@@ -78,24 +78,18 @@ const coreFunctions = [
 ];
 ---
 
-+<head>
-  <SEOHead 
-    title="Gaia Hub | Digital Coordination Platform for Regenerative Ecosystems"
-    description="Gaia Hub is the digital operating system of the Gaia Ecosystem. A meta-platform for network coordination, matchmaking, and regenerative collaboration."
-    keywords={["regenerative economy", "Gaia Hub", "commons", "bioregions", "impact fund", "regenerative marketplace", "coordination platform"]}
-    ogImage="/og-image.jpg"
-    canonicalUrl="https://gaiahub.co"
-  />
-  <SchemaOrg type={["Organization", "WebSite"]} />
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-</head>
-
 <Layout title="Gaia Hub | Digital Coordination Platform">
+  <Fragment slot="head">
+    <SEOHead 
+      title="Gaia Hub | Digital Coordination Platform for Regenerative Ecosystems"
+      description="Gaia Hub is the digital operating system of the Gaia Ecosystem. A meta-platform for network coordination, matchmaking, and regenerative collaboration."
+      keywords={["regenerative economy", "Gaia Hub", "commons", "bioregions", "impact fund", "regenerative marketplace", "coordination platform"]}
+      ogImage="/og-image.jpg"
+      canonicalUrl="https://gaiahub.co"
+    />
+    <SchemaOrg type={["Organization", "WebSite"]} />
+  </Fragment>
+  
   <main class="min-h-screen bg-background text-on-surface">
     
     <!-- Top Navigation Shell -->
@@ -110,7 +104,7 @@ const coreFunctions = [
       </div>
       <div class="flex items-center gap-4 lg:gap-6">
         <button class="material-symbols-outlined p-2 rounded-full transition-all hover:bg-primary-container/10 text-primary">search</button>
-        <button class="hidden sm:block px-6 lg:px-8 py-3 rounded-full text-white font-headline text-xs tracking-widest uppercase hover:scale-[1.02] active:scale-95 transition-all shadow-ethereal bg-gradient-to-r from-primary to-primary-container text-on-primary-container">Connect Soul</button>
+        <button class="hidden sm:block px-6 lg:px-8 py-3 rounded-full text-white font-headline text-xs tracking-widest uppercase hover:scale-[1.02] active:scale-95 transition-all shadow-ethereal bg-gradient-to-r from-primary to-primary-container text-on-primary-container font-bold">Connect Soul</button>
         <button class="sm:hidden material-symbols-outlined p-2 rounded-full text-primary">menu</button>
       </div>
     </nav>
