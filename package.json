@@ -1,7 +1,7 @@
 {
-  "name": "kinto-cms",
+  "name": "gaia-hub",
   "version": "1.0.0",
-  "description": "KINTO Content Site Manager - Static sites with skill-based architecture",
+  "description": "Gaia Hub - Plataforma de gestión de presencia digital con arquitectura de skills",
   "type": "module",
   "bin": {
     "kinto": "./kinto.js"

@@ -1,0 +1,12 @@
+{
+  "site": "gaiahub",
+  "skills": [
+    "cms-sveltia",
+    "seo-ai-citations",
+    "testimonials",
+    "contact-form",
+    "webflow-effects",
+    "blog"
+  ],
+  "_comment": "Skills se añaden con: node scripts/skill-add.js [nombre]"
+}

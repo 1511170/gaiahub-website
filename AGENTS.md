@@ -5,16 +5,18 @@
 ## 🎯 Tú Entras Aquí y Lees ESTO Primero
 
 ### Contexto Inmediato
+- **Proyecto**: Gaia Hub - Plataforma de gestión de presencia digital
 - **Sistema**: KINTO CMS - Generador de sitios estáticos con arquitectura de skills
 - **Stack**: Astro 5 + Tailwind 4 + Sveltia CMS
-- **Sitio activo**: `sites/serviworldlogistics/` (empresa de logística)
+- **Dominio**: gaiahub.co
 - **Estado**: Core limpio, sin skills instaladas aún
 
-### Tu Misión (Si eliges aceptarla)
-Generar el sitio web completo para Serviworld Logistics:
-1. Instalar skills necesarias
-2. Crear páginas: Home, Servicios, Nosotros, Blog, Contacto
-3. Configurar CMS para que el cliente edite contenido
+### Tu Misión
+Desarrollar la plataforma Gaia Hub:
+1. Landing page para gaiahub.co
+2. Sistema de gestión de sitios para clientes
+3. Panel de administración
+4. Integración con skills del CMS
 
 ---
 

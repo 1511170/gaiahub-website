@@ -1,0 +1,362 @@
+---
+import Layout from '../layouts/Layout.astro';
+import siteConfig from '../../config/site.config.ts';
+
+// Importar componentes de skills
+import { SEOHead, SchemaOrg } from '../../../../skills/community/seo-ai-citations/index.ts';
+import { TestimonialsGrid } from '../../../../skills/community/testimonials/index.ts';
+import { ContactForm } from '../../../../skills/community/contact-form/index.ts';
+
+// Datos de testimonios
+const testimonials = [
+  {
+    name: "María González",
+    role: "CEO",
+    company: "TechStart SAS",
+    content: "Gaia Hub transformó completamente nuestra presencia digital. En solo 2 semanas teníamos un sitio profesional que superó todas nuestras expectativas.",
+    rating: 5,
+    image: "/images/testimonial-1.jpg"
+  },
+  {
+    name: "Carlos Rodríguez",
+    role: "Director de Marketing",
+    company: "InnovateCorp",
+    content: "La arquitectura de skills es brillante. Podemos agregar funcionalidades sin complicaciones y todo funciona perfectamente integrado.",
+    rating: 5,
+    image: "/images/testimonial-2.jpg"
+  },
+  {
+    name: "Ana Martínez",
+    role: "Fundadora",
+    company: "EcoDesign Studio",
+    content: "El CMS oculto es exactamente lo que necesitábamos. Mi equipo actualiza contenido sin tocar código y yo me enfoco en crecer el negocio.",
+    rating: 5,
+    image: "/images/testimonial-3.jpg"
+  }
+];
+
+// Servicios
+const services = [
+  {
+    icon: "🚀",
+    title: "Despliegue Ultrarrápido",
+    description: "Sitios estáticos optimizados que cargan en milisegundos, mejorando tu SEO y experiencia de usuario."
+  },
+  {
+    icon: "🎨",
+    title: "Diseño Premium",
+    description: "Animaciones tipo Webflow, efectos visuales profesionales y diseño responsive de última generación."
+  },
+  {
+    icon: "🔒",
+    title: "CMS Seguro",
+    description: "Gestión de contenido via Git con Sveltia CMS. Sin bases de datos vulnerables, 100% seguro."
+  },
+  {
+    icon: "⚡",
+    title: "Escalabilidad Infinita",
+    description: "Arquitectura de skills modular. Agrega funcionalidades bajo demanda sin rehacer el sitio."
+  },
+  {
+    icon: "🤖",
+    title: "Optimizado para IA",
+    description: "Schema.org completo, AI citations y meta tags optimizados para destacar en buscadores y LLMs."
+  },
+  {
+    icon: "☁️",
+    title: "Hosting Global",
+    description: "Deploy automático a Cloudflare Pages con CDN global. Tu sitio rápido en cualquier parte del mundo."
+  }
+];
+---
+
++<head>
+  <SEOHead 
+    title="Gaia Hub - Gestión de Presencia Digital Empresarial"
+    description="Plataforma de gestión de presencia digital empresarial. Crea, gestiona y escala tu presencia online con tecnología de última generación."
+    keywords={["presencia digital", "sitios web", "CMS", "marketing digital", "SEO", "cloudflare"]}
+    ogImage="/og-image.jpg"
+    canonicalUrl="https://gaiahub.co"
+  />
+  <SchemaOrg type={["Organization", "WebSite", "Service"]} />
+</head>
+
+<Layout title="Gaia Hub - Presencia Digital Empresarial">
+  <main class="min-h-screen bg-white">
+    
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800">
+      <!-- Background decoration -->
+      <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+        <div class="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse" style="animation-delay: 4s;"></div>
+      </div>
+      
+      <div class="relative z-10 container mx-auto px-4 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 text-sm mb-8">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+          Nueva plataforma v1.0 disponible
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+          Tu Presencia<br>
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+            Digital Elevada
+          </span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed">
+          La plataforma empresarial que combina la velocidad de sitios estáticos con la flexibilidad de un CMS moderno. 
+          Gestiona tu presencia digital sin límites.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a 
+            href="#contacto" 
+            class="px-8 py-4 bg-white text-indigo-900 rounded-full font-semibold text-lg hover:bg-white/90 transition-all transform hover:scale-105 shadow-lg"
+          >
+            Comenzar Ahora
+          </a>
+          <a 
+            href="#servicios" 
+            class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white border border-white/30 rounded-full font-semibold text-lg hover:bg-white/20 transition-all"
+          >
+            Explorar Servicios
+          </a>
+        </div>
+        
+        <!-- Stats -->
+        <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div class="text-center">
+            <div class="text-4xl md:text-5xl font-bold text-white mb-2">99.9%</div>
+            <div class="text-white/60 text-sm">Uptime Garantizado</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl md:text-5xl font-bold text-white mb-2">< 1s</div>
+            <div class="text-white/60 text-sm">Tiempo de Carga</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl md:text-5xl font-bold text-white mb-2">100+</div>
+            <div class="text-white/60 text-sm">Skills Disponibles</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl md:text-5xl font-bold text-white mb-2">0</div>
+            <div class="text-white/60 text-sm">Vulnerabilidades DB</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-24 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <span class="inline-block px-4 py-1 rounded-full bg-indigo-100 text-indigo-700 text-sm font-medium mb-4">
+            Nuestra Tecnología
+          </span>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Todo lo que necesitas para<br>
+            <span class="text-indigo-600">dominar tu presencia digital</span>
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Arquitectura modular basada en skills. Instala solo lo que necesitas, escala cuando quieras.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <div class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+              <div class="text-4xl mb-4">{service.icon}</div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">
+                {service.title}
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                {service.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <span class="inline-block px-4 py-1 rounded-full bg-purple-100 text-purple-700 text-sm font-medium mb-4">
+            Proceso Simple
+          </span>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            De idea a realidad en <span class="text-purple-600">4 pasos</span>
+          </h2>
+        </div>
+        
+        <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div class="relative text-center">
+            <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
+              1
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Analizamos</h3>
+            <p class="text-gray-600">Entendemos tus necesidades y objetivos de negocio</p>
+            <div class="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 -z-10 transform -translate-x-1/2"></div>
+          </div>
+          
+          <div class="relative text-center">
+            <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
+              2
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Diseñamos</h3>
+            <p class="text-gray-600">Creamos prototipos y definimos la arquitectura de skills</p>
+            <div class="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-purple-600 to-pink-600 -z-10 transform -translate-x-1/2"></div>
+          </div>
+          
+          <div class="relative text-center">
+            <div class="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
+              3
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Desarrollamos</h3>
+            <p class="text-gray-600">Construimos tu sitio con Astro, Tailwind y skills especializadas</p>
+            <div class="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-pink-600 to-orange-600 -z-10 transform -translate-x-1/2"></div>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">
+              4
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Desplegamos</h3>
+            <p class="text-gray-600">Publicamos en Cloudflare con CDN global y CMS configurado</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 to-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <span class="inline-block px-4 py-1 rounded-full bg-green-100 text-green-700 text-sm font-medium mb-4">
+            Testimonios
+          </span>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Lo que dicen nuestros <span class="text-green-600">clientes</span>
+          </h2>
+        </div>
+        
+        <TestimonialsGrid testimonials={testimonials} columns={3} showRatings={true} />
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-indigo-900">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          ¿Listo para transformar tu<br>presencia digital?
+        </h2>
+        <p class="text-xl text-indigo-200 mb-12 max-w-2xl mx-auto">
+          Únete a las empresas que ya están aprovechando la velocidad y flexibilidad de Gaia Hub.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="#contacto" 
+            class="px-8 py-4 bg-white text-indigo-900 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
+          >
+            Solicitar Demo
+          </a>
+          <a 
+            href="mailto:hola@gaiahub.co" 
+            class="px-8 py-4 bg-indigo-800 text-white border border-indigo-700 rounded-full font-semibold text-lg hover:bg-indigo-700 transition-all"
+          >
+            Contactar Ventas
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <span class="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-4">
+              Contacto
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Hablemos de tu <span class="text-blue-600">proyecto</span>
+            </h2>
+            <p class="text-xl text-gray-600">
+              Cuéntanos sobre tu negocio y te ayudaremos a definir la mejor estrategia digital.
+            </p>
+          </div>
+          
+          <div class="bg-gray-50 rounded-3xl p-8 md:p-12">
+            <ContactForm 
+              title="Solicita información"
+              subtitle="Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas."
+              submitLabel="Enviar mensaje"
+              showPhone={true}
+              showCompany={true}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 class="text-white text-xl font-bold mb-4">Gaia Hub</h3>
+            <p class="text-sm leading-relaxed">
+              Plataforma de gestión de presencia digital empresarial. Tecnología de última generación para empresas que quieren destacar.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-4">Servicios</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-white transition-colors">Diseño Web</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">CMS Headless</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">SEO & AI Citations</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Migraciones</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-4">Empresa</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-white transition-colors">Sobre Nosotros</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Carreras</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Contacto</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="#" class="hover:text-white transition-colors">Privacidad</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Términos de Servicio</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p class="text-sm">
+            © 2026 Gaia Hub. Todos los derechos reservados.
+          </p>
+          <div class="flex gap-4 mt-4 md:mt-0">
+            <a href="#" class="hover:text-white transition-colors">Twitter</a>
+            <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+            <a href="#" class="hover:text-white transition-colors">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</Layout>

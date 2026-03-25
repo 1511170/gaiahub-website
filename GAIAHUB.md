@@ -1,16 +1,12 @@
-# 🌐 Gaia Hub
+# 🌐 Gaia Hub - Plataforma de Gestión Digital
 
-> Plataforma de gestión de presencia digital empresarial con arquitectura de skills/plugins bajo demanda.
+> Sistema de gestión de presencia digital empresarial con arquitectura de skills/plugins bajo demanda.
 
 ---
 
 ## 🎯 Visión
 
-**Gaia Hub** es una plataforma que permite a empresas gestionar su presencia digital de manera centralizada, usando tecnología de última generación con arquitectura modular de skills.
-
-Basado en **KINTO CMS** - sistema generador de sitios web estáticos empresariales.
-
----
+Gaia Hub es una plataforma que permite a empresas gestionar su presencia digital de manera centralizada, usando tecnología de última generación con arquitectura modular de skills.
 
 ## 🏗️ Arquitectura: Core Mínimo + Skills Bajo Demanda
 
@@ -27,8 +23,6 @@ Basado en **KINTO CMS** - sistema generador de sitios web estáticos empresarial
 └─────────────────────────────────────────────┘
 ```
 
----
-
 ## 🚀 Stack Tecnológico
 
 | Capa | Tecnología |
@@ -39,8 +33,6 @@ Basado en **KINTO CMS** - sistema generador de sitios web estáticos empresarial
 | Hosting | Cloudflare Pages |
 | Testing | Puppeteer + Browser Automation |
 | Animaciones | GSAP + ScrollTrigger |
-
----
 
 ## 📦 Skills Disponibles (14 total)
 
@@ -72,16 +64,16 @@ Basado en **KINTO CMS** - sistema generador de sitios web estáticos empresarial
 node kinto.js init nombre-sitio
 
 # Desarrollo
-node kinto.js dev --site=gaiahub
+node kinto.js dev --site=nombre-sitio
 
 # Build
-node kinto.js build --site=gaiahub
+node kinto.js build --site=nombre-sitio
 
 # Listar skills
 node kinto.js skills:list
 
 # Instalar skill en un sitio
-cd sites/gaiahub
+cd sites/nombre-sitio
 node scripts/skill-add.js nombre-skill
 
 # Crear nueva skill
@@ -90,40 +82,4 @@ node scripts/skill-create.js nombre-skill
 
 ---
 
-## 📁 Estructura del Proyecto
-
-```
-gaiahub-website/
-├── core/                    # Motor mínimo Astro
-├── skills/                  # Marketplace de skills
-│   ├── official/            # Skills oficiales
-│   └── community/           # Skills comunitarias
-├── sites/                   # Sitios de clientes
-│   └── gaiahub/            # Sitio principal
-├── templates/              # Templates base
-├── docs/                   # Documentación
-├── kinto.js               # CLI principal
-└── package.json
-```
-
----
-
-## 🚀 Iniciar Desarrollo
-
-```bash
-# Instalar dependencias del sitio
-cd sites/gaiahub
-npm install
-
-# Modo desarrollo
-npm run dev
-
-# Build producción
-npm run build
-```
-
----
-
-**Gaia Hub** - Tu presencia digital, simplificada y potenciada.
-
-🌐 [gaiahub.co](https://gaiahub.co)
+**Gaia Hub**: Tu presencia digital, simplificada y potenciada.
