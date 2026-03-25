@@ -20,9 +20,8 @@ try {
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  site: 'https://example.com', // Se actualiza en cada proyecto
+  site: 'https://gaiahub.co',
   
-  // Sin integración de Tailwind - usamos PostCSS directo para Tailwind 4
   integrations: [],
   
   build: {
@@ -33,7 +32,7 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        // Alias para skills - permite importar fácilmente
+        // Alias para skills
         '@skills': join(__dirname, '../../skills'),
         '@skills-official': join(__dirname, '../../skills/official'),
         '@skills-community': join(__dirname, '../../skills/community'),
@@ -45,10 +44,6 @@ export default defineConfig({
         '@pages': join(__dirname, 'src/pages'),
         '@config': join(__dirname, 'config'),
       }
-    },
-    css: {
-      // Configuración para Tailwind 4 via PostCSS
-      postcss: './postcss.config.mjs'
     }
   }
 });
