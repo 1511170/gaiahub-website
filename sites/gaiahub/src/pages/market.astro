@@ -1,11 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { t } from '@site/i18n';
+
+const locale = 'en';
+const i18n = t(locale);
 ---
 
 <Layout 
-  title="Gaia Market | El Sistema Circulatorio"
-  description="El marketplace donde cada transacción nutre al ecosistema. Productos, servicios, experiencias y conocimiento regenerativo."
-  keywords={["Gaia Market", "marketplace regenerativo", "economía regenerativa", "productos sostenibles", "servicios regenerativos", "experiencias conscientes"]}
+  title={i18n.market.meta_title}
+  description={i18n.market.meta_description}
+  keywords={["Gaia Market", "regenerative marketplace", "regenerative economy", "sustainable products", "regenerative services", "conscious experiences"]}
   schemaType={["WebPage", "Organization"]}
 >
   
@@ -16,26 +20,26 @@ import Layout from '../layouts/Layout.astro';
         Gaia
       </a>
       <div class="hidden md:flex items-center gap-12 font-headline tracking-tight font-bold uppercase text-sm">
-        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/">Inicio</a>
-        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/hub">Hub</a>
-        <a class="text-primary border-b-2 border-primary pb-1" href="/market">Market</a>
-        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/commons">Commons</a>
+        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/">{i18n.nav.home}</a>
+        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/hub">{i18n.nav.hub}</a>
+        <a class="text-primary border-b-2 border-primary pb-1" href="/market">{i18n.nav.market}</a>
+        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/commons">{i18n.nav.commons}</a>
         <div class="relative group">
           <a class="text-on-surface/70 hover:text-on-surface transition-colors flex items-center gap-1" href="/commons">
-            Impact
+            {i18n.nav.impact}
             <span class="material-symbols-outlined text-sm">expand_more</span>
           </a>
           <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
             <div class="bg-white/95 backdrop-blur-xl rounded-xl shadow-xl border border-outline/10 py-2 min-w-[180px]">
-              <a class="block px-4 py-2 text-on-surface/70 hover:text-primary hover:bg-surface-container transition-colors text-xs" href="/commons/impact-fund/">Impact Fund</a>
-              <a class="block px-4 py-2 text-on-surface/70 hover:text-primary hover:bg-surface-container transition-colors text-xs" href="/commons/impact-hub/">Impact Hub</a>
+              <a class="block px-4 py-2 text-on-surface/70 hover:text-primary hover:bg-surface-container transition-colors text-xs" href="/commons/impact-fund/">{i18n.nav.impact_fund}</a>
+              <a class="block px-4 py-2 text-on-surface/70 hover:text-primary hover:bg-surface-container transition-colors text-xs" href="/commons/impact-hub/">{i18n.nav.impact_hub}</a>
             </div>
           </div>
         </div>
       </div>
       <div class="flex items-center gap-4">
         <a href="#comunidad" class="bg-primary text-white px-6 py-3 rounded-full font-headline font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-all scale-95 active:scale-90">
-          Únete
+          {i18n.nav.join}
         </a>
       </div>
     </div>
@@ -47,20 +51,20 @@ import Layout from '../layouts/Layout.astro';
       <div class="grid grid-cols-1 lg:grid-cols-[1.618fr_1fr] gap-12 lg:gap-16 items-center">
         <div class="space-y-8">
           <div class="inline-flex items-center px-4 py-2 rounded-full bg-secondary-container/50 text-secondary font-semibold text-xs tracking-widest uppercase">
-            El Motor de la Regeneración
+            {i18n.market.hero_badge}
           </div>
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-black font-headline text-on-surface leading-[1.05] tracking-tighter">
-            Donde cada compra <span class="text-primary italic">regenera</span> el mundo.
+            {i18n.market.hero_title}
           </h1>
           <p class="text-xl md:text-2xl text-on-surface/60 max-w-xl leading-relaxed font-light">
-            Un marketplace donde el dinero fluye hacia donde la vida lo necesita. Un sistema circulatorio que nutre el planeta mientras tú prosperas.
+            {i18n.market.hero_subtitle}
           </p>
           <div class="flex flex-col sm:flex-row gap-4 pt-4">
             <a href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank" class="px-10 py-5 rounded-full solar-gradient text-white font-headline font-bold text-sm tracking-widest uppercase shadow-2xl hover:translate-y-[-4px] transition-all text-center">
-              Entrar al Marketplace
+              {i18n.market.cta_marketplace}
             </a>
             <a href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank" class="px-10 py-5 rounded-full bg-surface-container-highest text-on-surface font-headline font-bold text-sm tracking-widest uppercase hover:bg-surface-container transition-all text-center">
-              Registrarme como Proveedor
+              {i18n.market.cta_vendor}
             </a>
           </div>
         </div>
@@ -79,23 +83,23 @@ import Layout from '../layouts/Layout.astro';
     <section class="bg-surface-container py-24 lg:py-32 px-6 lg:px-[5.5rem]">
       <div class="max-w-[1618px] mx-auto text-center space-y-12">
         <h2 class="text-4xl md:text-5xl font-bold font-headline max-w-3xl mx-auto leading-tight">
-          El dinero que gastas define el mundo que construyes. <span class="text-secondary-dim">Gaia Market</span> es la alternativa.
+          {i18n.market.problem_title}
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-left">
           <div class="space-y-4 p-8 bg-white rounded-xl ethereal-shadow">
             <span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">token</span>
-            <h3 class="text-xl font-bold font-headline uppercase">Transparencia Radical</h3>
-            <p class="text-on-surface/60 font-light">Trazabilidad total de cada moneda. Mira exactamente cómo tu compra impacta el suelo, el agua y las personas.</p>
+            <h3 class="text-xl font-bold font-headline uppercase">{i18n.market.transparency_title}</h3>
+            <p class="text-on-surface/60 font-light">{i18n.market.transparency_desc}</p>
           </div>
           <div class="space-y-4 p-8 bg-white rounded-xl ethereal-shadow">
             <span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">eco</span>
-            <h3 class="text-xl font-bold font-headline uppercase">Calidad Ancestral</h3>
-            <p class="text-on-surface/60 font-light">Solo productos y servicios que devuelven más de lo que toman. Estándares regenerativos estrictos.</p>
+            <h3 class="text-xl font-bold font-headline uppercase">{i18n.market.quality_title}</h3>
+            <p class="text-on-surface/60 font-light">{i18n.market.quality_desc}</p>
           </div>
           <div class="space-y-4 p-8 bg-white rounded-xl ethereal-shadow">
             <span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">group</span>
-            <h3 class="text-xl font-bold font-headline uppercase">Economía Local</h3>
-            <p class="text-on-surface/60 font-light">Eliminamos intermediarios parasitarios. La riqueza se queda en la comunidad que la crea.</p>
+            <h3 class="text-xl font-bold font-headline uppercase">{i18n.market.local_title}</h3>
+            <p class="text-on-surface/60 font-light">{i18n.market.local_desc}</p>
           </div>
         </div>
       </div>
@@ -104,7 +108,7 @@ import Layout from '../layouts/Layout.astro';
     <!-- The Exchange Ecosystem (Bento Grid) -->
     <section class="py-24 lg:py-32 px-6 lg:px-[5.5rem] max-w-[1618px] mx-auto">
       <div class="mb-16 lg:mb-20">
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold font-headline mb-6">Explora el Ecosistema</h2>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold font-headline mb-6">{i18n.market.explore_title}</h2>
         <div class="h-1 w-32 bg-primary rounded-full"></div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
@@ -113,14 +117,14 @@ import Layout from '../layouts/Layout.astro';
           <div>
             <div class="flex justify-between items-start mb-8 lg:mb-12">
               <span class="material-symbols-outlined text-5xl text-primary">local_mall</span>
-              <span class="text-xs font-bold uppercase tracking-widest text-on-surface/40">01 / Productos</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-on-surface/40">01 / {i18n.market.products_title}</span>
             </div>
-            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">Productos de la Tierra</h3>
-            <p class="text-lg text-on-surface/70 max-w-md">Alimentos orgánicos, artesanías con alma y objetos diseñados para durar mil años.</p>
+            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">{i18n.market.products_title}</h3>
+            <p class="text-lg text-on-surface/70 max-w-md">{i18n.market.products_desc}</p>
           </div>
           <div class="mt-8 lg:mt-12 flex flex-wrap gap-3">
-            <span class="px-4 py-2 bg-secondary-container/50 rounded-full text-xs font-bold">BIO-COSECHA</span>
-            <span class="px-4 py-2 bg-secondary-container/50 rounded-full text-xs font-bold">ARTESANÍA VIVA</span>
+            <span class="px-4 py-2 bg-secondary-container/50 rounded-full text-xs font-bold">{i18n.market.products_tag1}</span>
+            <span class="px-4 py-2 bg-secondary-container/50 rounded-full text-xs font-bold">{i18n.market.products_tag2}</span>
           </div>
         </div>
 
@@ -129,10 +133,10 @@ import Layout from '../layouts/Layout.astro';
           <div>
             <div class="flex justify-between items-start mb-8 lg:mb-12">
               <span class="material-symbols-outlined text-5xl text-secondary-dim">handshake</span>
-              <span class="text-xs font-bold uppercase tracking-widest text-on-surface/40">02 / Servicios</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-on-surface/40">02 / {i18n.market.services_title}</span>
             </div>
-            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">Servicios Conscientes</h3>
-            <p class="text-on-surface/70">Consultoría regenerativa, terapias holísticas y soporte profesional alineado con la vida.</p>
+            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">{i18n.market.services_title}</h3>
+            <p class="text-on-surface/70">{i18n.market.services_desc}</p>
           </div>
         </div>
 
@@ -141,10 +145,10 @@ import Layout from '../layouts/Layout.astro';
           <div>
             <div class="flex justify-between items-start mb-8 lg:mb-12">
               <span class="material-symbols-outlined text-5xl text-primary-dim">menu_book</span>
-              <span class="text-xs font-bold uppercase tracking-widest text-on-surface/40">03 / Sabiduría</span>
+              <span class="text-xs font-bold uppercase tracking-widest text-on-surface/40">03 / {i18n.market.knowledge_title}</span>
             </div>
-            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">Conocimiento</h3>
-            <p class="text-on-surface/70">Cursos de permacultura, economía sagrada y talleres de autogestión.</p>
+            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">{i18n.market.knowledge_title}</h3>
+            <p class="text-on-surface/70">{i18n.market.knowledge_desc}</p>
           </div>
         </div>
 
@@ -156,9 +160,9 @@ import Layout from '../layouts/Layout.astro';
             src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1932&auto=format&fit=crop"
           />
           <div class="absolute inset-0 bg-gradient-to-r from-on-surface/80 to-transparent p-8 lg:p-10 flex flex-col justify-end">
-            <span class="text-xs font-bold uppercase tracking-widest text-white/60 mb-4">04 / Experiencias</span>
-            <h3 class="font-headline text-2xl lg:text-3xl font-bold text-white mb-2">Retiros y Encuentros</h3>
-            <p class="text-white/80 max-w-sm">Reconecta con la red de la vida en santuarios regenerativos alrededor del globo.</p>
+            <span class="text-xs font-bold uppercase tracking-widest text-white/60 mb-4">04 / {i18n.market.experiences_title}</span>
+            <h3 class="font-headline text-2xl lg:text-3xl font-bold text-white mb-2">{i18n.market.experiences_title}</h3>
+            <p class="text-white/80 max-w-sm">{i18n.market.experiences_desc}</p>
           </div>
         </div>
       </div>
@@ -168,8 +172,8 @@ import Layout from '../layouts/Layout.astro';
     <section class="bg-surface-container-low py-24 lg:py-32 px-6 lg:px-[5.5rem] overflow-hidden">
       <div class="max-w-[1618px] mx-auto">
         <div class="text-center mb-16 lg:mb-24">
-          <span class="text-primary font-headline font-bold uppercase tracking-[0.3em] text-sm">Alquimia Solar</span>
-          <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-black mt-6">El Ciclo de la Vida</h2>
+          <span class="text-primary font-headline font-bold uppercase tracking-[0.3em] text-sm">{i18n.market.cycle_subtitle}</span>
+          <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-black mt-6">{i18n.market.cycle_title}</h2>
         </div>
         <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           <!-- Step 1 -->
@@ -177,8 +181,8 @@ import Layout from '../layouts/Layout.astro';
             <div class="w-20 h-20 lg:w-24 lg:h-24 solar-gradient rounded-full flex items-center justify-center mb-6 lg:mb-8 shadow-2xl">
               <span class="material-symbols-outlined text-white text-3xl lg:text-4xl" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
             </div>
-            <h4 class="font-headline text-lg lg:text-xl font-bold mb-3">Compra</h4>
-            <p class="text-on-surface/60 text-sm px-2">Tu intercambio inicia el flujo energético en el ecosistema.</p>
+            <h4 class="font-headline text-lg lg:text-xl font-bold mb-3">{i18n.market.cycle_step1}</h4>
+            <p class="text-on-surface/60 text-sm px-2">{i18n.market.cycle_step1_desc}</p>
           </div>
           
           <!-- Step 2 -->
@@ -186,8 +190,8 @@ import Layout from '../layouts/Layout.astro';
             <div class="w-20 h-20 lg:w-24 lg:h-24 bg-white rounded-full flex items-center justify-center mb-6 lg:mb-8 shadow-xl border-4 border-primary-container">
               <span class="material-symbols-outlined text-primary text-3xl lg:text-4xl">percent</span>
             </div>
-            <h4 class="font-headline text-lg lg:text-xl font-bold mb-3">Comisión</h4>
-            <p class="text-on-surface/60 text-sm px-2">Una fracción se destina automáticamente al bien común.</p>
+            <h4 class="font-headline text-lg lg:text-xl font-bold mb-3">{i18n.market.cycle_step2}</h4>
+            <p class="text-on-surface/60 text-sm px-2">{i18n.market.cycle_step2_desc}</p>
           </div>
           
           <!-- Step 3 -->
@@ -195,8 +199,8 @@ import Layout from '../layouts/Layout.astro';
             <div class="w-20 h-20 lg:w-24 lg:h-24 bg-secondary-container rounded-full flex items-center justify-center mb-6 lg:mb-8 shadow-xl">
               <span class="material-symbols-outlined text-secondary text-3xl lg:text-4xl">account_balance</span>
             </div>
-            <h4 class="font-headline text-lg lg:text-xl font-bold mb-3">Tesoro Común</h4>
-            <p class="text-on-surface/60 text-sm px-2">Fondos custodiados colectivamente para regeneración.</p>
+            <h4 class="font-headline text-lg lg:text-xl font-bold mb-3">{i18n.market.cycle_step3}</h4>
+            <p class="text-on-surface/60 text-sm px-2">{i18n.market.cycle_step3_desc}</p>
           </div>
           
           <!-- Step 4 -->
@@ -204,8 +208,8 @@ import Layout from '../layouts/Layout.astro';
             <div class="w-20 h-20 lg:w-24 lg:h-24 bg-tertiary-container rounded-full flex items-center justify-center mb-6 lg:mb-8 shadow-xl">
               <span class="material-symbols-outlined text-tertiary text-3xl lg:text-4xl">eco</span>
             </div>
-            <h4 class="font-headline text-lg lg:text-xl font-bold mb-3">Inversión Regenerativa</h4>
-            <p class="text-on-surface/60 text-sm px-2">El capital retorna a la tierra en forma de proyectos vitales.</p>
+            <h4 class="font-headline text-lg lg:text-xl font-bold mb-3">{i18n.market.cycle_step4}</h4>
+            <p class="text-on-surface/60 text-sm px-2">{i18n.market.cycle_step4_desc}</p>
           </div>
           
           <!-- Connecting Lines (Visual Decor) -->
@@ -217,7 +221,7 @@ import Layout from '../layouts/Layout.astro';
     <!-- User Profiles: Bento Grid -->
     <section class="px-6 lg:px-[5.5rem] py-24 lg:py-32 max-w-[1618px] mx-auto">
       <div class="mb-16 lg:mb-20">
-        <h2 class="font-headline text-4xl lg:text-5xl font-black mb-4">Para quién es</h2>
+        <h2 class="font-headline text-4xl lg:text-5xl font-black mb-4">{i18n.market.for_whom_title}</h2>
         <div class="w-32 h-2 solar-gradient rounded-full"></div>
       </div>
       
@@ -231,11 +235,11 @@ import Layout from '../layouts/Layout.astro';
           />
           <div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-transparent"></div>
           <div class="absolute bottom-0 p-8 lg:p-12 text-white">
-            <span class="bg-primary px-4 py-1 rounded-full text-[10px] font-headline font-bold tracking-widest uppercase mb-4 inline-block">Creadores</span>
-            <h3 class="font-headline text-3xl lg:text-4xl font-bold mb-4">Productores</h3>
-            <p class="font-body text-lg opacity-80 max-w-md">Ofrece tus productos a una red que valora lo regenerativo.</p>
+            <span class="bg-primary px-4 py-1 rounded-full text-[10px] font-headline font-bold tracking-widest uppercase mb-4 inline-block">{i18n.market.producers_title}</span>
+            <h3 class="font-headline text-3xl lg:text-4xl font-bold mb-4">{i18n.market.producers_title}</h3>
+            <p class="font-body text-lg opacity-80 max-w-md">{i18n.market.producers_desc}</p>
             <button class="mt-8 flex items-center font-headline font-bold uppercase text-xs tracking-widest group-hover:translate-x-2 transition-transform">
-              Registrarme <span class="material-symbols-outlined ml-2">arrow_forward</span>
+              {i18n.market.producers_cta} <span class="material-symbols-outlined ml-2">arrow_forward</span>
             </button>
           </div>
         </div>
@@ -249,11 +253,11 @@ import Layout from '../layouts/Layout.astro';
           />
           <div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-transparent"></div>
           <div class="absolute bottom-0 p-8 lg:p-12 text-white">
-            <span class="bg-tertiary px-4 py-1 rounded-full text-[10px] font-headline font-bold tracking-widest uppercase mb-4 inline-block">Expertos</span>
-            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">Profesionales</h3>
-            <p class="font-body text-base opacity-80">Comparte tus servicios con quienes los necesitan.</p>
+            <span class="bg-tertiary px-4 py-1 rounded-full text-[10px] font-headline font-bold tracking-widest uppercase mb-4 inline-block">{i18n.market.professionals_title}</span>
+            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">{i18n.market.professionals_title}</h3>
+            <p class="font-body text-base opacity-80">{i18n.market.professionals_desc}</p>
             <button class="mt-6 flex items-center font-headline font-bold uppercase text-xs tracking-widest group-hover:translate-x-2 transition-transform">
-              Ofrecer servicios <span class="material-symbols-outlined ml-2">arrow_forward</span>
+              {i18n.market.professionals_cta} <span class="material-symbols-outlined ml-2">arrow_forward</span>
             </button>
           </div>
         </div>
@@ -261,14 +265,14 @@ import Layout from '../layouts/Layout.astro';
         <!-- Communities -->
         <div class="md:col-span-12 relative group rounded-xl overflow-hidden bg-secondary-container">
           <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <span class="text-[15vw] font-black text-secondary/10 select-none leading-none">COMUNIDAD</span>
+            <span class="text-[15vw] font-black text-secondary/10 select-none leading-none">{i18n.market.communities_title}</span>
           </div>
           <div class="relative grid md:grid-cols-2 gap-8 items-center p-8 lg:p-16">
             <div>
-              <span class="bg-secondary-dim text-white px-4 py-1 rounded-full text-[10px] font-headline font-bold tracking-widest uppercase mb-4 inline-block">Colectivos</span>
-              <h3 class="font-headline text-4xl lg:text-5xl font-black text-secondary-dim mb-6">Comunidades</h3>
-              <p class="font-body text-lg lg:text-xl text-secondary-dim/80 leading-relaxed mb-8">Accede a todo lo que necesitas, alineado con tus valores. Ecovillas, DAOs y cooperativas intercambiando recursos.</p>
-              <button class="bg-secondary-dim text-white px-8 py-4 rounded-xl font-headline font-bold uppercase tracking-widest text-sm shadow-lg hover:scale-105 transition-transform">Registrar colectivo</button>
+              <span class="bg-secondary-dim text-white px-4 py-1 rounded-full text-[10px] font-headline font-bold tracking-widest uppercase mb-4 inline-block">{i18n.market.communities_title}</span>
+              <h3 class="font-headline text-4xl lg:text-5xl font-black text-secondary-dim mb-6">{i18n.market.communities_title}</h3>
+              <p class="font-body text-lg lg:text-xl text-secondary-dim/80 leading-relaxed mb-8">{i18n.market.communities_desc}</p>
+              <button class="bg-secondary-dim text-white px-8 py-4 rounded-xl font-headline font-bold uppercase tracking-widest text-sm shadow-lg hover:scale-105 transition-transform">{i18n.market.communities_cta}</button>
             </div>
             <div class="hidden md:grid grid-cols-2 gap-4">
               <img 
@@ -290,17 +294,17 @@ import Layout from '../layouts/Layout.astro';
     <!-- Final CTA -->
     <section id="comunidad" class="py-24 lg:py-40 px-6 lg:px-[5.5rem] max-w-[1618px] mx-auto text-center">
       <h2 class="text-5xl md:text-6xl lg:text-7xl font-black font-headline tracking-tighter mb-8 lg:mb-12 leading-none">
-        Otro modelo económico <br/> <span class="text-primary italic">ya está funcionando.</span>
+        {i18n.market.final_cta_title}
       </h2>
       <div class="flex flex-col sm:flex-row justify-center gap-4 lg:gap-8 mt-12 lg:mt-16">
         <a href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank" class="px-12 lg:px-16 py-6 lg:py-8 rounded-full solar-gradient text-white font-headline font-black text-lg tracking-widest uppercase shadow-2xl hover:scale-105 transition-all text-center">
-          Entrar al Marketplace
+          {i18n.market.cta_marketplace}
         </a>
         <a href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank" class="px-12 lg:px-16 py-6 lg:py-8 rounded-full bg-surface-container-highest text-on-surface font-headline font-black text-lg tracking-widest uppercase hover:bg-surface-container transition-all text-center">
-          Registrarme como Proveedor
+          {i18n.market.cta_vendor}
         </a>
       </div>
-      <p class="mt-10 lg:mt-12 text-on-surface/50 font-light tracking-wide uppercase text-sm">Únete a más de 450 comunidades regenerativas hoy.</p>
+      <p class="mt-10 lg:mt-12 text-on-surface/50 font-light tracking-wide uppercase text-sm">{i18n.market.final_cta_subtitle}</p>
     </section>
   </main>
 
@@ -309,25 +313,25 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-[1618px] mx-auto grid grid-cols-1 md:grid-cols-[1.618fr_1fr] gap-12 px-6 lg:px-[5.5rem]">
       <div class="space-y-8">
         <div class="font-headline font-bold text-primary text-2xl tracking-tight">
-          Gaia Ecosystem
+          {i18n.footer.brand}
         </div>
         <p class="font-body text-sm leading-relaxed text-on-surface/60 max-w-sm">
-          Infraestructura para una civilización regenerativa. Un ecosistema descentralizado de coordinación planetaria.
+          {i18n.footer.description}
         </p>
         <p class="font-body text-sm text-on-surface/40">
-          © 2026 Gaia Ecosystem.
+          {i18n.footer.copyright}
         </p>
       </div>
       <div class="grid grid-cols-2 gap-8 font-body text-sm">
         <div class="flex flex-col gap-4">
-          <span class="font-bold text-primary uppercase tracking-wider text-xs">Explorar</span>
-          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/hub">Gaia Hub</a>
-          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/market">Gaia Market</a>
-          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/commons">Gaia Commons</a>
+          <span class="font-bold text-primary uppercase tracking-wider text-xs">{i18n.footer.explore_title}</span>
+          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/hub">{i18n.footer.hub}</a>
+          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/market">{i18n.footer.market}</a>
+          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/commons">{i18n.footer.commons}</a>
         </div>
         <div class="flex flex-col gap-4">
-          <span class="font-bold text-primary uppercase tracking-wider text-xs">Comunidad</span>
-          <a class="text-on-surface/60 hover:text-primary transition-colors" href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank">Telegram</a>
+          <span class="font-bold text-primary uppercase tracking-wider text-xs">{i18n.footer.community_title}</span>
+          <a class="text-on-surface/60 hover:text-primary transition-colors" href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank">{i18n.footer.telegram}</a>
         </div>
       </div>
     </div>

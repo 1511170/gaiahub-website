@@ -1,10 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { t } from '@site/i18n';
+
+const locale = 'en';
+const i18n = t(locale);
 ---
 
 <Layout 
-  title="Gaia Commons | El Alma"
-  description="El alma de una civilización que renace. Gobernanza, principios y capital estratégico — todo lo que sostiene y dirige al ecosistema."
+  title={i18n.commons.meta_title}
+  description={i18n.commons.meta_description}
   keywords={["Gaia Commons", "gobernanza distribuida", "capital regenerativo", "principios", "orquestación de impacto", "DAO"]}
   schemaType={["WebPage", "Organization"]}
 >
@@ -16,26 +20,26 @@ import Layout from '../layouts/Layout.astro';
         Gaia
       </a>
       <div class="hidden md:flex items-center gap-12 font-headline tracking-tight font-bold uppercase text-sm">
-        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/">Inicio</a>
-        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/hub">Hub</a>
-        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/market">Market</a>
-        <a class="text-primary border-b-2 border-primary pb-1" href="/commons">Commons</a>
+        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/">{i18n.nav.home}</a>
+        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/hub">{i18n.nav.hub}</a>
+        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/market">{i18n.nav.market}</a>
+        <a class="text-primary border-b-2 border-primary pb-1" href="/commons">{i18n.nav.commons}</a>
         <div class="relative group">
           <a class="text-on-surface/70 hover:text-on-surface transition-colors flex items-center gap-1" href="/commons">
-            Impact
+            {i18n.nav.impact}
             <span class="material-symbols-outlined text-sm">expand_more</span>
           </a>
           <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
             <div class="bg-white/95 backdrop-blur-xl rounded-xl shadow-xl border border-outline/10 py-2 min-w-[180px]">
-              <a class="block px-4 py-2 text-on-surface/70 hover:text-primary hover:bg-surface-container transition-colors text-xs" href="/commons/impact-fund/">Impact Fund</a>
-              <a class="block px-4 py-2 text-on-surface/70 hover:text-primary hover:bg-surface-container transition-colors text-xs" href="/commons/impact-hub/">Impact Hub</a>
+              <a class="block px-4 py-2 text-on-surface/70 hover:text-primary hover:bg-surface-container transition-colors text-xs" href="/commons/impact-fund/">{i18n.nav.impact_fund}</a>
+              <a class="block px-4 py-2 text-on-surface/70 hover:text-primary hover:bg-surface-container transition-colors text-xs" href="/commons/impact-hub/">{i18n.nav.impact_hub}</a>
             </div>
           </div>
         </div>
       </div>
       <div class="flex items-center gap-4">
         <a href="#comunidad" class="bg-primary text-white px-6 py-3 rounded-full font-headline font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-all scale-95 active:scale-90">
-          Únete
+          {i18n.nav.join}
         </a>
       </div>
     </div>
@@ -50,20 +54,20 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="relative z-20 max-w-[1000px] w-full">
         <div class="inline-block px-4 py-1 mb-8 rounded-full bg-secondary-container/40 text-on-secondary-container font-label text-sm font-bold tracking-widest uppercase backdrop-blur-sm">
-          El Alma del Ecosistema
+          {i18n.commons.hero_badge}
         </div>
         <h1 class="font-headline text-5xl md:text-6xl lg:text-8xl font-black text-on-surface leading-[1.1] mb-8 tracking-tighter">
-          El alma de una civilización que <span class="text-primary italic">renace</span>.
+          {i18n.commons.hero_title}
         </h1>
         <p class="text-xl md:text-2xl text-on-surface/70 max-w-2xl font-light leading-relaxed mb-12">
-          Gobernanza, principios y capital estratégico — todo lo que sostiene y dirige al ecosistema Gaia hacia un futuro regenerativo.
+          {i18n.commons.hero_subtitle}
         </p>
         <div class="flex flex-wrap gap-6">
           <a href="#funciones" class="px-10 py-5 solar-gradient text-white rounded-xl font-headline font-bold text-lg shadow-xl hover:scale-105 active:scale-95 transition-transform">
-            Explorar los Principios
+            {i18n.commons.cta_principles}
           </a>
           <a href="#comunidad" class="px-10 py-5 bg-surface-container-highest text-on-surface rounded-xl font-headline font-bold text-lg hover:bg-surface-container-high transition-colors">
-            Hablar con el Equipo
+            {i18n.commons.cta_team}
           </a>
         </div>
       </div>
@@ -79,23 +83,23 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
         <div class="order-1 lg:order-2">
-          <h2 class="font-headline text-4xl md:text-5xl font-black mb-8 leading-tight">Commons-based Coordination System.</h2>
+          <h2 class="font-headline text-4xl md:text-5xl font-black mb-8 leading-tight">{i18n.commons.coordination_title}</h2>
           <p class="text-lg text-on-surface/70 mb-10 leading-relaxed">
-            Gaia Commons no es una estructura de control, sino un organismo de <span class="text-secondary font-bold">Stewardship</span>. Diseñamos sistemas de coordinación donde el bien común y la soberanía individual coexisten en armonía a través de una arquitectura policéntrica.
+            {i18n.commons.coordination_desc}
           </p>
           <ul class="space-y-6">
             <li class="flex gap-4 items-start">
               <span class="material-symbols-outlined text-primary text-3xl">hub</span>
               <div>
-                <h4 class="font-headline font-bold text-xl">Stewardship > Ownership</h4>
-                <p class="text-on-surface/70">Priorizamos el cuidado y la custodia de los activos sobre la propiedad extractiva.</p>
+                <h4 class="font-headline font-bold text-xl">{i18n.commons.stewardship_title}</h4>
+                <p class="text-on-surface/70">{i18n.commons.stewardship_desc}</p>
               </div>
             </li>
             <li class="flex gap-4 items-start">
               <span class="material-symbols-outlined text-primary text-3xl">account_balance</span>
               <div>
-                <h4 class="font-headline font-bold text-xl">Polycentric Governance</h4>
-                <p class="text-on-surface/70">Múltiples centros de decisión coordinados por protocolos de confianza radical.</p>
+                <h4 class="font-headline font-bold text-xl">{i18n.commons.governance_title}</h4>
+                <p class="text-on-surface/70">{i18n.commons.governance_desc}</p>
               </div>
             </li>
           </ul>
@@ -107,34 +111,34 @@ import Layout from '../layouts/Layout.astro';
     <section id="funciones" class="py-24 lg:py-32 px-6 lg:px-[5.5rem]">
       <div class="max-w-[1618px] mx-auto">
         <div class="text-center mb-16 lg:mb-24">
-          <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-black mb-6">Funciones Vitales</h2>
+          <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-black mb-6">{i18n.commons.functions_title}</h2>
           <div class="h-1 w-24 bg-primary mx-auto rounded-full"></div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
-          <!-- Function 1: Principios -->
+          <!-- Function 1: Principles -->
           <div class="md:col-span-7 bg-surface-container rounded-xl p-10 lg:p-12 relative overflow-hidden group">
             <div class="relative z-10">
               <span class="material-symbols-outlined text-5xl text-primary mb-6" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
-              <h3 class="font-headline text-2xl lg:text-3xl font-black mb-4 uppercase tracking-tighter">Principios (Guardianship)</h3>
-              <p class="text-on-surface/70 text-lg leading-relaxed max-w-md">La brújula ética que asegura que cada acción esté alineada con la regeneración de la biosfera y el florecimiento humano.</p>
+              <h3 class="font-headline text-2xl lg:text-3xl font-black mb-4 uppercase tracking-tighter">{i18n.commons.principles_title}</h3>
+              <p class="text-on-surface/70 text-lg leading-relaxed max-w-md">{i18n.commons.principles_desc}</p>
             </div>
             <div class="absolute -right-20 -bottom-20 opacity-5 group-hover:opacity-10 transition-opacity">
               <span class="material-symbols-outlined text-[15rem] text-primary">shield_with_heart</span>
             </div>
           </div>
 
-          <!-- Function 2: Gobernanza -->
+          <!-- Function 2: Governance -->
           <div class="md:col-span-5 bg-surface-container-high rounded-xl p-10 lg:p-12 flex flex-col justify-end">
             <span class="material-symbols-outlined text-5xl text-tertiary mb-6">account_tree</span>
-            <h3 class="font-headline text-2xl lg:text-3xl font-black mb-4 uppercase tracking-tighter">Gobernanza (DAOs/Councils)</h3>
-            <p class="text-on-surface/70 text-lg leading-relaxed">Arquitecturas descentralizadas para la toma de decisiones colectiva, fluida y transparente.</p>
+            <h3 class="font-headline text-2xl lg:text-3xl font-black mb-4 uppercase tracking-tighter">{i18n.commons.governance_func_title}</h3>
+            <p class="text-on-surface/70 text-lg leading-relaxed">{i18n.commons.governance_func_desc}</p>
           </div>
 
           <!-- Function 3: Capital -->
           <div class="md:col-span-5 bg-surface-variant/30 rounded-xl p-10 lg:p-12">
             <span class="material-symbols-outlined text-5xl text-secondary mb-6">currency_exchange</span>
-            <h3 class="font-headline text-2xl lg:text-3xl font-black mb-4 uppercase tracking-tighter">Capital (Fund deployment)</h3>
-            <p class="text-on-surface/70 text-lg leading-relaxed">Asignación inteligente de recursos financieros para maximizar el retorno sistémico.</p>
+            <h3 class="font-headline text-2xl lg:text-3xl font-black mb-4 uppercase tracking-tighter">{i18n.commons.capital_title}</h3>
+            <p class="text-on-surface/70 text-lg leading-relaxed">{i18n.commons.capital_desc}</p>
           </div>
 
           <!-- Function 4: Orquestación -->
@@ -143,8 +147,8 @@ import Layout from '../layouts/Layout.astro';
               <span class="material-symbols-outlined text-4xl text-primary">auto_awesome</span>
             </div>
             <div>
-              <h3 class="font-headline text-2xl lg:text-3xl font-black mb-4 uppercase tracking-tighter">Orquestación de Impacto</h3>
-              <p class="text-on-surface/70 text-lg leading-relaxed">Soluciones estratégicas que conectan problemas reales con capital y talento especializado.</p>
+              <h3 class="font-headline text-2xl lg:text-3xl font-black mb-4 uppercase tracking-tighter">{i18n.commons.orchestration_title}</h3>
+              <p class="text-on-surface/70 text-lg leading-relaxed">{i18n.commons.orchestration_desc}</p>
             </div>
           </div>
         </div>
@@ -154,13 +158,13 @@ import Layout from '../layouts/Layout.astro';
     <!-- Capital Flow -->
     <section class="py-24 lg:py-32 px-6 lg:px-[5.5rem] bg-surface-container">
       <div class="max-w-[1618px] mx-auto text-center">
-        <h2 class="font-headline text-4xl font-black mb-16 uppercase tracking-widest text-primary">Flujo del Capital</h2>
+        <h2 class="font-headline text-4xl font-black mb-16 uppercase tracking-widest text-primary">{i18n.commons.flow_title}</h2>
         <div class="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4">
           <div class="flex-1 flex flex-col items-center">
             <div class="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-white flex items-center justify-center shadow-lg mb-6">
               <span class="material-symbols-outlined text-3xl text-on-surface">verified</span>
             </div>
-            <h4 class="font-headline font-bold">Principles</h4>
+            <h4 class="font-headline font-bold">{i18n.commons.flow_principles}</h4>
             <div class="h-20 w-px bg-primary/20 my-3 hidden md:block"></div>
           </div>
           <span class="material-symbols-outlined md:rotate-0 rotate-90 text-primary opacity-30 text-4xl">arrow_forward</span>
@@ -168,7 +172,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-primary-container flex items-center justify-center shadow-lg mb-6">
               <span class="material-symbols-outlined text-3xl text-on-primary-container">monetization_on</span>
             </div>
-            <h4 class="font-headline font-bold">Strategic Capital</h4>
+            <h4 class="font-headline font-bold">{i18n.commons.flow_strategic}</h4>
             <div class="h-20 w-px bg-primary/20 my-3 hidden md:block"></div>
           </div>
           <span class="material-symbols-outlined md:rotate-0 rotate-90 text-primary opacity-30 text-4xl">arrow_forward</span>
@@ -176,7 +180,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-secondary-container flex items-center justify-center shadow-lg mb-6">
               <span class="material-symbols-outlined text-3xl text-on-secondary-container">account_balance_wallet</span>
             </div>
-            <h4 class="font-headline font-bold">Specialized Funds</h4>
+            <h4 class="font-headline font-bold">{i18n.commons.flow_specialized}</h4>
             <div class="h-20 w-px bg-primary/20 my-3 hidden md:block"></div>
           </div>
           <span class="material-symbols-outlined md:rotate-0 rotate-90 text-primary opacity-30 text-4xl">arrow_forward</span>
@@ -184,7 +188,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="w-24 h-24 lg:w-32 lg:h-32 rounded-3xl bg-primary flex items-center justify-center shadow-2xl mb-6">
               <span class="material-symbols-outlined text-4xl lg:text-5xl text-white">nature_people</span>
             </div>
-            <h4 class="font-headline font-bold">Real Projects</h4>
+            <h4 class="font-headline font-bold">{i18n.commons.flow_projects}</h4>
           </div>
         </div>
       </div>
@@ -194,15 +198,15 @@ import Layout from '../layouts/Layout.astro';
     <section class="py-24 lg:py-32 px-6 lg:px-[5.5rem] overflow-hidden">
       <div class="max-w-[1618px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <div>
-          <h2 class="font-headline text-4xl md:text-5xl font-black mb-12">Lo que nos hace <span class="text-tertiary">diferentes</span>.</h2>
+          <h2 class="font-headline text-4xl md:text-5xl font-black mb-12">{i18n.commons.difference_title}</h2>
           <div class="space-y-10 lg:space-y-12">
             <div class="flex gap-6 lg:gap-8">
               <div class="flex-shrink-0 w-16 h-16 rounded-xl bg-tertiary/10 flex items-center justify-center">
                 <span class="material-symbols-outlined text-tertiary text-3xl">all_inclusive</span>
               </div>
               <div>
-                <h4 class="font-headline font-bold text-xl lg:text-2xl mb-2">Multi-capital Approach</h4>
-                <p class="text-on-surface/70">No solo medimos el éxito en dinero. Evaluamos capital natural, social, cultural e intelectual como activos reales.</p>
+                <h4 class="font-headline font-bold text-xl lg:text-2xl mb-2">{i18n.commons.multicapital_title}</h4>
+                <p class="text-on-surface/70">{i18n.commons.multicapital_desc}</p>
               </div>
             </div>
             <div class="flex gap-6 lg:gap-8">
@@ -210,19 +214,19 @@ import Layout from '../layouts/Layout.astro';
                 <span class="material-symbols-outlined text-secondary text-3xl">vibration</span>
               </div>
               <div>
-                <h4 class="font-headline font-bold text-xl lg:text-2xl mb-2">Evolutionary Nature</h4>
-                <p class="text-on-surface/70">Nuestros protocolos de gobernanza no son estáticos; están diseñados para aprender y adaptarse al ecosistema en tiempo real.</p>
+                <h4 class="font-headline font-bold text-xl lg:text-2xl mb-2">{i18n.commons.evolutionary_title}</h4>
+                <p class="text-on-surface/70">{i18n.commons.evolutionary_desc}</p>
               </div>
             </div>
           </div>
         </div>
         <div class="relative">
           <div class="bg-surface-container-high p-8 lg:p-12 rounded-3xl shadow-inner relative z-10">
-            <h3 class="font-headline text-2xl font-bold mb-8">Para inversores y aliados</h3>
-            <p class="text-on-surface/70 mb-8 text-lg">Invertir en Gaia Commons es participar en la construcción de la infraestructura real del mañana. Ofrecemos un retorno múltiple: financiero, ecológico y social.</p>
+            <h3 class="font-headline text-2xl font-bold mb-8">{i18n.commons.investors_title}</h3>
+            <p class="text-on-surface/70 mb-8 text-lg">{i18n.commons.investors_desc}</p>
             <div class="flex items-center gap-4 p-6 bg-white/50 rounded-2xl">
               <span class="material-symbols-outlined text-primary text-4xl">foundation</span>
-              <span class="font-bold">Infraestructura Real & Regenerativa</span>
+              <span class="font-bold">{i18n.commons.infrastructure}</span>
             </div>
           </div>
           <div class="absolute -top-12 -right-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-0"></div>
@@ -236,13 +240,13 @@ import Layout from '../layouts/Layout.astro';
       <div class="max-w-[1200px] mx-auto bg-inverse-surface text-inverse-on-surface rounded-[3rem] p-12 lg:p-24 text-center relative overflow-hidden">
         <div class="absolute inset-0 opacity-10" style="background-image: url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=2070&auto=format&fit=crop')"></div>
         <div class="relative z-10">
-          <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-black mb-10 leading-tight">¿Listo para ser parte de la <br/>nueva civilización?</h2>
+          <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-black mb-10 leading-tight">{i18n.commons.final_cta_title}</h2>
           <div class="flex flex-col md:flex-row justify-center gap-4 lg:gap-6">
             <a href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank" class="px-10 lg:px-12 py-5 lg:py-6 solar-gradient text-white font-headline font-black text-lg rounded-full shadow-2xl hover:scale-105 transition-transform">
-              Explorar los Principios
+              {i18n.commons.cta_principles}
             </a>
             <a href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank" class="px-10 lg:px-12 py-5 lg:py-6 border-2 border-inverse-on-surface/30 text-inverse-on-surface font-headline font-black text-lg rounded-full hover:bg-inverse-on-surface/10 transition-colors">
-              Hablar con el Equipo
+              {i18n.commons.cta_team}
             </a>
           </div>
         </div>
@@ -258,22 +262,22 @@ import Layout from '../layouts/Layout.astro';
           Gaia Ecosystem
         </div>
         <p class="font-body text-sm leading-relaxed text-on-surface/60 max-w-sm">
-          Infraestructura para una civilización regenerativa. Un ecosistema descentralizado de coordinación planetaria.
+          {i18n.footer.description}
         </p>
         <p class="font-body text-sm text-on-surface/40">
-          © 2026 Gaia Ecosystem.
+          {i18n.footer.copyright}
         </p>
       </div>
       <div class="grid grid-cols-2 gap-8 font-body text-sm">
         <div class="flex flex-col gap-4">
-          <span class="font-bold text-primary uppercase tracking-wider text-xs">Explorar</span>
-          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/hub">Gaia Hub</a>
-          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/market">Gaia Market</a>
-          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/commons">Gaia Commons</a>
+          <span class="font-bold text-primary uppercase tracking-wider text-xs">{i18n.footer.explore}</span>
+          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/hub">{i18n.footer.hub}</a>
+          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/market">{i18n.footer.market}</a>
+          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/commons">{i18n.footer.commons}</a>
         </div>
         <div class="flex flex-col gap-4">
-          <span class="font-bold text-primary uppercase tracking-wider text-xs">Comunidad</span>
-          <a class="text-on-surface/60 hover:text-primary transition-colors" href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank">Telegram</a>
+          <span class="font-bold text-primary uppercase tracking-wider text-xs">{i18n.footer.community}</span>
+          <a class="text-on-surface/60 hover:text-primary transition-colors" href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank">{i18n.footer.telegram}</a>
         </div>
       </div>
     </div>

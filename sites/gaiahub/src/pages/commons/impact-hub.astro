@@ -1,10 +1,14 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { t } from '@site/i18n';
+
+const locale = 'en';
+const i18n = t(locale);
 ---
 
 <Layout 
-  title="Gaia Impact Hub | Orquestación de Impacto"
-  description="De problemas invisibles a soluciones imposibles. Orquestadores de impacto que transforman comunidades enteras a través de la alquimia tecnológica y financiera."
+  title={i18n.impact_hub.meta_title}
+  description={i18n.impact_hub.meta_description}
   keywords={["Gaia Impact Hub", "orquestación de impacto", "regenerative finance", "tokenización", "facilitación", "ecosistemas locales"]}
   schemaType={["WebPage", "Organization"]}
 >
@@ -16,26 +20,26 @@ import Layout from '../../layouts/Layout.astro';
         Gaia
       </a>
       <div class="hidden md:flex items-center gap-12 font-headline tracking-tight font-bold uppercase text-sm">
-        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/">Inicio</a>
-        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/hub">Hub</a>
-        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/market">Market</a>
-        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/commons">Commons</a>
+        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/">{i18n.nav.home}</a>
+        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/hub">{i18n.nav.hub}</a>
+        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/market">{i18n.nav.market}</a>
+        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/commons">{i18n.nav.commons}</a>
         <div class="relative group">
           <a class="text-primary border-b-2 border-primary pb-1 flex items-center gap-1" href="/commons">
-            Impact
+            {i18n.nav.impact}
             <span class="material-symbols-outlined text-sm">expand_more</span>
           </a>
           <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
             <div class="bg-white/95 backdrop-blur-xl rounded-xl shadow-xl border border-outline/10 py-2 min-w-[180px]">
-              <a class="block px-4 py-2 text-on-surface/70 hover:text-primary hover:bg-surface-container transition-colors text-xs" href="/commons/impact-fund/">Impact Fund</a>
-              <a class="block px-4 py-2 text-primary bg-surface-container transition-colors text-xs" href="/commons/impact-hub/">Impact Hub</a>
+              <a class="block px-4 py-2 text-on-surface/70 hover:text-primary hover:bg-surface-container transition-colors text-xs" href="/commons/impact-fund/">{i18n.nav.impact_fund}</a>
+              <a class="block px-4 py-2 text-primary bg-surface-container transition-colors text-xs" href="/commons/impact-hub/">{i18n.nav.impact_hub}</a>
             </div>
           </div>
         </div>
       </div>
       <div class="flex items-center gap-4">
         <a href="#comunidad" class="bg-primary text-white px-6 py-3 rounded-full font-headline font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-all scale-95 active:scale-90">
-          Únete
+          {i18n.nav.join}
         </a>
       </div>
     </div>
@@ -47,20 +51,20 @@ import Layout from '../../layouts/Layout.astro';
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         <div class="lg:col-span-7 z-10">
           <span class="inline-block py-2 px-4 rounded-full bg-secondary-container text-on-secondary-container font-headline font-bold text-xs tracking-widest uppercase mb-8">
-            Solar Alchemy Platform
+            {i18n.impact_hub.hero_badge}
           </span>
           <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl font-black text-on-surface leading-[0.9] tracking-tighter mb-8 uppercase">
-            De problemas <span class="text-primary italic">invisibles</span> a soluciones <span class="text-tertiary">imposibles</span>
+            {i18n.impact_hub.hero_title}
           </h1>
           <p class="font-body text-xl md:text-2xl text-on-surface/70 max-w-xl leading-relaxed mb-12">
-            Orquestadores de impacto que transforman comunidades enteras a través de la alquimia tecnológica y financiera.
+            {i18n.impact_hub.hero_subtitle}
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="#comunidad" class="solar-gradient text-white px-10 py-5 rounded-xl font-headline font-extrabold uppercase tracking-wider text-sm hover:translate-y-[-4px] transition-all">
-              Postular mi Organización
+              {i18n.impact_hub.cta_partner}
             </a>
             <a href="#comunidad" class="bg-surface-container-highest text-on-surface px-10 py-5 rounded-xl font-headline font-extrabold uppercase tracking-wider text-sm hover:translate-y-[-4px] transition-all">
-              Ser Orquestador
+              {i18n.impact_hub.cta_donate}
             </a>
           </div>
         </div>
@@ -76,8 +80,8 @@ import Layout from '../../layouts/Layout.astro';
           <!-- Decorative Glass Floating Card -->
           <div class="absolute -bottom-10 -left-10 glass-panel p-8 rounded-lg shadow-xl max-w-xs border border-white/40 hidden lg:block">
             <span class="material-symbols-outlined text-primary text-4xl mb-4">auto_awesome</span>
-            <p class="text-sm font-bold uppercase font-headline tracking-tighter mb-2">Impacto Activo</p>
-            <p class="text-xs text-on-surface/70 leading-relaxed">Sincronizando el capital natural con la liquidez global.</p>
+            <p class="text-sm font-bold uppercase font-headline tracking-tighter mb-2">{i18n.impact_hub.model_title}</p>
+            <p class="text-xs text-on-surface/70 leading-relaxed">{i18n.impact_hub.model_step1_desc}</p>
           </div>
         </div>
       </div>
@@ -86,25 +90,25 @@ import Layout from '../../layouts/Layout.astro';
     <!-- Problem Statement -->
     <section class="bg-surface-container-low py-24 lg:py-32 px-6 lg:px-[5.5rem]">
       <div class="max-w-[1618px] mx-auto flex flex-col items-center text-center">
-        <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-black text-on-surface mb-8 uppercase tracking-tighter">La Gran Fragmentación</h2>
+        <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-black text-on-surface mb-8 uppercase tracking-tighter">{i18n.impact_hub.model_title}</h2>
         <p class="font-body text-2xl md:text-3xl text-on-surface/70 max-w-4xl leading-relaxed italic">
-          "El impacto social está <span class="text-error font-bold">fragmentado</span>. Cada organización trabaja sola, diluyendo el potencial de cambio sistémico."
+          "{i18n.impact_hub.model_step1} <span class="text-error font-bold">{i18n.impact_hub.model_step2}</span>. {i18n.impact_hub.model_step3}"
         </p>
         <div class="mt-16 lg:mt-20 w-full grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           <div class="bg-white p-10 lg:p-12 rounded-xl text-left border border-outline/10">
             <div class="text-primary text-5xl font-headline font-black mb-4">01</div>
-            <h4 class="font-headline font-bold text-xl mb-4">Esfuerzo Aislado</h4>
-            <p class="text-on-surface/60 text-sm leading-relaxed">Duplicidad de tareas y recursos perdidos en silos administrativos.</p>
+            <h4 class="font-headline font-bold text-xl mb-4">{i18n.impact_hub.model_step1}</h4>
+            <p class="text-on-surface/60 text-sm leading-relaxed">{i18n.impact_hub.model_step1_desc}</p>
           </div>
           <div class="bg-white p-10 lg:p-12 rounded-xl text-left border border-outline/10 lg:translate-y-8">
             <div class="text-primary text-5xl font-headline font-black mb-4">02</div>
-            <h4 class="font-headline font-bold text-xl mb-4">Puntos Ciegos</h4>
-            <p class="text-on-surface/60 text-sm leading-relaxed">Incapacidad de ver las interconexiones críticas en el ecosistema local.</p>
+            <h4 class="font-headline font-bold text-xl mb-4">{i18n.impact_hub.model_step2}</h4>
+            <p class="text-on-surface/60 text-sm leading-relaxed">{i18n.impact_hub.model_step2_desc}</p>
           </div>
           <div class="bg-white p-10 lg:p-12 rounded-xl text-left border border-outline/10">
             <div class="text-primary text-5xl font-headline font-black mb-4">03</div>
-            <h4 class="font-headline font-bold text-xl mb-4">Finanzas Frágiles</h4>
-            <p class="text-on-surface/60 text-sm leading-relaxed">Modelos de fondeo tradicionales que no capturan el valor real generado.</p>
+            <h4 class="font-headline font-bold text-xl mb-4">{i18n.impact_hub.model_step3}</h4>
+            <p class="text-on-surface/60 text-sm leading-relaxed">{i18n.impact_hub.model_step3_desc}</p>
           </div>
         </div>
       </div>
@@ -114,15 +118,15 @@ import Layout from '../../layouts/Layout.astro';
     <section class="py-24 lg:py-32 px-6 lg:px-[5.5rem] max-w-[1618px] mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <div>
-          <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-black mb-12 uppercase tracking-tighter">Nuestra Metodología</h2>
+          <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-black mb-12 uppercase tracking-tighter">{i18n.impact_hub.model_title}</h2>
           <div class="space-y-12 lg:space-y-16">
             <div class="flex gap-6 lg:gap-8 group">
               <div class="flex-shrink-0 w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary transition-colors duration-500">
                 <span class="material-symbols-outlined text-3xl group-hover:text-white">visibility</span>
               </div>
               <div>
-                <h3 class="font-headline font-bold text-xl lg:text-2xl mb-2">Diagnosticamos (Blind spots)</h3>
-                <p class="text-on-surface/70 leading-relaxed">Utilizamos IA y datos comunitarios para revelar las necesidades latentes y las conexiones invisibles.</p>
+                <h3 class="font-headline font-bold text-xl lg:text-2xl mb-2">{i18n.impact_hub.model_step1}</h3>
+                <p class="text-on-surface/70 leading-relaxed">{i18n.impact_hub.model_step1_desc}</p>
               </div>
             </div>
             <div class="flex gap-6 lg:gap-8 group">
@@ -130,8 +134,8 @@ import Layout from '../../layouts/Layout.astro';
                 <span class="material-symbols-outlined text-3xl group-hover:text-white">token</span>
               </div>
               <div>
-                <h3 class="font-headline font-bold text-xl lg:text-2xl mb-2">Diseñamos (Regen Finance)</h3>
-                <p class="text-on-surface/70 leading-relaxed">Creamos arquitecturas de tokenización y finanzas regenerativas que incentivan la salud del ecosistema.</p>
+                <h3 class="font-headline font-bold text-xl lg:text-2xl mb-2">{i18n.impact_hub.model_step2}</h3>
+                <p class="text-on-surface/70 leading-relaxed">{i18n.impact_hub.model_step2_desc}</p>
               </div>
             </div>
             <div class="flex gap-6 lg:gap-8 group">
@@ -139,8 +143,8 @@ import Layout from '../../layouts/Layout.astro';
                 <span class="material-symbols-outlined text-3xl group-hover:text-white">groups</span>
               </div>
               <div>
-                <h3 class="font-headline font-bold text-xl lg:text-2xl mb-2">Orquestamos (Facilitation)</h3>
-                <p class="text-on-surface/70 leading-relaxed">Conectamos los actores, gestionamos el flujo de valor y escalamos el impacto de forma orgánica.</p>
+                <h3 class="font-headline font-bold text-xl lg:text-2xl mb-2">{i18n.impact_hub.model_step3}</h3>
+                <p class="text-on-surface/70 leading-relaxed">{i18n.impact_hub.model_step3_desc}</p>
               </div>
             </div>
           </div>
@@ -168,13 +172,13 @@ import Layout from '../../layouts/Layout.astro';
     <!-- Ecosystem Section: Bento Grid -->
     <section class="bg-surface py-24 lg:py-32 px-6 lg:px-[5.5rem]">
       <div class="max-w-[1618px] mx-auto">
-        <h2 class="font-headline text-4xl md:text-5xl font-black mb-16 text-center uppercase tracking-tighter">¿Para quién orquestamos?</h2>
+        <h2 class="font-headline text-4xl md:text-5xl font-black mb-16 text-center uppercase tracking-tighter">{i18n.impact_hub.model_title}</h2>
         <div class="grid grid-cols-1 md:grid-cols-12 md:grid-rows-2 gap-6 lg:gap-8 auto-rows-[250px]">
           <!-- NGOs -->
           <div class="md:col-span-4 md:row-span-1 bg-surface-container p-8 lg:p-10 rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-all duration-500 group overflow-hidden relative">
             <div class="z-10">
-              <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4 uppercase">ONGs</h3>
-              <p class="text-on-surface/70 text-sm">Escalando misiones sociales con herramientas de transparencia radical.</p>
+              <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4 uppercase">{i18n.impact_hub.model_step1}</h3>
+              <p class="text-on-surface/70 text-sm">{i18n.impact_hub.model_step1_desc}</p>
             </div>
             <span class="material-symbols-outlined text-7xl text-primary/10 absolute -bottom-4 -right-4 group-hover:scale-110 transition-transform">volunteer_activism</span>
           </div>
@@ -189,26 +193,26 @@ import Layout from '../../layouts/Layout.astro';
               />
             </div>
             <div>
-              <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4 uppercase">Startups</h3>
-              <p class="text-on-surface/70 text-sm max-w-md">Integrando modelos de negocio regenerativos desde la semilla hasta el exit.</p>
+              <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4 uppercase">{i18n.impact_hub.model_step2}</h3>
+              <p class="text-on-surface/70 text-sm max-w-md">{i18n.impact_hub.model_step2_desc}</p>
             </div>
           </div>
 
           <!-- Cooperativas -->
           <div class="md:col-span-5 md:row-span-1 bg-tertiary-container/20 p-8 lg:p-10 rounded-xl flex flex-col justify-center border border-tertiary/10 hover:shadow-xl transition-all duration-500">
-            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4 uppercase">Cooperativas</h3>
-            <p class="text-on-surface/70 text-sm">Democratizando el acceso a mercados globales y tecnología de punta.</p>
+            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4 uppercase">{i18n.impact_hub.model_step3}</h3>
+            <p class="text-on-surface/70 text-sm">{i18n.impact_hub.model_step3_desc}</p>
           </div>
 
           <!-- Comunidades -->
           <div class="md:col-span-4 md:row-span-1 bg-secondary-container/20 p-8 lg:p-10 rounded-xl flex flex-col justify-end border border-secondary/10 hover:shadow-xl transition-all duration-500">
-            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4 uppercase">Comunidades</h3>
-            <p class="text-on-surface/70 text-sm">Soberanía de datos y recursos locales auto-gestionados.</p>
+            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4 uppercase">{i18n.impact_hub.model_step4}</h3>
+            <p class="text-on-surface/70 text-sm">{i18n.impact_hub.model_step4_desc}</p>
           </div>
 
           <!-- Empresas -->
           <div class="md:col-span-3 md:row-span-1 bg-surface-container-highest p-8 lg:p-10 rounded-xl flex items-center justify-center text-center group">
-            <h3 class="font-headline text-xl lg:text-2xl font-black uppercase group-hover:tracking-[0.2em] transition-all duration-700">Empresas</h3>
+            <h3 class="font-headline text-xl lg:text-2xl font-black uppercase group-hover:tracking-[0.2em] transition-all duration-700">{i18n.impact_hub.model_title}</h3>
           </div>
         </div>
       </div>
@@ -225,11 +229,11 @@ import Layout from '../../layouts/Layout.astro';
       </div>
       <div class="max-w-[1618px] mx-auto relative z-10 text-center">
         <h2 class="font-headline text-4xl md:text-5xl lg:text-7xl font-black text-white mb-12 uppercase leading-none tracking-tighter">
-          Transformamos lo <span class="text-primary italic">invisible</span> en <span class="underline decoration-primary">inevitable</span>
+          {i18n.impact_hub.hero_title}
         </h2>
         <div class="flex flex-col md:flex-row justify-center gap-4 lg:gap-8 mt-12 lg:mt-16">
           <a href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank" class="solar-gradient text-white px-12 lg:px-16 py-6 lg:py-8 rounded-full font-headline font-black uppercase tracking-widest text-lg hover:scale-105 transition-all shadow-2xl">
-            Postular mi Organización
+            {i18n.impact_hub.cta_partner}
           </a>
         </div>
       </div>
@@ -241,25 +245,25 @@ import Layout from '../../layouts/Layout.astro';
     <div class="max-w-[1618px] mx-auto grid grid-cols-1 md:grid-cols-[1.618fr_1fr] gap-12 px-6 lg:px-[5.5rem]">
       <div class="space-y-8">
         <div class="font-headline font-bold text-primary text-2xl tracking-tight">
-          Gaia Ecosystem
+          {i18n.footer.brand}
         </div>
         <p class="font-body text-sm leading-relaxed text-on-surface/60 max-w-sm">
-          Infraestructura para una civilización regenerativa. Un ecosistema descentralizado de coordinación planetaria.
+          {i18n.footer.description}
         </p>
         <p class="font-body text-sm text-on-surface/40">
-          © 2026 Gaia Ecosystem.
+          {i18n.footer.copyright}
         </p>
       </div>
       <div class="grid grid-cols-2 gap-8 font-body text-sm">
         <div class="flex flex-col gap-4">
-          <span class="font-bold text-primary uppercase tracking-wider text-xs">Explorar</span>
-          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/hub">Gaia Hub</a>
-          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/market">Gaia Market</a>
-          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/commons">Gaia Commons</a>
+          <span class="font-bold text-primary uppercase tracking-wider text-xs">{i18n.footer.explore_title}</span>
+          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/hub">{i18n.footer.hub}</a>
+          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/market">{i18n.footer.market}</a>
+          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/commons">{i18n.footer.commons}</a>
         </div>
         <div class="flex flex-col gap-4">
-          <span class="font-bold text-primary uppercase tracking-wider text-xs">Comunidad</span>
-          <a class="text-on-surface/60 hover:text-primary transition-colors" href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank">Telegram</a>
+          <span class="font-bold text-primary uppercase tracking-wider text-xs">{i18n.footer.community_title}</span>
+          <a class="text-on-surface/60 hover:text-primary transition-colors" href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank">{i18n.footer.telegram}</a>
         </div>
       </div>
     </div>
