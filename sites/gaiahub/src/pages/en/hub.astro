@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Navigation from '@site/components/Navigation.astro';
 import { t } from '@site/i18n';
 
 const locale = 'en';
@@ -13,37 +14,7 @@ const i18n = t(locale);
   schemaType={["WebPage", "Organization"]}
 >
   
-  <!-- Top Navigation Shell -->
-  <nav class="fixed top-0 w-full z-50 bg-[#fefee5]/80 backdrop-blur-xl shadow-[0_40px_60px_-5px_rgba(54,59,16,0.06)]">
-    <div class="flex justify-between items-center max-w-[1618px] mx-auto px-6 lg:px-[5.5rem] h-24">
-      <a href="/en/" class="text-3xl font-black text-primary px-6 font-headline tracking-tight">
-        Gaia
-      </a>
-      <div class="hidden md:flex items-center gap-12 font-headline tracking-tight font-bold uppercase text-sm">
-        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/en/">{i18n.nav.home}</a>
-        <a class="text-primary border-b-2 border-primary pb-1" href="/en/hub">{i18n.nav.hub}</a>
-        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/en/market">{i18n.nav.market}</a>
-        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/en/commons">{i18n.nav.commons}</a>
-        <div class="relative group">
-          <a class="text-on-surface/70 hover:text-on-surface transition-colors flex items-center gap-1" href="/en/commons">
-            {i18n.nav.impact}
-            <span class="material-symbols-outlined text-sm">expand_more</span>
-          </a>
-          <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-            <div class="bg-white/95 backdrop-blur-xl rounded-xl shadow-xl border border-outline/10 py-2 min-w-[180px]">
-              <a class="block px-4 py-2 text-on-surface/70 hover:text-primary hover:bg-surface-container transition-colors text-xs" href="/en/commons/impact-fund/">{i18n.nav.impact_fund}</a>
-              <a class="block px-4 py-2 text-on-surface/70 hover:text-primary hover:bg-surface-container transition-colors text-xs" href="/en/commons/impact-hub/">{i18n.nav.impact_hub}</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="flex items-center gap-4">
-        <a href="#comunidad" class="bg-primary text-white px-6 py-3 rounded-full font-headline font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-all scale-95 active:scale-90">
-          {i18n.nav.join}
-        </a>
-      </div>
-    </div>
-  </nav>
+  <Navigation locale={locale} />
 
   <main class="pt-32">
     <!-- Hero Section -->

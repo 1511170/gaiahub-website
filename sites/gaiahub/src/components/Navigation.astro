@@ -1,0 +1,117 @@
+---
+import { t } from '@site/i18n';
+
+interface Props {
+  locale?: string;
+}
+
+const { locale = 'es' } = Astro.props;
+const i18n = t(locale);
+const isEn = locale === 'en';
+const prefix = isEn ? '/en' : '';
+---
+
+<nav class="fixed top-0 w-full z-50 bg-[#fefee5]/80 backdrop-blur-xl shadow-[0_40px_60px_-5px_rgba(54,59,16,0.06)]">
+  <div class="flex justify-between items-center max-w-[1618px] mx-auto px-6 lg:px-[5.5rem] h-24">
+    <a href={`${prefix}/`} class="text-3xl font-black text-primary px-6 font-headline tracking-tight">
+      Gaia
+    </a>
+    
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center gap-12 font-headline tracking-tight font-bold uppercase text-sm">
+      <a class="text-primary border-b-2 border-primary pb-1" href={`${prefix}/`}>{i18n.nav.home}</a>
+      <a class="text-on-surface/70 hover:text-on-surface transition-colors" href={`${prefix}/hub`}>{i18n.nav.hub}</a>
+      <a class="text-on-surface/70 hover:text-on-surface transition-colors" href={`${prefix}/market`}>{i18n.nav.market}</a>
+      <a class="text-on-surface/70 hover:text-on-surface transition-colors" href={`${prefix}/commons`}>{i18n.nav.commons}</a>
+      <div class="relative group">
+        <a class="text-on-surface/70 hover:text-on-surface transition-colors flex items-center gap-1" href={`${prefix}/commons`}>
+          {i18n.nav.impact}
+          <span class="material-symbols-outlined text-sm">expand_more</span>
+        </a>
+        <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+          <div class="bg-white/95 backdrop-blur-xl rounded-xl shadow-xl border border-outline/10 py-2 min-w-[180px]">
+            <a class="block px-4 py-2 text-on-surface/70 hover:text-primary hover:bg-surface-container transition-colors text-xs" href={`${prefix}/commons/impact-fund/`}>{i18n.nav.impact_fund}</a>
+            <a class="block px-4 py-2 text-on-surface/70 hover:text-primary hover:bg-surface-container transition-colors text-xs" href={`${prefix}/commons/impact-hub/`}>{i18n.nav.impact_hub}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Desktop CTA -->
+    <div class="hidden md:flex items-center gap-4">
+      <a href="#comunidad" class="bg-primary text-white px-6 py-3 rounded-full font-headline font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-all scale-95 active:scale-90">
+        {i18n.nav.join}
+      </a>
+    </div>
+    
+    <!-- Mobile Menu Button -->
+    <button 
+      id="mobile-menu-btn" 
+      class="md:hidden flex items-center justify-center w-12 h-12 rounded-full bg-surface-container-high text-on-surface"
+      aria-label="Toggle menu"
+    >
+      <span id="menu-icon" class="material-symbols-outlined text-2xl">menu</span>
+    </button>
+  </div>
+  
+  <!-- Mobile Menu Overlay -->
+  <div 
+    id="mobile-menu" 
+    class="fixed inset-0 top-24 bg-[#fefee5]/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 md:hidden"
+  >
+    <div class="flex flex-col items-center justify-center h-full gap-8 p-8">
+      <a class="text-2xl font-headline font-bold text-on-surface" href={`${prefix}/`}>{i18n.nav.home}</a>
+      <a class="text-2xl font-headline font-bold text-on-surface" href={`${prefix}/hub`}>{i18n.nav.hub}</a>
+      <a class="text-2xl font-headline font-bold text-on-surface" href={`${prefix}/market`}>{i18n.nav.market}</a>
+      <a class="text-2xl font-headline font-bold text-on-surface" href={`${prefix}/commons`}>{i18n.nav.commons}</a>
+      <div class="w-full h-px bg-outline/30 my-4"></div>
+      <a class="text-xl font-headline font-bold text-on-surface/70" href={`${prefix}/commons/impact-fund/`}>{i18n.nav.impact_fund}</a>
+      <a class="text-xl font-headline font-bold text-on-surface/70" href={`${prefix}/commons/impact-hub/`}>{i18n.nav.impact_hub}</a>
+      <div class="w-full h-px bg-outline/30 my-4"></div>
+      <a 
+        href="#comunidad" 
+        class="bg-primary text-white px-8 py-4 rounded-full font-headline font-bold text-lg uppercase tracking-wider hover:opacity-90 transition-all"
+      >
+        {i18n.nav.join}
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  let isOpen = false;
+  
+  function toggleMenu() {
+    isOpen = !isOpen;
+    if (isOpen) {
+      mobileMenu.classList.remove('translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
+      menuIcon.textContent = 'close';
+      document.body.style.overflow = 'hidden';
+    } else {
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenu.classList.remove('translate-x-0');
+      menuIcon.textContent = 'menu';
+      document.body.style.overflow = '';
+    }
+  }
+  
+  menuBtn?.addEventListener('click', toggleMenu);
+  
+  // Close menu when clicking on links
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (isOpen) toggleMenu();
+    });
+  });
+  
+  // Close menu on resize to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768 && isOpen) {
+      toggleMenu();
+    }
+  });
+</script>
