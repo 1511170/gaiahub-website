@@ -16,8 +16,8 @@ export const {
   getLocales,
   getDefaultLocale,
 } = createI18n({
-  translations: { en, es },
-  defaultLocale: 'en',
+  translations: { es, en },
+  defaultLocale: 'es',
 });
 
-export type SiteLocale = 'en' | 'es';
+export type SiteLocale = 'es' | 'en';
