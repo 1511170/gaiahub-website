@@ -4,35 +4,42 @@ import siteConfig from '../../config/site.config.ts';
 
 // Importar componentes de skills
 import { SEOHead, SchemaOrg } from '../../../../skills/community/seo-ai-citations/index.ts';
-import { TestimonialsGrid } from '../../../../skills/community/testimonials/index.ts';
 import { ContactForm } from '../../../../skills/community/contact-form/index.ts';
 
-// Testimonios del ecosistema
-const testimonials = [
+// Testimonios del ecosistema - Stewards
+const stewards = [
   {
     name: "María González",
     role: "Coordinadora Bioregional",
-    company: "EcoVillage Costa Rica",
-    content: "Gaia Hub transformó cómo nuestra comunidad se conecta con el mundo. De estar aislados, ahora somos nodos activos de un ecosistema global regenerativo.",
-    rating: 5,
-    image: "/images/testimonial-1.jpg"
+    organization: "EcoVillage Costa Rica",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face",
+    quote: "Gaia Hub transformó completamente cómo nuestra comunidad se conecta con el mundo. De estar aislados en nuestra región, ahora somos nodos activos de un ecosistema global regenerativo. La plataforma nos permitió encontrar aliados, recursos y visibilidad que ni sabíamos que existían.",
+    rating: 5
   },
   {
     name: "Carlos Rodríguez",
     role: "Director de Impacto",
-    company: "Regen Foundation",
-    content: "El sistema de matchmaking de Gaia GPS nos conectó con aliados estratégicos que ni sabíamos que existían. La inteligencia del ecosistema es real.",
-    rating: 5,
-    image: "/images/testimonial-2.jpg"
+    organization: "Regen Foundation",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
+    quote: "El sistema de matchmaking de Gaia GPS es simplemente extraordinario. Nos conectó con aliados estratégicos que ni sabíamos que existían, pero que compartían nuestra visión de regeneración. La inteligencia del ecosistema es real y funciona.",
+    rating: 5
   },
   {
     name: "Ana Martínez",
     role: "Emprendedora Regenerativa",
-    company: "Semillas del Futuro",
-    content: "En Gaia Market encontramos no solo clientes, sino una comunidad que valora verdaderamente lo regenerativo. Las ventas crecieron 300% en 6 meses.",
-    rating: 5,
-    image: "/images/testimonial-3.jpg"
+    organization: "Semillas del Futuro",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face",
+    quote: "En Gaia Market encontramos no solo clientes, sino una comunidad que valora verdaderamente lo regenerativo. Las ventas crecieron 300% en 6 meses, pero más importante: encontramos nuestra tribu, gente que entiende y apoya nuestro propósito.",
+    rating: 5
   }
+];
+
+// Métricas del ecosistema
+const metrics = [
+  { value: "150+", label: "Bioregiones Activas", icon: "public" },
+  { value: "2.4K", label: "Proyectos Regenerativos", icon: "eco" },
+  { value: "$12M", label: "Capital Desplegado", icon: "account_balance" },
+  { value: "45K", label: "Miembros del Ecosistema", icon: "diversity_3" }
 ];
 ---
 
@@ -102,6 +109,23 @@ const testimonials = [
       </div>
     </section>
 
+    <!-- Stats Section -->
+    <section class="py-16 lg:py-24 px-4 sm:px-6 lg:px-12">
+      <div class="max-w-[1920px] mx-auto">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {metrics.map((metric) => (
+            <div class="text-center p-6 lg:p-8 rounded-2xl shadow-ethereal bg-white">
+              <div class="w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-primary-container/20">
+                <span class="material-symbols-outlined text-2xl lg:text-3xl text-primary">{metric.icon}</span>
+              </div>
+              <div class="font-headline text-3xl lg:text-5xl font-black tracking-tighter mb-2 text-primary">{metric.value}</div>
+              <div class="font-body text-xs lg:text-sm uppercase tracking-widest text-on-surface/60">{metric.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <!-- The Triad of Life Section -->
     <section class="py-20 lg:py-32 px-6 lg:px-12 max-w-[1920px] mx-auto">
       <div class="flex flex-col md:flex-row justify-between items-end mb-16 lg:mb-24 gap-8">
@@ -153,7 +177,7 @@ const testimonials = [
         <!-- Card 3: The Commons (Nervous System) -->
         <div class="group relative bg-surface-container-high rounded-xl p-8 lg:p-10 ethereal-shadow hover:translate-y-[-8px] transition-all duration-500 overflow-hidden min-h-[450px] lg:min-h-[500px] flex flex-col justify-between">
           <div class="absolute top-0 right-0 p-8">
-            <span class="material-symbols-outlined text-4xl text-primary/20 group-hover:text-primary transition-colors" style="font-variation-settings: 'FILL' 1;">hub</span>
+            <span class="material-symbols-outlined text-4xl text-tertiary/20 group-hover:text-tertiary transition-colors" style="font-variation-settings: 'FILL' 1;">hub</span>
           </div>
           <div>
             <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-tertiary-container/20 flex items-center justify-center mb-8 lg:mb-10 group-hover:scale-110 transition-transform">
@@ -163,7 +187,7 @@ const testimonials = [
             <div class="inline-block px-4 py-1 rounded-full bg-tertiary-container/30 text-on-tertiary-container font-bold text-[10px] tracking-widest uppercase mb-6">Nervous System</div>
             <p class="font-body text-on-surface/60 leading-relaxed mb-8">The distributed awareness that connects every node in a shared field of collective wisdom.</p>
           </div>
-          <button class="group/btn flex items-center gap-2 font-headline text-xs tracking-widest uppercase text-primary font-bold">
+          <button class="group/btn flex items-center gap-2 font-headline text-xs tracking-widest uppercase text-tertiary font-bold">
             Connect <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">chevron_right</span>
           </button>
         </div>
@@ -217,14 +241,70 @@ const testimonials = [
       </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Stewards of the Ecosystem - Testimonios Mejorados -->
     <section class="py-20 lg:py-32 px-6 lg:px-12 bg-gradient-to-br from-surface-container/50 to-surface-container-high/50">
       <div class="max-w-[1920px] mx-auto">
-        <div class="text-center mb-12 lg:mb-16">
+        <div class="text-center mb-16">
           <span class="inline-block px-4 py-1 rounded-full font-medium text-xs tracking-widest uppercase mb-4 bg-secondary/10 text-secondary">Community Voices</span>
           <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-on-surface">Stewards of the Ecosystem</h2>
+          <p class="font-body text-lg text-on-surface/60 mt-4 max-w-2xl mx-auto">Stories from the regenerative network</p>
         </div>
-        <TestimonialsGrid testimonials={testimonials} columns={3} showRatings={true} />
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {stewards.map((steward, index) => (
+            <div class="group relative bg-white rounded-2xl p-8 lg:p-10 ethereal-shadow hover:translate-y-[-8px] transition-all duration-500">
+              <!-- Quote Icon -->
+              <div class="absolute top-8 right-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                <span class="material-symbols-outlined text-6xl text-primary">format_quote</span>
+              </div>
+              
+              <!-- Avatar and Info -->
+              <div class="flex items-center gap-4 mb-6">
+                <div class="relative">
+                  <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full overflow-hidden border-3 border-primary/20 shadow-lg">
+                    <img 
+                      src={steward.avatar} 
+                      alt={steward.name}
+                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-primary-container rounded-full flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[10px] text-primary">verified</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="font-headline text-lg font-bold text-on-surface">{steward.name}</h3>
+                  <p class="font-body text-sm text-on-surface/60">{steward.role}</p>
+                  <p class="font-body text-xs text-primary font-medium">{steward.organization}</p>
+                </div>
+              </div>
+              
+              <!-- Rating -->
+              <div class="flex gap-1 mb-6">
+                {Array.from({ length: steward.rating }).map(() => (
+                  <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                ))}
+              </div>
+              
+              <!-- Quote -->
+              <blockquote class="relative">
+                <p class="font-body text-on-surface/70 leading-relaxed text-base italic">
+                  "{steward.quote}"
+                </p>
+              </blockquote>
+              
+              <!-- Decorative Element -->
+              <div class="mt-8 pt-6 border-t border-on-surface/10 flex items-center justify-between">
+                <span class="font-body text-xs text-on-surface/40 uppercase tracking-widest">Steward</span>
+                <div class="flex gap-2">
+                  <span class="w-2 h-2 rounded-full bg-primary/20"></span>
+                  <span class="w-2 h-2 rounded-full bg-secondary/20"></span>
+                  <span class="w-2 h-2 rounded-full bg-tertiary/20"></span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -249,7 +329,7 @@ const testimonials = [
     </section>
 
     <!-- Contact Section -->
-    <section id="incubation" class="py-20 lg:py-32 px-6 lg:px-12 bg-white">
+    <section id="contact" class="py-20 lg:py-32 px-6 lg:px-12 bg-white">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-10 lg:mb-12">
           <span class="inline-block px-4 py-1 rounded-full font-medium text-xs tracking-widest uppercase mb-4 bg-primary/10 text-primary">Get in Touch</span>
