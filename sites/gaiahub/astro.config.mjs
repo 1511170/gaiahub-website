@@ -32,6 +32,9 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
+        // Alias para src (i18n, components, etc.)
+        '@': join(__dirname, 'src'),
+        
         // Alias para skills
         '@skills': join(__dirname, '../../skills'),
         '@skills-official': join(__dirname, '../../skills/official'),

@@ -6,7 +6,8 @@
     "testimonials",
     "contact-form",
     "webflow-effects",
-    "blog"
+    "blog",
+    "i18n"
   ],
   "_comment": "Skills se añaden con: node scripts/skill-add.js [nombre]"
 }

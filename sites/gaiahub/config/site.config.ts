@@ -37,9 +37,9 @@ export default {
     domain: 'gaiahub.co',
     name: 'Gaia Hub',
     description: 'Plataforma de gestión de presencia digital empresarial. Crea, gestiona y escala tu presencia online con tecnología de última generación.',
-    language: 'es',
+    language: 'en',
     logo: '/logo.svg',
-    favicon: '/favicon.ico'
+    favicon: '/favicon.svg'
   },
   cms: {
     enabled: true,

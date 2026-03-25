@@ -1,0 +1,48 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "hub": "Hub",
+    "market": "Market",
+    "commons": "Commons",
+    "impact": "Impact",
+    "impact_fund": "Impact Fund",
+    "impact_hub": "Impact Hub",
+    "join": "Únete"
+  },
+  "home": {
+    "meta_title": "Gaia | Ecosistema Regenerativo Global",
+    "meta_description": "La infraestructura para una civilización que regenera. Personas, proyectos y comunidades coordinándose para restaurar la Tierra.",
+    "hero_badge": "Ecosistema Regenerativo Global",
+    "hero_title": "La infraestructura para una civilización que regenera.",
+    "hero_subtitle": "Personas, proyectos y comunidades coordinándose para restaurar la Tierra a través de sistemas vivos y tecnología consciente.",
+    "cta_discover": "Descubre Gaia",
+    "cta_join": "Únete a la Comunidad",
+    "concept_title": "No es una empresa. No es una plataforma. Es un organismo vivo.",
+    "concept_subtitle": "Tres componentes interdependientes que juntos hacen lo que ninguno podría solo. Diseñados bajo principios de biomímesis para escalar el impacto planetario.",
+    "triad_title": "La Tríada Regenerativa",
+    "triad_hub": "Hub de Conocimiento",
+    "triad_hub_desc": "Mapas vivos de proyectos, agentes de cambio y patrones de regeneración. Inteligencia colectiva visibilizada.",
+    "triad_market": "Mercado Circular",
+    "triad_market_desc": "Intercambio de valor sin fisuras: productos, servicios y recursos entre agentes del ecosistema.",
+    "triad_commons": "Comunes Financieros",
+    "triad_commons_desc": "Capital semilla descentralizado para proyectos de alto impacto regenerativo.",
+    "how_title": "Cómo funciona",
+    "how_connect": "Conecta",
+    "how_connect_desc": "Registra tu proyecto o perfil. Suma tu nodo al mapa global de regeneración.",
+    "how_collaborate": "Colabora",
+    "how_collaborate_desc": "Encuentra aliados, recursos y oportunidades. El ecosistema te conecta automáticamente.",
+    "how_create": "Crea Impacto",
+    "how_create_desc": "Accede a financiación y visibilidad. Escala tu contribución a la regeneración planetaria.",
+    "community_title": "Conecta con la comunidad",
+    "community_subtitle": "Únete a nuestras comunidades activas. Comparte, aprende y colabora con otros agentes de regeneración.",
+    "whatsapp_title": "WhatsApp",
+    "whatsapp_desc": "Canal de difusión. Noticias, actualizaciones y contenido exclusivo.",
+    "whatsapp_cta": "Unirse al canal",
+    "telegram_title": "Telegram",
+    "telegram_desc": "Grupo de la comunidad. Networking, recursos y colaboración entre pares.",
+    "telegram_cta": "Unirse al grupo"
+  },
+  "footer": {
+    "copyright": "© 2026 Gaia Hub. Todos los derechos reservados."
+  }
+}
