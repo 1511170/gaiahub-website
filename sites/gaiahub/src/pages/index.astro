@@ -93,77 +93,25 @@ const coreFunctions = [
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-  
-  <style is:global>
-    :root {
-      --color-primary: #776300;
-      --color-primary-container: #ffd709;
-      --color-on-primary-container: #5b4b00;
-      --color-secondary: #00743a;
-      --color-secondary-container: #86fea7;
-      --color-on-secondary-container: #00612f;
-      --color-tertiary: #8e00fd;
-      --color-tertiary-container: #d0a7ff;
-      --color-on-tertiary-container: #500092;
-      --color-background: #fefee5;
-      --color-on-surface: #363b10;
-      --color-on-surface-variant: #626838;
-      --color-surface: #fefee5;
-      --color-surface-container: #f4f7ce;
-      --color-surface-container-low: #fafcda;
-      --color-surface-container-high: #eef2bf;
-      --color-surface-container-highest: #e7edb1;
-      --color-outline: #7f8452;
-      --color-outline-variant: #b8be86;
-      --color-error: #b23d21;
-    }
-    
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      vertical-align: middle;
-    }
-    
-    .glass-panel {
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-    }
-    
-    .solar-gradient {
-      background: linear-gradient(135deg, #776300 0%, #ffd709 100%);
-    }
-    
-    .ethereal-shadow {
-      box-shadow: 0 40px 60px -20px rgba(54, 59, 16, 0.06);
-    }
-    
-    .font-headline {
-      font-family: 'Epilogue', sans-serif;
-    }
-    
-    .font-body {
-      font-family: 'Manrope', sans-serif;
-    }
-  </style>
 </head>
 
 <Layout title="Gaia Hub | Digital Coordination Platform">
-  <main class="min-h-screen" style="background-color: #fefee5; color: #363b10;">
+  <main class="min-h-screen bg-background text-on-surface">
     
     <!-- Top Navigation Shell -->
-    <nav class="sticky top-0 z-50 w-full px-6 lg:px-12 py-6 max-w-[1920px] mx-auto flex justify-between items-center backdrop-blur-xl" style="background: rgba(254, 254, 229, 0.8); box-shadow: 0 20px 40px -15px rgba(54, 59, 16, 0.05);">
-      <div class="text-2xl font-black tracking-tighter font-headline" style="color: #776300;">Gaia Hub</div>
+    <nav class="sticky top-0 z-50 w-full px-6 lg:px-12 py-6 max-w-[1920px] mx-auto flex justify-between items-center bg-background/80 backdrop-blur-xl shadow-ethereal">
+      <div class="text-2xl font-black tracking-tighter font-headline text-primary">Gaia Hub</div>
       <div class="hidden md:flex items-center gap-10">
-        <a class="font-headline tracking-tight font-bold uppercase text-sm transition-colors hover:text-[#363b10]" style="color: rgba(54, 59, 16, 0.6);" href="#intelligence">Intelligence</a>
-        <a class="font-headline tracking-tight font-bold uppercase text-sm transition-colors hover:text-[#363b10]" style="color: rgba(54, 59, 16, 0.6);" href="#market">Market</a>
-        <a class="font-headline tracking-tight font-bold uppercase text-sm transition-colors hover:text-[#363b10]" style="color: rgba(54, 59, 16, 0.6);" href="#commons">Commons</a>
-        <a class="font-headline tracking-tight font-bold uppercase text-sm transition-colors hover:text-[#363b10]" style="color: rgba(54, 59, 16, 0.6);" href="#capital">Capital</a>
-        <a class="font-headline tracking-tight font-bold uppercase text-sm transition-colors hover:text-[#363b10]" style="color: rgba(54, 59, 16, 0.6);" href="#incubation">Incubation</a>
+        <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface/60 hover:text-on-surface transition-colors" href="#intelligence">Intelligence</a>
+        <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface/60 hover:text-on-surface transition-colors" href="#market">Market</a>
+        <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface/60 hover:text-on-surface transition-colors" href="#commons">Commons</a>
+        <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface/60 hover:text-on-surface transition-colors" href="#capital">Capital</a>
+        <a class="font-headline tracking-tight font-bold uppercase text-sm text-on-surface/60 hover:text-on-surface transition-colors" href="#incubation">Incubation</a>
       </div>
       <div class="flex items-center gap-4 lg:gap-6">
-        <button class="material-symbols-outlined p-2 rounded-full transition-all hover:bg-[#ffd709]/10" style="color: #776300;">search</button>
-        <button class="hidden sm:block px-6 lg:px-8 py-3 rounded-full text-white font-headline text-xs tracking-widest uppercase hover:scale-[1.02] active:scale-95 transition-all ethereal-shadow solar-gradient">Connect Soul</button>
-        <button class="sm:hidden material-symbols-outlined p-2 rounded-full" style="color: #776300;">menu</button>
+        <button class="material-symbols-outlined p-2 rounded-full transition-all hover:bg-primary-container/10 text-primary">search</button>
+        <button class="hidden sm:block px-6 lg:px-8 py-3 rounded-full text-white font-headline text-xs tracking-widest uppercase hover:scale-[1.02] active:scale-95 transition-all shadow-ethereal bg-gradient-to-r from-primary to-primary-container text-on-primary-container">Connect Soul</button>
+        <button class="sm:hidden material-symbols-outlined p-2 rounded-full text-primary">menu</button>
       </div>
     </nav>
 
@@ -171,29 +119,29 @@ const coreFunctions = [
     <section class="relative min-h-[90vh] flex flex-col items-center justify-center pt-20 lg:pt-32 pb-16 px-6 overflow-hidden">
       <!-- Background decoration -->
       <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
-        <div class="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] lg:w-[600px] lg:h-[600px] rounded-full blur-[120px]" style="background: #ffd709;"></div>
-        <div class="absolute bottom-[0%] left-[-10%] w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] rounded-full blur-[100px]" style="background: #86fea7;"></div>
+        <div class="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] lg:w-[600px] lg:h-[600px] rounded-full blur-[120px] bg-primary-container"></div>
+        <div class="absolute bottom-[0%] left-[-10%] w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] rounded-full blur-[100px] bg-secondary-container"></div>
       </div>
       
       <div class="relative z-10 text-center max-w-5xl px-4">
-        <span class="inline-block px-6 py-2 rounded-full font-semibold text-sm tracking-wide mb-8 font-label" style="background: rgba(134, 254, 167, 0.4); color: #00612f;">
+        <span class="inline-block px-6 py-2 rounded-full font-semibold text-sm tracking-wide mb-8 font-label bg-secondary-container/40 text-on-secondary-container">
           Ethereal Conduit v2.0
         </span>
         
-        <h1 class="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter leading-[0.9] mb-8 lg:mb-12" style="color: #776300;">
+        <h1 class="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tighter leading-[0.9] mb-8 lg:mb-12 text-primary">
           The Digital <br/>
-          <span class="text-transparent bg-clip-text solar-gradient">Nervous System</span>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Nervous System</span>
         </h1>
         
-        <p class="font-body text-lg sm:text-xl md:text-2xl mb-10 lg:mb-16 max-w-2xl mx-auto leading-relaxed" style="color: rgba(54, 59, 16, 0.7);">
+        <p class="font-body text-lg sm:text-xl md:text-2xl mb-10 lg:mb-16 max-w-2xl mx-auto leading-relaxed text-on-surface/70">
           Harmonizing human intelligence with planetary vitality through an interconnected web of capital, commons, and market flows.
         </p>
         
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
-          <a href="#ecosystem" class="solar-gradient text-white px-10 lg:px-12 py-4 lg:py-5 rounded-full font-headline text-sm tracking-widest uppercase shadow-xl hover:scale-105 transition-all w-full sm:w-auto text-center">
+          <a href="#ecosystem" class="bg-gradient-to-r from-primary to-primary-container text-on-primary-container px-10 lg:px-12 py-4 lg:py-5 rounded-full font-headline text-sm tracking-widest uppercase shadow-xl hover:scale-105 transition-all w-full sm:w-auto text-center font-bold">
             Enter the Portal
           </a>
-          <a href="#triad" class="group flex items-center justify-center gap-3 font-headline text-sm tracking-widest uppercase" style="color: #776300;">
+          <a href="#triad" class="group flex items-center justify-center gap-3 font-headline text-sm tracking-widest uppercase text-primary font-bold">
             Explore Governance <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
           </a>
         </div>
@@ -201,13 +149,13 @@ const coreFunctions = [
       
       <!-- Asymmetric Visual Element -->
       <div class="relative mt-16 lg:mt-32 w-full max-w-7xl px-4 sm:px-6">
-        <div class="aspect-[21/9] rounded-xl overflow-hidden ethereal-shadow relative">
+        <div class="aspect-[21/9] rounded-xl lg:rounded-2xl overflow-hidden shadow-ethereal relative">
           <img 
             alt="Earth from space" 
             class="w-full h-full object-cover"
             src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-[#fefee5]/80 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
           <div class="absolute bottom-6 left-6 lg:bottom-12 lg:left-12">
             <p class="font-headline text-white/90 text-lg lg:text-2xl font-bold drop-shadow-lg">A Living Regenerative Organism</p>
             <p class="font-body text-white/70 text-sm lg:text-base drop-shadow-md">Coordinating 150+ bioregions worldwide</p>
@@ -221,12 +169,12 @@ const coreFunctions = [
       <div class="max-w-[1920px] mx-auto">
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {metrics.map((metric) => (
-            <div class="text-center p-6 lg:p-8 rounded-2xl ethereal-shadow" style="background: white;">
-              <div class="w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: rgba(255, 215, 9, 0.2);">
-                <span class="material-symbols-outlined text-2xl lg:text-3xl" style="color: #776300;">{metric.icon}</span>
+            <div class="text-center p-6 lg:p-8 rounded-2xl shadow-ethereal bg-white">
+              <div class="w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-primary-container/20">
+                <span class="material-symbols-outlined text-2xl lg:text-3xl text-primary">{metric.icon}</span>
               </div>
-              <div class="font-headline text-3xl lg:text-5xl font-black tracking-tighter mb-2" style="color: #776300;">{metric.value}</div>
-              <div class="font-body text-xs lg:text-sm uppercase tracking-widest" style="color: rgba(54, 59, 16, 0.6);">{metric.label}</div>
+              <div class="font-headline text-3xl lg:text-5xl font-black tracking-tighter mb-2 text-primary">{metric.value}</div>
+              <div class="font-body text-xs lg:text-sm uppercase tracking-widest text-on-surface/60">{metric.label}</div>
             </div>
           ))}
         </div>
@@ -237,83 +185,83 @@ const coreFunctions = [
     <section id="triad" class="py-20 lg:py-32 px-4 sm:px-6 lg:px-12 max-w-[1920px] mx-auto">
       <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 lg:mb-24 gap-6 lg:gap-8">
         <div class="max-w-xl">
-          <span class="inline-block px-4 py-1 rounded-full font-medium text-xs tracking-widest uppercase mb-4" style="background: rgba(119, 99, 0, 0.1); color: #776300;">The Gaia Triad</span>
-          <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 lg:mb-6" style="color: #363b10;">The Triad of Life</h2>
-          <p class="font-body text-base lg:text-lg" style="color: rgba(54, 59, 16, 0.6);">Our ecosystem functions as a biological entity, utilizing three core systems to process value, information, and wisdom.</p>
+          <span class="inline-block px-4 py-1 rounded-full font-medium text-xs tracking-widest uppercase mb-4 bg-primary/10 text-primary">The Gaia Triad</span>
+          <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 lg:mb-6 text-on-surface">The Triad of Life</h2>
+          <p class="font-body text-base lg:text-lg text-on-surface/60">Our ecosystem functions as a biological entity, utilizing three core systems to process value, information, and wisdom.</p>
         </div>
         <div class="flex gap-2 lg:gap-4">
-          <div class="w-12 lg:w-16 h-1 rounded-full" style="background: #776300;"></div>
-          <div class="w-6 lg:w-8 h-1 rounded-full" style="background: rgba(119, 99, 0, 0.2);"></div>
-          <div class="w-6 lg:w-8 h-1 rounded-full" style="background: rgba(119, 99, 0, 0.2);"></div>
+          <div class="w-12 lg:w-16 h-1 rounded-full bg-primary"></div>
+          <div class="w-6 lg:w-8 h-1 rounded-full bg-primary/20"></div>
+          <div class="w-6 lg:w-8 h-1 rounded-full bg-primary/20"></div>
         </div>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12">
         <!-- Card 1: Gaia Hub (Nervous System) -->
-        <div class="group relative rounded-xl lg:rounded-2xl p-6 lg:p-10 ethereal-shadow hover:translate-y-[-8px] transition-all duration-500 overflow-hidden min-h-[450px] lg:min-h-[500px] flex flex-col justify-between" style="background: white;">
+        <div class="group relative rounded-xl lg:rounded-2xl p-6 lg:p-10 shadow-ethereal hover:translate-y-[-8px] transition-all duration-500 overflow-hidden min-h-[450px] lg:min-h-[500px] flex flex-col justify-between bg-white">
           <div class="absolute top-0 right-0 p-6 lg:p-8">
-            <span class="material-symbols-outlined text-3xl lg:text-4xl transition-colors" style="color: rgba(119, 99, 0, 0.2);" class="group-hover:text-[#776300]">hub</span>
+            <span class="material-symbols-outlined text-3xl lg:text-4xl text-primary/20 group-hover:text-primary transition-colors">hub</span>
           </div>
           <div>
-            <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center mb-6 lg:mb-10 group-hover:scale-110 transition-transform" style="background: rgba(255, 215, 9, 0.2);">
-              <span class="material-symbols-outlined text-2xl lg:text-3xl" style="color: #776300;">network_intelligence</span>
+            <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center mb-6 lg:mb-10 group-hover:scale-110 transition-transform bg-primary-container/20">
+              <span class="material-symbols-outlined text-2xl lg:text-3xl text-primary">network_intelligence</span>
             </div>
-            <h3 class="font-headline text-2xl lg:text-3xl mb-3 lg:mb-4" style="color: #363b10;">Gaia Hub</h3>
-            <div class="inline-block px-3 lg:px-4 py-1 rounded-full font-bold text-[10px] tracking-widest uppercase mb-4 lg:mb-6" style="background: rgba(134, 254, 167, 0.3); color: #00612f;">The Nervous System</div>
-            <p class="font-body text-sm lg:text-base leading-relaxed mb-6 lg:mb-8" style="color: rgba(54, 59, 16, 0.6);">The digital coordination platform that makes the ecosystem visible, enables intelligent connections, and coordinates collaboration across distributed actors.</p>
+            <h3 class="font-headline text-2xl lg:text-3xl mb-3 lg:mb-4 text-on-surface">Gaia Hub</h3>
+            <div class="inline-block px-3 lg:px-4 py-1 rounded-full font-bold text-[10px] tracking-widest uppercase mb-4 lg:mb-6 bg-secondary-container/30 text-on-secondary-container">The Nervous System</div>
+            <p class="font-body text-sm lg:text-base leading-relaxed mb-6 lg:mb-8 text-on-surface/60">The digital coordination platform that makes the ecosystem visible, enables intelligent connections, and coordinates collaboration across distributed actors.</p>
           </div>
-          <ul class="space-y-2 font-body text-xs lg:text-sm mb-6" style="color: rgba(54, 59, 16, 0.7);">
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" style="color: #776300;">check</span>Directory & Global Map</li>
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" style="color: #776300;">check</span>Gaia GPS Matchmaking</li>
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" style="color: #776300;">check</span>Contribution Tracking</li>
+          <ul class="space-y-2 font-body text-xs lg:text-sm mb-6 text-on-surface/70">
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">check</span>Directory & Global Map</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">check</span>Gaia GPS Matchmaking</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">check</span>Contribution Tracking</li>
           </ul>
-          <a href="#hub" class="group/btn flex items-center gap-2 font-headline text-xs tracking-widest uppercase font-bold" style="color: #776300;">
+          <a href="#hub" class="group/btn flex items-center gap-2 font-headline text-xs tracking-widest uppercase font-bold text-primary">
             Synchronize <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">chevron_right</span>
           </a>
         </div>
 
         <!-- Card 2: Gaia Market (Circulatory) -->
-        <div id="market" class="group relative rounded-xl lg:rounded-2xl p-6 lg:p-10 ethereal-shadow hover:translate-y-[-8px] transition-all duration-500 overflow-hidden min-h-[450px] lg:min-h-[500px] flex flex-col justify-between" style="background: rgba(244, 247, 206, 0.5); border: 1px solid rgba(119, 99, 0, 0.05);">
+        <div id="market" class="group relative rounded-xl lg:rounded-2xl p-6 lg:p-10 shadow-ethereal hover:translate-y-[-8px] transition-all duration-500 overflow-hidden min-h-[450px] lg:min-h-[500px] flex flex-col justify-between bg-surface-container border border-primary/5">
           <div class="absolute top-0 right-0 p-6 lg:p-8">
-            <span class="material-symbols-outlined text-3xl lg:text-4xl transition-colors" style="color: rgba(119, 99, 0, 0.2);" class="group-hover:text-[#776300]">currency_exchange</span>
+            <span class="material-symbols-outlined text-3xl lg:text-4xl text-primary/20 group-hover:text-primary transition-colors">currency_exchange</span>
           </div>
           <div>
-            <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center mb-6 lg:mb-10 group-hover:scale-110 transition-transform" style="background: rgba(119, 99, 0, 0.1);">
-              <span class="material-symbols-outlined text-2xl lg:text-3xl" style="color: #776300;">storefront</span>
+            <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center mb-6 lg:mb-10 group-hover:scale-110 transition-transform bg-primary/10">
+              <span class="material-symbols-outlined text-2xl lg:text-3xl text-primary">storefront</span>
             </div>
-            <h3 class="font-headline text-2xl lg:text-3xl mb-3 lg:mb-4" style="color: #363b10;">Gaia Market</h3>
-            <div class="inline-block px-3 lg:px-4 py-1 rounded-full font-bold text-[10px] tracking-widest uppercase mb-4 lg:mb-6" style="background: rgba(255, 215, 9, 0.3); color: #5b4b00;">Circulatory System</div>
-            <p class="font-body text-sm lg:text-base leading-relaxed mb-6 lg:mb-8" style="color: rgba(54, 59, 16, 0.6);">The regenerative marketplace where value is exchanged in alignment with regenerative principles - products, services, experiences, and knowledge.</p>
+            <h3 class="font-headline text-2xl lg:text-3xl mb-3 lg:mb-4 text-on-surface">Gaia Market</h3>
+            <div class="inline-block px-3 lg:px-4 py-1 rounded-full font-bold text-[10px] tracking-widest uppercase mb-4 lg:mb-6 bg-primary-container/30 text-on-primary-container">Circulatory System</div>
+            <p class="font-body text-sm lg:text-base leading-relaxed mb-6 lg:mb-8 text-on-surface/60">The regenerative marketplace where value is exchanged in alignment with regenerative principles - products, services, experiences, and knowledge.</p>
           </div>
-          <ul class="space-y-2 font-body text-xs lg:text-sm mb-6" style="color: rgba(54, 59, 16, 0.7);">
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" style="color: #776300;">check</span>Regenerative Products</li>
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" style="color: #776300;">check</span>Services & Experiences</li>
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" style="color: #776300;">check</span>Knowledge & Courses</li>
+          <ul class="space-y-2 font-body text-xs lg:text-sm mb-6 text-on-surface/70">
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">check</span>Regenerative Products</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">check</span>Services & Experiences</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-primary">check</span>Knowledge & Courses</li>
           </ul>
-          <a href="#marketplace" class="group/btn flex items-center gap-2 font-headline text-xs tracking-widest uppercase font-bold" style="color: #776300;">
+          <a href="#marketplace" class="group/btn flex items-center gap-2 font-headline text-xs tracking-widest uppercase font-bold text-primary">
             Exchange <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">chevron_right</span>
           </a>
         </div>
 
         <!-- Card 3: The Commons (Soul) -->
-        <div id="commons" class="group relative rounded-xl lg:rounded-2xl p-6 lg:p-10 ethereal-shadow hover:translate-y-[-8px] transition-all duration-500 overflow-hidden min-h-[450px] lg:min-h-[500px] flex flex-col justify-between" style="background: rgba(238, 242, 191, 0.6);">
+        <div id="commons" class="group relative rounded-xl lg:rounded-2xl p-6 lg:p-10 shadow-ethereal hover:translate-y-[-8px] transition-all duration-500 overflow-hidden min-h-[450px] lg:min-h-[500px] flex flex-col justify-between bg-surface-container-high">
           <div class="absolute top-0 right-0 p-6 lg:p-8">
-            <span class="material-symbols-outlined text-3xl lg:text-4xl transition-colors" style="color: rgba(142, 0, 253, 0.2);" class="group-hover:text-[#8e00fd]">diversity_3</span>
+            <span class="material-symbols-outlined text-3xl lg:text-4xl text-tertiary/20 group-hover:text-tertiary transition-colors">diversity_3</span>
           </div>
           <div>
-            <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center mb-6 lg:mb-10 group-hover:scale-110 transition-transform" style="background: rgba(208, 167, 255, 0.3);">
-              <span class="material-symbols-outlined text-2xl lg:text-3xl" style="color: #8e00fd;">account_balance</span>
+            <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center mb-6 lg:mb-10 group-hover:scale-110 transition-transform bg-tertiary-container/20">
+              <span class="material-symbols-outlined text-2xl lg:text-3xl text-tertiary">account_balance</span>
             </div>
-            <h3 class="font-headline text-2xl lg:text-3xl mb-3 lg:mb-4" style="color: #363b10;">Gaia Commons</h3>
-            <div class="inline-block px-3 lg:px-4 py-1 rounded-full font-bold text-[10px] tracking-widest uppercase mb-4 lg:mb-6" style="background: rgba(208, 167, 255, 0.3); color: #500092;">The Soul</div>
-            <p class="font-body text-sm lg:text-base leading-relaxed mb-6 lg:mb-8" style="color: rgba(54, 59, 16, 0.6);">The constitutional and civilizational framework that defines principles, governance, and stewardship of the network through commons-based coordination.</p>
+            <h3 class="font-headline text-2xl lg:text-3xl mb-3 lg:mb-4 text-on-surface">Gaia Commons</h3>
+            <div class="inline-block px-3 lg:px-4 py-1 rounded-full font-bold text-[10px] tracking-widest uppercase mb-4 lg:mb-6 bg-tertiary-container/30 text-on-tertiary-container">The Soul</div>
+            <p class="font-body text-sm lg:text-base leading-relaxed mb-6 lg:mb-8 text-on-surface/60">The constitutional and civilizational framework that defines principles, governance, and stewardship of the network through commons-based coordination.</p>
           </div>
-          <ul class="space-y-2 font-body text-xs lg:text-sm mb-6" style="color: rgba(54, 59, 16, 0.7);">
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" style="color: #8e00fd;">check</span>Polycentric Governance</li>
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" style="color: #8e00fd;">check</span>Multi-Capital Value</li>
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm" style="color: #8e00fd;">check</span>Commons Stewardship</li>
+          <ul class="space-y-2 font-body text-xs lg:text-sm mb-6 text-on-surface/70">
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-tertiary">check</span>Polycentric Governance</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-tertiary">check</span>Multi-Capital Value</li>
+            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm text-tertiary">check</span>Commons Stewardship</li>
           </ul>
-          <a href="#common" class="group/btn flex items-center gap-2 font-headline text-xs tracking-widest uppercase font-bold" style="color: #8e00fd;">
+          <a href="#common" class="group/btn flex items-center gap-2 font-headline text-xs tracking-widest uppercase font-bold text-tertiary">
             Connect <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">chevron_right</span>
           </a>
         </div>
@@ -321,22 +269,22 @@ const coreFunctions = [
     </section>
 
     <!-- Core Functions Section -->
-    <section id="ecosystem" class="py-20 lg:py-32 px-4 sm:px-6 lg:px-12" style="background: rgba(244, 247, 206, 0.3);">
+    <section id="ecosystem" class="py-20 lg:py-32 px-4 sm:px-6 lg:px-12 bg-surface-container/50">
       <div class="max-w-[1920px] mx-auto">
         <div class="text-center mb-12 lg:mb-20">
-          <span class="inline-block px-4 py-1 rounded-full font-medium text-xs tracking-widest uppercase mb-4" style="background: rgba(0, 116, 58, 0.1); color: #00743a;">Core Infrastructure</span>
-          <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 lg:mb-6" style="color: #363b10;">Digital Coordination Platform</h2>
-          <p class="font-body text-base lg:text-lg max-w-2xl mx-auto" style="color: rgba(54, 59, 16, 0.6);">Gaia Hub functions as the digital operating system of the ecosystem - a meta-platform for network coordination and evolution.</p>
+          <span class="inline-block px-4 py-1 rounded-full font-medium text-xs tracking-widest uppercase mb-4 bg-secondary/10 text-secondary">Core Infrastructure</span>
+          <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 lg:mb-6 text-on-surface">Digital Coordination Platform</h2>
+          <p class="font-body text-base lg:text-lg max-w-2xl mx-auto text-on-surface/60">Gaia Hub functions as the digital operating system of the ecosystem - a meta-platform for network coordination and evolution.</p>
         </div>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
-          {coreFunctions.map((func, index) => (
-            <div class="group p-6 lg:p-8 rounded-xl ethereal-shadow hover:translate-y-[-4px] transition-all duration-300" style="background: white;">
-              <div class="w-12 h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center mb-4 lg:mb-6 group-hover:scale-110 transition-transform" style="background: rgba(255, 215, 9, 0.15);">
-                <span class="material-symbols-outlined text-xl lg:text-2xl" style="color: #776300;">{func.icon}</span>
+          {coreFunctions.map((func) => (
+            <div class="group p-6 lg:p-8 rounded-xl shadow-ethereal hover:translate-y-[-4px] transition-all duration-300 bg-white">
+              <div class="w-12 h-12 lg:w-14 lg:h-14 rounded-full flex items-center justify-center mb-4 lg:mb-6 group-hover:scale-110 transition-transform bg-primary-container/15">
+                <span class="material-symbols-outlined text-xl lg:text-2xl text-primary">{func.icon}</span>
               </div>
-              <h3 class="font-headline text-lg lg:text-xl font-bold mb-2 lg:mb-3" style="color: #363b10;">{func.title}</h3>
-              <p class="font-body text-sm lg:text-base leading-relaxed" style="color: rgba(54, 59, 16, 0.6);">{func.description}</p>
+              <h3 class="font-headline text-lg lg:text-xl font-bold mb-2 lg:mb-3 text-on-surface">{func.title}</h3>
+              <p class="font-body text-sm lg:text-base leading-relaxed text-on-surface/60">{func.description}</p>
             </div>
           ))}
         </div>
@@ -348,40 +296,40 @@ const coreFunctions = [
       <div class="max-w-[1920px] mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div>
-            <span class="inline-block px-4 py-1 rounded-full font-medium text-xs tracking-widest uppercase mb-4 lg:mb-6" style="background: rgba(119, 99, 0, 0.1); color: #776300;">Provision & Development</span>
-            <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight mb-4 lg:mb-6" style="color: #363b10;">Gaia Impact Fund</h2>
-            <p class="font-body text-base lg:text-lg leading-relaxed mb-6 lg:mb-8" style="color: rgba(54, 59, 16, 0.7);">
+            <span class="inline-block px-4 py-1 rounded-full font-medium text-xs tracking-widest uppercase mb-4 lg:mb-6 bg-primary/10 text-primary">Provision & Development</span>
+            <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight mb-4 lg:mb-6 text-on-surface">Gaia Impact Fund</h2>
+            <p class="font-body text-base lg:text-lg leading-relaxed mb-6 lg:mb-8 text-on-surface/70">
               The primary strategic fund designed to mobilize, coordinate, and deploy capital toward regenerative initiatives at global, bioregional, and local levels.
             </p>
             <div class="space-y-4 mb-6 lg:mb-8">
               <div class="flex items-start gap-3">
-                <span class="material-symbols-outlined mt-1" style="color: #776300;">account_balance</span>
+                <span class="material-symbols-outlined mt-1 text-primary">account_balance</span>
                 <div>
-                  <h4 class="font-headline font-bold text-sm lg:text-base" style="color: #363b10;">Capital Aggregator</h4>
-                  <p class="font-body text-xs lg:text-sm" style="color: rgba(54, 59, 16, 0.6);">Gathers resources from investment, donations, marketplace flows, and tokens</p>
+                  <h4 class="font-headline font-bold text-sm lg:text-base text-on-surface">Capital Aggregator</h4>
+                  <p class="font-body text-xs lg:text-sm text-on-surface/60">Gathers resources from investment, donations, marketplace flows, and tokens</p>
                 </div>
               </div>
               <div class="flex items-start gap-3">
-                <span class="material-symbols-outlined mt-1" style="color: #776300;">route</span>
+                <span class="material-symbols-outlined mt-1 text-primary">route</span>
                 <div>
-                  <h4 class="font-headline font-bold text-sm lg:text-base" style="color: #363b10;">Financial Orchestrator</h4>
-                  <p class="font-body text-xs lg:text-sm" style="color: rgba(54, 59, 16, 0.6);">Strategically allocates capital across specialized funds</p>
+                  <h4 class="font-headline font-bold text-sm lg:text-base text-on-surface">Financial Orchestrator</h4>
+                  <p class="font-body text-xs lg:text-sm text-on-surface/60">Strategically allocates capital across specialized funds</p>
                 </div>
               </div>
               <div class="flex items-start gap-3">
-                <span class="material-symbols-outlined mt-1" style="color: #776300;">rocket_launch</span>
+                <span class="material-symbols-outlined mt-1 text-primary">rocket_launch</span>
                 <div>
-                  <h4 class="font-headline font-bold text-sm lg:text-base" style="color: #363b10;">Impact Accelerator</h4>
-                  <p class="font-body text-xs lg:text-sm" style="color: rgba(54, 59, 16, 0.6);">Prioritizes high-regenerative-potential initiatives</p>
+                  <h4 class="font-headline font-bold text-sm lg:text-base text-on-surface">Impact Accelerator</h4>
+                  <p class="font-body text-xs lg:text-sm text-on-surface/60">Prioritizes high-regenerative-potential initiatives</p>
                 </div>
               </div>
             </div>
-            <a href="#fund" class="inline-flex items-center gap-2 solar-gradient text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full font-headline text-xs lg:text-sm tracking-widest uppercase shadow-lg hover:scale-105 transition-all">
+            <a href="#fund" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-container text-on-primary-container px-6 lg:px-8 py-3 lg:py-4 rounded-full font-headline text-xs lg:text-sm tracking-widest uppercase shadow-lg hover:scale-105 transition-all font-bold">
               Explore Fund <span class="material-symbols-outlined">arrow_forward</span>
             </a>
           </div>
           <div class="relative">
-            <div class="aspect-square rounded-2xl lg:rounded-3xl overflow-hidden ethereal-shadow">
+            <div class="aspect-square rounded-2xl lg:rounded-3xl overflow-hidden shadow-ethereal">
               <img 
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" 
                 alt="Impact visualization" 
@@ -389,13 +337,13 @@ const coreFunctions = [
               />
             </div>
             <!-- Floating stats cards -->
-            <div class="absolute -bottom-4 -left-4 lg:-bottom-8 lg:-left-8 bg-white rounded-xl lg:rounded-2xl p-4 lg:p-6 ethereal-shadow">
-              <div class="font-headline text-2xl lg:text-4xl font-black" style="color: #776300;">$12M+</div>
-              <div class="font-body text-xs lg:text-sm uppercase tracking-wider" style="color: rgba(54, 59, 16, 0.6);">Capital Deployed</div>
+            <div class="absolute -bottom-4 -left-4 lg:-bottom-8 lg:-left-8 bg-white rounded-xl lg:rounded-2xl p-4 lg:p-6 shadow-ethereal">
+              <div class="font-headline text-2xl lg:text-4xl font-black text-primary">$12M+</div>
+              <div class="font-body text-xs lg:text-sm uppercase tracking-wider text-on-surface/60">Capital Deployed</div>
             </div>
-            <div class="absolute -top-4 -right-4 lg:-top-8 lg:-right-8 rounded-xl lg:rounded-2xl p-4 lg:p-6 ethereal-shadow" style="background: rgba(134, 254, 167, 0.3);">
-              <div class="font-headline text-2xl lg:text-4xl font-black" style="color: #00612f;">85+</div>
-              <div class="font-body text-xs lg:text-sm uppercase tracking-wider" style="color: rgba(54, 59, 16, 0.6);">Projects Funded</div>
+            <div class="absolute -top-4 -right-4 lg:-top-8 lg:-right-8 rounded-xl lg:rounded-2xl p-4 lg:p-6 shadow-ethereal bg-secondary-container/30">
+              <div class="font-headline text-2xl lg:text-4xl font-black text-on-secondary-container">85+</div>
+              <div class="font-body text-xs lg:text-sm uppercase tracking-wider text-on-surface/60">Projects Funded</div>
             </div>
           </div>
         </div>
@@ -403,16 +351,16 @@ const coreFunctions = [
     </section>
 
     <!-- Bento Grid: Ecosystem Pulse -->
-    <section class="py-20 lg:py-32 px-4 sm:px-6 lg:px-12" style="background: rgba(244, 247, 206, 0.5);">
+    <section class="py-20 lg:py-32 px-4 sm:px-6 lg:px-12 bg-surface-container/50">
       <div class="max-w-[1920px] mx-auto">
         <div class="text-center mb-12 lg:mb-16">
-          <span class="inline-block px-4 py-1 rounded-full font-medium text-xs tracking-widest uppercase mb-4" style="background: rgba(0, 116, 58, 0.1); color: #00743a;">Live Ecosystem</span>
-          <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight" style="color: #363b10;">Ecosystem Pulse</h2>
+          <span class="inline-block px-4 py-1 rounded-full font-medium text-xs tracking-widest uppercase mb-4 bg-secondary/10 text-secondary">Live Ecosystem</span>
+          <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-on-surface">Ecosystem Pulse</h2>
         </div>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 gap-4 lg:gap-8 h-auto lg:h-[800px]">
           <!-- Large Card -->
-          <div class="sm:col-span-2 lg:col-span-2 lg:row-span-2 bg-white rounded-xl lg:rounded-2xl p-6 lg:p-12 ethereal-shadow relative overflow-hidden flex flex-col justify-end min-h-[300px] lg:min-h-0">
+          <div class="sm:col-span-2 lg:col-span-2 lg:row-span-2 bg-white rounded-xl lg:rounded-2xl p-6 lg:p-12 shadow-ethereal relative overflow-hidden flex flex-col justify-end min-h-[300px] lg:min-h-0">
             <div class="absolute top-0 left-0 w-full h-full">
               <img 
                 src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2026&auto=format&fit=crop" 
@@ -421,59 +369,59 @@ const coreFunctions = [
               />
             </div>
             <div class="relative z-10">
-              <h4 class="font-headline text-2xl lg:text-4xl font-black mb-3 lg:mb-4" style="color: #776300;">Regenerative Capital</h4>
-              <p class="font-body text-sm lg:text-lg mb-4 lg:mb-8 max-w-sm" style="color: rgba(54, 59, 16, 0.7);">Investing in the protocols that heal the planet and empower the people.</p>
-              <a href="#capital" class="inline-flex items-center justify-center w-12 h-12 lg:w-14 lg:h-14 rounded-full shadow-lg hover:scale-110 transition-all solar-gradient text-white">
+              <h4 class="font-headline text-2xl lg:text-4xl font-black mb-3 lg:mb-4 text-primary">Regenerative Capital</h4>
+              <p class="font-body text-sm lg:text-lg mb-4 lg:mb-8 max-w-sm text-on-surface/70">Investing in the protocols that heal the planet and empower the people.</p>
+              <a href="#capital" class="inline-flex items-center justify-center w-12 h-12 lg:w-14 lg:h-14 rounded-full shadow-lg hover:scale-110 transition-all bg-gradient-to-r from-primary to-primary-container text-on-primary-container">
                 <span class="material-symbols-outlined">trending_up</span>
               </a>
             </div>
           </div>
           
           <!-- Stats Card -->
-          <div class="sm:col-span-2 rounded-xl lg:rounded-2xl p-6 lg:p-10 flex flex-col justify-center relative overflow-hidden min-h-[200px]" style="background: rgba(231, 237, 177, 0.5);">
-            <div class="absolute right-0 top-0 h-full w-1/2 opacity-20 bg-gradient-to-l from-[#776300] to-transparent"></div>
+          <div class="sm:col-span-2 rounded-xl lg:rounded-2xl p-6 lg:p-10 flex flex-col justify-center relative overflow-hidden min-h-[200px] bg-surface-container-highest/50">
+            <div class="absolute right-0 top-0 h-full w-1/2 opacity-20 bg-gradient-to-l from-primary to-transparent"></div>
             <div class="flex items-center gap-4 lg:gap-6 mb-2 lg:mb-4">
-              <span class="material-symbols-outlined text-3xl lg:text-4xl" style="color: #776300;">eco</span>
-              <span class="font-headline text-xl lg:text-2xl font-bold" style="color: #363b10;">Biomass Index</span>
+              <span class="material-symbols-outlined text-3xl lg:text-4xl text-primary">eco</span>
+              <span class="font-headline text-xl lg:text-2xl font-bold text-on-surface">Biomass Index</span>
             </div>
-            <div class="font-headline text-4xl lg:text-5xl font-black tracking-tighter" style="color: #776300;">+12.4%</div>
-            <div class="font-body text-xs lg:text-sm mt-1 lg:mt-2 uppercase tracking-widest" style="color: rgba(54, 59, 16, 0.6);">Global Recovery Rate</div>
+            <div class="font-headline text-4xl lg:text-5xl font-black tracking-tighter text-primary">+12.4%</div>
+            <div class="font-body text-xs lg:text-sm mt-1 lg:mt-2 uppercase tracking-widest text-on-surface/60">Global Recovery Rate</div>
           </div>
           
           <!-- Small Card 1 -->
-          <div class="rounded-xl lg:rounded-2xl p-6 lg:p-10 flex flex-col items-center justify-center text-center min-h-[180px]" style="background: rgba(134, 254, 167, 0.2);">
+          <div class="rounded-xl lg:rounded-2xl p-6 lg:p-10 flex flex-col items-center justify-center text-center min-h-[180px] bg-secondary-container/20">
             <div class="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-white flex items-center justify-center mb-3 lg:mb-6 shadow-sm">
-              <span class="material-symbols-outlined text-xl lg:text-2xl" style="color: #00743a;">waves</span>
+              <span class="material-symbols-outlined text-xl lg:text-2xl text-secondary">waves</span>
             </div>
-            <div class="font-headline text-lg lg:text-xl font-bold mb-1 lg:mb-2" style="color: #363b10;">Ocean Flows</div>
-            <div class="font-body text-xs lg:text-sm" style="color: rgba(54, 59, 16, 0.6);">Real-time marine health data</div>
+            <div class="font-headline text-lg lg:text-xl font-bold mb-1 lg:mb-2 text-on-surface">Ocean Flows</div>
+            <div class="font-body text-xs lg:text-sm text-on-surface/60">Real-time marine health data</div>
           </div>
           
           <!-- Small Card 2 -->
-          <div class="rounded-xl lg:rounded-2xl p-6 lg:p-10 flex flex-col items-center justify-center text-center min-h-[180px]" style="background: rgba(255, 215, 9, 0.15);">
+          <div class="rounded-xl lg:rounded-2xl p-6 lg:p-10 flex flex-col items-center justify-center text-center min-h-[180px] bg-primary-container/15">
             <div class="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-white flex items-center justify-center mb-3 lg:mb-6 shadow-sm">
-              <span class="material-symbols-outlined text-xl lg:text-2xl" style="color: #776300;">solar_power</span>
+              <span class="material-symbols-outlined text-xl lg:text-2xl text-primary">solar_power</span>
             </div>
-            <div class="font-headline text-lg lg:text-xl font-bold mb-1 lg:mb-2" style="color: #363b10;">Solar Yield</div>
-            <div class="font-body text-xs lg:text-sm" style="color: rgba(54, 59, 16, 0.6);">Renewable energy grid</div>
+            <div class="font-headline text-lg lg:text-xl font-bold mb-1 lg:mb-2 text-on-surface">Solar Yield</div>
+            <div class="font-body text-xs lg:text-sm text-on-surface/60">Renewable energy grid</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-20 lg:py-32 px-4 sm:px-6 lg:px-12" style="background: linear-gradient(135deg, rgba(244, 247, 206, 0.5) 0%, rgba(238, 242, 191, 0.5) 100%);">
+    <section class="py-20 lg:py-32 px-4 sm:px-6 lg:px-12 bg-gradient-to-br from-surface-container/50 to-surface-container-high/50">
       <div class="max-w-[1920px] mx-auto">
         <div class="text-center mb-12 lg:mb-16">
-          <span class="inline-block px-4 py-1 rounded-full font-medium text-xs tracking-widest uppercase mb-4" style="background: rgba(0, 116, 58, 0.1); color: #00743a;">Community Voices</span>
-          <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight" style="color: #363b10;">Stewards of the Ecosystem</h2>
+          <span class="inline-block px-4 py-1 rounded-full font-medium text-xs tracking-widest uppercase mb-4 bg-secondary/10 text-secondary">Community Voices</span>
+          <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-on-surface">Stewards of the Ecosystem</h2>
         </div>
         <TestimonialsGrid testimonials={testimonials} columns={3} showRatings={true} />
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 lg:py-32 px-4 sm:px-6 lg:px-12" style="background: #776300;">
+    <section class="py-20 lg:py-32 px-4 sm:px-6 lg:px-12 bg-primary">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white mb-4 lg:mb-6">
           Ready to join the<br/>regenerative organism?
@@ -482,7 +430,7 @@ const coreFunctions = [
           Connect your project, community, or bioregion to a global network of stewards building a regenerative civilization.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#join" class="px-8 lg:px-12 py-4 lg:py-5 bg-white rounded-full font-headline text-sm tracking-widest uppercase shadow-lg hover:scale-105 transition-all" style="color: #776300;">
+          <a href="#join" class="px-8 lg:px-12 py-4 lg:py-5 bg-white rounded-full font-headline text-sm tracking-widest uppercase shadow-lg hover:scale-105 transition-all text-primary font-bold">
             Join the Ecosystem
           </a>
           <a href="mailto:hello@gaiahub.co" class="px-8 lg:px-12 py-4 lg:py-5 rounded-full font-headline text-sm tracking-widest uppercase border border-white/30 text-white hover:bg-white/10 transition-all">
@@ -493,17 +441,17 @@ const coreFunctions = [
     </section>
 
     <!-- Contact Section -->
-    <section id="incubation" class="py-20 lg:py-32 px-4 sm:px-6 lg:px-12" style="background: white;">
+    <section id="incubation" class="py-20 lg:py-32 px-4 sm:px-6 lg:px-12 bg-white">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-10 lg:mb-12">
-          <span class="inline-block px-4 py-1 rounded-full font-medium text-xs tracking-widest uppercase mb-4" style="background: rgba(119, 99, 0, 0.1); color: #776300;">Get in Touch</span>
-          <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-3 lg:mb-4" style="color: #363b10;">Connect with Gaia</h2>
-          <p class="font-body text-base lg:text-lg" style="color: rgba(54, 59, 16, 0.6);">
+          <span class="inline-block px-4 py-1 rounded-full font-medium text-xs tracking-widest uppercase mb-4 bg-primary/10 text-primary">Get in Touch</span>
+          <h2 class="font-headline text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-3 lg:mb-4 text-on-surface">Connect with Gaia</h2>
+          <p class="font-body text-base lg:text-lg text-on-surface/60">
             Whether you're a project seeking incubation, an investor looking for impact, or a bioregion ready to coordinate - we're here to connect.
           </p>
         </div>
         
-        <div class="rounded-2xl lg:rounded-3xl p-6 lg:p-12 ethereal-shadow" style="background: rgba(244, 247, 206, 0.3);">
+        <div class="rounded-2xl lg:rounded-3xl p-6 lg:p-12 shadow-ethereal bg-surface-container/30">
           <ContactForm 
             title="Start the Conversation"
             subtitle="Tell us about your project, needs, or vision for regeneration."
@@ -516,29 +464,29 @@ const coreFunctions = [
     </section>
 
     <!-- Footer -->
-    <footer class="w-full py-16 lg:py-24 px-4 sm:px-6 lg:px-12 border-t" style="background: white; border-color: rgba(54, 59, 16, 0.05);">
+    <footer class="w-full py-16 lg:py-24 px-4 sm:px-6 lg:px-12 border-t border-on-surface/5 bg-white">
       <div class="max-w-[1920px] mx-auto">
         <div class="flex flex-wrap justify-center gap-6 lg:gap-12 mb-8 lg:mb-12">
-          <a class="font-body text-xs tracking-[0.2em] uppercase font-bold transition-colors hover:text-[#363b10]" style="color: rgba(54, 59, 16, 0.4);" href="#hub">Gaia Hub</a>
-          <a class="font-body text-xs tracking-[0.2em] uppercase font-bold transition-colors hover:text-[#363b10]" style="color: rgba(54, 59, 16, 0.4);" href="#market">Market</a>
-          <a class="font-body text-xs tracking-[0.2em] uppercase font-bold transition-colors hover:text-[#363b10]" style="color: rgba(54, 59, 16, 0.4);" href="#commons">Commons</a>
-          <a class="font-body text-xs tracking-[0.2em] uppercase font-bold transition-colors hover:text-[#363b10]" style="color: rgba(54, 59, 16, 0.4);" href="#fund">Impact Fund</a>
-          <a class="font-body text-xs tracking-[0.2em] uppercase font-bold transition-colors hover:text-[#363b10]" style="color: rgba(54, 59, 16, 0.4);" href="#incubation">Incubation</a>
+          <a class="font-body text-xs tracking-[0.2em] uppercase font-bold text-on-surface/40 hover:text-on-surface transition-colors" href="#hub">Gaia Hub</a>
+          <a class="font-body text-xs tracking-[0.2em] uppercase font-bold text-on-surface/40 hover:text-on-surface transition-colors" href="#market">Market</a>
+          <a class="font-body text-xs tracking-[0.2em] uppercase font-bold text-on-surface/40 hover:text-on-surface transition-colors" href="#commons">Commons</a>
+          <a class="font-body text-xs tracking-[0.2em] uppercase font-bold text-on-surface/40 hover:text-on-surface transition-colors" href="#fund">Impact Fund</a>
+          <a class="font-body text-xs tracking-[0.2em] uppercase font-bold text-on-surface/40 hover:text-on-surface transition-colors" href="#incubation">Incubation</a>
         </div>
         
         <div class="flex items-center justify-center gap-4 lg:gap-6 mb-6 lg:mb-8">
-          <div class="w-10 lg:w-12 h-[1px]" style="background: rgba(119, 99, 0, 0.2);"></div>
-          <span class="font-body text-[10px] tracking-[0.4em] uppercase font-black" style="color: #776300;">Regenerative Futurism</span>
-          <div class="w-10 lg:w-12 h-[1px]" style="background: rgba(119, 99, 0, 0.2);"></div>
+          <div class="w-10 lg:w-12 h-[1px] bg-primary/20"></div>
+          <span class="font-body text-[10px] tracking-[0.4em] uppercase font-black text-primary">Regenerative Futurism</span>
+          <div class="w-10 lg:w-12 h-[1px] bg-primary/20"></div>
         </div>
         
         <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-          <p class="font-body text-[10px] tracking-widest uppercase" style="color: rgba(54, 59, 16, 0.3);">© 2024 Gaia Ecosystem Collective</p>
+          <p class="font-body text-[10px] tracking-widest uppercase text-on-surface/30">© 2024 Gaia Ecosystem Collective</p>
           <div class="flex items-center gap-4 lg:gap-6">
-            <a href="#" class="transition-colors hover:text-[#363b10]" style="color: rgba(54, 59, 16, 0.4);">Twitter</a>
-            <a href="#" class="transition-colors hover:text-[#363b10]" style="color: rgba(54, 59, 16, 0.4);">LinkedIn</a>
-            <a href="#" class="transition-colors hover:text-[#363b10]" style="color: rgba(54, 59, 16, 0.4);">GitHub</a>
-            <a href="#" class="transition-colors hover:text-[#363b10]" style="color: rgba(54, 59, 16, 0.4);">Discord</a>
+            <a href="#" class="text-on-surface/40 hover:text-on-surface transition-colors text-sm">Twitter</a>
+            <a href="#" class="text-on-surface/40 hover:text-on-surface transition-colors text-sm">LinkedIn</a>
+            <a href="#" class="text-on-surface/40 hover:text-on-surface transition-colors text-sm">GitHub</a>
+            <a href="#" class="text-on-surface/40 hover:text-on-surface transition-colors text-sm">Discord</a>
           </div>
         </div>
       </div>
@@ -546,16 +494,16 @@ const coreFunctions = [
 
     <!-- Dynamic Side Navigation (Floating Portal) - Desktop Only -->
     <aside class="hidden xl:flex fixed left-6 top-1/2 -translate-y-1/2 w-16 glass-panel rounded-full flex-col items-center py-8 gap-8 shadow-2xl z-40 border border-white/40">
-      <div class="w-10 h-10 rounded-full flex items-center justify-center shadow-md" style="background: #ffd709;">
-        <span class="material-symbols-outlined" style="color: #776300; font-variation-settings: 'FILL' 1;">public</span>
+      <div class="w-10 h-10 rounded-full flex items-center justify-center shadow-md bg-primary-container">
+        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">public</span>
       </div>
       <div class="flex flex-col gap-6">
-        <button class="material-symbols-outlined transition-all text-xl" style="color: rgba(54, 59, 16, 0.4);" class="hover:text-[#776300]">explore</button>
-        <button class="material-symbols-outlined transition-all text-xl" style="color: #776300; font-variation-settings: 'FILL' 1;">favorite</button>
-        <button class="material-symbols-outlined transition-all text-xl" style="color: rgba(54, 59, 16, 0.4);" class="hover:text-[#776300]">waves</button>
+        <button class="material-symbols-outlined transition-all text-xl text-on-surface/40 hover:text-primary">explore</button>
+        <button class="material-symbols-outlined transition-all text-xl text-primary" style="font-variation-settings: 'FILL' 1;">favorite</button>
+        <button class="material-symbols-outlined transition-all text-xl text-on-surface/40 hover:text-primary">waves</button>
       </div>
       <div class="mt-auto">
-        <div class="w-8 h-8 rounded-full overflow-hidden border-2" style="border-color: rgba(119, 99, 0, 0.2);">
+        <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-primary/20">
           <img 
             src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" 
             alt="User" 
@@ -567,23 +515,23 @@ const coreFunctions = [
 
     <!-- Bottom Nav for Mobile -->
     <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 px-4 py-3">
-      <div class="bg-white/90 backdrop-blur-xl rounded-full shadow-2xl flex items-center justify-around py-3 px-2 border" style="border-color: rgba(119, 99, 0, 0.05);">
-        <button class="flex flex-col items-center gap-1" style="color: #776300;">
+      <div class="bg-white/90 backdrop-blur-xl rounded-full shadow-2xl flex items-center justify-around py-3 px-2 border border-primary/5">
+        <button class="flex flex-col items-center gap-1 text-primary">
           <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
           <span class="text-[10px] font-bold uppercase tracking-tighter">Portal</span>
         </button>
-        <button class="flex flex-col items-center gap-1" style="color: rgba(54, 59, 16, 0.4);">
+        <button class="flex flex-col items-center gap-1 text-on-surface/40">
           <span class="material-symbols-outlined">hub</span>
           <span class="text-[10px] font-bold uppercase tracking-tighter">Nodes</span>
         </button>
-        <button class="w-10 h-10 solar-gradient rounded-full flex items-center justify-center text-white -translate-y-4 shadow-xl">
+        <button class="w-10 h-10 rounded-full flex items-center justify-center text-white -translate-y-4 shadow-xl bg-gradient-to-r from-primary to-primary-container text-on-primary-container">
           <span class="material-symbols-outlined text-xl">add</span>
         </button>
-        <button class="flex flex-col items-center gap-1" style="color: rgba(54, 59, 16, 0.4);">
+        <button class="flex flex-col items-center gap-1 text-on-surface/40">
           <span class="material-symbols-outlined">bar_chart</span>
           <span class="text-[10px] font-bold uppercase tracking-tighter">Stats</span>
         </button>
-        <button class="flex flex-col items-center gap-1" style="color: rgba(54, 59, 16, 0.4);">
+        <button class="flex flex-col items-center gap-1 text-on-surface/40">
           <span class="material-symbols-outlined">person</span>
           <span class="text-[10px] font-bold uppercase tracking-tighter">Soul</span>
         </button>

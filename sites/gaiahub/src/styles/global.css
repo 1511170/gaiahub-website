@@ -1,36 +1,199 @@
 @import "tailwindcss";
 
-/* Variables de marca — sobreescribir en cada proyecto */
-:root {
-  --brand-50: #f8fafc;
-  --brand-100: #f1f5f9;
-  --brand-200: #e2e8f0;
-  --brand-500: #64748b;
-  --brand-600: #475569;
-  --brand-700: #334155;
-  --brand-800: #1e293b;
-  --brand-900: #0f172a;
+/* ========================================
+   Gaia Hub - Solar Design System
+   ======================================== */
 
-  --font-sans: system-ui, sans-serif;
-  --font-display: system-ui, sans-serif;
+/* Color Palette - Solar/Ethereal Theme */
+:root {
+  /* Primary - Solar Gold */
+  --color-primary: #776300;
+  --color-primary-dim: #695700;
+  --color-primary-container: #ffd709;
+  --color-primary-fixed: #ffd709;
+  --color-primary-fixed-dim: #efc900;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #5b4b00;
+  --color-on-primary-fixed: #453900;
+  --color-on-primary-fixed-variant: #665500;
+  --color-inverse-primary: #ffd709;
+  --color-surface-tint: #776300;
+  
+  /* Secondary - Regenerative Green */
+  --color-secondary: #00743a;
+  --color-secondary-dim: #006632;
+  --color-secondary-container: #86fea7;
+  --color-secondary-fixed: #86fea7;
+  --color-secondary-fixed-dim: #78ef9a;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #00612f;
+  --color-on-secondary-fixed: #004c23;
+  --color-on-secondary-fixed-variant: #006c35;
+  
+  /* Tertiary - Wisdom Purple */
+  --color-tertiary: #8e00fd;
+  --color-tertiary-dim: #7d00e1;
+  --color-tertiary-container: #d0a7ff;
+  --color-tertiary-fixed: #d0a7ff;
+  --color-tertiary-fixed-dim: #c695ff;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #500092;
+  --color-on-tertiary-fixed: #31005e;
+  --color-on-tertiary-fixed-variant: #5c00a7;
+  
+  /* Surface Colors */
+  --color-background: #fefee5;
+  --color-on-background: #363b10;
+  --color-surface: #fefee5;
+  --color-on-surface: #363b10;
+  --color-on-surface-variant: #626838;
+  --color-inverse-surface: #0e0f03;
+  --color-inverse-on-surface: #9e9e88;
+  
+  /* Surface Containers */
+  --color-surface-variant: #e7edb1;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #fafcda;
+  --color-surface-container: #f4f7ce;
+  --color-surface-container-high: #eef2bf;
+  --color-surface-container-highest: #e7edb1;
+  --color-surface-dim: #e1e8a2;
+  --color-surface-bright: #fefee5;
+  
+  /* Utility Colors */
+  --color-outline: #7f8452;
+  --color-outline-variant: #b8be86;
+  --color-error: #b23d21;
+  --color-error-dim: #821a01;
+  --color-error-container: #fa7150;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #671200;
+  
+  /* Brand Aliases for Tailwind */
+  --brand-50: #fefee5;
+  --brand-100: #fafcda;
+  --brand-200: #f4f7ce;
+  --brand-500: #776300;
+  --brand-600: #695700;
+  --brand-700: #5b4b00;
+  --brand-800: #453900;
+  --brand-900: #363b10;
+  
+  /* Typography */
+  --font-sans: 'Manrope', system-ui, sans-serif;
+  --font-display: 'Epilogue', system-ui, sans-serif;
 }
 
-/* Reset mínimo */
+/* Reset and Base Styles */
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--color-background);
 }
 
 body {
   font-family: var(--font-sans);
-  color: var(--brand-900);
+  color: var(--color-on-surface);
+  background-color: var(--color-background);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Utilities compartidas entre sitios KINTO */
+/* Typography Classes */
+.font-headline {
+  font-family: 'Epilogue', sans-serif;
+}
+
+.font-body {
+  font-family: 'Manrope', sans-serif;
+}
+
+.font-label {
+  font-family: 'Manrope', sans-serif;
+}
+
+/* Material Symbols Outlined */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+/* Solar Gradient */
+.solar-gradient {
+  background: linear-gradient(135deg, #776300 0%, #ffd709 100%);
+}
+
+/* Glass Effect */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Ethereal Shadow */
+.ethereal-shadow {
+  box-shadow: 0 40px 60px -20px rgba(54, 59, 16, 0.06);
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-container-low);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
+}
+
+/* Focus Styles */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Link Styles */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Button Reset */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Image Handling */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Utility Classes */
 .container-site {
   width: 100%;
   max-width: 1200px;
@@ -43,9 +206,33 @@ body {
   padding-bottom: 5rem;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .section-py {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
+  
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Animation Utilities */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
 }
