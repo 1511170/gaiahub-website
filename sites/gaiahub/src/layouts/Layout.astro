@@ -114,8 +114,13 @@ const alternates = getLocales()
   <body class="font-body selection:bg-primary-container selection:text-on-primary-container">
     <slot />
     
-    <!-- Language Toggle (floating on mobile) -->
+    <!-- Language Toggle (floating on mobile + desktop visible) -->
     <LanguageToggle currentLocale={locale} currentPath={Astro.url.pathname} alternates={alternates} sticky />
+    
+    <!-- Desktop Language Toggle (in navbar area) -->
+    <div class="fixed top-24 right-6 z-40 hidden lg:block">
+      <LanguageToggle currentLocale={locale} currentPath={Astro.url.pathname} alternates={alternates} />
+    </div>
     
     <!-- Floating Action Buttons -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">

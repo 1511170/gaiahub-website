@@ -1,0 +1,321 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { t } from '@site/i18n';
+
+const locale = 'es';
+const i18n = t(locale);
+---
+
+<Layout 
+  title={i18n.home.meta_title}
+  description={i18n.home.meta_description}
+  keywords={["economía regenerativa", "Gaia", "commons", "biorregiones", "marketplace regenerativo", "plataforma de coordinación", "ecosistema regenerativo"]}
+  schemaType={["Organization", "WebSite"]}
+>
+  
+  <!-- Top Navigation Shell -->
+  <nav class="fixed top-0 w-full z-50 bg-[#fefee5]/80 backdrop-blur-xl shadow-[0_40px_60px_-5px_rgba(54,59,16,0.06)]">
+    <div class="flex justify-between items-center max-w-[1618px] mx-auto px-6 lg:px-[5.5rem] h-24">
+      <a href="/es/" class="text-3xl font-black text-primary px-6 font-headline tracking-tight">
+        Gaia
+      </a>
+      <div class="hidden md:flex items-center gap-12 font-headline tracking-tight font-bold uppercase text-sm">
+        <a class="text-primary border-b-2 border-primary pb-1" href="/es/">Inicio</a>
+        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/es/hub">Hub</a>
+        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/es/market">Market</a>
+        <a class="text-on-surface/70 hover:text-on-surface transition-colors" href="/es/commons">Commons</a>
+        <div class="relative group">
+          <a class="text-on-surface/70 hover:text-on-surface transition-colors flex items-center gap-1" href="/es/commons">
+            Impact
+            <span class="material-symbols-outlined text-sm">expand_more</span>
+          </a>
+          <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div class="bg-white/95 backdrop-blur-xl rounded-xl shadow-xl border border-outline/10 py-2 min-w-[180px]">
+              <a class="block px-4 py-2 text-on-surface/70 hover:text-primary hover:bg-surface-container transition-colors text-xs" href="/es/commons/impact-fund/">Impact Fund</a>
+              <a class="block px-4 py-2 text-on-surface/70 hover:text-primary hover:bg-surface-container transition-colors text-xs" href="/es/commons/impact-hub/">Impact Hub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="#comunidad" class="bg-primary text-white px-6 py-3 rounded-full font-headline font-bold text-sm uppercase tracking-wider hover:opacity-90 transition-all scale-95 active:scale-90">
+          Únete
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col justify-center px-6 lg:px-[5.5rem] pt-32 pb-16 overflow-hidden">
+      <div class="absolute top-0 right-0 w-full h-full -z-10 opacity-20 pointer-events-none">
+        <div class="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] rounded-full bg-primary-container blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-secondary-container blur-[100px]"></div>
+      </div>
+      <div class="max-w-[1618px] mx-auto w-full">
+        <div class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-8">
+          Ecosistema Regenerativo Global
+        </div>
+        <h1 class="font-headline text-5xl md:text-7xl lg:text-8xl font-black text-on-surface leading-[0.95] tracking-tighter mb-8 max-w-5xl">
+          La infraestructura para una civilización que <span class="text-primary italic">regenera</span>.
+        </h1>
+        <p class="text-xl md:text-2xl text-on-surface/70 max-w-2xl font-light leading-relaxed mb-12">
+          Personas, proyectos y comunidades coordinándose para restaurar la Tierra a través de sistemas vivos y tecnología consciente.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6">
+          <a href="#triada" class="solar-gradient px-10 py-5 rounded-full text-white font-headline font-bold text-lg hover:opacity-90 transition-all scale-95 active:scale-90 shadow-xl text-center">
+            Descubre Gaia
+          </a>
+          <a href="#comunidad" class="bg-surface-container-highest px-10 py-5 rounded-full text-on-surface font-headline font-bold text-lg hover:bg-surface-container-high transition-all text-center">
+            Únete a la Comunidad
+          </a>
+        </div>
+      </div>
+      <!-- Asymmetric Hero Image Overlap -->
+      <div class="mt-24 ml-auto w-full md:w-[61.8%] aspect-[1.618/1] rounded-l-2xl overflow-hidden ethereal-shadow relative">
+        <img 
+          class="w-full h-full object-cover" 
+          alt="Sustainable community integrated into rainforest" 
+          src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2026&auto=format&fit=crop"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
+      </div>
+    </section>
+
+    <!-- Concept Section: ¿Qué es Gaia? -->
+    <section class="py-[5.5rem] px-6 lg:px-[5.5rem] bg-surface-container">
+      <div class="max-w-[1618px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.618fr] gap-16 items-center">
+        <div class="space-y-8">
+          <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-black text-on-surface leading-tight">
+            No es una empresa.<br/>
+            No es una plataforma.<br/>
+            <span class="text-secondary-dim">Es un organismo vivo.</span>
+          </h2>
+          <p class="text-xl text-on-surface/80 leading-relaxed">
+            Tres componentes interdependientes que juntos hacen lo que ninguno podría solo. Diseñados bajo principios de biomímesis para escalar el impacto planetario.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="aspect-square bg-surface-container-high rounded-xl p-8 flex flex-col justify-end ethereal-shadow border-l-4 border-primary">
+            <span class="material-symbols-outlined text-4xl mb-4 text-primary" style="font-variation-settings: 'FILL' 1;">eco</span>
+            <h4 class="font-headline font-bold uppercase tracking-tight">Regeneración</h4>
+          </div>
+          <div class="aspect-[1.618/1] bg-surface-container-highest rounded-xl p-8 flex flex-col justify-end shadow-sm mt-8">
+            <span class="material-symbols-outlined text-4xl mb-4 text-secondary-dim">hub</span>
+            <h4 class="font-headline font-bold uppercase tracking-tight">Coordinación</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Triad: La Triada -->
+    <section id="triada" class="py-[5.5rem] px-6 lg:px-[5.5rem]">
+      <div class="max-w-[1618px] mx-auto">
+        <div class="text-center mb-24">
+          <h2 class="font-headline text-4xl md:text-5xl lg:text-7xl font-black uppercase tracking-tighter mb-4">Tres órganos. Un solo cuerpo.</h2>
+          <div class="h-1 w-24 bg-primary mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          <!-- Gaia Commons -->
+          <a href="/commons" class="group relative bg-surface-container-low p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block">
+            <div class="absolute top-0 right-0 p-8 text-on-surface/10 font-black text-6xl font-headline">01</div>
+            <span class="material-symbols-outlined text-5xl text-secondary-dim mb-8" style="font-variation-settings: 'FILL' 1;">favorite</span>
+            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">Gaia Commons</h3>
+            <p class="text-secondary-dim font-headline font-bold uppercase tracking-widest text-sm mb-6">El Alma</p>
+            <p class="text-on-surface/70 leading-relaxed mb-8">Gobernanza, principios y capital estratégico. Custodia los valores, distribuye los fondos y alinea todo con la regeneración.</p>
+            <div class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm group-hover:gap-4 transition-all text-secondary-dim">
+              Explorar Commons <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+          </a>
+          <!-- Gaia Hub -->
+          <a href="/hub" class="group relative bg-surface-container-high p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block">
+            <div class="absolute top-0 right-0 p-8 text-on-surface/10 font-black text-6xl font-headline">02</div>
+            <span class="material-symbols-outlined text-5xl text-primary mb-8" style="font-variation-settings: 'FILL' 1;">network_node</span>
+            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">Gaia Hub</h3>
+            <p class="text-primary font-headline font-bold uppercase tracking-widest text-sm mb-6">El Sistema Nervioso</p>
+            <p class="text-on-surface/70 leading-relaxed mb-8">La plataforma digital que hace visible la red, conecta actores y coordina colaboración a escala global.</p>
+            <div class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm group-hover:gap-4 transition-all text-primary">
+              Unirse al Hub <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+          </a>
+          <!-- Gaia Market -->
+          <a href="/market" class="group relative bg-surface-container-highest p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block">
+            <div class="absolute top-0 right-0 p-8 text-on-surface/10 font-black text-6xl font-headline">03</div>
+            <span class="material-symbols-outlined text-5xl text-secondary mb-8" style="font-variation-settings: 'FILL' 1;">storefront</span>
+            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">Gaia Market</h3>
+            <p class="text-secondary font-headline font-bold uppercase tracking-widest text-sm mb-6">El Sistema Circulatorio</p>
+            <p class="text-on-surface/70 leading-relaxed mb-8">El marketplace donde cada transacción nutre al ecosistema. Economía que regenera.</p>
+            <div class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm group-hover:gap-4 transition-all text-secondary">
+              Ir al Market <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flow Section: Cómo funciona -->
+    <section id="como-funciona" class="py-[5.5rem] lg:py-[7rem] px-6 lg:px-[5.5rem] bg-surface">
+      <div class="max-w-[1618px] mx-auto">
+        <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl font-black text-center mb-20">Cada acción alimenta al ecosistema</h2>
+        <div class="relative flex flex-col md:flex-row justify-between items-center gap-6 lg:gap-4 px-4 lg:px-8">
+          <!-- Invisible Connector Line for Web -->
+          <div class="hidden md:block absolute top-1/2 left-0 w-full h-px border-t border-dashed border-primary-container -z-0"></div>
+          
+          <div class="relative z-10 flex flex-col items-center text-center max-w-[180px]">
+            <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg mb-6 border-2 border-primary-container">
+              <span class="material-symbols-outlined text-primary">shopping_bag</span>
+            </div>
+            <h4 class="font-headline font-bold text-sm uppercase mb-2">Actividad en Market</h4>
+          </div>
+          
+          <span class="material-symbols-outlined text-primary-container md:rotate-0 rotate-90">arrow_forward_ios</span>
+          
+          <div class="relative z-10 flex flex-col items-center text-center max-w-[180px]">
+            <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg mb-6 border-2 border-primary-container">
+              <span class="material-symbols-outlined text-primary">volunteer_activism</span>
+            </div>
+            <h4 class="font-headline font-bold text-sm uppercase mb-2">Contribución al común</h4>
+          </div>
+          
+          <span class="material-symbols-outlined text-primary-container md:rotate-0 rotate-90">arrow_forward_ios</span>
+          
+          <div class="relative z-10 flex flex-col items-center text-center max-w-[180px]">
+            <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg mb-6 border-2 border-primary-container">
+              <span class="material-symbols-outlined text-primary">trending_up</span>
+            </div>
+            <h4 class="font-headline font-bold text-sm uppercase mb-2">Capital estratégico</h4>
+          </div>
+          
+          <span class="material-symbols-outlined text-primary-container md:rotate-0 rotate-90">arrow_forward_ios</span>
+          
+          <div class="relative z-10 flex flex-col items-center text-center max-w-[180px]">
+            <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg mb-6 border-2 border-primary-container">
+              <span class="material-symbols-outlined text-primary">public</span>
+            </div>
+            <h4 class="font-headline font-bold text-sm uppercase mb-2">Impacto real</h4>
+          </div>
+          
+          <span class="material-symbols-outlined text-primary-container md:rotate-0 rotate-90">all_inclusive</span>
+          
+          <div class="relative z-10 flex flex-col items-center text-center max-w-[100px]">
+            <div class="w-16 h-16 rounded-full solar-gradient flex items-center justify-center shadow-xl mb-6">
+              <span class="material-symbols-outlined text-white">auto_awesome</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Call: Cierre -->
+    <section class="relative py-[7rem] lg:py-[10rem] px-6 lg:px-[5.5rem] overflow-hidden">
+      <div class="absolute inset-0 -z-10">
+        <img 
+          class="w-full h-full object-cover opacity-10" 
+          alt="Mountain peak at sunrise" 
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop"
+        />
+      </div>
+      <div class="max-w-[1618px] mx-auto text-center">
+        <h2 class="font-headline text-4xl md:text-6xl lg:text-7xl font-black text-on-surface mb-8 tracking-tighter">
+          Un organismo <br/><span class="text-primary italic">regenerativo</span> planetario.
+        </h2>
+        <p class="text-xl md:text-2xl text-on-surface/80 max-w-2xl mx-auto mb-16 font-light">
+          No es utopía. Es diseño. Y ya está en marcha. El futuro no se espera, se cultiva.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+          <a href="#comunidad" class="solar-gradient px-12 py-6 rounded-full text-white font-headline font-bold text-xl hover:opacity-90 transition-all scale-95 active:scale-90 shadow-2xl text-center">
+            Únete al Ecosistema
+          </a>
+          <a href="#comunidad" class="bg-surface-container-highest px-12 py-6 rounded-full text-on-surface font-headline font-bold text-xl hover:bg-surface-container-high transition-all text-center">
+            Agenda una Llamada
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comunidad Section: WhatsApp + Telegram -->
+    <section id="comunidad" class="py-[5.5rem] px-6 lg:px-[5.5rem] bg-surface-container-low">
+      <div class="max-w-[1000px] mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl font-black tracking-tight mb-4 text-on-surface">
+            Conecta con la comunidad
+          </h2>
+          <p class="font-body text-lg text-on-surface/60 max-w-xl mx-auto">
+            Únete a nuestras comunidades activas. Comparte, aprende y colabora con otros agentes de regeneración.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- WhatsApp -->
+          <a href="https://whatsapp.com/channel/0029VbCY4kLIiRozv7gGVN3L" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-2xl p-8 lg:p-10 ethereal-shadow hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center w-full max-w-md mx-auto">
+            <div class="w-20 h-20 rounded-2xl bg-[#25D366]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-10 h-10 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+            </div>
+            <h3 class="font-headline text-2xl font-bold mb-2 text-on-surface">WhatsApp</h3>
+            <p class="text-on-surface/60 mb-6">Canal de difusión. Noticias, actualizaciones y contenido exclusivo.</p>
+            <div class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm text-[#25D366] group-hover:gap-4 transition-all">
+              Unirse al canal <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+          </a>
+          
+          <!-- Telegram -->
+          <a href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-2xl p-8 lg:p-10 ethereal-shadow hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center w-full max-w-md mx-auto">
+            <div class="w-20 h-20 rounded-2xl bg-[#0088cc]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-10 h-10 text-[#0088cc]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+              </svg>
+            </div>
+            <h3 class="font-headline text-2xl font-bold mb-2 text-on-surface">Telegram</h3>
+            <p class="text-on-surface/60 mb-6">Grupo de la comunidad. Networking, recursos y colaboración entre pares.</p>
+            <div class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm text-[#0088cc] group-hover:gap-4 transition-all">
+              Unirse al grupo <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full py-[5.5rem] bg-surface-container">
+    <div class="max-w-[1618px] mx-auto grid grid-cols-1 md:grid-cols-[1.618fr_1fr] gap-12 px-6 lg:px-[5.5rem]">
+      <div class="space-y-8">
+        <div class="font-headline font-bold text-primary text-2xl tracking-tight">
+          Gaia Ecosystem
+        </div>
+        <p class="font-body text-sm leading-relaxed text-on-surface/60 max-w-sm">
+          Infraestructura para una civilización regenerativa. Un ecosistema descentralizado de coordinación planetaria.
+        </p>
+        <p class="font-body text-sm text-on-surface/40">
+          © 2026 Gaia Ecosystem.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-8 font-body text-sm">
+        <div class="flex flex-col gap-4">
+          <span class="font-bold text-primary uppercase tracking-wider text-xs">Explorar</span>
+          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/hub">Gaia Hub</a>
+          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/market">Gaia Market</a>
+          <a class="text-on-surface/60 hover:text-primary transition-colors" href="/commons">Gaia Commons</a>
+        </div>
+        <div class="flex flex-col gap-4">
+          <span class="font-bold text-primary uppercase tracking-wider text-xs">Comunidad</span>
+          <a class="text-on-surface/60 hover:text-primary transition-colors" href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank">Telegram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .solar-gradient {
+    background: linear-gradient(135deg, #776300 0%, #ffd709 100%);
+  }
+  .ethereal-shadow {
+    box-shadow: 0 40px 60px -5px rgba(54, 59, 16, 0.06);
+  }
+</style>
