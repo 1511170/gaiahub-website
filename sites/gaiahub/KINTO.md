@@ -1,19 +1,53 @@
 # Gaia Hub - Guía del Proyecto
 
 > **Dominio**: gaiahub.co  
-> **CMS**: cms.gaiahub.co (oculto)  
-> **Tipo**: Landing page corporativa + plataforma de gestión digital
+> **Tipo**: Landing page del Ecosistema Gaia - Plataforma de Coordinación Digital  
+> **Design System**: Solar/Ethereal Theme - Material Design 3
 
 ---
 
-## 🎯 Objetivo
+## 🎯 Identidad del Proyecto
 
-Landing page profesional para Gaia Hub que comunica:
-- La propuesta de valor de la plataforma
-- Servicios disponibles
-- Proceso de trabajo
-- Testimonios de clientes
-- Formulario de contacto
+**Gaia Hub** es el sistema operativo digital del Ecosistema Gaia - una meta-plataforma que permite a la red verse a sí misma, conectarse, coordinarse y evolucionar.
+
+### El Triad de Gaia
+
+1. **Gaia Hub** (Nervous System) - Coordinación digital y matchmaking
+2. **Gaia Market** (Circulatory) - Marketplace regenerativo  
+3. **Gaia Commons** (Soul) - Marco constitucional y gobernanza
+
+Plus:
+- **Gaia Impact Fund** - Fondo madre para regeneración
+- **Gaia Impact Hub** - Orquestación e incubación
+
+---
+
+## 🎨 Design System
+
+### Paleta de Colores
+
+```css
+--primary: #776300           /* Solar Gold */
+--primary-container: #ffd709  /* Bright Solar */
+--secondary: #00743a          /* Regenerative Green */
+--secondary-container: #86fea7
+--tertiary: #8e00fd           /* Wisdom Purple */
+--tertiary-container: #d0a7ff
+--background: #fefee5         /* Light Solar Background */
+--on-surface: #363b10         /* Deep Olive Text */
+```
+
+### Tipografía
+
+- **Headlines**: Epilogue (700-900)
+- **Body**: Manrope (300-800)
+- **Icons**: Material Symbols Outlined
+
+### Efectos
+
+- `ethereal-shadow`: Sombras suaves difuminadas
+- `glass-panel`: Efecto vidrio esmerilado
+- `solar-gradient`: Gradiente dorado solar
 
 ---
 
@@ -22,67 +56,59 @@ Landing page profesional para Gaia Hub que comunica:
 ```json
 {
   "skills": [
-    "cms-sveltia",
-    "seo-ai-citations", 
-    "testimonials",
-    "contact-form",
-    "webflow-effects",
-    "blog"
+    "cms-sveltia",           /* Panel de admin */
+    "seo-ai-citations",      /* Schema.org, meta tags */
+    "testimonials",          /* Testimonios con schema */
+    "contact-form",          /* Formulario de contacto */
+    "webflow-effects",       /* Animaciones GSAP */
+    "blog"                   /* Sistema de blog */
   ]
 }
 ```
 
 ---
 
-## 📁 Estructura del Sitio
+## 📁 Secciones de la Landing
 
-```
-sites/gaiahub/
-├── src/
-│   ├── pages/
-│   │   └── index.astro      # Landing page principal
-│   ├── layouts/
-│   │   └── Layout.astro     # Layout base con SEO
-│   └── content/             # Contenido editable
-│       ├── blog/            # Posts del blog
-│       ├── pages/           # Páginas editables
-│       └── testimonials/    # Testimonios
-├── config/
-│   └── site.config.ts       # Configuración del sitio
-└── skills-active.json       # Skills activas
-```
+1. **Navigation** - Sticky nav con glass effect
+2. **Hero** - "The Digital Nervous System" con CTA
+3. **Stats** - Métricas del ecosistema (4 cards)
+4. **The Triad** - Gaia Hub, Market, Commons (3 cards grandes)
+5. **Core Functions** - 6 funciones de la plataforma
+6. **Impact Fund** - Sección del fondo con stats flotantes
+7. **Ecosystem Pulse** - Bento grid con datos en vivo
+8. **Testimonials** - Stewards del ecosistema
+9. **CTA** - "Join the regenerative organism"
+10. **Contact** - Formulario de contacto
+11. **Footer** - Links y navegación
+12. **Floating Nav** - Sidebar (desktop) / Bottom bar (mobile)
 
 ---
 
-## 🎨 Secciones de la Landing
+## 🌐 Arquitectura de Contenido
 
-1. **Hero** - Value proposition principal con CTA
-2. **Servicios** - Grid de 6 servicios clave
-3. **Proceso** - 4 pasos de trabajo
-4. **Testimonios** - Carrusel de clientes
-5. **CTA** - Llamada a la acción final
-6. **Contacto** - Formulario de contacto
-7. **Footer** - Links y navegación
+### URLs Principales
+
+- `/` - Home Portal
+- `/hub` - Gaia Hub Platform
+- `/market` - Gaia Marketplace
+- `/commons` - Gaia Commons Framework
+- `/fund` - Gaia Impact Fund
+- `/incubation` - Impact Hub Incubation
+
+### CMS Collections
+
+- **blog/** - Posts del ecosistema
+- **pages/** - Páginas editables
+- **testimonials/** - Testimonios de stewards
+- **projects/** - Proyectos regenerativos
+- **team/** - Miembros del equipo
 
 ---
 
-## 📝 Contenido Editable via CMS
-
-- **Blog**: Posts, categorías, tags
-- **Testimonios**: Nuevos testimonios de clientes
-- **Pages**: Páginas adicionales
-
----
-
-## 🚀 Comandos de Desarrollo
+## 🚀 Comandos
 
 ```bash
-# Ver skills disponibles
-node scripts/skill-list.js
-
-# Agregar nueva skill
-node scripts/skill-add.js nombre-skill
-
 # Desarrollo
 npm run dev
 
@@ -91,12 +117,20 @@ npm run build
 
 # Preview
 npm run preview
+
+# Skills
+node scripts/skill-list.js
+node scripts/skill-add.js [nombre]
 ```
 
 ---
 
-## 📚 Documentación
+## 📚 Referencias
 
+- [Documentación Gaia Economy](../../docs/Gaia%20Economy%20Layer%20-%20Commonomics%20&%20Tokenomics%20Explained%20In-Depth.md)
 - [Guía KINTO](../../KINTO.md)
 - [Catálogo de Skills](../../SKILLS_CATALOG.md)
-- [Generación con IA](../../docs/AI_GENERATION.md)
+
+---
+
+**Gaia Hub**: The Digital Coordination Platform for Regenerative Ecosystems
