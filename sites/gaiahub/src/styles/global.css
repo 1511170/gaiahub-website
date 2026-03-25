@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 /* ========================================
-   Tailwind 4 Theme Configuration
+   Gaia Ecosystem - Solar Design System
    ======================================== */
 
 @theme {
-  /* Colors - Solar Design System */
+  /* Primary - Solar Gold */
   --color-primary: #776300;
   --color-primary-dim: #695700;
   --color-primary-container: #ffd709;
@@ -16,6 +16,7 @@
   --color-on-primary-fixed: #453900;
   --color-on-primary-fixed-variant: #665500;
   
+  /* Secondary - Regenerative Green */
   --color-secondary: #00743a;
   --color-secondary-dim: #006632;
   --color-secondary-container: #86fea7;
@@ -26,6 +27,7 @@
   --color-on-secondary-fixed: #004c23;
   --color-on-secondary-fixed-variant: #006c35;
   
+  /* Tertiary - Wisdom Purple */
   --color-tertiary: #8e00fd;
   --color-tertiary-dim: #7d00e1;
   --color-tertiary-container: #d0a7ff;
@@ -36,6 +38,7 @@
   --color-on-tertiary-fixed: #31005e;
   --color-on-tertiary-fixed-variant: #5c00a7;
   
+  /* Surface Colors */
   --color-background: #fefee5;
   --color-on-background: #363b10;
   --color-surface: #fefee5;
@@ -47,22 +50,23 @@
   --color-inverse-surface: #0e0f03;
   --color-inverse-on-surface: #9e9e88;
   
+  /* Surface Containers */
   --color-surface-container-lowest: #ffffff;
   --color-surface-container-low: #fafcda;
   --color-surface-container: #f4f7ce;
   --color-surface-container-high: #eef2bf;
   --color-surface-container-highest: #e7edb1;
   
+  /* Outline & Error */
   --color-outline: #7f8452;
   --color-outline-variant: #b8be86;
-  
   --color-error: #b23d21;
   --color-error-dim: #821a01;
   --color-error-container: #fa7150;
   --color-on-error: #ffffff;
   --color-on-error-container: #671200;
   
-  /* Font Families */
+  /* Typography */
   --font-headline: 'Epilogue', system-ui, sans-serif;
   --font-body: 'Manrope', system-ui, sans-serif;
   --font-label: 'Manrope', system-ui, sans-serif;
@@ -70,14 +74,9 @@
   /* Border Radius */
   --radius-sm: 0.5rem;
   --radius-md: 1rem;
-  --radius-lg: 1.5rem;
-  --radius-xl: 2rem;
-  --radius-2xl: 2.5rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
   --radius-full: 9999px;
-  
-  /* Shadows */
-  --shadow-ethereal: 0 40px 60px -20px rgba(54, 59, 16, 0.06);
-  --shadow-glass: 0 8px 32px rgba(54, 59, 16, 0.08);
 }
 
 /* ========================================
@@ -102,6 +101,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* ========================================
@@ -130,8 +130,38 @@ body {
 }
 
 /* ========================================
-   Custom Utilities
+   Solar Gradient
    ======================================== */
+
+.solar-gradient {
+  background: linear-gradient(135deg, #776300 0%, #ffd709 100%);
+}
+
+/* ========================================
+   Glass Effect
+   ======================================== */
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ========================================
+   Shadow Utilities
+   ======================================== */
+
+.ethereal-shadow {
+  box-shadow: 0 40px 60px -20px rgba(54, 59, 16, 0.06);
+}
+
+/* ========================================
+   Background Opacity Utilities
+   ======================================== */
+
+.bg-primary-container\/10 {
+  background-color: rgba(255, 215, 9, 0.1);
+}
 
 .bg-primary-container\/15 {
   background-color: rgba(255, 215, 9, 0.15);
@@ -149,8 +179,16 @@ body {
   background-color: rgba(255, 215, 9, 0.4);
 }
 
+.bg-primary\/5 {
+  background-color: rgba(119, 99, 0, 0.05);
+}
+
 .bg-primary\/10 {
   background-color: rgba(119, 99, 0, 0.1);
+}
+
+.bg-primary\/20 {
+  background-color: rgba(119, 99, 0, 0.2);
 }
 
 .bg-secondary-container\/20 {
@@ -181,6 +219,10 @@ body {
   background-color: rgba(244, 247, 206, 0.5);
 }
 
+.bg-surface-container-low\/50 {
+  background-color: rgba(250, 252, 218, 0.5);
+}
+
 .bg-surface-container-high\/50 {
   background-color: rgba(238, 242, 191, 0.5);
 }
@@ -189,21 +231,17 @@ body {
   background-color: rgba(231, 237, 177, 0.5);
 }
 
-.bg-primary\/5 {
-  background-color: rgba(119, 99, 0, 0.05);
+.bg-background\/80 {
+  background-color: rgba(254, 254, 229, 0.8);
 }
 
-.bg-primary\/10 {
-  background-color: rgba(119, 99, 0, 0.1);
+.bg-white\/80 {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
-.bg-primary\/20 {
-  background-color: rgba(119, 99, 0, 0.2);
-}
-
-.bg-secondary\/10 {
-  background-color: rgba(0, 116, 58, 0.1);
-}
+/* ========================================
+   Text Opacity Utilities
+   ======================================== */
 
 .text-on-surface\/30 {
   color: rgba(54, 59, 16, 0.3);
@@ -225,54 +263,28 @@ body {
   color: rgba(119, 99, 0, 0.2);
 }
 
-.text-tertiary\/20 {
-  color: rgba(142, 0, 253, 0.2);
+.text-white\/80 {
+  color: rgba(255, 255, 255, 0.8);
 }
+
+/* ========================================
+   Border Utilities
+   ======================================== */
 
 .border-primary\/5 {
   border-color: rgba(119, 99, 0, 0.05);
 }
 
-.border-on-surface\/5 {
-  border-color: rgba(54, 59, 16, 0.05);
+.border-primary\/20 {
+  border-color: rgba(119, 99, 0, 0.2);
 }
 
-/* ========================================
-   Solar Gradient
-   ======================================== */
-
-.bg-gradient-to-r.from-primary.to-primary-container {
-  background: linear-gradient(135deg, #776300 0%, #ffd709 100%);
+.border-white\/30 {
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
-.solar-gradient {
-  background: linear-gradient(135deg, #776300 0%, #ffd709 100%);
-}
-
-/* ========================================
-   Glass Effect
-   ======================================== */
-
-.glass-panel {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-.bg-background\/80 {
-  background-color: rgba(254, 254, 229, 0.8);
-}
-
-/* ========================================
-   Shadow Utilities
-   ======================================== */
-
-.shadow-ethereal {
-  box-shadow: 0 40px 60px -20px rgba(54, 59, 16, 0.06);
-}
-
-.shadow-glass {
-  box-shadow: 0 8px 32px rgba(54, 59, 16, 0.08);
+.border-white\/40 {
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* ========================================
@@ -316,66 +328,39 @@ body {
 }
 
 /* ========================================
-   Animations
+   Link Reset
    ======================================== */
 
-@keyframes fadeIn {
-  from { 
-    opacity: 0; 
-    transform: translateY(20px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  }
-}
-
-@keyframes float {
-  0%, 100% { 
-    transform: translateY(0); 
-  }
-  50% { 
-    transform: translateY(-10px); 
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* ========================================
-   Responsive
+   Button Reset
    ======================================== */
 
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
 /* ========================================
-   Container Utilities
+   Image Handling
    ======================================== */
 
-.container-site {
-  width: 100%;
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: 1.5rem;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-.section-py {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
+/* ========================================
+   Min Height Hero
+   ======================================== */
 
-@media (max-width: 768px) {
-  .section-py {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
+.min-height-\[819px\] {
+  min-height: 819px;
 }
