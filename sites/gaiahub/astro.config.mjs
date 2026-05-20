@@ -21,6 +21,7 @@ try {
 export default defineConfig({
   output: 'static',
   site: 'https://gaiahub.co',
+  trailingSlash: 'always',
   
   integrations: [],
   
