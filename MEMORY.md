@@ -76,6 +76,40 @@
 
 ---
 
+## Deploy Rules (CRITICAL)
+
+> **Rule 1:** Static deployments **ALWAYS** go to the `master` branch of `https://github.com/1511170/gaiahub-website-static.git`
+>
+> **Rule 2:** NEVER use `git init` inside `dist/` + `push --force`. This destroys the repository history.
+>
+> **Correct deploy process:**
+> ```bash
+> # 1. Build
+> cd sites/gaiahub && npm run build
+>
+> # 2. Clone the static repo (or use existing clone)
+> git clone https://github.com/1511170/gaiahub-website-static.git /tmp/static-deploy
+> cd /tmp/static-deploy
+>
+> # 3. Reset to latest master (preserves history)
+> git reset --hard origin/master
+>
+> # 4. Clean everything except .git/
+> find . -mindepth 1 -not -path './.git/*' -not -name '.git' -exec rm -rf {} +
+>
+> # 5. Copy new build
+> cp -r /path/to/dist/* .
+>
+> # 6. Commit on top of existing history
+> git add -A
+> git commit -m "deploy: static build from <commit-hash>"
+>
+> # 7. Push (force only if necessary to recover from bad state)
+> git push origin master
+> ```
+
+---
+
 ## To Do (Pending from CorreccionesSitioWeb.md)
 - [ ] **SubMenus in nav:** Gaia Network, Gaia BioLab, Gaia Commonomics, Gaia Academy, BioHabitats Network, Gaia Hub → Google Doc links.
 - [ ] **Hero CTA "Diferentes Cuerpos. Un solo EcoSistema."** — tagline + newsletter prominence.
