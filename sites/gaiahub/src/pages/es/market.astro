@@ -85,42 +85,66 @@ const i18n = t(locale);
       </div>
       <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
         <!-- Products -->
-        <div class="md:col-span-8 bg-surface-container rounded-xl p-8 lg:p-10 flex flex-col justify-between group hover:shadow-xl transition-all">
-          <div>
-            <div class="flex justify-between items-start mb-8 lg:mb-12">
-              <span class="material-symbols-outlined text-5xl text-primary">local_mall</span>
-              <span class="text-xs font-bold uppercase tracking-widest text-on-surface/40">01 / {i18n.market.products_title}</span>
+        <div class="md:col-span-8 relative rounded-xl overflow-hidden group min-h-[300px]">
+          <img 
+            alt="Products" 
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+            src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop"
+          />
+          <div class="absolute inset-0 bg-gradient-to-r from-on-surface/80 to-transparent p-8 lg:p-10 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-8 lg:mb-12">
+                <span class="material-symbols-outlined text-5xl text-white">local_mall</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-white/60">01 / {i18n.market.products_title}</span>
+              </div>
+              <h3 class="font-headline text-2xl lg:text-3xl font-bold text-white mb-4">{i18n.market.products_title}</h3>
+              <p class="text-lg text-white/80 max-w-md">{i18n.market.products_desc}</p>
             </div>
-            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">{i18n.market.products_title}</h3>
-            <p class="text-lg text-on-surface/70 max-w-md">{i18n.market.products_desc}</p>
-          </div>
-          <div class="mt-8 lg:mt-12 flex flex-wrap gap-3">
-            <span class="px-4 py-2 bg-secondary-container/50 rounded-full text-xs font-bold">{i18n.market.products_tag1}</span>
-            <span class="px-4 py-2 bg-secondary-container/50 rounded-full text-xs font-bold">{i18n.market.products_tag2}</span>
+            <div class="mt-8 flex flex-wrap items-center gap-3">
+              <span class="px-4 py-2 bg-white/20 rounded-full text-xs font-bold text-white">{i18n.market.products_tag1}</span>
+              <span class="px-4 py-2 bg-white/20 rounded-full text-xs font-bold text-white">{i18n.market.products_tag2}</span>
+              <a href="#" class="ml-auto inline-flex items-center gap-1 text-white font-headline font-bold uppercase text-xs tracking-wider hover:underline">{i18n.market.products_external}</a>
+            </div>
           </div>
         </div>
 
         <!-- Services -->
-        <div class="md:col-span-4 bg-surface-container-high rounded-xl p-8 lg:p-10 flex flex-col justify-between group hover:shadow-xl transition-all">
-          <div>
-            <div class="flex justify-between items-start mb-8 lg:mb-12">
-              <span class="material-symbols-outlined text-5xl text-secondary-dim">handshake</span>
-              <span class="text-xs font-bold uppercase tracking-widest text-on-surface/40">02 / {i18n.market.services_title}</span>
+        <div class="md:col-span-4 relative rounded-xl overflow-hidden group min-h-[300px]">
+          <img 
+            alt="Services" 
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2069&auto=format&fit=crop"
+          />
+          <div class="absolute inset-0 bg-gradient-to-r from-on-surface/80 to-transparent p-8 lg:p-10 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-8 lg:mb-12">
+                <span class="material-symbols-outlined text-5xl text-white">handshake</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-white/60">02 / {i18n.market.services_title}</span>
+              </div>
+              <h3 class="font-headline text-2xl lg:text-3xl font-bold text-white mb-4">{i18n.market.services_title}</h3>
+              <p class="text-white/80">{i18n.market.services_desc}</p>
             </div>
-            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">{i18n.market.services_title}</h3>
-            <p class="text-on-surface/70">{i18n.market.services_desc}</p>
+            <a href="#" class="mt-8 inline-flex items-center gap-1 text-white font-headline font-bold uppercase text-xs tracking-wider hover:underline">{i18n.market.services_external}</a>
           </div>
         </div>
 
         <!-- Knowledge -->
-        <div class="md:col-span-4 bg-surface-container-highest rounded-xl p-8 lg:p-10 flex flex-col justify-between group hover:shadow-xl transition-all">
-          <div>
-            <div class="flex justify-between items-start mb-8 lg:mb-12">
-              <span class="material-symbols-outlined text-5xl text-primary-dim">menu_book</span>
-              <span class="text-xs font-bold uppercase tracking-widest text-on-surface/40">03 / {i18n.market.knowledge_title}</span>
+        <div class="md:col-span-4 relative rounded-xl overflow-hidden group min-h-[300px]">
+          <img 
+            alt="Knowledge" 
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+            src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2090&auto=format&fit=crop"
+          />
+          <div class="absolute inset-0 bg-gradient-to-r from-on-surface/80 to-transparent p-8 lg:p-10 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-8 lg:mb-12">
+                <span class="material-symbols-outlined text-5xl text-white">menu_book</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-white/60">03 / {i18n.market.knowledge_title}</span>
+              </div>
+              <h3 class="font-headline text-2xl lg:text-3xl font-bold text-white mb-4">{i18n.market.knowledge_title}</h3>
+              <p class="text-white/80">{i18n.market.knowledge_desc}</p>
             </div>
-            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">{i18n.market.knowledge_title}</h3>
-            <p class="text-on-surface/70">{i18n.market.knowledge_desc}</p>
+            <a href="#" class="mt-8 inline-flex items-center gap-1 text-white font-headline font-bold uppercase text-xs tracking-wider hover:underline">{i18n.market.knowledge_external}</a>
           </div>
         </div>
 
@@ -135,6 +159,7 @@ const i18n = t(locale);
             <span class="text-xs font-bold uppercase tracking-widest text-white/60 mb-4">04 / {i18n.market.experiences_title}</span>
             <h3 class="font-headline text-2xl lg:text-3xl font-bold text-white mb-2">{i18n.market.experiences_title}</h3>
             <p class="text-white/80 max-w-sm">{i18n.market.experiences_desc}</p>
+            <a href="#" class="mt-4 inline-flex items-center gap-1 text-white font-headline font-bold uppercase text-xs tracking-wider hover:underline">{i18n.market.experiences_external}</a>
           </div>
         </div>
       </div>

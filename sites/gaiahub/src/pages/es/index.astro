@@ -156,17 +156,25 @@ function formatDate(date: Date) {
           <div class="h-1 w-24 bg-primary mx-auto"></div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 gsap-stagger">
-          <a href="/es/commons" class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/concept-regen.webp'); background-size: cover; background-position: center;">
+          <div class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/concept-regen.webp'); background-size: cover; background-position: center;">
             <div class="absolute inset-0 bg-surface-container-low/95"></div>
             <div class="absolute top-0 right-0 p-8 text-on-surface/10 font-black text-6xl font-headline">01</div>
             <span class="material-symbols-outlined text-5xl text-secondary-dim mb-8" style="font-variation-settings: 'FILL' 1;">favorite</span>
             <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">{i18n.home.triad_commons_title}</h3>
-            <p class="text-secondary-dim font-headline font-bold uppercase tracking-widest text-sm mb-6">{i18n.home.triad_commons_subtitle}</p>
-            <p class="text-on-surface/70 leading-relaxed mb-8">{i18n.home.triad_commons_desc}</p>
-            <div class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm group-hover:gap-4 transition-all text-secondary-dim">
-              {i18n.home.triad_commons_cta} <span class="material-symbols-outlined">arrow_forward</span>
+            <p class="text-secondary-dim font-headline font-bold uppercase tracking-widest text-sm mb-2">{i18n.home.triad_commons_system}</p>
+            <p class="text-on-surface/70 leading-relaxed mb-6">{i18n.home.triad_commons_desc_new}</p>
+            <div class="flex flex-wrap gap-3 mb-6">
+              <a href="/es/impact-fund/" class="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-secondary-dim/10 text-secondary-dim text-xs font-bold uppercase tracking-wider hover:bg-secondary-dim/20 transition-colors">
+                {i18n.home.triad_commons_fund_link}
+              </a>
+              <a href="/es/impact-hub/" class="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-secondary-dim/10 text-secondary-dim text-xs font-bold uppercase tracking-wider hover:bg-secondary-dim/20 transition-colors">
+                {i18n.home.triad_commons_hub_link}
+              </a>
             </div>
-          </a>
+            <a href="/es/commons" class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm group-hover:gap-4 transition-all text-secondary-dim">
+              {i18n.home.triad_commons_cta} <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </div>
           <a href="/es/hub" class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/concept-coord.webp'); background-size: cover; background-position: center;">
             <div class="absolute inset-0 bg-surface-container-high/95"></div>
             <div class="absolute top-0 right-0 p-8 text-on-surface/10 font-black text-6xl font-headline">02</div>

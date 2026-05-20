@@ -1,0 +1,154 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '@site/components/Navigation.astro';
+import Footer from '@site/components/Footer.astro';
+import { t } from '@site/i18n';
+
+const locale = 'es';
+const i18n = t(locale);
+
+// TODO: Reemplazar con compañías aliadas reales del spreadsheet
+const allies = [
+  { name: 'EcoVillage Network', tagline: 'Comunidades regenerativas mundiales', icon: 'forest' },
+  { name: 'Regen Foundation', tagline: 'Infraestructura blockchain ecológica', icon: 'hub' },
+  { name: 'Permaculture Institute', tagline: 'Educación para la restauración planetaria', icon: 'compost' },
+  { name: 'Open Collective', tagline: 'Financiamiento comunitario transparente', icon: 'groups' },
+  { name: 'Holochain', tagline: 'Tecnología regenerativa distribuida', icon: 'network_node' },
+  { name: 'SEEDS', tagline: 'Ecosistema de moneda regenerativa', icon: 'token' },
+  { name: 'Common Good', tagline: 'Redes de crédito mutuo', icon: 'account_balance' },
+  { name: 'Living Earth', tagline: 'Proyectos de restauración bioregional', icon: 'public' },
+];
+---
+
+<Layout 
+  title={i18n.allies.meta_title}
+  description={i18n.allies.meta_description}
+  keywords={["aliados Gaia", "empresas regenerativas", "red holónica", "socios ecosistema", "aliados economía regenerativa"]}
+  schemaType={["WebPage", "Organization"]}
+>
+  
+  <Navigation locale={locale} activePage="allies" />
+
+  <main class="pt-32">
+    <!-- Hero Section -->
+    <section class="px-6 lg:px-[5.5rem] max-w-[1618px] mx-auto mb-24">
+      <div class="text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center px-4 py-2 rounded-full bg-secondary-container/50 text-secondary font-semibold text-xs tracking-widest uppercase mb-8">
+          {i18n.allies.hero_badge}
+        </div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-black font-headline text-on-surface leading-[1.05] tracking-tighter mb-8">
+          {i18n.allies.hero_title}
+        </h1>
+        <p class="text-xl md:text-2xl text-on-surface/60 leading-relaxed font-light">
+          {i18n.allies.hero_subtitle}
+        </p>
+      </div>
+    </section>
+
+    <!-- Holonic Map -->
+    <section class="py-24 lg:py-32 px-6 lg:px-[5.5rem] bg-surface-container overflow-hidden">
+      <div class="max-w-[1618px] mx-auto">
+        <div class="text-center mb-20">
+          <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl font-black mb-4">{i18n.allies.map_title}</h2>
+          <p class="text-on-surface/60 text-lg max-w-xl mx-auto">{i18n.allies.map_subtitle}</p>
+        </div>
+
+        <!-- Desktop Holonic Layout -->
+        <div class="hidden lg:block relative mx-auto" style="width: 900px; height: 900px;">
+          <!-- Connection Lines (SVG) -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 900 900">
+            {allies.map((_, i) => {
+              const angle = (i / allies.length) * 360;
+              const rad = (angle * Math.PI) / 180;
+              const cx = 450;
+              const cy = 450;
+              const r = 320;
+              const x2 = cx + r * Math.sin(rad);
+              const y2 = cy - r * Math.cos(rad);
+              return <line x1={cx} y1={cy} x2={x2} y2={y2} stroke="currentColor" stroke-width="1" class="text-primary/20" stroke-dasharray="6 4" />;
+            })}
+          </svg>
+
+          <!-- Center Node: Gaia -->
+          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+            <div class="w-40 h-40 rounded-full solar-gradient flex flex-col items-center justify-center shadow-2xl border-4 border-white/20">
+              <span class="material-symbols-outlined text-5xl text-white mb-1" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+              <span class="font-headline font-black text-white text-lg">{i18n.allies.gaia_center}</span>
+              <span class="text-white/70 text-[10px] uppercase tracking-wider">{i18n.allies.gaia_tagline}</span>
+            </div>
+          </div>
+
+          <!-- Orbital Ring -->
+          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[640px] h-[640px] rounded-full border border-primary/10"></div>
+
+          <!-- Ally Nodes -->
+          {allies.map((ally, i) => {
+            const angle = (i / allies.length) * 360;
+            return (
+              <div 
+                class="absolute left-1/2 top-1/2 z-10"
+                style={`transform: rotate(${angle}deg) translateY(-320px) rotate(-${angle}deg) translateX(-50%) translateY(-50%);`}
+              >
+                <div class="group bg-white rounded-2xl p-5 shadow-lg border border-outline/5 w-52 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                  <div class="flex items-center gap-3 mb-3">
+                    <div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center flex-shrink-0">
+                      <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">{ally.icon}</span>
+                    </div>
+                    <h4 class="font-headline font-bold text-sm leading-tight">{ally.name}</h4>
+                  </div>
+                  <p class="text-xs text-on-surface/60 leading-relaxed">{ally.tagline}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <!-- Mobile/Tablet Grid Layout -->
+        <div class="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <!-- Gaia Center (Mobile) -->
+          <div class="sm:col-span-2 flex justify-center mb-8">
+            <div class="w-32 h-32 rounded-full solar-gradient flex flex-col items-center justify-center shadow-2xl border-4 border-white/20">
+              <span class="material-symbols-outlined text-4xl text-white mb-1" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+              <span class="font-headline font-black text-white text-sm">{i18n.allies.gaia_center}</span>
+            </div>
+          </div>
+          {allies.map((ally) => (
+            <div class="bg-white rounded-2xl p-5 shadow-lg border border-outline/5 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center flex-shrink-0">
+                  <span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">{ally.icon}</span>
+                </div>
+                <h4 class="font-headline font-bold text-sm leading-tight">{ally.name}</h4>
+              </div>
+              <p class="text-xs text-on-surface/60 leading-relaxed">{ally.tagline}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 lg:py-32 px-6 lg:px-[5.5rem] max-w-[1618px] mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-black font-headline tracking-tighter mb-6">
+        {i18n.allies.cta_title}
+      </h2>
+      <p class="text-xl text-on-surface/60 max-w-xl mx-auto mb-12">
+        {i18n.allies.cta_subtitle}
+      </p>
+      <a href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank" rel="noopener noreferrer" class="inline-flex px-12 py-6 rounded-full solar-gradient text-white font-headline font-black text-lg tracking-widest uppercase shadow-2xl hover:scale-105 transition-all">
+        {i18n.allies.cta_title}
+      </a>
+    </section>
+  </main>
+
+  <Footer locale={locale} />
+</Layout>
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .solar-gradient {
+    background: linear-gradient(135deg, #776300 0%, #ffd709 100%);
+  }
+</style>
