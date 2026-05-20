@@ -1,0 +1,126 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "@site/components/Navigation.astro";
+import Footer from "@site/components/Footer.astro";
+import { t } from "@site/i18n";
+
+import PageHero from "@site/components/page-sections/PageHero.astro";
+import ContentSection from "@site/components/page-sections/ContentSection.astro";
+import FeatureGrid from "@site/components/page-sections/FeatureGrid.astro";
+import DocumentSection from "@site/components/page-sections/DocumentSection.astro";
+import StatsBar from "@site/components/page-sections/StatsBar.astro";
+import CTABanner from "@site/components/page-sections/CTABanner.astro";
+import MarkdownDoc from "@site/components/page-sections/MarkdownDoc.astro";
+
+const locale = "en";
+const i18n = t(locale);
+---
+
+<Layout
+  title={i18n.confederation.meta_title}
+  description={i18n.confederation.meta_description}
+  keywords={["Gaia", "confederation", "alliance", "autonomy", "regenerative", "territories"]}
+  schemaType={["WebPage", "Organization"]}
+>
+  <Navigation locale={locale} activePage="confederation" />
+
+  <main class="pt-32">
+    <PageHero
+      badge="Great Alliance"
+      title="Autonomous territories. Shared destiny."
+      subtitle="The Gaia Confederation emerges as a systemic and regenerative response to contemporary global crises. A convergent network of autonomous cultures and territories interconnected through shared values, distributed technologies, and regenerative practices."
+      ctaPrimary={{ label: "Join the Alliance", href: "https://t.me/+1x_EVaVp-lEwN2I8" }}
+      ctaSecondary={{ label: "Read the Whitepaper", href: "#governance" }}
+      image="/images/confederation-hero.webp"
+    />
+
+    <ContentSection
+      title="Vision & Mission"
+      body={[
+        "To create a glocal network of autonomous, interdependent, and regenerative cultures and territories that operate in harmony with Mother Earth and promote the integral well-being of all beings.",
+        "We facilitate the emergence, interconnection, and strengthening of autonomous communities, using distributed technologies, regenerative practices, and holocratic governance models to catalyze the transition to a civilization based on shared abundance, planetary regeneration, and human fulfillment."
+      ]}
+      image="/images/confederation-hero.webp"
+      bg="surface-container"
+    />
+
+    <FeatureGrid
+      title="7 Core Values"
+      subtitle="The foundation of the Great Alliance of Integrity, Interdependence and Autonomy."
+      features={[
+        { icon: "gavel", title: "Integrity", description: "Ethics, transparency, and responsibility in all actions and relationships." },
+        { icon: "self_improvement", title: "Autonomy", description: "Self-determination and sovereignty of individuals and communities over their destinies." },
+        { icon: "diversity_1", title: "Diversity Harmony", description: "Celebration and appreciation of cultural, biological, and epistemological plurality." },
+        { icon: "eco", title: "Regeneration", description: "Active restoration of deteriorated natural and social ecosystems." },
+        { icon: "handshake", title: "Collaboration", description: "Synergistic cooperation for the common good and shared abundance." },
+        { icon: "favorite", title: "Kindness", description: "Cultivation of relationships based on empathy, respect, and genuine care." },
+        { icon: "hub", title: "Interdependence", description: "Recognition of the fundamental interconnection between all beings." }
+      ]}
+      columns={3}
+    />
+
+    <DocumentSection
+      id="governance"
+      title="Biomimetic Governance"
+      subtitle="The governance structure is inspired by living systems, recognizing that nature has already developed sophisticated models of decentralized, adaptive, and resilient organization."
+      blocks={[
+        {
+          heading: "Individuals (Atoms or Cells)",
+          paragraphs: ["A human being as a micro-organism of Gaia. Each person is recognized as an autonomous and interdependent agent, capable of self-governance and unique contribution to the social ecosystem."]
+        },
+        {
+          heading: "Circles, Holons & Spheres (Organs)",
+          paragraphs: ["Families, clans, teams or groups of 3 to 13 people. These basic units of social organization promote high-trust relationships, mutual support, and intimate collaboration."]
+        },
+        {
+          heading: "Communities, Hubs & Agencies (Clusters)",
+          paragraphs: ["Groups of 13 to 150 people (up to 16 sub-circles). This level roughly corresponds to Dunbar's number, reflecting the human cognitive limit for maintaining stable social relationships."]
+        },
+        {
+          heading: "BioRegions, Guilds & Federations",
+          paragraphs: ["Networks formed of 144 to 10,000 individuals and/or organizations (up to 100 spheres). Specialized structures emerge that fulfill specific functions within the broader social ecosystem."]
+        },
+        {
+          heading: "Confederations (Macro-Organism / Gaia)",
+          paragraphs: ["The union and interaction between federations, forming a living and cooperative system. Multiple organs, bodies and territories collaborate in symbiosis, maintaining autonomy while contributing to the health of the whole."]
+        }
+      ]}
+      bg="surface-container-low"
+    />
+
+    <ContentSection
+      title="Context & Justification"
+      body={[
+        "We live in an era marked by unprecedented systemic challenges: climate collapse, massive species extinction, extreme economic inequality, and growing social fragmentation. These are interconnected symptoms of a civilization based on separation—from nature, from each other, and from our deeper purpose.",
+        "Conventional governance systems demonstrate an increasing inability to respond to these challenges. The Gaia Confederation recognizes that the necessary transformation will not come from incremental reforms, but from the emergence of new models of social organization that transcend geopolitical limitations and activate collective intelligence in service of planetary regeneration."
+      ]}
+      image="/images/cta-banner-bg.webp"
+      bg="surface-container"
+      reverse
+    />
+
+    <StatsBar
+      stats={[
+        { value: "5", label: "Governance Scales", icon:"account_tree" },
+        { value: "7", label: "Core Values", icon:"star" },
+        { value: "Unlimited", label: "Autonomous Territories", icon:"terrain" },
+        { value: "1", label: "Shared Destiny", icon:"public" }
+      ]}
+    />
+
+    <CTABanner
+      title="Join the Alliance"
+      subtitle="Whether as an individual, community, organization, or project—explore how you can participate in this great alliance for integrity and autonomy. There are many entry points, many ways to contribute, many paths to engage."
+      ctaLabel="Join the Alliance"
+      ctaHref="https://t.me/+1x_EVaVp-lEwN2I8"
+      external
+      bgImage="/images/cta-banner-bg.webp"
+    />
+    <MarkdownDoc
+      filePath="../../docs/@ Gaia Confederation_ Great Alliance of Integrity_Interdependence and Autonomy_ Alliance for an Autonomous and Resilient & Regenerative Territories.md"
+      title={locale === 'es' ? '📄 Leer Documento Completo' : '📄 Read Full Document'}
+    />
+  </main>
+
+  <Footer locale={locale} />
+</Layout>

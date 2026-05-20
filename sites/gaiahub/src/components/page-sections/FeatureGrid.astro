@@ -1,0 +1,39 @@
+---
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
+interface Props {
+  title?: string;
+  subtitle?: string;
+  features: Feature[];
+  columns?: 2 | 3 | 4;
+  bg?: 'surface' | 'surface-container' | 'surface-container-low';
+}
+const { title, subtitle, features, columns = 3, bg = 'surface-container-low' } = Astro.props;
+const bgClass = bg === 'surface-container' ? 'bg-surface-container' : bg === 'surface-container-low' ? 'bg-surface-container-low' : 'bg-surface';
+const gridClass = columns === 2 ? 'md:grid-cols-2' : columns === 4 ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-2 lg:grid-cols-3';
+---
+
+<section class={`${bgClass} py-20 lg:py-28 px-6 lg:px-[5.5rem] gsap-fade-up`}>
+  <div class="max-w-[1618px] mx-auto">
+    {(title || subtitle) && (
+      <div class="text-center mb-16">
+        {title && <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl font-black text-on-surface tracking-tighter mb-4">{title}</h2>}
+        {subtitle && <p class="text-xl text-on-surface/70 max-w-2xl mx-auto font-light">{subtitle}</p>}
+      </div>
+    )}
+    <div class={`grid grid-cols-1 ${gridClass} gap-8 gsap-stagger`}>
+      {features.map(f => (
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-outline/5 hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
+          <div class="w-14 h-14 rounded-xl bg-primary-container flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">{f.icon}</span>
+          </div>
+          <h3 class="font-headline text-xl font-bold text-on-surface mb-3">{f.title}</h3>
+          <p class="text-on-surface/60 leading-relaxed">{f.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

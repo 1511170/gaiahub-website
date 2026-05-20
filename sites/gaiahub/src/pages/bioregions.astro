@@ -1,0 +1,101 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "@site/components/Navigation.astro";
+import Footer from "@site/components/Footer.astro";
+import { t } from "@site/i18n";
+
+import PageHero from "@site/components/page-sections/PageHero.astro";
+import ContentSection from "@site/components/page-sections/ContentSection.astro";
+import FeatureGrid from "@site/components/page-sections/FeatureGrid.astro";
+import ProcessSteps from "@site/components/page-sections/ProcessSteps.astro";
+import StatsBar from "@site/components/page-sections/StatsBar.astro";
+import CTABanner from "@site/components/page-sections/CTABanner.astro";
+import MarkdownDoc from "@site/components/page-sections/MarkdownDoc.astro";
+
+const locale = "en";
+const i18n = t(locale);
+---
+
+<Layout
+  title={i18n.bioregions.meta_title}
+  description={i18n.bioregions.meta_description}
+  keywords={["Gaia", "bioregions", "mapping", "synergies", "network states", "communities"]}
+  schemaType={["WebPage", "Organization"]}
+>
+  <Navigation locale={locale} activePage="bioregions" />
+
+  <main class="pt-32">
+    <PageHero
+      badge="Meta-Mapping & Synergies"
+      title="Map the regenerative world."
+      subtitle="The Gaia GPS platform is a meta-mapping, synergy and matchmaking platform that coordinates knowledge, membership, trust, and financial flows across bioregions—unifying pockets of regenerative innovation into a shared network."
+      image="/images/bioregions-hero.webp"
+    />
+
+    <ContentSection
+      title="The Platform"
+      body={[
+        "In the face of ecological degradation, social polarization, and antiquated economic models, regenerative solutions and distributed, trust-based communities are emerging worldwide. Yet these efforts often remain isolated. The Gaia GPS Platform seeks to unify these pockets of innovation into a shared network of synergy.",
+        "It bridges local autonomy with global interdependence, helping define new forms of living and how we participate in different places around the world—including how we produce, consume, exchange, buy, and sell. There is a growing constellation of physical sites that champion sustainability, well-being, regeneration, and cultural vibrancy."
+      ]}
+      image="/images/ecohabitats-hero.webp"
+    />
+
+    <FeatureGrid
+      title="5 Pillars"
+      features={[
+        { icon: "map", title: "The Platform", description: "The overarching digital environment for mapping, verifying, and connecting individuals, projects, and communities across the regenerative world." },
+        { icon: "eco", title: "Integral Regeneration", description: "A structured process of ecological, social, cultural, and personal renewal inspired by permaculture, regenerative design, and spiritual traditions." },
+        { icon: "verified", title: "Certification", description: "A system ensuring participants meet regenerative standards, offering ongoing audits and credibility badges for verified entities." },
+        { icon: "account_balance", title: "CoRe Economy", description: "Mechanisms for fair exchange, rewarding positive actions, referrals, donations, and synergy creation across the ecosystem." },
+        { icon: "passport", title: "Gaia Passport", description: "A unified identity, reputation, and membership container including personal badges, skill credentials, and organizational memberships." }
+      ]}
+      columns={3}
+    />
+
+    <ContentSection
+      title="Platform Architecture"
+      body={[
+        "The GPS Platform provides a robust digital infrastructure designed to connect the regenerative world. Its architecture centers on three core capabilities that enable seamless discovery, verification, and collaboration.",
+        "The Unified Directory lists all participating projects, ventures, co-living sites, philanthropic partners, and volunteer opportunities. The Interactive Map allows users to search by location, trust rating, membership, or project type. Data Interoperability through standardized fields and open APIs lets allied networks sync data with minimal redundancy."
+      ]}
+      image="/images/bioregions-hero.webp"
+      bg="surface-container"
+      reverse
+    />
+
+    <ProcessSteps
+      title="How It Works"
+      subtitle="Three simple phases to join the regenerative network."
+      steps={[
+        { number: "1", title: "Join", description: "Create your profile, highlight your interests, and become a verified member of the Gaia ecosystem." },
+        { number: "2", title: "Verify", description: "Complete trust verification, earn your Gaia Passport, and align with the Certification of Trust standards." },
+        { number: "3", title: "Connect", description: "Explore the interactive map, find synergies, collaborate on projects, and visit place-based initiatives worldwide." }
+      ]}
+    />
+
+    <StatsBar
+      stats={[
+        { value: "5", label: "Pillars", icon: "account_tree" },
+        { value: "Global", label: "Directory", icon: "public" },
+        { value: "Trust", label: "Based", icon: "verified" },
+        { value: "Place", label: "Based", icon: "location_on" }
+      ]}
+    />
+
+    <CTABanner
+      title="Explore the regenerative map"
+      subtitle="Discover regenerative projects, communities, and opportunities across the globe. The Gaia GPS Platform is your gateway to a new era of connected regeneration."
+      ctaLabel="Join the Platform"
+      ctaHref="https://t.me/+1x_EVaVp-lEwN2I8"
+      bgImage="/images/cta-banner-bg.webp"
+      external
+    />
+    <MarkdownDoc
+      filePath="../../docs/@ Gaia GPS - Meta-Mapping, Synergies & MatchMaking Platform.md"
+      title={locale === 'es' ? '📄 Leer Documento Completo' : '📄 Read Full Document'}
+    />
+  </main>
+
+  <Footer locale={locale} />
+</Layout>

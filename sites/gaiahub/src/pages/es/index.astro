@@ -1,0 +1,494 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '@site/components/Navigation.astro';
+import Footer from '@site/components/Footer.astro';
+import GaiaContactForm from '@site/components/GaiaContactForm.astro';
+import { t } from '@site/i18n';
+import { getCollection } from 'astro:content';
+
+const locale = 'es';
+const i18n = t(locale);
+
+// Fetch testimonials and latest blog posts
+const allTestimonials = (await getCollection('testimonials'))
+  .filter(t => t.data.published)
+  .sort((a, b) => new Date(b.data.date || 0).getTime() - new Date(a.data.date || 0).getTime());
+
+const latestPosts = (await getCollection('blog'))
+  .filter(p => p.data.published)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<Layout 
+  title={i18n.home.meta_title}
+  description={i18n.home.meta_description}
+  keywords={["economía regenerativa", "Gaia", "comunes", "biorregiones", "mercado regenerativo", "plataforma de coordinación", "ecosistema regenerativo"]}
+  schemaType={["Organization", "WebSite"]}
+>
+  
+  <Navigation locale={locale} activePage="home" />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-8 px-6 lg:px-[5.5rem] overflow-hidden">
+      <div class="absolute top-0 right-0 w-full h-full -z-10 opacity-20 pointer-events-none">
+        <div class="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] rounded-full bg-primary-container blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-secondary-container blur-[100px]"></div>
+      </div>
+      <div class="max-w-[1618px] mx-auto w-full">
+        <div class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-8 gsap-fade-up">
+          {i18n.home.hero_badge}
+        </div>
+        <h1 class="hero-title font-headline text-5xl md:text-7xl lg:text-8xl font-black text-on-surface leading-[0.95] tracking-tighter mb-8 max-w-5xl">
+          {i18n.home.hero_title.split('regenera')[0]}<span class="text-primary italic">regenera</span>.
+        </h1>
+        <p class="hero-subtitle text-xl md:text-2xl text-on-surface/70 max-w-2xl font-light leading-relaxed mb-12">
+          {i18n.home.hero_subtitle}
+        </p>
+        <div class="hero-cta flex flex-col sm:flex-row gap-6">
+          <a href="#triada" class="solar-gradient px-10 py-5 rounded-full text-white font-headline font-bold text-lg hover:opacity-90 transition-all scale-95 active:scale-90 shadow-xl text-center">
+            {i18n.home.cta_discover}
+          </a>
+          <a href="#comunidad" class="bg-surface-container-highest px-10 py-5 rounded-full text-on-surface font-headline font-bold text-lg hover:bg-surface-container-high transition-all text-center">
+            {i18n.home.cta_join}
+          </a>
+        </div>
+        <!-- Newsletter CTA -->
+        <div class="mt-10 max-w-md gsap-fade-up">
+          <p class="text-sm font-bold text-on-surface/60 uppercase tracking-wider mb-3">{i18n.home.newsletter_title}</p>
+          <form class="flex gap-2" onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!');">
+            <input 
+              type="email" 
+              placeholder={i18n.home.newsletter_placeholder}
+              class="flex-1 px-5 py-3 rounded-full bg-white border border-outline/20 text-on-surface placeholder:text-on-surface/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+              required
+            />
+            <button 
+              type="submit"
+              class="solar-gradient px-6 py-3 rounded-full text-white font-headline font-bold text-sm hover:opacity-90 transition-all shadow-lg"
+            >
+              {i18n.home.newsletter_button}
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Banner -->
+    <section class="w-full px-6 lg:px-[5.5rem] mb-16 gsap-scale-in">
+      <div class="max-w-[1618px] mx-auto">
+        <div class="w-full h-[40vh] min-h-[300px] max-h-[560px] rounded-2xl overflow-hidden ethereal-shadow relative">
+          <img 
+            class="w-full h-full object-cover" 
+            alt="Comunidad sostenible integrada en la selva tropical" 
+            src="/images/hero-banner.webp"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="py-12 px-6 lg:px-[5.5rem] bg-surface gsap-fade-up">
+      <div class="max-w-[1618px] mx-auto">
+        <div class="relative max-w-2xl mx-auto">
+          <span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-on-surface/40">search</span>
+          <input 
+            type="text" 
+            placeholder={i18n.home.search_placeholder}
+            class="w-full pl-14 pr-6 py-4 rounded-full bg-surface-container-high border border-outline/10 text-on-surface placeholder:text-on-surface/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-lg shadow-sm"
+          />
+          <span class="absolute right-5 top-1/2 -translate-y-1/2 text-xs font-bold text-primary uppercase tracking-wider hidden sm:block">{i18n.home.search_title}</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concept Section -->
+    <section class="py-[5.5rem] px-6 lg:px-[5.5rem] bg-surface-container gsap-fade-up">
+      <div class="max-w-[1618px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.618fr] gap-16 items-center">
+        <div class="space-y-8">
+          <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-black text-on-surface leading-tight">
+            {i18n.home.concept_title}
+          </h2>
+          <p class="text-xl text-on-surface/80 leading-relaxed">
+            {i18n.home.concept_subtitle}
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 gsap-stagger">
+          <div class="relative aspect-[4/3] rounded-xl overflow-hidden ethereal-shadow group">
+            <img src="/images/concept-regen.webp" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Regeneración" />
+            <div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-on-surface/20"></div>
+            <div class="absolute bottom-0 left-0 p-6">
+              <span class="material-symbols-outlined text-4xl text-primary-container mb-2" style="font-variation-settings: 'FILL' 1;">eco</span>
+              <h4 class="font-headline font-bold uppercase tracking-tight text-white">{i18n.home.concept_regeneration}</h4>
+            </div>
+          </div>
+          <div class="relative aspect-[4/3] rounded-xl overflow-hidden ethereal-shadow group">
+            <img src="/images/concept-coord.webp" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Coordinación" />
+            <div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-on-surface/20"></div>
+            <div class="absolute bottom-0 left-0 p-6">
+              <span class="material-symbols-outlined text-4xl text-primary-container mb-2" style="font-variation-settings: 'FILL' 1;">hub</span>
+              <h4 class="font-headline font-bold uppercase tracking-tight text-white">{i18n.home.concept_coordination}</h4>
+            </div>
+          </div>
+          <div class="relative aspect-[4/3] rounded-xl overflow-hidden ethereal-shadow group">
+            <img src="/images/cta-banner-bg.webp" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Colaboración" />
+            <div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-on-surface/20"></div>
+            <div class="absolute bottom-0 left-0 p-6">
+              <span class="material-symbols-outlined text-4xl text-primary-container mb-2" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
+              <h4 class="font-headline font-bold uppercase tracking-tight text-white">Colaboración</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Triad -->
+    <section id="triada" class="py-[5.5rem] px-6 lg:px-[5.5rem]">
+      <div class="max-w-[1618px] mx-auto">
+        <div class="text-center mb-24 gsap-fade-up">
+          <h2 class="font-headline text-4xl md:text-5xl lg:text-7xl font-black uppercase tracking-tighter mb-4">{i18n.home.triad_title}</h2>
+          <div class="h-1 w-24 bg-primary mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 gsap-stagger">
+          <a href="/es/commons" class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/concept-regen.webp'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-surface-container-low/95"></div>
+            <div class="absolute top-0 right-0 p-8 text-on-surface/10 font-black text-6xl font-headline">01</div>
+            <span class="material-symbols-outlined text-5xl text-secondary-dim mb-8" style="font-variation-settings: 'FILL' 1;">favorite</span>
+            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">{i18n.home.triad_commons_title}</h3>
+            <p class="text-secondary-dim font-headline font-bold uppercase tracking-widest text-sm mb-6">{i18n.home.triad_commons_subtitle}</p>
+            <p class="text-on-surface/70 leading-relaxed mb-8">{i18n.home.triad_commons_desc}</p>
+            <div class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm group-hover:gap-4 transition-all text-secondary-dim">
+              {i18n.home.triad_commons_cta} <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+          </a>
+          <a href="/es/hub" class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/concept-coord.webp'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-surface-container-high/95"></div>
+            <div class="absolute top-0 right-0 p-8 text-on-surface/10 font-black text-6xl font-headline">02</div>
+            <span class="material-symbols-outlined text-5xl text-primary mb-8" style="font-variation-settings: 'FILL' 1;">network_node</span>
+            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">{i18n.home.triad_hub_title}</h3>
+            <p class="text-primary font-headline font-bold uppercase tracking-widest text-sm mb-6">{i18n.home.triad_hub_subtitle}</p>
+            <p class="text-on-surface/70 leading-relaxed mb-8">{i18n.home.triad_hub_desc}</p>
+            <div class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm group-hover:gap-4 transition-all text-primary">
+              {i18n.home.triad_hub_cta} <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+          </a>
+          <a href="/es/market" class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/cta-banner-bg.webp'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-surface-container-highest/95"></div>
+            <div class="absolute top-0 right-0 p-8 text-on-surface/10 font-black text-6xl font-headline">03</div>
+            <span class="material-symbols-outlined text-5xl text-secondary mb-8" style="font-variation-settings: 'FILL' 1;">storefront</span>
+            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">{i18n.home.triad_market_title}</h3>
+            <p class="text-secondary font-headline font-bold uppercase tracking-widest text-sm mb-6">{i18n.home.triad_market_subtitle}</p>
+            <p class="text-on-surface/70 leading-relaxed mb-8">{i18n.home.triad_market_desc}</p>
+            <div class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm group-hover:gap-4 transition-all text-secondary">
+              {i18n.home.triad_market_cta} <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flow Section -->
+    <section id="como-funciona" class="relative py-[5.5rem] lg:py-[7rem] px-6 lg:px-[5.5rem] bg-surface gsap-fade-up overflow-hidden">
+      <div class="absolute inset-0 -z-0 opacity-5">
+        <img src="/images/cta-banner-bg.webp" class="w-full h-full object-cover" alt="" />
+      </div>
+      <div class="max-w-[1618px] mx-auto">
+        <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl font-black text-center mb-20">{i18n.home.how_title}</h2>
+        <div class="relative flex flex-col md:flex-row justify-between items-center gap-6 lg:gap-4 px-4 lg:px-8 gsap-stagger">
+          <div class="hidden md:block absolute top-1/2 left-0 w-full h-px border-t border-dashed border-primary-container -z-0"></div>
+          
+          <div class="relative z-10 flex flex-col items-center text-center max-w-[180px]">
+            <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg mb-6 border-2 border-primary-container">
+              <span class="material-symbols-outlined text-primary">shopping_bag</span>
+            </div>
+            <h4 class="font-headline font-bold text-sm uppercase mb-2">{i18n.home.how_market}</h4>
+          </div>
+          
+          <span class="material-symbols-outlined text-primary-container md:rotate-0 rotate-90">arrow_forward_ios</span>
+          
+          <div class="relative z-10 flex flex-col items-center text-center max-w-[180px]">
+            <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg mb-6 border-2 border-primary-container">
+              <span class="material-symbols-outlined text-primary">volunteer_activism</span>
+            </div>
+            <h4 class="font-headline font-bold text-sm uppercase mb-2">{i18n.home.how_contribution}</h4>
+          </div>
+          
+          <span class="material-symbols-outlined text-primary-container md:rotate-0 rotate-90">arrow_forward_ios</span>
+          
+          <div class="relative z-10 flex flex-col items-center text-center max-w-[180px]">
+            <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg mb-6 border-2 border-primary-container">
+              <span class="material-symbols-outlined text-primary">trending_up</span>
+            </div>
+            <h4 class="font-headline font-bold text-sm uppercase mb-2">{i18n.home.how_capital}</h4>
+          </div>
+          
+          <span class="material-symbols-outlined text-primary-container md:rotate-0 rotate-90">arrow_forward_ios</span>
+          
+          <div class="relative z-10 flex flex-col items-center text-center max-w-[180px]">
+            <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg mb-6 border-2 border-primary-container">
+              <span class="material-symbols-outlined text-primary">public</span>
+            </div>
+            <h4 class="font-headline font-bold text-sm uppercase mb-2">{i18n.home.how_impact}</h4>
+          </div>
+          
+          <span class="material-symbols-outlined text-primary-container md:rotate-0 rotate-90">all_inclusive</span>
+          
+          <div class="relative z-10 flex flex-col items-center text-center max-w-[100px]">
+            <div class="w-16 h-16 rounded-full solar-gradient flex items-center justify-center shadow-xl mb-6">
+              <span class="material-symbols-outlined text-white">auto_awesome</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    {allTestimonials.length > 0 && (
+      <section class="py-[5.5rem] px-6 lg:px-[5.5rem] bg-surface-container-low gsap-fade-up">
+        <div class="max-w-[1618px] mx-auto">
+          <div class="text-center mb-16">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-primary-container text-on-primary-container text-xs font-bold tracking-widest uppercase mb-6">
+              Voces del Ecosistema
+            </div>
+            <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl font-black text-on-surface tracking-tighter mb-4">
+              Lo que dicen los Stewards
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 gsap-stagger">
+            {allTestimonials.map((t) => (
+              <article class="bg-white rounded-xl p-6 shadow-sm border border-outline/5 h-full flex flex-col" itemscope itemtype="https://schema.org/Review">
+                <div class="flex gap-1 mb-4" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                  <meta itemprop="ratingValue" content={t.data.rating.toString()} />
+                  <meta itemprop="bestRating" content="5" />
+                  {Array(5).fill(0).map((_, i) => (
+                    <svg class={`w-5 h-5 ${i < t.data.rating ? 'text-yellow-400' : 'text-gray-200'}`} fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <blockquote class="flex-1">
+                  <p class="text-on-surface/70 italic mb-4 text-sm leading-relaxed" itemprop="reviewBody">"{t.data.quote}"</p>
+                </blockquote>
+                <footer class="flex items-center gap-3 mt-4 pt-4 border-t border-outline/10">
+                  {t.data.image && (
+                    <img src={t.data.image} alt={t.data.author} class="w-10 h-10 rounded-full object-cover" itemprop="image" />
+                  )}
+                  <div>
+                    <cite class="not-italic font-headline font-bold text-on-surface text-sm" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                      <span itemprop="name">{t.data.author}</span>
+                    </cite>
+                    {t.data.company && (
+                      <p class="text-xs text-on-surface/50">{t.data.company}</p>
+                    )}
+                  </div>
+                </footer>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Ecosystem Gallery Section -->
+    <section class="py-[5.5rem] px-6 lg:px-[5.5rem] bg-surface-container gsap-fade-up">
+      <div class="max-w-[1618px] mx-auto">
+        <div class="text-center mb-16">
+          <div class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-6">
+            Ecosistema en Acción
+          </div>
+          <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl font-black text-on-surface tracking-tighter">
+            Futuros Regenerativos
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 gsap-stagger">
+          <div class="aspect-[3/4] rounded-xl overflow-hidden ethereal-shadow">
+            <img src="/images/bioregions-hero.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Biorregiones" />
+          </div>
+          <div class="aspect-[3/4] rounded-xl overflow-hidden ethereal-shadow mt-8 md:mt-0">
+            <img src="/images/ecohabitats-hero.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="EcoHabitats" />
+          </div>
+          <div class="aspect-[3/4] rounded-xl overflow-hidden ethereal-shadow">
+            <img src="/images/academy-hero.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Academia" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Blog Posts Section -->
+    {latestPosts.length > 0 && (
+      <section class="py-[5.5rem] px-6 lg:px-[5.5rem] bg-surface gsap-fade-up">
+        <div class="max-w-[1618px] mx-auto">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
+            <div>
+              <div class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-6">
+                Últimas Ideas
+              </div>
+              <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl font-black text-on-surface tracking-tighter">
+                Desde el Blog
+              </h2>
+            </div>
+            <a href="/es/blog" class="mt-6 md:mt-0 inline-flex items-center gap-2 font-headline font-bold text-primary uppercase tracking-wider text-sm hover:gap-4 transition-all">
+              Ver todos los posts <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 gsap-stagger">
+            {latestPosts.map((post) => (
+              <a href={`/es/blog/${post.slug}`} class="group block bg-surface-container-low rounded-xl overflow-hidden hover:-translate-y-2 transition-all duration-300 ethereal-shadow">
+                <div class="aspect-video bg-surface-container-high overflow-hidden">
+                  {post.data.image ? (
+                    <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  ) : (
+                    <div class="w-full h-full flex items-center justify-center text-6xl">🌱</div>
+                  )}
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center gap-3 text-sm text-on-surface/50 mb-3">
+                    <span class="px-2 py-0.5 bg-primary-container text-on-primary-container rounded-full text-xs font-bold uppercase">{post.data.category}</span>
+                    <span>{formatDate(post.data.date)}</span>
+                  </div>
+                  <h3 class="font-headline text-lg font-bold text-on-surface mb-2 group-hover:text-primary transition-colors line-clamp-2">{post.data.title}</h3>
+                  <p class="text-on-surface/60 text-sm leading-relaxed line-clamp-2">{post.data.excerpt}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Contact Section -->
+    <section class="py-[5.5rem] px-6 lg:px-[5.5rem] bg-surface-container gsap-fade-up">
+      <div class="max-w-[1618px] mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <div class="inline-block px-4 py-1.5 rounded-full bg-primary-container text-on-primary-container text-xs font-bold tracking-widest uppercase mb-6">
+              Conecta
+            </div>
+            <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl font-black text-on-surface tracking-tighter mb-6">
+              Inicia la Conversación
+            </h2>
+            <p class="text-xl text-on-surface/70 leading-relaxed mb-8">
+              Ya seas inversor, líder de proyecto, o simplemente curioso sobre la regeneración — queremos saber de ti.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center">
+                  <span class="material-symbols-outlined text-primary">email</span>
+                </div>
+                <div>
+                  <p class="font-headline font-bold text-on-surface">Email</p>
+                  <p class="text-on-surface/60 text-sm">hello@gaiahub.co</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary">chat</span>
+                </div>
+                <div>
+                  <p class="font-headline font-bold text-on-surface">Comunidad</p>
+                  <p class="text-on-surface/60 text-sm">Telegram y WhatsApp</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <GaiaContactForm locale={locale} />
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Call -->
+    <section class="relative py-[7rem] lg:py-[10rem] px-6 lg:px-[5.5rem] overflow-hidden gsap-fade-up">
+      <div class="absolute inset-0 -z-10">
+        <img 
+          class="w-full h-full object-cover opacity-10" 
+          alt="Cima de montaña al amanecer" 
+          src="/images/closing-bg.webp"
+        />
+      </div>
+      <div class="max-w-[1618px] mx-auto text-center">
+        <h2 class="font-headline text-4xl md:text-6xl lg:text-7xl font-black text-on-surface mb-8 tracking-tighter">
+          Un organismo regenerativo planetario.
+        </h2>
+        <p class="text-xl md:text-2xl text-on-surface/80 max-w-2xl mx-auto mb-16 font-light">
+          No es utopía. Es diseño. Y ya está en marcha. El futuro no se espera, se cultiva.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+          <a href="#comunidad" class="solar-gradient px-12 py-6 rounded-full text-white font-headline font-bold text-xl hover:opacity-90 transition-all scale-95 active:scale-90 shadow-2xl text-center">
+            Únete al Ecosistema
+          </a>
+          <a href="#comunidad" class="bg-surface-container-highest px-12 py-6 rounded-full text-on-surface font-headline font-bold text-xl hover:bg-surface-container-high transition-all text-center">
+            Agendar una Llamada
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comunidad Section -->
+    <section id="comunidad" class="py-[5.5rem] px-6 lg:px-[5.5rem] bg-surface-container-low gsap-fade-up">
+      <div class="max-w-[1000px] mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl font-black tracking-tight mb-4 text-on-surface">
+            {i18n.home.community_title}
+          </h2>
+          <p class="font-body text-lg text-on-surface/60 max-w-xl mx-auto">
+            {i18n.home.community_subtitle}
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 gsap-stagger">
+          <a href="https://whatsapp.com/channel/0029VbCY4kLIiRozv7gGVN3L" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-2xl p-8 lg:p-10 ethereal-shadow hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center w-full max-w-md mx-auto">
+            <div class="w-20 h-20 rounded-2xl bg-[#25D366]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-10 h-10 text-[#25D366]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+            </div>
+            <h3 class="font-headline text-2xl font-bold mb-2 text-on-surface">{i18n.home.whatsapp_title}</h3>
+            <p class="text-on-surface/60 mb-6">{i18n.home.whatsapp_desc}</p>
+            <div class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm text-[#25D366] group-hover:gap-4 transition-all">
+              {i18n.home.whatsapp_cta} <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+          </a>
+          
+          <a href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-2xl p-8 lg:p-10 ethereal-shadow hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center w-full max-w-md mx-auto">
+            <div class="w-20 h-20 rounded-2xl bg-[#0088cc]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <svg class="w-10 h-10 text-[#0088cc]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+              </svg>
+            </div>
+            <h3 class="font-headline text-2xl font-bold mb-2 text-on-surface">{i18n.home.telegram_title}</h3>
+            <p class="text-on-surface/60 mb-6">{i18n.home.telegram_desc}</p>
+            <div class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm text-[#0088cc] group-hover:gap-4 transition-all">
+              {i18n.home.telegram_cta} <span class="material-symbols-outlined">arrow_forward</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer locale={locale} />
+</Layout>
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .solar-gradient {
+    background: linear-gradient(135deg, #776300 0%, #ffd709 100%);
+  }
+  .ethereal-shadow {
+    box-shadow: 0 40px 60px -5px rgba(54, 59, 16, 0.06);
+  }
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

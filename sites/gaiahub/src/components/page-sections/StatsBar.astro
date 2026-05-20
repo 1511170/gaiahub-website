@@ -1,0 +1,29 @@
+---
+interface Stat {
+  value: string;
+  label: string;
+  icon?: string;
+}
+interface Props {
+  stats: Stat[];
+  bg?: 'surface' | 'surface-container' | 'surface-container-low';
+}
+const { stats, bg = 'surface-container' } = Astro.props;
+const bgClass = bg === 'surface-container' ? 'bg-surface-container' : bg === 'surface-container-low' ? 'bg-surface-container-low' : 'bg-surface';
+---
+
+<section class={`${bgClass} py-16 lg:py-20 px-6 lg:px-[5.5rem] gsap-fade-up`}>
+  <div class="max-w-[1618px] mx-auto">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 gsap-stagger">
+      {stats.map(stat => (
+        <div class="flex flex-col items-center text-center">
+          {stat.icon && (
+            <span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">{stat.icon}</span>
+          )}
+          <div class="font-headline text-4xl md:text-5xl font-black text-on-surface mb-2">{stat.value}</div>
+          <div class="text-on-surface/60 font-medium">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

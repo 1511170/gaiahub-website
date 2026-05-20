@@ -1,0 +1,127 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "@site/components/Navigation.astro";
+import Footer from "@site/components/Footer.astro";
+import { t } from "@site/i18n";
+
+import PageHero from "@site/components/page-sections/PageHero.astro";
+import ContentSection from "@site/components/page-sections/ContentSection.astro";
+import DocumentSection from "@site/components/page-sections/DocumentSection.astro";
+import StatsBar from "@site/components/page-sections/StatsBar.astro";
+import CTABanner from "@site/components/page-sections/CTABanner.astro";
+import MarkdownDoc from "@site/components/page-sections/MarkdownDoc.astro";
+
+const locale = "en";
+const i18n = t(locale);
+---
+
+<Layout
+  title={i18n.vision.meta_title}
+  description={i18n.vision.meta_description}
+  keywords={["Gaia", "vision", "regenerative", "economy", "tokenomics", "commons"]}
+  schemaType={["WebPage", "Organization"]}
+>
+  <Navigation locale={locale} activePage="vision" />
+
+  <main class="pt-32">
+    <PageHero
+      badge="The Vision"
+      title="A civilization that regenerates the Earth while regenerating itself."
+      subtitle="CoRe (Commons Regenerative Economy) is the economic coordination layer of the Gaia Ecosystem — enabling a multi-capital regenerative economy where contributions, reputation, and economic flows are transparently connected."
+      ctaPrimary={{ label: "Join the Confederation", href: "https://t.me/+1x_EVaVp-lEwN2I8" }}
+      ctaSecondary={{ label: "Read the Whitepaper", href: "#economy" }}
+      image="/images/vision-hero.webp"
+    />
+
+    <ContentSection
+      title="CoRe Tokenomics"
+      body={[
+        "Unlike traditional financial systems that prioritize financial capital alone, CoRe integrates multiple forms of value including ecological, social, cultural, knowledge, infrastructural, and financial capital.",
+        "The CoRe system allows these forms of value to circulate, be recognized, and generate regenerative impact across the Gaia Network. It is not a single token but a multi-layer economic system designed for planetary regeneration."
+      ]}
+      image="/images/vision-hero.webp"
+      bg="surface-container"
+    />
+
+    <DocumentSection
+      title="Design Philosophy"
+      subtitle="CoRe is designed according to five foundational principles that ensure economic flows remain aligned with regeneration rather than extraction."
+      blocks={[
+        {
+          heading: "Contribution before extraction",
+          paragraphs: ["Value enters the system through contribution, not speculation. Participants who contribute more receive greater access to opportunities within the ecosystem."]
+        },
+        {
+          heading: "Reputation as coordination",
+          paragraphs: ["Reputation functions as a trust layer for economic interaction. It cannot be bought, only earned through verified contributions, collaboration history, peer validation, and governance participation."]
+        },
+        {
+          heading: "Multi-capital valuation",
+          paragraphs: ["Different forms of value can coexist and interact. The system recognizes natural, social, cultural, spiritual, physical, and intellectual capital."]
+        },
+        {
+          heading: "Bioregional adaptability",
+          paragraphs: ["Local communities can create their own economic layers within the system, linking currencies to food systems, energy, land stewardship, and community services."]
+        },
+        {
+          heading: "Regenerative circulation",
+          paragraphs: ["Value flows should reinforce ecological and social regeneration. Economic cycles are inspired by natural cycles, where waste from one process becomes resources for others."]
+        }
+      ]}
+    />
+
+    <DocumentSection
+      id="economy"
+      title="Economic Layers"
+      subtitle="CoRe includes three complementary layers that work together to create a holistic regenerative economy."
+      blocks={[
+        {
+          heading: "Layer 1 — Contribution Ledger",
+          paragraphs: [
+            "This layer records contributions made by participants. Types of contributions include time, knowledge, mentorship, infrastructure, ecological restoration, innovation, financial investment, and governance participation.",
+            "Each contribution is registered in the Contribution Ledger, which feeds the reputation system."
+          ]
+        },
+        {
+          heading: "Layer 2 — Reputation Layer (Gaia Score)",
+          paragraphs: [
+            "Reputation functions as the trust layer of the ecosystem. The Gaia Score reflects verified contributions, collaboration history, peer validation, certifications, and governance participation.",
+            "Reputation unlocks access to funding opportunities, governance roles, collaboration networks, and economic participation."
+          ]
+        },
+        {
+          heading: "Layer 3 — Regenerative Value Circulation",
+          paragraphs: [
+            "Economic value circulates through multiple instruments including Mutual Credit, Regenerative Tokens representing time, ecological impact, infrastructure, and financial capital, and Bioregional Currencies linked to local ecosystems."
+          ]
+        }
+      ]}
+      bg="surface-container-low"
+    />
+
+    <StatsBar
+      stats={[
+        { value: "6", label: "Forms of Capital", icon:"diversity_3" },
+        { value: "3", label: "Economic Layers", icon:"layers" },
+        { value: "5", label: "Design Principles", icon:"emoji_objects" },
+        { value: "Infinite", label: "Regenerative Impact", icon:"cycle" }
+      ]}
+      bg="surface-container"
+    />
+
+    <CTABanner
+      title="Join the Confederation"
+      subtitle="Be part of the economic coordination layer for regenerative ecosystems worldwide. Move beyond extractive models toward a regenerative, commons-based economy."
+      ctaLabel="Join the Confederation"
+      ctaHref="https://t.me/+1x_EVaVp-lEwN2I8"
+      external
+      bgImage="/images/cta-banner-bg.webp"
+    />
+    <MarkdownDoc
+      filePath="../../docs/Gaia Economy Layer - Commonomics & Tokenomics Explained In-Depth.md"
+      title={locale === 'es' ? '📄 Leer Documento Completo' : '📄 Read Full Document'}
+    />
+  </main>
+
+  <Footer locale={locale} />
+</Layout>

@@ -1,0 +1,123 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "@site/components/Navigation.astro";
+import Footer from "@site/components/Footer.astro";
+import { t } from "@site/i18n";
+
+import PageHero from "@site/components/page-sections/PageHero.astro";
+import FeatureGrid from "@site/components/page-sections/FeatureGrid.astro";
+import DocumentSection from "@site/components/page-sections/DocumentSection.astro";
+import ProcessSteps from "@site/components/page-sections/ProcessSteps.astro";
+import StatsBar from "@site/components/page-sections/StatsBar.astro";
+import CTABanner from "@site/components/page-sections/CTABanner.astro";
+import MarkdownDoc from "@site/components/page-sections/MarkdownDoc.astro";
+
+const locale = "en";
+const i18n = t(locale);
+---
+
+<Layout
+  title={i18n.certification.meta_title}
+  description={i18n.certification.meta_description}
+>
+  <Navigation locale={locale} activePage="certification" />
+
+  <main class="pt-32">
+    <PageHero
+      badge="Trust Certification"
+      title="Certify your commitment to regeneration."
+      subtitle="A rigorous yet accessible certification process that helps organizations and individuals demonstrate and continually refine their commitment to regenerative principles."
+      image="/images/certification-hero.webp"
+    />
+
+    <FeatureGrid
+      id="why"
+      title="Why Certification Matters"
+      features={[
+        { icon: "verified", title: "Badge of Integrity", description: "Reflects adherence to regenerative values. Indicates transparency, accountability, and authenticity—traits increasingly sought by partners, customers, and the public." },
+        { icon: "trending_up", title: "Commercial Advantage", description: "Access new markets of eco-conscious consumers and ethical investors. Differentiate from competitors who lack a credible eco-trust seal and build valuable brand loyalty." },
+        { icon: "task_alt", title: "Internal Accountability", description: "Establish long-term commitments to environmental, social, economic and cultural well-being. Provide structured frameworks and key performance indicators for tracking progress." },
+        { icon: "public", title: "Global Alignment", description: "Connect with a wider network of certified entities and experts worldwide. Co-create solutions, share best practices, and learn from collective wisdom." }
+      ]}
+      columns={2}
+    />
+
+    <FeatureGrid
+      title="Core Components"
+      features={[
+        { icon: "verified", title: "Certification Badge", description: "A visible emblem confirming the entity's status as part of a global movement dedicated to regenerating life on Earth." },
+        { icon: "passport", title: "Trust Passport", description: "A novel approach to identity, trust, and reputation—created for a world where collaboration and authentic contribution are central values." },
+        { icon: "emoji_events", title: "Reward System", description: "Beyond a simple stamp of approval, diverse recognition and reward methods foster long-term engagement through multiple forms of capital." },
+        { icon: "monitoring", title: "Impact Dashboard", description: "Real-time visualizations of regenerative practices, processes, projects and contributions designed to gamify and inspire continuous improvement." }
+      ]}
+      columns={2}
+      bg="surface-container"
+    />
+
+    <DocumentSection
+      title="Eligibility Criteria"
+      subtitle="To qualify for the Gaia Certification Badge, an entity must meet comprehensive standards covering ethical conduct, regenerative impact, and specialized expertise."
+      blocks={[
+        {
+          heading: "Core Requirements",
+          paragraphs: [
+            "Does not engage in degenerative or unethical practices. Clear documentation ensures it does not harm local environments, exploit labor, or mislead stakeholders. Transparent supply chains and fair labor practices are maintained where applicable.",
+            "Actively contributes to planetary and social well-being. Demonstrates continuous efforts to enhance biodiversity, reduce waste, improve community welfare, and promote equity across all operations."
+          ]
+        },
+        {
+          heading: "Specialized Criteria (at least one required)",
+          list: [
+            "ReGenerative Education / Formation",
+            "ReGenerative Economics",
+            "ReGenerative Governance",
+            "ReGenerative Health and Well-being",
+            "ReGenerative Ecology / Environment",
+            "ReGenerative Experiences",
+            "ReGenerative Arts & Hobbies",
+            "ReGenerative Consciousness",
+            "ReGenerative Metaphysics & Ancestral Wisdom",
+            "Organic, AgroEcological, Eco-Friendly Products"
+          ]
+        }
+      ]}
+      bg="surface-container-low"
+    />
+
+    <ProcessSteps
+      id="apply"
+      title="Onboarding Process"
+      steps={[
+        { number: "1", title: "Apply", description: "Entities submit a detailed form outlining their regenerative practices, along with optional third-party verifications such as organic certifications, B-Corp status, or local testimonies." },
+        { number: "2", title: "Review", description: "A Certification Committee evaluates applications, reviews supplementary evidence, and may schedule interviews or site visits to ensure alignment with standards." },
+        { number: "3", title: "Approve", description: "Successfully vetted entities are publicly recognized and featured in the Gaia Certified database, awarded the official badge for digital and physical display." },
+        { number: "4", title: "Monitor", description: "Annual renewal with updates on improvements, expansions, and ongoing compliance. Spot checks and community feedback ensure continued alignment." }
+      ]}
+      bg="surface-container"
+    />
+
+    <StatsBar
+      stats={[
+        { value: "4", label: "Core Components", icon: "category" },
+        { value: "10+", label: "Specialized Criteria", icon: "checklist" },
+        { value: "4", label: "Onboarding Steps", icon: "steps" },
+        { value: "Infinite", label: "Network Benefits", icon: "emoji_events" }
+      ]}
+    />
+
+    <CTABanner
+      title="Apply for Certification"
+      subtitle="Join a global network of regenerative organizations and individuals. Demonstrate your commitment, build trust, and unlock new opportunities for collaboration and growth."
+      ctaLabel="Apply for Certification"
+      ctaHref="https://t.me/+1x_EVaVp-lEwN2I8"
+      bgImage="/images/cta-banner-bg.webp"
+      external
+    />
+    <MarkdownDoc
+      filePath="../../docs/@ Certification Program - Integral ReGeneration Dashboard - Master doc.md"
+      title={locale === 'es' ? '📄 Leer Documento Completo' : '📄 Read Full Document'}
+    />
+  </main>
+
+  <Footer locale={locale} />
+</Layout>

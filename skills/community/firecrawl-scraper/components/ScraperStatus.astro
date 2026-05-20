@@ -1,0 +1,114 @@
+---
+/**
+ * ScraperStatus — Panel de estado del último scraping con Firecrawl
+ */
+
+interface Props {
+  scrapedSite?: string;
+  lastRun?: string;
+  counts?: {
+    blog?: number;
+    testimonials?: number;
+    services?: number;
+    team?: number;
+    pages?: number;
+  };
+  status?: 'completed' | 'in-progress' | 'error' | 'idle';
+  reportUrl?: string;
+}
+
+const {
+  scrapedSite,
+  lastRun,
+  counts,
+  status = 'idle',
+  reportUrl,
+} = Astro.props;
+
+const statusConfig = {
+  completed: { label: 'Completado', color: 'bg-green-100 text-green-800 border-green-200' },
+  'in-progress': { label: 'En progreso', color: 'bg-yellow-100 text-yellow-800 border-yellow-200' },
+  error: { label: 'Error', color: 'bg-red-100 text-red-800 border-red-200' },
+  idle: { label: 'Inactivo', color: 'bg-gray-100 text-gray-800 border-gray-200' },
+};
+
+const s = statusConfig[status];
+const total = (counts?.blog || 0) + (counts?.testimonials || 0) + (counts?.services || 0) + (counts?.team || 0) + (counts?.pages || 0);
+---
+
+<div class="rounded-xl border border-gray-200 bg-white p-6 shadow-sm max-w-lg">
+  <div class="flex items-center justify-between mb-4">
+    <h3 class="text-lg font-semibold text-gray-900 flex items-center gap-2">
+      <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+      </svg>
+      Firecrawl Scraper
+    </h3>
+    <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${s.color}`}>
+      {s.label}
+    </span>
+  </div>
+
+  {scrapedSite && (
+    <div class="space-y-2 text-sm text-gray-600 mb-4">
+      <p><span class="font-medium text-gray-900">Sitio:</span> {scrapedSite}</p>
+      {lastRun && <p><span class="font-medium text-gray-900">Última ejecución:</span> {lastRun}</p>}
+    </div>
+  )}
+
+  {total > 0 && (
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
+      {counts?.blog !== undefined && counts.blog > 0 && (
+        <div class="bg-orange-50 rounded-lg p-3 text-center">
+          <div class="text-xl font-bold text-orange-600">{counts.blog}</div>
+          <div class="text-xs text-orange-700">Blog</div>
+        </div>
+      )}
+      {counts?.testimonials !== undefined && counts.testimonials > 0 && (
+        <div class="bg-blue-50 rounded-lg p-3 text-center">
+          <div class="text-xl font-bold text-blue-600">{counts.testimonials}</div>
+          <div class="text-xs text-blue-700">Testimonios</div>
+        </div>
+      )}
+      {counts?.services !== undefined && counts.services > 0 && (
+        <div class="bg-purple-50 rounded-lg p-3 text-center">
+          <div class="text-xl font-bold text-purple-600">{counts.services}</div>
+          <div class="text-xs text-purple-700">Servicios</div>
+        </div>
+      )}
+      {counts?.team !== undefined && counts.team > 0 && (
+        <div class="bg-green-50 rounded-lg p-3 text-center">
+          <div class="text-xl font-bold text-green-600">{counts.team}</div>
+          <div class="text-xs text-green-700">Equipo</div>
+        </div>
+      )}
+      {counts?.pages !== undefined && counts.pages > 0 && (
+        <div class="bg-gray-50 rounded-lg p-3 text-center">
+          <div class="text-xl font-bold text-gray-600">{counts.pages}</div>
+          <div class="text-xs text-gray-700">Páginas</div>
+        </div>
+      )}
+    </div>
+  )}
+
+  {reportUrl && (
+    <a
+      href={reportUrl}
+      class="inline-flex items-center gap-1.5 text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors"
+    >
+      Ver reporte completo
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+      </svg>
+    </a>
+  )}
+
+  {!scrapedSite && (
+    <p class="text-sm text-gray-500">
+      No hay datos de scraping aún. Ejecuta el script CLI para empezar:
+      <code class="block mt-2 p-2 bg-gray-100 rounded text-xs font-mono text-gray-700">
+        node scripts/firecrawl-scrape.js --url=https://ejemplo.com --mode=crawl
+      </code>
+    </p>
+  )}
+</div>

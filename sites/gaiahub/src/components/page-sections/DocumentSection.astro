@@ -1,0 +1,58 @@
+---
+interface ContentBlock {
+  heading?: string;
+  paragraphs?: string[];
+  list?: string[];
+  quote?: string;
+}
+interface Props {
+  title?: string;
+  subtitle?: string;
+  blocks: ContentBlock[];
+  bg?: 'surface' | 'surface-container' | 'surface-container-low';
+}
+const { title, subtitle, blocks, bg = 'surface' } = Astro.props;
+const bgClass = bg === 'surface-container' ? 'bg-surface-container' : bg === 'surface-container-low' ? 'bg-surface-container-low' : 'bg-surface';
+---
+
+<section class={`${bgClass} py-20 lg:py-28 px-6 lg:px-[5.5rem] gsap-fade-up`}>
+  <div class="max-w-[1618px] mx-auto">
+    {(title || subtitle) && (
+      <div class="mb-16 max-w-3xl">
+        {title && <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl font-black text-on-surface tracking-tighter mb-4">{title}</h2>}
+        {subtitle && <p class="text-xl text-on-surface/70 font-light">{subtitle}</p>}
+      </div>
+    )}
+    <div class="grid grid-cols-1 gap-12 gsap-stagger">
+      {blocks.map(block => (
+        <div class="bg-white rounded-2xl p-8 lg:p-10 shadow-sm border border-outline/5">
+          {block.heading && (
+            <h3 class="font-headline text-2xl font-bold text-on-surface mb-6">{block.heading}</h3>
+          )}
+          {block.paragraphs && block.paragraphs.length > 0 && (
+            <div class="space-y-4">
+              {block.paragraphs.map(p => (
+                <p class="text-on-surface/70 leading-relaxed">{p}</p>
+              ))}
+            </div>
+          )}
+          {block.list && block.list.length > 0 && (
+            <ul class="mt-6 space-y-3">
+              {block.list.map(item => (
+                <li class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-primary mt-0.5 text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                  <span class="text-on-surface/70">{item}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+          {block.quote && (
+            <blockquote class="mt-6 pl-6 border-l-4 border-primary italic text-on-surface/80 text-lg">
+              "{block.quote}"
+            </blockquote>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

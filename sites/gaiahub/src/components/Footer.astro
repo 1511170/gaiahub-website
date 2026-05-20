@@ -1,0 +1,67 @@
+---
+import { t } from '@site/i18n';
+
+interface Props {
+  locale?: string;
+}
+
+const { locale = 'en' } = Astro.props;
+const i18n = t(locale);
+const isEn = locale === 'en';
+const prefix = isEn ? '' : '/es';
+---
+
+<footer class="w-full py-16 lg:py-24 bg-surface-container border-t border-outline/10">
+  <div class="max-w-[1618px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.618fr_1fr_1fr_1fr] gap-12 px-6 lg:px-[5.5rem]">
+    <!-- Brand -->
+    <div class="space-y-8">
+      <div class="font-headline font-bold text-primary text-2xl tracking-tight">
+        {i18n.footer.brand}
+      </div>
+      <p class="font-body text-sm leading-relaxed text-on-surface/60 max-w-sm">
+        {i18n.footer.tagline}
+      </p>
+      <p class="font-body text-sm text-on-surface/40">
+        {i18n.footer.copyright}
+      </p>
+    </div>
+
+    <!-- Explore -->
+    <div class="flex flex-col gap-4 font-body text-sm">
+      <span class="font-bold text-primary uppercase tracking-wider text-xs">{i18n.footer.explore}</span>
+      <a class="text-on-surface/60 hover:text-primary transition-colors" href={`${prefix}/hub`}>{i18n.footer.hub}</a>
+      <a class="text-on-surface/60 hover:text-primary transition-colors" href={`${prefix}/market`}>{i18n.footer.market}</a>
+      <a class="text-on-surface/60 hover:text-primary transition-colors" href={`${prefix}/commons`}>{i18n.footer.commons}</a>
+      <a class="text-on-surface/60 hover:text-primary transition-colors" href={`${prefix}/impact-fund`}>{i18n.footer.impact_fund}</a>
+      <a class="text-on-surface/60 hover:text-primary transition-colors" href={`${prefix}/impact-hub`}>{i18n.footer.impact_hub}</a>
+      <a class="text-on-surface/60 hover:text-primary transition-colors" href={`${prefix}/blog`}>Blog</a>
+    </div>
+
+    <!-- Ecosystem -->
+    <div class="flex flex-col gap-4 font-body text-sm">
+      <span class="font-bold text-primary uppercase tracking-wider text-xs">{i18n.footer.ecosystem}</span>
+      <a class="text-on-surface/60 hover:text-primary transition-colors" href={`${prefix}/vision`}>{i18n.footer.vision}</a>
+      <a class="text-on-surface/60 hover:text-primary transition-colors" href={`${prefix}/academy`}>{i18n.footer.academy}</a>
+      <a class="text-on-surface/60 hover:text-primary transition-colors" href={`${prefix}/certification`}>{i18n.footer.certification}</a>
+      <a class="text-on-surface/60 hover:text-primary transition-colors" href={`${prefix}/confederation`}>{i18n.footer.confederation}</a>
+      <a class="text-on-surface/60 hover:text-primary transition-colors" href={`${prefix}/bioregions`}>{i18n.footer.bioregions}</a>
+      <a class="text-on-surface/60 hover:text-primary transition-colors" href={`${prefix}/ecohabitats`}>{i18n.footer.ecohabitats}</a>
+    </div>
+
+    <!-- Community -->
+    <div class="flex flex-col gap-4 font-body text-sm">
+      <span class="font-bold text-primary uppercase tracking-wider text-xs">{i18n.footer.community}</span>
+      <a class="text-on-surface/60 hover:text-primary transition-colors" href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank" rel="noopener noreferrer">{i18n.footer.telegram}</a>
+      <a class="text-on-surface/60 hover:text-primary transition-colors" href="https://whatsapp.com/channel/0029VbCY4kLIiRozv7gGVN3L" target="_blank" rel="noopener noreferrer">{i18n.footer.whatsapp}</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .solar-gradient {
+    background: linear-gradient(135deg, #776300 0%, #ffd709 100%);
+  }
+</style>

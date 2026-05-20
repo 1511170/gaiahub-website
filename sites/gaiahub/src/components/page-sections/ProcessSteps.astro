@@ -1,0 +1,47 @@
+---
+interface Step {
+  number: string;
+  title: string;
+  description: string;
+}
+interface Props {
+  title?: string;
+  subtitle?: string;
+  steps: Step[];
+  bg?: 'surface' | 'surface-container' | 'surface-container-low';
+}
+const { title, subtitle, steps, bg = 'surface' } = Astro.props;
+const bgClass = bg === 'surface-container' ? 'bg-surface-container' : bg === 'surface-container-low' ? 'bg-surface-container-low' : 'bg-surface';
+---
+
+<section class={`${bgClass} py-20 lg:py-28 px-6 lg:px-[5.5rem] gsap-fade-up`}>
+  <div class="max-w-[1618px] mx-auto">
+    {(title || subtitle) && (
+      <div class="text-center mb-16">
+        {title && <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl font-black text-on-surface tracking-tighter mb-4">{title}</h2>}
+        {subtitle && <p class="text-xl text-on-surface/70 max-w-2xl mx-auto font-light">{subtitle}</p>}
+      </div>
+    )}
+    <div class="relative">
+      <!-- Connector line -->
+      <div class="hidden md:block absolute top-12 left-0 w-full h-px border-t-2 border-dashed border-primary-container/40 -z-0"></div>
+      <div class={`grid grid-cols-1 md:grid-cols-${steps.length} gap-8 relative z-10 gsap-stagger`}>
+        {steps.map(step => (
+          <div class="flex flex-col items-center text-center">
+            <div class="w-24 h-24 rounded-full solar-gradient flex items-center justify-center shadow-xl mb-6 border-4 border-white">
+              <span class="font-headline font-black text-3xl text-white">{step.number}</span>
+            </div>
+            <h3 class="font-headline text-xl font-bold text-on-surface mb-3">{step.title}</h3>
+            <p class="text-on-surface/60 leading-relaxed max-w-xs">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .solar-gradient {
+    background: linear-gradient(135deg, #776300 0%, #ffd709 100%);
+  }
+</style>

@@ -1,0 +1,108 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "@site/components/Navigation.astro";
+import Footer from "@site/components/Footer.astro";
+import { t } from "@site/i18n";
+
+import PageHero from "@site/components/page-sections/PageHero.astro";
+import ContentSection from "@site/components/page-sections/ContentSection.astro";
+import FeatureGrid from "@site/components/page-sections/FeatureGrid.astro";
+import ProcessSteps from "@site/components/page-sections/ProcessSteps.astro";
+import CTABanner from "@site/components/page-sections/CTABanner.astro";
+import MarkdownDoc from "@site/components/page-sections/MarkdownDoc.astro";
+
+const locale = "en";
+const i18n = t(locale);
+---
+
+<Layout
+  title={i18n.academy.meta_title}
+  description={i18n.academy.meta_description}
+  keywords={["Gaia", "academy", "education", "regenerative", "holistic", "learning"]}
+  schemaType={["WebPage", "Organization"]}
+>
+  <Navigation locale={locale} activePage="academy" />
+
+  <main class="pt-32">
+    <PageHero
+      badge="Education & Entrepreneurship"
+      title="Education that regenerates the world."
+      subtitle="The University & School of Life orchestrates a regenerative educational ecosystem that provides the skills, knowledge, and values necessary for a transition toward resilient and sustainable societies."
+      ctaPrimary={{ label: "Explore Programs", href: "#programs" }}
+      ctaSecondary={{ label: "Learn More", href: "#mission" }}
+      image="/images/academy-hero.webp"
+    />
+
+    <ContentSection
+      id="mission"
+      title="Our Mission"
+      body={[
+        "Our mission is to orchestrate and strengthen a regenerative educational ecosystem that provides the skills, knowledge, and values necessary for a transition toward resilient and sustainable societies.",
+        "We aim to connect diverse educational projects, integrating ancestral and contemporary pedagogies into a collaborative platform that fosters self-directed, experiential learning applied to social and ecological transformation."
+      ]}
+      image="/images/academy-hero.webp"
+      bg="surface-container"
+    />
+
+    <FeatureGrid
+      title="5 Fundamental Principles"
+      subtitle="The educational model is built on principles that ensure holistic, accessible, and regenerative learning for all."
+      features={[
+        { icon: "psychology", title: "Holistic Learning", description: "Integrating ancestral, scientific, technological, artistic, and spiritual knowledge into a unified educational experience." },
+        { icon: "hub", title: "Interconnection", description: "Creating a learning network that encourages cooperation among diverse stakeholders across cultures and disciplines." },
+        { icon: "forest", title: "Regeneration", description: "Promoting ecological, regenerative, and resilient practices as core values of every learning journey." },
+        { icon: "self_improvement", title: "Self-Directed", description: "Providing spaces where each individual can design their own learning path according to their unique purpose." },
+        { icon: "public", title: "Accessibility", description: "Including communities and people from diverse cultures, backgrounds, and economic situations." }
+      ]}
+      columns={3}
+    />
+
+    <ContentSection
+      id="programs"
+      title="Academic Structure"
+      body={[
+        "The platform is based on a decentralized, open model, enabling various stakeholders to contribute their knowledge and methodologies. Training is organized into progressive levels:",
+        "Introductory workshops and short courses for awareness and basic knowledge. Intermediate certification programs with practical application and continuous assessment. Advanced residencies and diploma programs focusing on specialization. Master's and Doctoral degrees anchored in real-world research on regenerative processes in communities and ecosystems."
+      ]}
+      image="/images/concept-coord.webp"
+      bg="surface-container-low"
+      reverse
+    />
+
+    <ContentSection
+      title="Innovation Laboratories"
+      body={[
+        "Spaces for experimentation and applied research in key areas driving the regenerative transition. These labs address climate and socio-economic challenges through ecosystem restoration, regenerative agriculture, biodiversity and carbon credits, and a thriving bioeconomy.",
+        "Focus areas include clean technologies and energy self-sufficiency, soil regeneration and agroforestry systems, regenerative architecture and advanced natural building, alternative currencies and decentralized economies, and hybrid educational models integrating digital and physical tools."
+      ]}
+      image="/images/concept-regen.webp"
+      bg="surface-container"
+    />
+
+    <ProcessSteps
+      title="The Learning Journey"
+      subtitle="A phased approach to regenerative education that transforms knowledge into real-world impact."
+      steps={[
+        { number: "1", title: "Explore", description: "Discover your path through introductory workshops and awareness courses across multiple faculties." },
+        { number: "2", title: "Immerse", description: "Engage in residencies, hands-on projects, and community-based experiential learning." },
+        { number: "3", title: "Specialize", description: "Pursue advanced certifications, diplomas, and field practice in your chosen domain." },
+        { number: "4", title: "Lead", description: "Contribute to research, mentor others, and scale regenerative innovations globally." }
+      ]}
+    />
+
+    <CTABanner
+      title="Explore Programs"
+      subtitle="Join a global network of learners, educators, and communities building the future of regenerative education."
+      ctaLabel="Explore Programs"
+      ctaHref="https://t.me/+1x_EVaVp-lEwN2I8"
+      external
+      bgImage="/images/cta-banner-bg.webp"
+    />
+    <MarkdownDoc
+      filePath="../../docs/@ University & School of Life - Education & Entrepreneurship Programs & Sinergies Platform.md"
+      title={locale === 'es' ? '📄 Leer Documento Completo' : '📄 Read Full Document'}
+    />
+  </main>
+
+  <Footer locale={locale} />
+</Layout>

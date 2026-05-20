@@ -1,0 +1,101 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "@site/components/Navigation.astro";
+import Footer from "@site/components/Footer.astro";
+import { t } from "@site/i18n";
+
+import PageHero from "@site/components/page-sections/PageHero.astro";
+import ContentSection from "@site/components/page-sections/ContentSection.astro";
+import FeatureGrid from "@site/components/page-sections/FeatureGrid.astro";
+import ProcessSteps from "@site/components/page-sections/ProcessSteps.astro";
+import StatsBar from "@site/components/page-sections/StatsBar.astro";
+import CTABanner from "@site/components/page-sections/CTABanner.astro";
+import MarkdownDoc from "@site/components/page-sections/MarkdownDoc.astro";
+
+const locale = "es";
+const i18n = t(locale);
+---
+
+<Layout
+  title={i18n.bioregions.meta_title}
+  description={i18n.bioregions.meta_description}
+  keywords={["Gaia", "bioregiones", "mapeo", "sinergias", "estados de red", "comunidades"]}
+  schemaType={["WebPage", "Organization"]}
+>
+  <Navigation locale={locale} activePage="bioregions" />
+
+  <main class="pt-32">
+    <PageHero
+      badge="Meta-Mapeo y Sinergias"
+      title="Mapea el mundo regenerativo."
+      subtitle="La plataforma Gaia GPS es una plataforma de meta-mapeo, sinergias y matchmaking que coordina conocimiento, membresia, confianza y flujos financieros entre bioregiones—uniendo bolsillos de innovacion regenerativa en una red compartida."
+      image="/images/bioregions-hero.webp"
+    />
+
+    <ContentSection
+      title="La Plataforma"
+      body={[
+        "Frente a la degradacion ecologica, la polarizacion social y los modelos economicos obsoletos, las soluciones regenerativas y las comunidades distribuidas basadas en la confianza estan emergiendo en todo el mundo. Sin embargo, estos esfuerzos a menudo permanecen aislados. La Plataforma Gaia GPS busca unificar estos bolsillos de innovacion en una red compartida de sinergia.",
+        "Puentea la autonomia local con la interdependencia global, ayudando a definir nuevas formas de vivir y como participamos en diferentes lugares del mundo—incluyendo como producimos, consumimos, intercambiamos, compramos y vendemos. Existe una creciente constelacion de sitios fisicos que abogan por la sostenibilidad, el bienestar, la regeneracion y la vitalidad cultural."
+      ]}
+      image="/images/ecohabitats-hero.webp"
+    />
+
+    <FeatureGrid
+      title="5 Pilares"
+      features={[
+        { icon: "map", title: "La Plataforma", description: "El entorno digital general para mapear, verificar y conectar individuos, proyectos y comunidades en el mundo regenerativo." },
+        { icon: "eco", title: "Regeneracion Integral", description: "Un proceso estructurado de renovacion ecologica, social, cultural y personal inspirado en permacultura, diseno regenerativo y tradiciones espirituales." },
+        { icon: "verified", title: "Certificacion", description: "Un sistema que asegura que los participantes cumplen estandares regenerativos, ofreciendo auditorias continuas e insignias de credibilidad para entidades verificadas." },
+        { icon: "account_balance", title: "Economia CoRe", description: "Mecanismos para el intercambio justo, recompensando acciones positivas, referidos, donaciones y creacion de sinergias en todo el ecosistema." },
+        { icon: "passport", title: "Pasaporte Gaia", description: "Un contenedor unificado de identidad, reputacion y membresia que incluye insignias personales, credenciales de habilidades y membresias organizacionales." }
+      ]}
+      columns={3}
+    />
+
+    <ContentSection
+      title="Arquitectura de la Plataforma"
+      body={[
+        "La Plataforma GPS proporciona una infraestructura digital robusta disenada para conectar el mundo regenerativo. Su arquitectura se centra en tres capacidades principales que permiten el descubrimiento, verificacion y colaboracion sin fricciones.",
+        "El Directorio Unificado lista todos los proyectos participantes, emprendimientos, sitios de co-vivencia, socios filantropicos y oportunidades de voluntariado. El Mapa Interactivo permite a los usuarios buscar por ubicacion, calificacion de confianza, membresia o tipo de proyecto. La Interoperabilidad de Datos a traves de campos estandarizados y APIs abiertas permite que las redes aliadas sincronicen datos con redundancia minima."
+      ]}
+      image="/images/bioregions-hero.webp"
+      bg="surface-container"
+      reverse
+    />
+
+    <ProcessSteps
+      title="Como Funciona"
+      subtitle="Tres fases simples para unirte a la red regenerativa."
+      steps={[
+        { number: "1", title: "Unirse", description: "Crea tu perfil, destaca tus intereses y conviertete en miembro verificado del ecosistema Gaia." },
+        { number: "2", title: "Verificar", description: "Completa la verificacion de confianza, obtien tu Pasaporte Gaia y alineate con los estandares de la Certificacion de Confianza." },
+        { number: "3", title: "Conectar", description: "Explora el mapa interactivo, encuentra sinergias, colabora en proyectos y visita iniciativas basadas en lugar en todo el mundo." }
+      ]}
+    />
+
+    <StatsBar
+      stats={[
+        { value: "5", label: "Pilares", icon: "account_tree" },
+        { value: "Global", label: "Directorio", icon: "public" },
+        { value: "Confianza", label: "Basado", icon: "verified" },
+        { value: "Lugar", label: "Basado", icon: "location_on" }
+      ]}
+    />
+
+    <CTABanner
+      title="Explora el mapa regenerativo"
+      subtitle="Descubre proyectos regenerativos, comunidades y oportunidades en todo el globo. La Plataforma Gaia GPS es tu puerta de entrada a una nueva era de regeneracion conectada."
+      ctaLabel="Unirse a la Plataforma"
+      ctaHref="https://t.me/+1x_EVaVp-lEwN2I8"
+      bgImage="/images/cta-banner-bg.webp"
+      external
+    />
+    <MarkdownDoc
+      filePath="../../docs/@ Gaia GPS - Meta-Mapping, Synergies & MatchMaking Platform.md"
+      title={locale === 'es' ? '📄 Leer Documento Completo' : '📄 Read Full Document'}
+    />
+  </main>
+
+  <Footer locale={locale} />
+</Layout>

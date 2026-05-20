@@ -1,0 +1,7 @@
+# Secrets (nunca commitear)
+.env
+
+# Scraped content (generated, do not commit)
+.kinto-scraped/
+*.scraped.json
+reports/

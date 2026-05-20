@@ -1,0 +1,182 @@
+{
+  "$schema": "firecrawl-extraction-schemas-v1",
+  "description": "Schemas de extracción LLM para Firecrawl API v2 /extract endpoint",
+  "schemas": {
+    "blog": {
+      "type": "object",
+      "properties": {
+        "posts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "excerpt": { "type": "string" },
+              "date": { "type": "string" },
+              "author": { "type": "string" },
+              "category": { "type": "string" },
+              "tags": { "type": "array", "items": { "type": "string" } },
+              "image": { "type": "string" },
+              "content": { "type": "string" }
+            },
+            "required": ["title", "content"]
+          }
+        }
+      },
+      "required": ["posts"]
+    },
+    "testimonials": {
+      "type": "object",
+      "properties": {
+        "testimonials": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "author": { "type": "string" },
+              "company": { "type": "string" },
+              "quote": { "type": "string" },
+              "image": { "type": "string" },
+              "rating": { "type": "number" },
+              "date": { "type": "string" }
+            },
+            "required": ["author", "quote"]
+          }
+        }
+      },
+      "required": ["testimonials"]
+    },
+    "services": {
+      "type": "object",
+      "properties": {
+        "services": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "shortDescription": { "type": "string" },
+              "icon": { "type": "string" },
+              "order": { "type": "number" },
+              "content": { "type": "string" }
+            },
+            "required": ["title", "shortDescription"]
+          }
+        }
+      },
+      "required": ["services"]
+    },
+    "team": {
+      "type": "object",
+      "properties": {
+        "members": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "position": { "type": "string" },
+              "bio": { "type": "string" },
+              "image": { "type": "string" },
+              "linkedin": { "type": "string" },
+              "email": { "type": "string" },
+              "order": { "type": "number" }
+            },
+            "required": ["name", "position"]
+          }
+        }
+      },
+      "required": ["members"]
+    },
+    "pages": {
+      "type": "object",
+      "properties": {
+        "pages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "description": { "type": "string" },
+              "content": { "type": "string" },
+              "slug": { "type": "string" }
+            },
+            "required": ["title", "content", "slug"]
+          }
+        }
+      },
+      "required": ["pages"]
+    },
+    "full_site": {
+      "type": "object",
+      "properties": {
+        "blogPosts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "excerpt": { "type": "string" },
+              "date": { "type": "string" },
+              "author": { "type": "string" },
+              "category": { "type": "string" },
+              "tags": { "type": "array", "items": { "type": "string" } },
+              "image": { "type": "string" },
+              "content": { "type": "string" }
+            }
+          }
+        },
+        "testimonials": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "author": { "type": "string" },
+              "company": { "type": "string" },
+              "quote": { "type": "string" },
+              "rating": { "type": "number" },
+              "date": { "type": "string" }
+            }
+          }
+        },
+        "services": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "shortDescription": { "type": "string" },
+              "content": { "type": "string" },
+              "icon": { "type": "string" }
+            }
+          }
+        },
+        "team": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "position": { "type": "string" },
+              "bio": { "type": "string" },
+              "image": { "type": "string" },
+              "linkedin": { "type": "string" }
+            }
+          }
+        },
+        "pages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "description": { "type": "string" },
+              "content": { "type": "string" },
+              "slug": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

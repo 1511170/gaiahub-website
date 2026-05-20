@@ -1,0 +1,89 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '@site/components/Navigation.astro';
+import Footer from '@site/components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts
+    .filter(p => p.data.published)
+    .map(post => ({
+      params: { slug: post.slug },
+      props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<Layout 
+  title={`${post.data.title} | Gaia Blog`}
+  description={post.data.excerpt}
+  type="article"
+  publishedTime={post.data.date.toISOString()}
+  author={post.data.author}
+  image={post.data.image}
+  keywords={post.data.tags}
+  schemaType={["BlogPosting", "Article"]}
+>
+  <Navigation locale="en" activePage="blog" />
+
+  <main class="pt-32 pb-20 px-6 lg:px-[5.5rem]">
+    <article class="max-w-3xl mx-auto">
+      <!-- Header -->
+      <header class="mb-12">
+        <div class="flex items-center gap-3 text-sm text-on-surface/50 mb-4">
+          <span class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-xs font-bold uppercase tracking-wider">{post.data.category}</span>
+          <span>{formatDate(post.data.date)}</span>
+        </div>
+        <h1 class="font-headline text-3xl md:text-5xl font-black text-on-surface leading-tight tracking-tighter mb-6">
+          {post.data.title}
+        </h1>
+        <p class="text-xl text-on-surface/70 leading-relaxed">{post.data.excerpt}</p>
+      </header>
+
+      <!-- Author -->
+      <div class="flex items-center gap-4 pb-8 mb-8 border-b border-outline/20">
+        <div class="w-14 h-14 bg-primary-container rounded-full flex items-center justify-center text-xl font-bold text-on-primary-container">
+          {post.data.author.split(' ').map(n => n[0]).join('')}
+        </div>
+        <div>
+          <div class="font-headline font-bold text-on-surface">{post.data.author}</div>
+          <div class="text-on-surface/50 text-sm">Gaia Ecosystem Contributor</div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="prose prose-lg max-w-none prose-headings:font-headline prose-headings:text-on-surface prose-p:text-on-surface/80 prose-a:text-primary hover:prose-a:text-primary/80 prose-strong:text-on-surface prose-ul:text-on-surface/70 prose-ol:text-on-surface/70 prose-li:marker:text-primary">
+        <Content />
+      </div>
+
+      <!-- Tags -->
+      {post.data.tags && post.data.tags.length > 0 && (
+        <div class="pt-8 mt-12 border-t border-outline/20">
+          <p class="text-sm text-on-surface/50 mb-3">Tags:</p>
+          <div class="flex flex-wrap gap-2">
+            {post.data.tags.map(tag => (
+              <span class="px-3 py-1 bg-surface-container-high text-on-surface/70 rounded-full text-sm">{tag}</span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Back -->
+      <div class="mt-12">
+        <a href="/blog" class="inline-flex items-center gap-2 font-headline font-bold text-primary hover:gap-4 transition-all uppercase tracking-wider text-sm">
+          <span class="material-symbols-outlined">arrow_back</span> Back to Blog
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <Footer locale="en" />
+</Layout>

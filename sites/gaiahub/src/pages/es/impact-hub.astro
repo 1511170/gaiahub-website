@@ -1,0 +1,230 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '@site/components/Navigation.astro';
+import Footer from '@site/components/Footer.astro';
+import { t } from '@site/i18n';
+
+const locale = 'es';
+const i18n = t(locale);
+---
+
+<Layout 
+  title={i18n.impact_hub.meta_title}
+  description={i18n.impact_hub.meta_description}
+  keywords={["Gaia Impact Hub", "orquestación de impacto", "regenerative finance", "tokenización", "facilitación", "ecosistemas locales"]}
+  schemaType={["WebPage", "Organization"]}
+>
+  
+  <Navigation locale={locale} activePage="impact-hub" />
+
+  <main class="pt-32">
+    <!-- Hero Section -->
+    <section class="px-6 lg:px-[5.5rem] max-w-[1618px] mx-auto mb-32 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-7 z-10">
+          <span class="inline-block py-2 px-4 rounded-full bg-secondary-container text-on-secondary-container font-headline font-bold text-xs tracking-widest uppercase mb-8">
+            {i18n.impact_hub.hero_badge}
+          </span>
+          <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl font-black text-on-surface leading-[0.9] tracking-tighter mb-8 uppercase">
+            {i18n.impact_hub.hero_title}
+          </h1>
+          <p class="font-body text-xl md:text-2xl text-on-surface/70 max-w-xl leading-relaxed mb-12">
+            {i18n.impact_hub.hero_subtitle}
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#comunidad" class="solar-gradient text-white px-10 py-5 rounded-xl font-headline font-extrabold uppercase tracking-wider text-sm hover:translate-y-[-4px] transition-all">
+              {i18n.impact_hub.cta_partner}
+            </a>
+            <a href="#comunidad" class="bg-surface-container-highest text-on-surface px-10 py-5 rounded-xl font-headline font-extrabold uppercase tracking-wider text-sm hover:translate-y-[-4px] transition-all">
+              {i18n.impact_hub.cta_donate}
+            </a>
+          </div>
+        </div>
+        <div class="lg:col-span-5 relative">
+          <div class="aspect-[1/1.618] rounded-xl overflow-hidden shadow-2xl relative">
+            <img 
+              class="w-full h-full object-cover" 
+              alt="Cosmic network of golden light" 
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+          </div>
+          <!-- Decorative Glass Floating Card -->
+          <div class="absolute -bottom-10 -left-10 glass-panel p-8 rounded-lg shadow-xl max-w-xs border border-white/40 hidden lg:block">
+            <span class="material-symbols-outlined text-primary text-4xl mb-4">auto_awesome</span>
+            <p class="text-sm font-bold uppercase font-headline tracking-tighter mb-2">{i18n.impact_hub.model_title}</p>
+            <p class="text-xs text-on-surface/70 leading-relaxed">{i18n.impact_hub.model_step1_desc}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Statement -->
+    <section class="bg-surface-container-low py-24 lg:py-32 px-6 lg:px-[5.5rem]">
+      <div class="max-w-[1618px] mx-auto flex flex-col items-center text-center">
+        <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-black text-on-surface mb-8 uppercase tracking-tighter">{i18n.impact_hub.model_title}</h2>
+        <p class="font-body text-2xl md:text-3xl text-on-surface/70 max-w-4xl leading-relaxed italic">
+          "{i18n.impact_hub.model_step1} <span class="text-error font-bold">{i18n.impact_hub.model_step2}</span>. {i18n.impact_hub.model_step3}"
+        </p>
+        <div class="mt-16 lg:mt-20 w-full grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          <div class="bg-white p-10 lg:p-12 rounded-xl text-left border border-outline/10">
+            <div class="text-primary text-5xl font-headline font-black mb-4">01</div>
+            <h4 class="font-headline font-bold text-xl mb-4">{i18n.impact_hub.model_step1}</h4>
+            <p class="text-on-surface/60 text-sm leading-relaxed">{i18n.impact_hub.model_step1_desc}</p>
+          </div>
+          <div class="bg-white p-10 lg:p-12 rounded-xl text-left border border-outline/10 lg:translate-y-8">
+            <div class="text-primary text-5xl font-headline font-black mb-4">02</div>
+            <h4 class="font-headline font-bold text-xl mb-4">{i18n.impact_hub.model_step2}</h4>
+            <p class="text-on-surface/60 text-sm leading-relaxed">{i18n.impact_hub.model_step2_desc}</p>
+          </div>
+          <div class="bg-white p-10 lg:p-12 rounded-xl text-left border border-outline/10">
+            <div class="text-primary text-5xl font-headline font-black mb-4">03</div>
+            <h4 class="font-headline font-bold text-xl mb-4">{i18n.impact_hub.model_step3}</h4>
+            <p class="text-on-surface/60 text-sm leading-relaxed">{i18n.impact_hub.model_step3_desc}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Methodology: The Alchemist's Path -->
+    <section class="py-24 lg:py-32 px-6 lg:px-[5.5rem] max-w-[1618px] mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div>
+          <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-black mb-12 uppercase tracking-tighter">{i18n.impact_hub.model_title}</h2>
+          <div class="space-y-12 lg:space-y-16">
+            <div class="flex gap-6 lg:gap-8 group">
+              <div class="flex-shrink-0 w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary transition-colors duration-500">
+                <span class="material-symbols-outlined text-3xl group-hover:text-white">visibility</span>
+              </div>
+              <div>
+                <h3 class="font-headline font-bold text-xl lg:text-2xl mb-2">{i18n.impact_hub.model_step1}</h3>
+                <p class="text-on-surface/70 leading-relaxed">{i18n.impact_hub.model_step1_desc}</p>
+              </div>
+            </div>
+            <div class="flex gap-6 lg:gap-8 group">
+              <div class="flex-shrink-0 w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-tertiary transition-colors duration-500">
+                <span class="material-symbols-outlined text-3xl group-hover:text-white">token</span>
+              </div>
+              <div>
+                <h3 class="font-headline font-bold text-xl lg:text-2xl mb-2">{i18n.impact_hub.model_step2}</h3>
+                <p class="text-on-surface/70 leading-relaxed">{i18n.impact_hub.model_step2_desc}</p>
+              </div>
+            </div>
+            <div class="flex gap-6 lg:gap-8 group">
+              <div class="flex-shrink-0 w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-secondary transition-colors duration-500">
+                <span class="material-symbols-outlined text-3xl group-hover:text-white">groups</span>
+              </div>
+              <div>
+                <h3 class="font-headline font-bold text-xl lg:text-2xl mb-2">{i18n.impact_hub.model_step3}</h3>
+                <p class="text-on-surface/70 leading-relaxed">{i18n.impact_hub.model_step3_desc}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative aspect-square">
+          <div class="absolute inset-0 bg-primary/5 rounded-full blur-[100px]"></div>
+          <div class="relative z-10 w-full h-full flex items-center justify-center">
+            <!-- Abstract Diagram Representation -->
+            <div class="w-4/5 h-4/5 border border-outline/30 rounded-full flex items-center justify-center">
+              <div class="w-3/4 h-3/4 border border-primary/40 rounded-full relative">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary shadow-lg shadow-primary/50"></div>
+                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-4 h-4 rounded-full bg-tertiary shadow-lg shadow-tertiary/50"></div>
+              </div>
+            </div>
+            <img 
+              class="absolute w-1/2 h-1/2 object-cover rounded-xl shadow-2xl rotate-3" 
+              alt="Gold leaf details" 
+              src="https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2029&auto=format&fit=crop"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ecosystem Section: Bento Grid -->
+    <section class="bg-surface py-24 lg:py-32 px-6 lg:px-[5.5rem]">
+      <div class="max-w-[1618px] mx-auto">
+        <h2 class="font-headline text-4xl md:text-5xl font-black mb-16 text-center uppercase tracking-tighter">{i18n.impact_hub.model_title}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-12 md:grid-rows-2 gap-6 lg:gap-8 auto-rows-[250px]">
+          <!-- NGOs -->
+          <div class="md:col-span-4 md:row-span-1 bg-surface-container p-8 lg:p-10 rounded-xl flex flex-col justify-between hover:bg-surface-container-high transition-all duration-500 group overflow-hidden relative">
+            <div class="z-10">
+              <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4 uppercase">{i18n.impact_hub.model_step1}</h3>
+              <p class="text-on-surface/70 text-sm">{i18n.impact_hub.model_step1_desc}</p>
+            </div>
+            <span class="material-symbols-outlined text-7xl text-primary/10 absolute -bottom-4 -right-4 group-hover:scale-110 transition-transform">volunteer_activism</span>
+          </div>
+
+          <!-- Startups -->
+          <div class="md:col-span-8 md:row-span-1 bg-surface-container p-8 lg:p-10 rounded-xl flex flex-col lg:flex-row items-center gap-6 lg:gap-10 hover:bg-surface-container-high transition-all duration-500 group overflow-hidden">
+            <div class="w-full lg:w-1/3 h-48 lg:h-full rounded-lg overflow-hidden flex-shrink-0">
+              <img 
+                class="w-full h-full object-cover" 
+                alt="Modern office space" 
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
+              />
+            </div>
+            <div>
+              <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4 uppercase">{i18n.impact_hub.model_step2}</h3>
+              <p class="text-on-surface/70 text-sm max-w-md">{i18n.impact_hub.model_step2_desc}</p>
+            </div>
+          </div>
+
+          <!-- Cooperativas -->
+          <div class="md:col-span-5 md:row-span-1 bg-tertiary-container/20 p-8 lg:p-10 rounded-xl flex flex-col justify-center border border-tertiary/10 hover:shadow-xl transition-all duration-500">
+            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4 uppercase">{i18n.impact_hub.model_step3}</h3>
+            <p class="text-on-surface/70 text-sm">{i18n.impact_hub.model_step3_desc}</p>
+          </div>
+
+          <!-- Comunidades -->
+          <div class="md:col-span-4 md:row-span-1 bg-secondary-container/20 p-8 lg:p-10 rounded-xl flex flex-col justify-end border border-secondary/10 hover:shadow-xl transition-all duration-500">
+            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4 uppercase">{i18n.impact_hub.model_step4}</h3>
+            <p class="text-on-surface/70 text-sm">{i18n.impact_hub.model_step4_desc}</p>
+          </div>
+
+          <!-- Empresas -->
+          <div class="md:col-span-3 md:row-span-1 bg-surface-container-highest p-8 lg:p-10 rounded-xl flex items-center justify-center text-center group">
+            <h3 class="font-headline text-xl lg:text-2xl font-black uppercase group-hover:tracking-[0.2em] transition-all duration-700">{i18n.impact_hub.model_title}</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="comunidad" class="py-24 lg:py-48 px-6 lg:px-[5.5rem] relative overflow-hidden bg-inverse-surface">
+      <div class="absolute inset-0 opacity-20">
+        <img 
+          class="w-full h-full object-cover grayscale" 
+          alt="Mountain peak at dawn" 
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop"
+        />
+      </div>
+      <div class="max-w-[1618px] mx-auto relative z-10 text-center">
+        <h2 class="font-headline text-4xl md:text-5xl lg:text-7xl font-black text-white mb-12 uppercase leading-none tracking-tighter">
+          {i18n.impact_hub.hero_title}
+        </h2>
+        <div class="flex flex-col md:flex-row justify-center gap-4 lg:gap-8 mt-12 lg:mt-16">
+          <a href="https://t.me/+1x_EVaVp-lEwN2I8" target="_blank" rel="noopener noreferrer" class="solar-gradient text-white px-12 lg:px-16 py-6 lg:py-8 rounded-full font-headline font-black uppercase tracking-widest text-lg hover:scale-105 transition-all shadow-2xl">
+            {i18n.impact_hub.cta_partner}
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer locale={locale} />
+</Layout>
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .solar-gradient {
+    background: linear-gradient(135deg, #776300 0%, #ffd709 100%);
+  }
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+</style>

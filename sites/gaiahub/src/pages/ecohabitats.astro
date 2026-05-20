@@ -1,0 +1,113 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "@site/components/Navigation.astro";
+import Footer from "@site/components/Footer.astro";
+import { t } from "@site/i18n";
+
+import PageHero from "@site/components/page-sections/PageHero.astro";
+import ContentSection from "@site/components/page-sections/ContentSection.astro";
+import FeatureGrid from "@site/components/page-sections/FeatureGrid.astro";
+import DocumentSection from "@site/components/page-sections/DocumentSection.astro";
+import StatsBar from "@site/components/page-sections/StatsBar.astro";
+import CTABanner from "@site/components/page-sections/CTABanner.astro";
+import MarkdownDoc from "@site/components/page-sections/MarkdownDoc.astro";
+
+const locale = "en";
+const i18n = t(locale);
+---
+
+<Layout
+  title={i18n.ecohabitats.meta_title}
+  description={i18n.ecohabitats.meta_description}
+  keywords={["Gaia", "ecohabitats", "co-living", "ecovillages", "regenerative", "network"]}
+  schemaType={["WebPage", "Organization"]}
+>
+  <Navigation locale={locale} activePage="ecohabitats" />
+
+  <main class="pt-32">
+    <PageHero
+      badge="Living Networks"
+      title="Regenerative habitats for a new civilization."
+      subtitle="Physical sites for co-living, co-creation, ecotourism, and community building. The Global EcoHabitats Network is a collaborative alliance sharing a core commitment to planetary well-being, cultural exchange, and personal growth."
+      image="/images/ecohabitats-hero.webp"
+    />
+
+    <ContentSection
+      title="What is EcoHabitats"
+      body={[
+        "EcoHabitats are physical sites that bridge the digital and physical worlds. A collaborative alliance of diverse ecovillages, regenerative farms, wellness centers, and communal living projects, they all share the core commitment to planetary well-being, cultural exchange, and personal growth.",
+        "Each BioHabitat upholds the principle of co-creation and synergy with the broader network. These physical spaces allow for total immersion in a regenerative lifestyle, serving as anchors for the Gaia Platform while feeding real-world data back into the digital ecosystem."
+      ]}
+      image="/images/concept-regen.webp"
+    />
+
+    <FeatureGrid
+      title="Membership Types"
+      features={[
+        { icon: "home", title: "Permanent Co-Habitant", description: "Grants lifetime membership signifying full-time or long-term residence in a specific BioHabitat. May require an annual fee or community investment. For those ready to fully commit to regenerative community living." },
+        { icon: "luggage", title: "Temporary Visitor", description: "Designed for individuals who enjoy traveling among multiple BioHabitats, or staying short to medium-term in one. Comes with a partial membership fee and requires adherence to each site's local guidelines." },
+        { icon: "laptop_mac", title: "Digital Nomad Visa", description: "For remote workers and facilitators who combine living and remote work with offering skills or classes to the community. A flexible way to contribute while maintaining location independence." },
+        { icon: "storefront", title: "Regenerative Enterprise", description: "For organizations and businesses operating within the EcoHabitats Network. Provides access to shared resources, collaborative markets, and the broader regenerative supply chain." }
+      ]}
+      columns={2}
+    />
+
+    <ContentSection
+      title="Role of Physical Sites"
+      body={[
+        "Each BioHabitat or BioHub serves as a physical anchor for activities and gatherings: hosting volunteering, retreats, or local governance circles. They feed back real-world data into the Platform, bridging the digital with the tangible.",
+        "Because every community and territory has unique traits, BioHubs come in many forms. Geographically vast regions may need several hubs to ensure inclusive coverage. Some hubs concentrate on agriculture, others on science, technology, health, or social entrepreneurship. All remain connected at the global level, forming a network that shares best practices and co-creates solutions."
+      ]}
+      image="/images/ecohabitats-hero.webp"
+      bg="surface-container"
+      reverse
+    />
+
+    <DocumentSection
+      title="Financial Model"
+      subtitle="Multiple funding streams sustain the EcoHabitats Network, welcoming all forms of capital to stimulate co-creative abundance."
+      blocks={[
+        {
+          heading: "Subscriptions & Donations",
+          paragraphs: [
+            "The system welcomes all forms of capital—time, knowledge, land, local produce, or even partial monetary contributions—to stimulate co-creative abundance. Some participants pay a nominal fee to activate Visas linked to the Gaia Passport.",
+            "Others add philanthropic donations that return them certain tokens. Member subscriptions and donations form the foundational revenue stream that keeps local BioHabitats operational and accessible to diverse participants regardless of financial background."
+          ]
+        },
+        {
+          heading: "GLocal Initiative Fund",
+          paragraphs: [
+            "The GLocal Initiative Fund channels capital into emergent or established regenerative projects. It bridges local needs with global resources, ensuring that promising initiatives receive the seed funding they need to thrive.",
+            "Combined with bioregional local currencies that circulate within specific territories, the financial model strengthens local economies, reduces ecological footprint, and creates resilient economic loops that serve both people and planet."
+          ]
+        }
+      ]}
+      bg="surface-container-low"
+    />
+
+    <StatsBar
+      stats={[
+        { value: "3", label: "Visa Types", icon: "badge" },
+        { value: "Global", label: "Network", icon: "public" },
+        { value: "Physical + Digital", label: "Integration", icon: "devices" },
+        { value: "Regenerative", label: "Living", icon: "nature" }
+      ]}
+      bg="surface-container"
+    />
+
+    <CTABanner
+      title="Join the EcoHabitats Network"
+      subtitle="Whether you seek a permanent home, a temporary retreat, or a nomadic path of service—the EcoHabitats Network welcomes you. Connect with regenerative communities worldwide and become part of a living network restoring our planet."
+      ctaLabel="Apply Now"
+      ctaHref="https://t.me/+1x_EVaVp-lEwN2I8"
+      bgImage="/images/cta-banner-bg.webp"
+      external
+    />
+    <MarkdownDoc
+      filePath="../../docs/@ Gaia GPS - Meta-Mapping, Synergies & MatchMaking Platform.md"
+      title={locale === 'es' ? '📄 Leer Documento Completo' : '📄 Read Full Document'}
+    />
+  </main>
+
+  <Footer locale={locale} />
+</Layout>

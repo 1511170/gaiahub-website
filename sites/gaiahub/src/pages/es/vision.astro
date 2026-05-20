@@ -1,0 +1,127 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "@site/components/Navigation.astro";
+import Footer from "@site/components/Footer.astro";
+import { t } from "@site/i18n";
+
+import PageHero from "@site/components/page-sections/PageHero.astro";
+import ContentSection from "@site/components/page-sections/ContentSection.astro";
+import DocumentSection from "@site/components/page-sections/DocumentSection.astro";
+import StatsBar from "@site/components/page-sections/StatsBar.astro";
+import CTABanner from "@site/components/page-sections/CTABanner.astro";
+import MarkdownDoc from "@site/components/page-sections/MarkdownDoc.astro";
+
+const locale = "es";
+const i18n = t(locale);
+---
+
+<Layout
+  title={i18n.vision.meta_title}
+  description={i18n.vision.meta_description}
+  keywords={["Gaia", "visión", "regenerativo", "economía", "tokenomics", "bienes comunes"]}
+  schemaType={["WebPage", "Organization"]}
+>
+  <Navigation locale={locale} activePage="vision" />
+
+  <main class="pt-32">
+    <PageHero
+      badge="La Visión"
+      title="Una civilización que regenera la Tierra mientras se regenera a sí misma."
+      subtitle="CoRe (Economía Regenerativa de los Bienes Comunes) es la capa de coordinación económica del Ecosistema Gaia — permitiendo una economía regenerativa multi-capital donde las contribuciones, la reputación y los flujos económicos se conectan transparentemente."
+      ctaPrimary={{ label: "Unirse a la Confederación", href: "https://t.me/+1x_EVaVp-lEwN2I8" }}
+      ctaSecondary={{ label: "Leer el Whitepaper", href: "#economia" }}
+      image="/images/vision-hero.webp"
+    />
+
+    <ContentSection
+      title="Tokenomics CoRe"
+      body={[
+        "A diferencia de los sistemas financieros tradicionales que priorizan solo el capital financiero, CoRe integra múltiples formas de valor incluyendo capital ecológico, social, cultural, de conocimiento, infraestructural y financiero.",
+        "El sistema CoRe permite que estas formas de valor circulen, sean reconocidas y generen impacto regenerativo en toda la Red Gaia. No es un solo token, sino un sistema económico multicapa diseñado para la regeneración planetaria."
+      ]}
+      image="/images/vision-hero.webp"
+      bg="surface-container"
+    />
+
+    <DocumentSection
+      title="Filosofía de Diseño"
+      subtitle="CoRe está diseñado según cinco principios fundamentales que aseguran que los flujos económicos permanezcan alineados con la regeneración en lugar de la extracción."
+      blocks={[
+        {
+          heading: "Contribución antes que extracción",
+          paragraphs: ["El valor entra al sistema a través de la contribución, no la especulación. Los participantes que más contribuyen reciben mayor acceso a oportunidades dentro del ecosistema."]
+        },
+        {
+          heading: "Reputación como coordinación",
+          paragraphs: ["La reputación funciona como una capa de confianza para la interacción económica. No puede comprarse, solo ganarse a través de contribuciones verificadas, historial de colaboración, validación entre pares y participación en gobernanza."]
+        },
+        {
+          heading: "Valoración multi-capital",
+          paragraphs: ["Diferentes formas de valor pueden coexistir e interactuar. El sistema reconoce capital natural, social, cultural, espiritual, físico e intelectual."]
+        },
+        {
+          heading: "Adaptabilidad bioregional",
+          paragraphs: ["Las comunidades locales pueden crear sus propias capas económicas dentro del sistema, vinculando monedas a sistemas alimentarios, energía, custodia de tierras y servicios comunitarios."]
+        },
+        {
+          heading: "Circulación regenerativa",
+          paragraphs: ["Los flujos de valor deben reforzar la regeneración ecológica y social. Los ciclos económicos se inspiran en los ciclos naturales, donde los residuos de un proceso se convierten en recursos para otros."]
+        }
+      ]}
+    />
+
+    <DocumentSection
+      id="economia"
+      title="Capas Económicas"
+      subtitle="CoRe incluye tres capas complementarias que trabajan juntas para crear una economía regenerativa holística."
+      blocks={[
+        {
+          heading: "Capa 1 — Libro de Contribuciones",
+          paragraphs: [
+            "Esta capa registra las contribuciones realizadas por los participantes. Los tipos de contribuciones incluyen tiempo, conocimiento, mentoría, infraestructura, restauración ecológica, innovación, inversión financiera y participación en gobernanza.",
+            "Cada contribución se registra en el Libro de Contribuciones, que alimenta el sistema de reputación."
+          ]
+        },
+        {
+          heading: "Capa 2 — Capa de Reputación (Gaia Score)",
+          paragraphs: [
+            "La reputación funciona como la capa de confianza del ecosistema. El Gaia Score refleja contribuciones verificadas, historial de colaboración, validación entre pares, certificaciones y participación en gobernanza.",
+            "La reputación desbloquea acceso a oportunidades de financiamiento, roles de gobernanza, redes de colaboración y participación económica."
+          ]
+        },
+        {
+          heading: "Capa 3 — Circulación de Valor Regenerativo",
+          paragraphs: [
+            "El valor económico circula a través de múltiples instrumentos incluyendo Crédito Mutuo, Tokens Regenerativos que representan tiempo, impacto ecológico, infraestructura y capital financiero, y Monedas Bioregionales vinculadas a ecosistemas locales."
+          ]
+        }
+      ]}
+      bg="surface-container-low"
+    />
+
+    <StatsBar
+      stats={[
+        { value: "6", label: "Formas de Capital", icon:"diversity_3" },
+        { value: "3", label: "Capas Económicas", icon:"layers" },
+        { value: "5", label: "Principios de Diseño", icon:"emoji_objects" },
+        { value: "Infinito", label: "Impacto Regenerativo", icon:"cycle" }
+      ]}
+      bg="surface-container"
+    />
+
+    <CTABanner
+      title="Únete a la Confederación"
+      subtitle="Sé parte de la capa de coordinación económica para ecosistemas regenerativos en todo el mundo. Muévete más allá de los modelos extractivos hacia una economía regenerativa basada en los bienes comunes."
+      ctaLabel="Unirse a la Confederación"
+      ctaHref="https://t.me/+1x_EVaVp-lEwN2I8"
+      external
+      bgImage="/images/cta-banner-bg.webp"
+    />
+    <MarkdownDoc
+      filePath="../../docs/Gaia Economy Layer - Commonomics & Tokenomics Explained In-Depth.md"
+      title={locale === 'es' ? '📄 Leer Documento Completo' : '📄 Read Full Document'}
+    />
+  </main>
+
+  <Footer locale={locale} />
+</Layout>

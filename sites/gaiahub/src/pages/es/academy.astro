@@ -1,0 +1,108 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "@site/components/Navigation.astro";
+import Footer from "@site/components/Footer.astro";
+import { t } from "@site/i18n";
+
+import PageHero from "@site/components/page-sections/PageHero.astro";
+import ContentSection from "@site/components/page-sections/ContentSection.astro";
+import FeatureGrid from "@site/components/page-sections/FeatureGrid.astro";
+import ProcessSteps from "@site/components/page-sections/ProcessSteps.astro";
+import CTABanner from "@site/components/page-sections/CTABanner.astro";
+import MarkdownDoc from "@site/components/page-sections/MarkdownDoc.astro";
+
+const locale = "es";
+const i18n = t(locale);
+---
+
+<Layout
+  title={i18n.academy.meta_title}
+  description={i18n.academy.meta_description}
+  keywords={["Gaia", "academia", "educación", "regenerativo", "holístico", "aprendizaje"]}
+  schemaType={["WebPage", "Organization"]}
+>
+  <Navigation locale={locale} activePage="academy" />
+
+  <main class="pt-32">
+    <PageHero
+      badge="Educación y Emprendimiento"
+      title="Educación que regenera el mundo."
+      subtitle="La Universidad y Escuela de la Vida orquesta un ecosistema educativo regenerativo que proporciona las habilidades, conocimientos y valores necesarios para la transición hacia sociedades resilientes y sostenibles."
+      ctaPrimary={{ label: "Explorar Programas", href: "#programas" }}
+      ctaSecondary={{ label: "Saber Más", href: "#mision" }}
+      image="/images/academy-hero.webp"
+    />
+
+    <ContentSection
+      id="mision"
+      title="Nuestra Misión"
+      body={[
+        "Nuestra misión es orquestar y fortalecer un ecosistema educativo regenerativo que proporcione las habilidades, conocimientos y valores necesarios para la transición hacia sociedades resilientes y sostenibles.",
+        "Buscamos conectar diversos proyectos educativos, integrando pedagogías ancestrales y contemporáneas en una plataforma colaborativa que fomente el aprendizaje autodirigido y experiencial aplicado a la transformación social y ecológica."
+      ]}
+      image="/images/academy-hero.webp"
+      bg="surface-container"
+    />
+
+    <FeatureGrid
+      title="5 Principios Fundamentales"
+      subtitle="El modelo educativo se construye sobre principios que aseguran un aprendizaje holístico, accesible y regenerativo para todos."
+      features={[
+        { icon: "psychology", title: "Aprendizaje Holístico", description: "Integración del conocimiento ancestral, científico, tecnológico, artístico y espiritual en una experiencia educativa unificada." },
+        { icon: "hub", title: "Interconexión", description: "Creación de una red de aprendizaje que fomenta la cooperación entre diversos actores a través de culturas y disciplinas." },
+        { icon: "forest", title: "Regeneración", description: "Promoción de prácticas ecológicas, regenerativas y resilientes como valores centrales de cada trayectoria de aprendizaje." },
+        { icon: "self_improvement", title: "Autodirigido", description: "Espacios donde cada individuo puede diseñar su propio camino de aprendizaje de acuerdo con su propósito único." },
+        { icon: "public", title: "Accesibilidad", description: "Inclusión de comunidades y personas de diversas culturas, contextos y situaciones económicas." }
+      ]}
+      columns={3}
+    />
+
+    <ContentSection
+      id="programas"
+      title="Estructura Académica"
+      body={[
+        "La plataforma se basa en un modelo descentralizado y abierto, permitiendo que diversos actores contribuyan con sus conocimientos y metodologías. La formación se organiza en niveles progresivos:",
+        "Talleres introductorios y cursos cortos para la concientización y conocimientos básicos. Programas de certificación intermedia con aplicación práctica y evaluación continua. Residencias avanzadas y programas de diploma enfocados en la especialización. Maestrías y doctorados anclados en investigación del mundo real sobre procesos regenerativos en comunidades y ecosistemas."
+      ]}
+      image="/images/concept-coord.webp"
+      bg="surface-container-low"
+      reverse
+    />
+
+    <ContentSection
+      title="Laboratorios de Innovación"
+      body={[
+        "Espacios para la experimentación e investigación aplicada en áreas clave que impulsan la transición regenerativa. Estos laboratorios abordan desafíos climáticos y socioeconómicos a través de la restauración de ecosistemas, agricultura regenerativa, créditos de biodiversidad y carbono, y una bioeconomía próspera.",
+        "Las áreas de enfoque incluyen tecnologías limpias y autosuficiencia energética, regeneración de suelos y sistemas agroforestales, arquitectura regenerativa y construcción natural avanzada, monedas alternativas y economías descentralizadas, y modelos educativos híbridos que integran herramientas digitales y físicas."
+      ]}
+      image="/images/concept-regen.webp"
+      bg="surface-container"
+    />
+
+    <ProcessSteps
+      title="El Viaje de Aprendizaje"
+      subtitle="Un enfoque por fases para la educación regenerativa que transforma el conocimiento en impacto real."
+      steps={[
+        { number: "1", title: "Explorar", description: "Descubre tu camino a través de talleres introductorios y cursos de concientización en múltiples facultades." },
+        { number: "2", title: "Sumergirse", description: "Participa en residencias, proyectos prácticos y aprendizaje experiencial basado en la comunidad." },
+        { number: "3", title: "Especializar", description: "Persigue certificaciones avanzadas, diplomas y práctica de campo en tu dominio elegido." },
+        { number: "4", title: "Liderar", description: "Contribuye a la investigación, mentoriza a otros y escala innovaciones regenerativas globalmente." }
+      ]}
+    />
+
+    <CTABanner
+      title="Explora los Programas"
+      subtitle="Únete a una red global de estudiantes, educadores y comunidades construyendo el futuro de la educación regenerativa."
+      ctaLabel="Explorar Programas"
+      ctaHref="https://t.me/+1x_EVaVp-lEwN2I8"
+      external
+      bgImage="/images/cta-banner-bg.webp"
+    />
+    <MarkdownDoc
+      filePath="../../docs/@ University & School of Life - Education & Entrepreneurship Programs & Sinergies Platform.md"
+      title={locale === 'es' ? '📄 Leer Documento Completo' : '📄 Read Full Document'}
+    />
+  </main>
+
+  <Footer locale={locale} />
+</Layout>

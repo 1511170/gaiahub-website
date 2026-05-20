@@ -1,0 +1,126 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "@site/components/Navigation.astro";
+import Footer from "@site/components/Footer.astro";
+import { t } from "@site/i18n";
+
+import PageHero from "@site/components/page-sections/PageHero.astro";
+import ContentSection from "@site/components/page-sections/ContentSection.astro";
+import FeatureGrid from "@site/components/page-sections/FeatureGrid.astro";
+import DocumentSection from "@site/components/page-sections/DocumentSection.astro";
+import StatsBar from "@site/components/page-sections/StatsBar.astro";
+import CTABanner from "@site/components/page-sections/CTABanner.astro";
+import MarkdownDoc from "@site/components/page-sections/MarkdownDoc.astro";
+
+const locale = "es";
+const i18n = t(locale);
+---
+
+<Layout
+  title={i18n.confederation.meta_title}
+  description={i18n.confederation.meta_description}
+  keywords={["Gaia", "confederación", "alianza", "autonomía", "regenerativo", "territorios"]}
+  schemaType={["WebPage", "Organization"]}
+>
+  <Navigation locale={locale} activePage="confederation" />
+
+  <main class="pt-32">
+    <PageHero
+      badge="Gran Alianza"
+      title="Territorios autónomos. Destino compartido."
+      subtitle="La Confederación Gaia emerge como una respuesta sistémica y regenerativa a las crisis globales contemporáneas. Una red convergente de culturas y territorios autónomos interconectados a través de valores compartidos, tecnologías distribuidas y prácticas regenerativas."
+      ctaPrimary={{ label: "Unirse a la Alianza", href: "https://t.me/+1x_EVaVp-lEwN2I8" }}
+      ctaSecondary={{ label: "Leer el Whitepaper", href: "#gobernanza" }}
+      image="/images/confederation-hero.webp"
+    />
+
+    <ContentSection
+      title="Visión y Misión"
+      body={[
+        "Crear una red glocal de culturas y territorios autónomos, interdependientes y regenerativos que operen en armonía con la Madre Tierra y promuevan el bienestar integral de todos los seres.",
+        "Facilitamos la emergencia, interconexión y fortalecimiento de comunidades autónomas, utilizando tecnologías distribuidas, prácticas regenerativas y modelos de gobernanza holocrática para catalizar la transición hacia una civilización basada en la abundancia compartida, la regeneración planetaria y el pleno desarrollo humano."
+      ]}
+      image="/images/confederation-hero.webp"
+      bg="surface-container"
+    />
+
+    <FeatureGrid
+      title="7 Valores Fundamentales"
+      subtitle="La base de la Gran Alianza de Integridad, Interdependencia y Autonomía."
+      features={[
+        { icon: "gavel", title: "Integridad", description: "Ética, transparencia y responsabilidad en todas las acciones y relaciones." },
+        { icon: "self_improvement", title: "Autonomía", description: "Autodeterminación y soberanía de individuos y comunidades sobre sus destinos." },
+        { icon: "diversity_1", title: "Armonía en la Diversidad", description: "Celebración y apreciación de la pluralidad cultural, biológica y epistemológica." },
+        { icon: "eco", title: "Regeneración", description: "Restauración activa de ecosistemas naturales y sociales deteriorados." },
+        { icon: "handshake", title: "Colaboración", description: "Cooperación sinérgica para el bien común y la abundancia compartida." },
+        { icon: "favorite", title: "Bondad", description: "Cultivo de relaciones basadas en la empatía, el respeto y el cuidado genuino." },
+        { icon: "hub", title: "Interdependencia", description: "Reconocimiento de la interconexión fundamental entre todos los seres." }
+      ]}
+      columns={3}
+    />
+
+    <DocumentSection
+      id="gobernanza"
+      title="Gobernanza Biomimética"
+      subtitle="La estructura de gobernanza se inspira en los sistemas vivos, reconociendo que la naturaleza ya ha desarrollado modelos sofisticados de organización descentralizada, adaptativa y resiliente."
+      blocks={[
+        {
+          heading: "Individuos (Átomos o Células)",
+          paragraphs: ["Un ser humano como micro-organismo de Gaia. Cada persona es reconocida como un agente autónomo e interdependiente, capaz de autogobernarse y hacer una contribución única al ecosistema social."]
+        },
+        {
+          heading: "Círculos, Holones y Esferas (Órganos)",
+          paragraphs: ["Familias, clanes, equipos o grupos de 3 a 13 personas. Estas unidades básicas de organización social promueven relaciones de alta confianza, apoyo mutuo y colaboración íntima."]
+        },
+        {
+          heading: "Comunidades, Hubs y Agencias (Agrupaciones)",
+          paragraphs: ["Grupos de 13 a 150 personas (hasta 16 subcírculos). Este nivel corresponde aproximadamente al número de Dunbar, reflejando el límite cognitivo humano para mantener relaciones sociales estables."]
+        },
+        {
+          heading: "BioRegiones, Gremios y Federaciones",
+          paragraphs: ["Redes formadas por 144 a 10,000 individuos y/u organizaciones (hasta 100 esferas). Emergen estructuras especializadas que cumplen funciones específicas dentro del ecosistema social más amplio."]
+        },
+        {
+          heading: "Confederaciones (Macro-Organismo / Gaia)",
+          paragraphs: ["La unión e interacción entre federaciones, formando un sistema vivo y cooperativo. Múltiples órganos, cuerpos y territorios colaboran en simbiosis, manteniendo autonomía mientras contribuyen a la salud del todo."]
+        }
+      ]}
+      bg="surface-container-low"
+    />
+
+    <ContentSection
+      title="Contexto y Justificación"
+      body={[
+        "Vivimos en una era marcada por desafíos sistémicos sin precedentes: colapso climático, extinción masiva de especies, extrema desigualdad económica y creciente fragmentación social. Estos son síntomas interconectados de una civilización basada en la separación—de la naturaleza, de los demás y de nuestro propósito más profundo.",
+        "Los sistemas de gobernanza convencionales demuestran una incapacidad creciente para responder a estos desafíos. La Confederación Gaia reconoce que la transformación necesaria no vendrá de reformas incrementales, sino de la emergencia de nuevos modelos de organización social que trasciendan limitaciones geopolíticas y activen la inteligencia colectiva al servicio de la regeneración planetaria."
+      ]}
+      image="/images/cta-banner-bg.webp"
+      bg="surface-container"
+      reverse
+    />
+
+    <StatsBar
+      stats={[
+        { value: "5", label: "Escalas de Gobernanza", icon:"account_tree" },
+        { value: "7", label: "Valores Fundamentales", icon:"star" },
+        { value: "Ilimitados", label: "Territorios Autónomos", icon:"terrain" },
+        { value: "1", label: "Destino Compartido", icon:"public" }
+      ]}
+    />
+
+    <CTABanner
+      title="Únete a la Alianza"
+      subtitle="Ya sea como individuo, comunidad, organización o proyecto—explora cómo puedes participar en esta gran alianza por la integridad y la autonomía. Hay muchos puntos de entrada, muchas formas de contribuir, muchos caminos por recorrer."
+      ctaLabel="Unirse a la Alianza"
+      ctaHref="https://t.me/+1x_EVaVp-lEwN2I8"
+      external
+      bgImage="/images/cta-banner-bg.webp"
+    />
+    <MarkdownDoc
+      filePath="../../docs/@ Gaia Confederation_ Great Alliance of Integrity_Interdependence and Autonomy_ Alliance for an Autonomous and Resilient & Regenerative Territories.md"
+      title={locale === 'es' ? '📄 Leer Documento Completo' : '📄 Read Full Document'}
+    />
+  </main>
+
+  <Footer locale={locale} />
+</Layout>

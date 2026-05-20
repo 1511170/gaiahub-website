@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '@site/components/Navigation.astro';
+import Footer from '@site/components/Footer.astro';
+import { t } from '@site/i18n';
+import { getCollection } from 'astro:content';
+
+const locale = 'en';
+const i18n = t(locale);
+
+const posts = (await getCollection('blog'))
+  .filter(p => p.data.published)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<Layout 
+  title="Blog | Gaia Ecosystem"
+  description="Latest insights from the regenerative ecosystem. Articles on regeneration, governance, economy, and planetary coordination."
+  keywords={["blog", "regeneration", "ecosystem", "governance", "economy"]}
+  schemaType={["Blog", "WebSite"]}
+>
+  <Navigation locale={locale} activePage="blog" />
+
+  <main class="pt-32 pb-20 px-6 lg:px-[5.5rem]">
+    <div class="max-w-[1618px] mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-20">
+        <div class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-6">
+          Regenerative Insights
+        </div>
+        <h1 class="font-headline text-4xl md:text-6xl lg:text-7xl font-black text-on-surface leading-tight tracking-tighter mb-6">
+          Gaia Blog
+        </h1>
+        <p class="text-xl text-on-surface/70 max-w-2xl mx-auto font-light">
+          Stories, research, and insights from the planetary regeneration frontlines.
+        </p>
+      </div>
+
+      <!-- Posts Grid -->
+      {posts.length === 0 ? (
+        <div class="text-center py-20">
+          <p class="text-on-surface/50 text-lg">No posts published yet. Check back soon.</p>
+        </div>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post) => (
+            <a href={`/blog/${post.slug}`} class="group block bg-surface-container-low rounded-xl overflow-hidden hover:-translate-y-2 transition-all duration-300 ethereal-shadow">
+              <div class="aspect-video bg-surface-container-high overflow-hidden">
+                {post.data.image ? (
+                  <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                ) : (
+                  <div class="w-full h-full flex items-center justify-center text-6xl">🌱</div>
+                )}
+              </div>
+              <div class="p-6 lg:p-8">
+                <div class="flex items-center gap-3 text-sm text-on-surface/50 mb-3">
+                  <span class="px-2 py-0.5 bg-primary-container text-on-primary-container rounded-full text-xs font-bold uppercase">{post.data.category}</span>
+                  <span>{formatDate(post.data.date)}</span>
+                </div>
+                <h2 class="font-headline text-xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors line-clamp-2">{post.data.title}</h2>
+                <p class="text-on-surface/60 text-sm leading-relaxed line-clamp-3">{post.data.excerpt}</p>
+                <div class="mt-4 flex items-center gap-2 text-sm font-bold text-primary uppercase tracking-wider group-hover:gap-4 transition-all">
+                  Read more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </main>
+
+  <Footer locale={locale} />
+</Layout>
+
+<style>
+  .ethereal-shadow {
+    box-shadow: 0 40px 60px -5px rgba(54, 59, 16, 0.06);
+  }
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

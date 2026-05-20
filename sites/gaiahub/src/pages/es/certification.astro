@@ -1,0 +1,123 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "@site/components/Navigation.astro";
+import Footer from "@site/components/Footer.astro";
+import { t } from "@site/i18n";
+
+import PageHero from "@site/components/page-sections/PageHero.astro";
+import FeatureGrid from "@site/components/page-sections/FeatureGrid.astro";
+import DocumentSection from "@site/components/page-sections/DocumentSection.astro";
+import ProcessSteps from "@site/components/page-sections/ProcessSteps.astro";
+import StatsBar from "@site/components/page-sections/StatsBar.astro";
+import CTABanner from "@site/components/page-sections/CTABanner.astro";
+import MarkdownDoc from "@site/components/page-sections/MarkdownDoc.astro";
+
+const locale = "es";
+const i18n = t(locale);
+---
+
+<Layout
+  title={i18n.certification.meta_title}
+  description={i18n.certification.meta_description}
+>
+  <Navigation locale={locale} activePage="certification" />
+
+  <main class="pt-32">
+    <PageHero
+      badge="Certificacion de Confianza"
+      title="Certifica tu compromiso con la regeneracion."
+      subtitle="Un proceso de certificacion riguroso pero accesible que ayuda a organizaciones e individuos a demostrar y refinar continuamente su compromiso con los principios regenerativos."
+      image="/images/certification-hero.webp"
+    />
+
+    <FeatureGrid
+      id="why"
+      title="Por que importa la Certificacion"
+      features={[
+        { icon: "verified", title: "Sello de Integridad", description: "Refleja la adherencia a valores regenerativos. Indica transparencia, responsabilidad y autenticidad—cualidades cada vez mas buscadas por aliados, clientes y el publico." },
+        { icon: "trending_up", title: "Ventaja Comercial", description: "Accede a nuevos mercados de consumidores eco-conscientes e inversores eticos. Diferenciate de la competencia que carece de un sello de confianza ecologica creible y construye lealtad de marca valiosa." },
+        { icon: "task_alt", title: "Responsabilidad Interna", description: "Establece compromisos a largo plazo para el bienestar ambiental, social, economico y cultural. Proporciona marcos estructurados e indicadores clave de desempeno para el seguimiento del progreso." },
+        { icon: "public", title: "Alineacion Global", description: "Conectate con una red mas amplia de entidades certificadas y expertos en todo el mundo. Co-crea soluciones, comparte mejores practicas y aprende de la sabiduria colectiva." }
+      ]}
+      columns={2}
+    />
+
+    <FeatureGrid
+      title="Componentes Principales"
+      features={[
+        { icon: "verified", title: "Insignia de Certificacion", description: "Un emblema visible que confirma el estado de la entidad como parte de un movimiento global dedicado a regenerar la vida en la Tierra." },
+        { icon: "passport", title: "Pasaporte de Confianza", description: "Un enfoque novedoso para la identidad, la confianza y la reputacion—creado para un mundo donde la colaboracion y la contribucion autentica son valores centrales." },
+        { icon: "emoji_events", title: "Sistema de Recompensas", description: "Mas alla de un simple sello de aprobacion, diversos metodos de reconocimiento y recompensa fomentan el compromiso a largo plazo a traves de multiples formas de capital." },
+        { icon: "monitoring", title: "Panel de Impacto", description: "Visualizaciones en tiempo real de practicas regenerativas, procesos, proyectos y contribuciones disenadas para gamificar e inspirar la mejora continua." }
+      ]}
+      columns={2}
+      bg="surface-container"
+    />
+
+    <DocumentSection
+      title="Criterios de Elegibilidad"
+      subtitle="Para calificar para la Insignia de Certificacion Gaia, una entidad debe cumplir con estandares integrales que cubren conducta etica, impacto regenerativo y experiencia especializada."
+      blocks={[
+        {
+          heading: "Requisitos Fundamentales",
+          paragraphs: [
+            "No participa en practicas degenerativas o no eticas. La documentacion clara garantiza que no dana los entornos locales, explota la mano de obra o engana a las partes interesadas. Se mantienen cadenas de suministro transparentes y practicas laborales justas donde sea aplicable.",
+            "Contribuye activamente al bienestar planetario y social. Demuestra esfuerzos continuos para mejorar la biodiversidad, reducir residuos, mejorar el bienestar comunitario y promover la equidad en todas sus operaciones."
+          ]
+        },
+        {
+          heading: "Criterios Especializados (al menos uno requerido)",
+          list: [
+            "Educacion / Formacion ReGenerativa",
+            "Economia ReGenerativa",
+            "Gobernanza ReGenerativa",
+            "Salud y Bienestar ReGenerativos",
+            "Ecologia / Medio Ambiente ReGenerativo",
+            "Experiencias ReGenerativas",
+            "Artes y Pasatiempos ReGenerativos",
+            "Conciencia ReGenerativa",
+            "Metafisica ReGenerativa y Sabiduria Ancestral",
+            "Productos Organicos, AgroEcologicos y Eco-Amigables"
+          ]
+        }
+      ]}
+      bg="surface-container-low"
+    />
+
+    <ProcessSteps
+      id="apply"
+      title="Proceso de Incorporacion"
+      steps={[
+        { number: "1", title: "Aplicar", description: "Las entidades presentan un formulario detallado que describe sus practicas regenerativas, junto con verificaciones de terceros opcionales como certificaciones organicas, estatus B-Corp o testimonios locales." },
+        { number: "2", title: "Revisar", description: "Un Comite de Certificacion evalua las solicitudes, revisa la evidencia complementaria y puede programar entrevistas o visitas in situ para garantizar la alineacion con los estandares." },
+        { number: "3", title: "Aprobar", description: "Las entidades evaluadas exitosamente son reconocidas publicamente y destacadas en la base de datos Gaia Certified, otorgandoseles la insignia oficial para exhibicion digital y fisica." },
+        { number: "4", title: "Monitorear", description: "Renovacion anual con actualizaciones sobre mejoras, expansiones y cumplimiento continuo. Las inspecciones sorpresa y la retroalimentacion comunitaria garantizan la alineacion continuada." }
+      ]}
+      bg="surface-container"
+    />
+
+    <StatsBar
+      stats={[
+        { value: "4", label: "Componentes Principales", icon: "category" },
+        { value: "10+", label: "Criterios Especializados", icon: "checklist" },
+        { value: "4", label: "Pasos de Incorporacion", icon: "steps" },
+        { value: "Infinito", label: "Beneficios de Red", icon: "emoji_events" }
+      ]}
+    />
+
+    <CTABanner
+      title="Aplica para la Certificacion"
+      subtitle="Unete a una red global de organizaciones e individuos regenerativos. Demuestra tu compromiso, construye confianza y desbloquea nuevas oportunidades de colaboracion y crecimiento."
+      ctaLabel="Aplicar para Certificacion"
+      ctaHref="https://t.me/+1x_EVaVp-lEwN2I8"
+      bgImage="/images/cta-banner-bg.webp"
+      external
+    />
+    <MarkdownDoc
+      filePath="../../docs/@ Certification Program - Integral ReGeneration Dashboard - Master doc.md"
+      title={locale === 'es' ? '📄 Leer Documento Completo' : '📄 Read Full Document'}
+    />
+  </main>
+
+  <Footer locale={locale} />
+</Layout>

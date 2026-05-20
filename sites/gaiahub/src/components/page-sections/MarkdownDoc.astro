@@ -1,0 +1,345 @@
+---
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+import { unified } from 'unified';
+
+interface Props {
+  filePath: string;
+  title: string;
+}
+
+const { filePath, title } = Astro.props;
+
+// Read markdown file
+let htmlContent = '';
+let toc: Array<{ level: number; text: string; id: string }> = [];
+
+try {
+  const absolutePath = resolve(process.cwd(), filePath);
+  const raw = readFileSync(absolutePath, 'utf-8');
+
+  // Convert markdown to HTML using unified (ESM plugins)
+  const [{ default: remarkParse }, { default: remarkRehype }, { default: rehypeStringify }] = await Promise.all([
+    import('remark-parse'),
+    import('remark-rehype'),
+    import('rehype-stringify'),
+  ]);
+
+  const result = await unified()
+    .use(remarkParse)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeStringify, { allowDangerousHtml: true })
+    .process(raw);
+
+  htmlContent = String(result);
+
+  // Add IDs to h2 and h3 for anchor navigation
+  htmlContent = htmlContent.replace(/<h2>([^<]+)<\/h2>/g, (_match, text) => {
+    const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+    return `<h2 id="${id}">${text}</h2>`;
+  });
+  htmlContent = htmlContent.replace(/<h3>([^<]+)<\/h3>/g, (_match, text) => {
+    const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+    return `<h3 id="${id}">${text}</h3>`;
+  });
+
+  // Extract TOC from h2 and h3
+  const h2Matches = [...htmlContent.matchAll(/<h2 id="([^"]+)">([^<]+)<\/h2>/g)];
+  const h3Matches = [...htmlContent.matchAll(/<h3 id="([^"]+)">([^<]+)<\/h3>/g)];
+
+  toc = [
+    ...h2Matches.map(m => ({ level: 2, text: m[2], id: m[1] })),
+    ...h3Matches.map(m => ({ level: 3, text: m[2], id: m[1] })),
+  ].sort((a, b) => {
+    // Sort by appearance in HTML string
+    const idxA = htmlContent.indexOf(`<h${a.level} id="${a.id}">`);
+    const idxB = htmlContent.indexOf(`<h${b.level} id="${b.id}">`);
+    return idxA - idxB;
+  });
+} catch (err) {
+  console.error(`MarkdownDoc: failed to read or process ${filePath}`, err);
+}
+---
+
+<section class="py-16 lg:py-24 px-6 lg:px-[5.5rem] bg-surface-container-low border-t border-outline/10">
+  <div class="max-w-[1618px] mx-auto">
+    <details class="group markdown-doc-accordion" open={false}>
+      <summary class="flex items-center justify-between cursor-pointer list-none py-6 px-8 bg-surface rounded-xl shadow-sm border border-outline/5 hover:shadow-md transition-all select-none">
+        <span class="font-headline text-xl md:text-2xl font-bold text-on-surface">{title}</span>
+        <span class="material-symbols-outlined text-3xl text-primary transition-transform duration-300 group-open:rotate-180">expand_more</span>
+      </summary>
+
+      <div class="mt-8 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-12">
+        {/* TOC Sidebar */}
+        {toc.length > 0 && (
+          <aside class="hidden lg:block">
+            <nav class="sticky top-32 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4">
+              <div class="font-headline text-sm font-bold text-on-surface/40 uppercase tracking-wider mb-4">Contents</div>
+              <ul class="space-y-2 border-l-2 border-outline/10">
+                {toc.map(item => (
+                  <li class={`${item.level === 3 ? 'ml-4' : ''}`}>
+                    <a
+                      href={`#${item.id}`}
+                      class={`block py-1 px-3 text-sm rounded-r-md transition-colors ${item.level === 2 ? 'font-semibold text-on-surface/80 hover:text-primary hover:bg-primary-container/20' : 'text-on-surface/60 hover:text-primary hover:bg-primary-container/10'}`}
+                    >
+                      {item.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </aside>
+        )}
+
+        {/* Main Content */}
+        <div class="markdown-doc">
+          {htmlContent ? (
+            <div set:html={htmlContent} />
+          ) : (
+            <p class="text-on-surface/60 italic">Document not available.</p>
+          )}
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<style is:global>
+  .markdown-doc {
+    color: var(--color-on-surface);
+    line-height: 1.75;
+  }
+  .markdown-doc > *:first-child {
+    margin-top: 0;
+  }
+
+  /* Headings */
+  .markdown-doc h1,
+  .markdown-doc h1 strong {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-on-surface);
+  }
+  .markdown-doc h1 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--color-primary);
+    scroll-margin-top: 8rem;
+  }
+  .markdown-doc h2,
+  .markdown-doc h2 strong {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--color-on-surface);
+  }
+  .markdown-doc h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-outline);
+    scroll-margin-top: 8rem;
+  }
+  .markdown-doc h3,
+  .markdown-doc h3 strong {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1.375rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-on-surface);
+  }
+  .markdown-doc h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    scroll-margin-top: 8rem;
+  }
+  .markdown-doc h4 {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-on-surface);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Paragraphs */
+  .markdown-doc p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-on-surface);
+    opacity: 0.85;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Lists */
+  .markdown-doc ul,
+  .markdown-doc ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  .markdown-doc ul {
+    list-style: none;
+  }
+  .markdown-doc ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-on-surface);
+    opacity: 0.85;
+  }
+  .markdown-doc ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-primary);
+  }
+  .markdown-doc ol {
+    list-style: decimal;
+  }
+  .markdown-doc ol li {
+    margin-bottom: 0.75rem;
+    padding-left: 0.5rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-on-surface);
+    opacity: 0.85;
+  }
+
+  /* Blockquotes */
+  .markdown-doc blockquote {
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem;
+    border-left: 4px solid var(--color-primary);
+    background: var(--color-surface-container-low);
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-style: italic;
+    color: var(--color-on-surface);
+    opacity: 0.75;
+  }
+  .markdown-doc blockquote p {
+    margin-bottom: 0.75rem;
+  }
+  .markdown-doc blockquote p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Tables */
+  .markdown-doc table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.9375rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .markdown-doc thead {
+    background: var(--color-surface-container);
+  }
+  .markdown-doc th {
+    padding: 0.875rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    font-family: 'Epilogue', sans-serif;
+    color: var(--color-on-surface);
+    border-bottom: 2px solid var(--color-outline);
+  }
+  .markdown-doc td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-outline);
+    color: var(--color-on-surface);
+    opacity: 0.85;
+  }
+  .markdown-doc tbody tr:nth-child(even) {
+    background: var(--color-surface-container-low);
+  }
+  .markdown-doc tbody tr:hover {
+    background: var(--color-surface-container-high);
+  }
+
+  /* Code */
+  .markdown-doc code {
+    font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.875rem;
+    background: var(--color-surface-container-high);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    color: var(--color-on-surface);
+  }
+  .markdown-doc pre {
+    background: var(--color-surface-container-high);
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .markdown-doc pre code {
+    background: transparent;
+    padding: 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  /* Links */
+  .markdown-doc a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .markdown-doc a:hover {
+    border-bottom-color: var(--color-primary);
+  }
+
+  /* Horizontal rules */
+  .markdown-doc hr {
+    border: none;
+    border-top: 2px solid var(--color-outline);
+    opacity: 0.3;
+    margin: 3rem 0;
+  }
+
+  /* Strong / Emphasis */
+  .markdown-doc strong {
+    font-weight: 700;
+    color: var(--color-on-surface);
+  }
+  .markdown-doc em {
+    font-style: italic;
+    color: var(--color-on-surface);
+    opacity: 0.8;
+  }
+
+  /* Images */
+  .markdown-doc img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  /* Summary / Details inside markdown */
+  .markdown-doc details {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    background: var(--color-surface-container);
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-outline);
+  }
+  .markdown-doc summary {
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+  }
+</style>
