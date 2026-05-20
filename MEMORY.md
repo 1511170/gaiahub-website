@@ -3,7 +3,8 @@
 > **Last updated:** 2026-05-19  
 > **Stack:** Astro 5 + Tailwind CSS + Sveltia CMS + Static Build  
 > **Domain:** gaiahub.co  
-> **Repo:** https://github.com/1511170/gaiahub-website
+> **Source Repo:** https://github.com/1511170/gaiahub-website (`master` branch)  
+> **Static Repo:** https://github.com/1511170/gaiahub-website-static (`master` branch)
 
 ---
 
