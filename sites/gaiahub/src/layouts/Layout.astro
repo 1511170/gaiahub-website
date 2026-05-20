@@ -44,17 +44,12 @@ const siteUrl = `https://${siteConfig.site.domain}`;
 
 // i18n setup
 const locale = getLocaleFromUrl(Astro.url);
-const flagMap: Record<string, string> = {
-  en: '🇺🇸',
-  es: '🇪🇸',
-};
 const alternates = getLocales()
   .filter((l) => l !== locale)
   .map((l) => ({
     code: l,
     label: l.toUpperCase(),
     href: getLocalizedPath(getPathWithoutLocale(Astro.url.pathname), l),
-    flagEmoji: flagMap[l] ?? undefined,
   }));
 ---
 

@@ -6,16 +6,17 @@ interface ContentBlock {
   quote?: string;
 }
 interface Props {
+  id?: string;
   title?: string;
   subtitle?: string;
   blocks: ContentBlock[];
   bg?: 'surface' | 'surface-container' | 'surface-container-low';
 }
-const { title, subtitle, blocks, bg = 'surface' } = Astro.props;
+const { id, title, subtitle, blocks, bg = 'surface' } = Astro.props;
 const bgClass = bg === 'surface-container' ? 'bg-surface-container' : bg === 'surface-container-low' ? 'bg-surface-container-low' : 'bg-surface';
 ---
 
-<section class={`${bgClass} py-20 lg:py-28 px-6 lg:px-[5.5rem] gsap-fade-up`}>
+<section id={id} class={`${bgClass} py-20 lg:py-28 px-6 lg:px-[5.5rem] gsap-fade-up ${id ? 'scroll-mt-32' : ''}`}>
   <div class="max-w-[1618px] mx-auto">
     {(title || subtitle) && (
       <div class="mb-16 max-w-3xl">

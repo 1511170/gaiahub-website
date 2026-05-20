@@ -1,5 +1,6 @@
 ---
 interface Props {
+  id?: string;
   title: string;
   body: string | string[];
   image?: string;
@@ -7,12 +8,12 @@ interface Props {
   reverse?: boolean;
   bg?: 'surface' | 'surface-container' | 'surface-container-low';
 }
-const { title, body, image, icon, reverse = false, bg = 'surface' } = Astro.props;
+const { id, title, body, image, icon, reverse = false, bg = 'surface' } = Astro.props;
 const bgClass = bg === 'surface-container' ? 'bg-surface-container' : bg === 'surface-container-low' ? 'bg-surface-container-low' : 'bg-surface';
 const bodyLines = Array.isArray(body) ? body : [body];
 ---
 
-<section class={`${bgClass} py-20 lg:py-28 px-6 lg:px-[5.5rem] gsap-fade-up`}>
+<section id={id} class={`${bgClass} py-20 lg:py-28 px-6 lg:px-[5.5rem] gsap-fade-up ${id ? 'scroll-mt-32' : ''}`}>
   <div class="max-w-[1618px] mx-auto">
     <div class={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${reverse ? 'lg:grid-flow-dense' : ''}`}>
       <div class={reverse ? 'lg:col-start-2' : ''}>

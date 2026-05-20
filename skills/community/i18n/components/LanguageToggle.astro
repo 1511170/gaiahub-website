@@ -23,8 +23,6 @@ interface LocaleOption {
   label: string;
   /** Ruta al ícono de bandera (SVG/PNG). Opcional. */
   flagSrc?: string;
-  /** Emoji de bandera. Opcional. */
-  flagEmoji?: string;
   /** Texto accesible para el botón. */
   ariaLabel?: string;
 }
@@ -57,6 +55,25 @@ const inlineClass =
   'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 hover:border-gray-400 transition-colors text-sm font-medium text-gray-700 hover:text-gray-900';
 const stickyClass =
   'inline-flex items-center gap-2 px-4 py-3 rounded-full border-2 border-gray-200 bg-white shadow-lg hover:border-gray-400 hover:shadow-xl transition-all text-base font-semibold text-gray-800 hover:text-gray-900 active:scale-[0.98]';
+
+// Inline SVG flags — avoids Windows/Node.js emoji encoding issues
+const flagSvgs: Record<string, string> = {
+  en: `<svg viewBox="0 0 20 14" width="20" height="14" class="rounded-sm flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <rect width="20" height="14" fill="#B22234"/>
+    <rect y="1.08" width="20" height="1.08" fill="#fff"/>
+    <rect y="3.23" width="20" height="1.08" fill="#fff"/>
+    <rect y="5.38" width="20" height="1.08" fill="#fff"/>
+    <rect y="7.54" width="20" height="1.08" fill="#fff"/>
+    <rect y="9.69" width="20" height="1.08" fill="#fff"/>
+    <rect y="11.85" width="20" height="1.08" fill="#fff"/>
+    <rect width="8" height="7.54" fill="#3C3B6E"/>
+  </svg>`,
+  es: `<svg viewBox="0 0 20 14" width="20" height="14" class="rounded-sm flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <rect width="20" height="14" fill="#AA151B"/>
+    <rect y="3.5" width="20" height="7" fill="#F1BF00"/>
+    <rect y="4.67" width="20" height="4.67" fill="#F1BF00"/>
+  </svg>`,
+};
 ---
 
 {sticky ? (
@@ -68,9 +85,13 @@ const stickyClass =
         aria-label={alt.ariaLabel ?? `Switch to ${alt.label}`}
         hreflang={alt.code}
       >
-        {(alt.flagEmoji || alt.flagSrc) && (
-          <span class="text-xl leading-none" aria-hidden="true">
-            {alt.flagEmoji ? alt.flagEmoji : <img src={alt.flagSrc} alt="" width={24} height={18} class="object-cover rounded-sm flex-shrink-0" />}
+        {(alt.flagSrc || flagSvgs[alt.code]) && (
+          <span class="leading-none" aria-hidden="true">
+            {alt.flagSrc ? (
+              <img src={alt.flagSrc} alt="" width={24} height={18} class="object-cover rounded-sm flex-shrink-0" />
+            ) : (
+              <Fragment set:html={flagSvgs[alt.code]} />
+            )}
           </span>
         )}
         <span>{alt.label}</span>
@@ -86,9 +107,13 @@ const stickyClass =
         aria-label={alt.ariaLabel ?? `Switch to ${alt.label}`}
         hreflang={alt.code}
       >
-        {(alt.flagEmoji || alt.flagSrc) && (
-          <span class="text-lg leading-none" aria-hidden="true">
-            {alt.flagEmoji ? alt.flagEmoji : <img src={alt.flagSrc} alt="" width="20" height="14" class="object-cover rounded-sm" />}
+        {(alt.flagSrc || flagSvgs[alt.code]) && (
+          <span class="leading-none" aria-hidden="true">
+            {alt.flagSrc ? (
+              <img src={alt.flagSrc} alt="" width="20" height="14" class="object-cover rounded-sm" />
+            ) : (
+              <Fragment set:html={flagSvgs[alt.code]} />
+            )}
           </span>
         )}
         <span>{alt.label}</span>
