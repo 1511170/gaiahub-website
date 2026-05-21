@@ -34,61 +34,57 @@ function formatDate(date: Date) {
   <Navigation locale={locale} activePage="home" />
 
   <main>
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-8 px-6 lg:px-[5.5rem] overflow-hidden">
-      <div class="absolute top-0 right-0 w-full h-full -z-10 opacity-20 pointer-events-none">
-        <div class="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] rounded-full bg-primary-container blur-[120px]"></div>
-        <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-secondary-container blur-[100px]"></div>
+    <!-- Hero Section: Full-bleed banner with text overlay -->
+    <section class="relative pt-32 pb-16 lg:pb-24 px-6 lg:px-[5.5rem] overflow-hidden min-h-[85vh] flex items-center">
+      <div class="absolute inset-0 -z-10">
+        <img 
+          src="/images/hero-banner.webp" 
+          class="w-full h-full object-cover" 
+          alt="Sustainable community integrated into rainforest" 
+        />
+        <!-- Light overlay so image stays visible -->
+        <div class="absolute inset-0 bg-on-surface/30"></div>
+        <!-- Subtle gradient from bottom for smooth transition -->
+        <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
       </div>
-      <div class="max-w-[1618px] mx-auto w-full">
-        <div class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-8 gsap-fade-up">
-          {i18n.home.hero_badge}
-        </div>
-        <h1 class="hero-title font-headline text-5xl md:text-7xl lg:text-8xl font-black text-on-surface leading-[0.95] tracking-tighter mb-8 max-w-5xl">
-          {i18n.home.hero_title.split('regenerates')[0]}<span class="text-primary italic">regenerates</span>.
-        </h1>
-        <p class="hero-subtitle text-xl md:text-2xl text-on-surface/70 max-w-2xl font-light leading-relaxed mb-12">
-          {i18n.home.hero_subtitle}
-        </p>
-        <div class="hero-cta flex flex-col sm:flex-row gap-6">
-          <a href="#triada" class="solar-gradient px-10 py-5 rounded-full text-white font-headline font-bold text-lg hover:opacity-90 transition-all scale-95 active:scale-90 shadow-xl text-center">
-            {i18n.home.cta_discover}
-          </a>
-          <a href="#comunidad" class="bg-surface-container-highest px-10 py-5 rounded-full text-on-surface font-headline font-bold text-lg hover:bg-surface-container-high transition-all text-center">
-            {i18n.home.cta_join}
-          </a>
-        </div>
-        <!-- Newsletter CTA -->
-        <div class="mt-10 max-w-md gsap-fade-up">
-          <p class="text-sm font-bold text-on-surface/60 uppercase tracking-wider mb-3">{i18n.home.newsletter_title}</p>
-          <form class="flex gap-2" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
-            <input 
-              type="email" 
-              placeholder={i18n.home.newsletter_placeholder}
-              class="flex-1 px-5 py-3 rounded-full bg-white border border-outline/20 text-on-surface placeholder:text-on-surface/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-              required
-            />
-            <button 
-              type="submit"
-              class="solar-gradient px-6 py-3 rounded-full text-white font-headline font-bold text-sm hover:opacity-90 transition-all shadow-lg"
-            >
-              {i18n.home.newsletter_button}
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- Hero Banner -->
-    <section class="w-full px-6 lg:px-[5.5rem] mb-16 gsap-scale-in">
-      <div class="max-w-[1618px] mx-auto">
-        <div class="w-full h-[40vh] min-h-[300px] max-h-[560px] rounded-2xl overflow-hidden ethereal-shadow relative">
-          <img 
-            class="w-full h-full object-cover" 
-            alt="Sustainable community integrated into rainforest" 
-            src="/images/hero-banner.webp"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent"></div>
+      <div class="max-w-[1618px] mx-auto w-full relative z-10">
+        <!-- Text card with semi-transparent dark background for readability -->
+        <div class="inline-block p-8 md:p-10 lg:p-12 rounded-2xl bg-black/40 backdrop-blur-md max-w-3xl">
+          <div class="inline-block px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 text-white text-xs font-bold tracking-widest uppercase mb-6 gsap-fade-up">
+            {i18n.home.hero_badge}
+          </div>
+          <h1 class="hero-title font-headline text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[0.95] tracking-tighter mb-6 drop-shadow-lg">
+            {i18n.home.hero_title.split('regenerates')[0]}<span class="text-primary italic">regenerates</span>.
+          </h1>
+          <p class="hero-subtitle text-lg md:text-xl text-white/90 max-w-xl font-light leading-relaxed mb-8 drop-shadow-md">
+            {i18n.home.hero_subtitle}
+          </p>
+          <div class="hero-cta flex flex-col sm:flex-row gap-4">
+            <a href="#triada" class="solar-gradient px-8 py-4 rounded-full text-white font-headline font-bold text-base hover:opacity-90 transition-all scale-95 active:scale-90 shadow-xl text-center">
+              {i18n.home.cta_discover}
+            </a>
+            <a href="#comunidad" class="bg-white/15 backdrop-blur-sm border border-white/25 px-8 py-4 rounded-full text-white font-headline font-bold text-base hover:bg-white/25 transition-all text-center">
+              {i18n.home.cta_join}
+            </a>
+          </div>
+          <!-- Newsletter CTA -->
+          <div class="mt-8 max-w-md gsap-fade-up">
+            <p class="text-xs font-bold text-white/70 uppercase tracking-wider mb-2">{i18n.home.newsletter_title}</p>
+            <form class="flex gap-2" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+              <input 
+                type="email" 
+                placeholder={i18n.home.newsletter_placeholder}
+                class="flex-1 px-4 py-2.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-sm"
+                required
+              />
+              <button 
+                type="submit"
+                class="solar-gradient px-5 py-2.5 rounded-full text-white font-headline font-bold text-sm hover:opacity-90 transition-all shadow-lg"
+              >
+                {i18n.home.newsletter_button}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -108,18 +104,26 @@ function formatDate(date: Date) {
       </div>
     </section>
 
-    <!-- Concept Section: ¿Qué es Gaia? -->
-    <section class="py-[5.5rem] px-6 lg:px-[5.5rem] bg-surface-container gsap-fade-up">
-      <div class="max-w-[1618px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.618fr] gap-16 items-center">
-        <div class="space-y-8">
-          <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-black text-on-surface leading-tight">
-            {i18n.home.concept_title}
-          </h2>
-          <p class="text-xl text-on-surface/80 leading-relaxed">
-            {i18n.home.concept_subtitle}
-          </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 gsap-stagger">
+    <!-- Concept Section: Full-bleed image with text overlay -->
+    <section class="relative py-[7rem] lg:py-[10rem] px-6 lg:px-[5.5rem] overflow-hidden gsap-fade-up">
+      <div class="absolute inset-0 -z-10">
+        <img src="/images/concept-bg.webp" class="w-full h-full object-cover" alt="Regenerative landscape" />
+        <div class="absolute inset-0 bg-gradient-to-r from-on-surface/90 via-on-surface/75 to-on-surface/50"></div>
+      </div>
+      <div class="max-w-[1618px] mx-auto relative z-10">
+        <h2 class="font-headline text-4xl md:text-5xl lg:text-7xl font-black text-white leading-tight max-w-4xl mb-6 drop-shadow-lg">
+          {i18n.home.concept_title}
+        </h2>
+        <p class="text-xl md:text-2xl text-white/85 leading-relaxed max-w-2xl drop-shadow-md">
+          {i18n.home.concept_subtitle}
+        </p>
+      </div>
+    </section>
+
+    <!-- Concept Cards Section -->
+    <section class="py-[5.5rem] px-6 lg:px-[5.5rem] bg-surface-container-low gsap-fade-up">
+      <div class="max-w-[1618px] mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 gsap-stagger">
           <div class="relative aspect-[4/3] rounded-xl overflow-hidden ethereal-shadow group">
             <img src="/images/concept-regen.webp" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Regeneration" />
             <div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-on-surface/20"></div>
@@ -137,7 +141,7 @@ function formatDate(date: Date) {
             </div>
           </div>
           <div class="relative aspect-[4/3] rounded-xl overflow-hidden ethereal-shadow group">
-            <img src="/images/cta-banner-bg.webp" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Collaboration" />
+            <img src="/images/concept-collab.webp" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Collaboration" />
             <div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-on-surface/20"></div>
             <div class="absolute bottom-0 left-0 p-6">
               <span class="material-symbols-outlined text-4xl text-primary-container mb-2" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
@@ -157,7 +161,7 @@ function formatDate(date: Date) {
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 gsap-stagger">
           <!-- Gaia Commons -->
-          <div class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/concept-regen.webp'); background-size: cover; background-position: center;">
+          <div class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/triad-commons.webp'); background-size: cover; background-position: center;">
             <div class="absolute inset-0 bg-surface-container-low/95"></div>
             <div class="absolute top-0 right-0 p-8 text-on-surface/10 font-black text-6xl font-headline">01</div>
             <span class="material-symbols-outlined text-5xl text-secondary-dim mb-8" style="font-variation-settings: 'FILL' 1;">favorite</span>
@@ -177,7 +181,7 @@ function formatDate(date: Date) {
             </a>
           </div>
           <!-- Gaia Hub -->
-          <a href="/hub" class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/concept-coord.webp'); background-size: cover; background-position: center;">
+          <a href="/hub" class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/triad-hub.webp'); background-size: cover; background-position: center;">
             <div class="absolute inset-0 bg-surface-container-high/95"></div>
             <div class="absolute top-0 right-0 p-8 text-on-surface/10 font-black text-6xl font-headline">02</div>
             <span class="material-symbols-outlined text-5xl text-primary mb-8" style="font-variation-settings: 'FILL' 1;">network_node</span>
@@ -189,7 +193,7 @@ function formatDate(date: Date) {
             </div>
           </a>
           <!-- Gaia Market -->
-          <a href="/market" class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/cta-banner-bg.webp'); background-size: cover; background-position: center;">
+          <a href="/market" class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/triad-market.webp'); background-size: cover; background-position: center;">
             <div class="absolute inset-0 bg-surface-container-highest/95"></div>
             <div class="absolute top-0 right-0 p-8 text-on-surface/10 font-black text-6xl font-headline">03</div>
             <span class="material-symbols-outlined text-5xl text-secondary mb-8" style="font-variation-settings: 'FILL' 1;">storefront</span>
@@ -207,7 +211,7 @@ function formatDate(date: Date) {
     <!-- Flow Section: Cómo funciona -->
     <section id="como-funciona" class="relative py-[5.5rem] lg:py-[7rem] px-6 lg:px-[5.5rem] bg-surface gsap-fade-up overflow-hidden">
       <div class="absolute inset-0 -z-0 opacity-5">
-        <img src="/images/cta-banner-bg.webp" class="w-full h-full object-cover" alt="" />
+        <img src="/images/flow-bg.webp" class="w-full h-full object-cover" alt="" />
       </div>
       <div class="max-w-[1618px] mx-auto">
         <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl font-black text-center mb-20">{i18n.home.how_title}</h2>
@@ -345,13 +349,13 @@ function formatDate(date: Date) {
                 From the Blog
               </h2>
             </div>
-            <a href="/blog" class="mt-6 md:mt-0 inline-flex items-center gap-2 font-headline font-bold text-primary uppercase tracking-wider text-sm hover:gap-4 transition-all">
+            <a href="/blog/" class="mt-6 md:mt-0 inline-flex items-center gap-2 font-headline font-bold text-primary uppercase tracking-wider text-sm hover:gap-4 transition-all">
               View all posts <span class="material-symbols-outlined">arrow_forward</span>
             </a>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 gsap-stagger">
             {latestPosts.map((post) => (
-              <a href={`/blog/${post.slug}`} class="group block bg-surface-container-low rounded-xl overflow-hidden hover:-translate-y-2 transition-all duration-300 ethereal-shadow">
+              <a href={`/blog/${post.slug}/`} class="group block bg-surface-container-low rounded-xl overflow-hidden hover:-translate-y-2 transition-all duration-300 ethereal-shadow">
                 <div class="aspect-video bg-surface-container-high overflow-hidden">
                   {post.data.image ? (
                     <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />

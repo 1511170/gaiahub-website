@@ -1,0 +1,32 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  variant?: 'default' | 'primary' | 'secondary' | 'tertiary';
+}
+
+const { icon, title, description, variant = 'default' } = Astro.props;
+
+const variantClasses = {
+  default: 'bg-surface-container hover:bg-surface-container-high',
+  primary: 'bg-primary-container/30 hover:bg-primary-container/50',
+  secondary: 'bg-secondary-container/30 hover:bg-secondary-container/50',
+  tertiary: 'bg-tertiary/10 hover:bg-tertiary/20',
+};
+
+const iconColors = {
+  default: 'text-primary',
+  primary: 'text-primary',
+  secondary: 'text-secondary',
+  tertiary: 'text-tertiary',
+};
+---
+
+<div class={`group p-6 lg:p-8 rounded-2xl border border-outline/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${variantClasses[variant]}`}>
+  <span class={`material-symbols-outlined text-4xl mb-4 block ${iconColors[variant]}`} style="font-variation-settings: 'FILL' 1;">
+    {icon}
+  </span>
+  <h3 class="font-headline text-lg font-bold text-on-surface mb-2">{title}</h3>
+  <p class="text-on-surface/70 text-sm leading-relaxed">{description}</p>
+</div>

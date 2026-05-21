@@ -78,7 +78,7 @@ export function createI18n<T extends Record<string, Record<string, unknown>>>(
   function getLocalizedPath(path: string, locale: keyof T & string): string {
     const clean = getPathWithoutLocale(path);
     if (locale === def) return clean;
-    return `/${locale}${clean === '/' ? '' : clean}`;
+    return `/${locale}${clean === '/' ? '/' : clean}`;
   }
 
   /**

@@ -1,0 +1,42 @@
+---
+interface Column {
+  key: string;
+  label: string;
+}
+
+interface Props {
+  columns: Column[];
+  rows: Record<string, string>[];
+  caption?: string;
+}
+
+const { columns, rows, caption } = Astro.props;
+---
+
+<div class="overflow-x-auto my-6 rounded-xl shadow-sm border border-outline/10">
+  <table class="w-full min-w-[500px] text-sm">
+    {caption && (
+      <caption class="sr-only">{caption}</caption>
+    )}
+    <thead>
+      <tr class="bg-surface-container">
+        {columns.map(col => (
+          <th class="px-4 py-3 text-left font-headline font-bold text-on-surface border-b-2 border-primary whitespace-nowrap">
+            {col.label}
+          </th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((row, i) => (
+        <tr class={`transition-colors hover:bg-surface-container-high ${i % 2 === 0 ? 'bg-surface-container-low' : 'bg-white'}`}>
+          {columns.map(col => (
+            <td class="px-4 py-3 text-on-surface/80 border-b border-outline/10">
+              {row[col.key]}
+            </td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

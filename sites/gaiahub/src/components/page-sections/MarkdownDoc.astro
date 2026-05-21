@@ -6,11 +6,23 @@ import { unified } from 'unified';
 interface Props {
   filePath: string;
   title: string;
+  locale?: string;
+  expandText?: string;
+  badgeText?: string;
+  contentsText?: string;
 }
 
-const { filePath, title } = Astro.props;
+const { filePath, title, locale = 'en', expandText, badgeText, contentsText } = Astro.props;
 
-// Read markdown file
+const isEs = locale === 'es';
+const defaultExpand = isEs ? 'Haz clic para expandir el documento completo' : 'Click to expand the full document';
+const defaultBadge = isEs ? 'Documento Completo' : 'Full Document';
+const defaultContents = isEs ? 'Contenido' : 'Contents';
+
+const finalExpand = expandText ?? defaultExpand;
+const finalBadge = badgeText ?? defaultBadge;
+const finalContents = contentsText ?? defaultContents;
+
 let htmlContent = '';
 let toc: Array<{ level: number; text: string; id: string }> = [];
 
@@ -18,15 +30,16 @@ try {
   const absolutePath = resolve(process.cwd(), filePath);
   const raw = readFileSync(absolutePath, 'utf-8');
 
-  // Convert markdown to HTML using unified (ESM plugins)
-  const [{ default: remarkParse }, { default: remarkRehype }, { default: rehypeStringify }] = await Promise.all([
+  const [{ default: remarkParse }, { default: remarkRehype }, { default: rehypeStringify }, { default: remarkGfm }] = await Promise.all([
     import('remark-parse'),
     import('remark-rehype'),
     import('rehype-stringify'),
+    import('remark-gfm'),
   ]);
 
   const result = await unified()
     .use(remarkParse)
+    .use(remarkGfm)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeStringify, { allowDangerousHtml: true })
     .process(raw);
@@ -51,7 +64,6 @@ try {
     ...h2Matches.map(m => ({ level: 2, text: m[2], id: m[1] })),
     ...h3Matches.map(m => ({ level: 3, text: m[2], id: m[1] })),
   ].sort((a, b) => {
-    // Sort by appearance in HTML string
     const idxA = htmlContent.indexOf(`<h${a.level} id="${a.id}">`);
     const idxB = htmlContent.indexOf(`<h${b.level} id="${b.id}">`);
     return idxA - idxB;
@@ -63,7 +75,7 @@ try {
 
 <section class="py-16 lg:py-24 px-6 lg:px-[5.5rem] bg-surface-container-low border-t border-outline/10">
   <div class="max-w-[1618px] mx-auto">
-    <details class="group markdown-doc-accordion" open={false}>
+    <details class="group markdown-doc-accordion" open={true}>
       <summary class="flex items-center gap-4 md:gap-6 cursor-pointer list-none py-5 px-6 md:py-6 md:px-8 bg-gradient-to-br from-surface to-surface-container rounded-xl shadow-sm border border-outline/5 hover:shadow-md hover:border-primary/10 transition-all select-none group/summary">
         <span class="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-primary-container flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
@@ -76,10 +88,10 @@ try {
         </span>
         <div class="flex-1 min-w-0">
           <span class="font-headline text-lg md:text-xl font-bold text-on-surface block leading-tight">{title}</span>
-          <span class="text-xs md:text-sm text-on-surface/50 mt-0.5 block">Click to expand the full document</span>
+          <span class="text-xs md:text-sm text-on-surface/50 mt-0.5 block">{finalExpand}</span>
         </div>
         <span class="hidden md:inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-container text-primary border border-primary/10">
-          Full Document
+          {finalBadge}
         </span>
         <span class="material-symbols-outlined text-2xl md:text-3xl text-primary transition-transform duration-300 group-open:rotate-180 flex-shrink-0">expand_more</span>
       </summary>
@@ -89,7 +101,7 @@ try {
         {toc.length > 0 && (
           <aside class="hidden lg:block">
             <nav class="sticky top-32 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4">
-              <div class="font-headline text-sm font-bold text-on-surface/40 uppercase tracking-wider mb-4">Contents</div>
+              <div class="font-headline text-sm font-bold text-on-surface/40 uppercase tracking-wider mb-4">{finalContents}</div>
               <ul class="space-y-2 border-l-2 border-outline/10">
                 {toc.map(item => (
                   <li class={`${item.level === 3 ? 'ml-4' : ''}`}>
@@ -106,12 +118,39 @@ try {
           </aside>
         )}
 
+        {/* Mobile TOC Dropdown */}
+        {toc.length > 0 && (
+          <div class="lg:hidden mb-6">
+            <details class="bg-surface-container rounded-xl border border-outline/10 overflow-hidden">
+              <summary class="flex items-center justify-between px-4 py-3 cursor-pointer font-headline font-bold text-sm text-on-surface">
+                <span class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary">list</span>
+                  {finalContents}
+                </span>
+                <span class="material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
+              </summary>
+              <ul class="px-4 pb-4 space-y-1 border-t border-outline/10 pt-3">
+                {toc.map(item => (
+                  <li class={`${item.level === 3 ? 'ml-3' : ''}`}>
+                    <a
+                      href={`#${item.id}`}
+                      class={`block py-1.5 px-2 text-sm rounded-md transition-colors ${item.level === 2 ? 'font-semibold text-on-surface/80 hover:text-primary hover:bg-primary-container/20' : 'text-on-surface/60 hover:text-primary hover:bg-primary-container/10'}`}
+                    >
+                      {item.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          </div>
+        )}
+
         {/* Main Content */}
         <div class="markdown-doc">
           {htmlContent ? (
             <div set:html={htmlContent} />
           ) : (
-            <p class="text-on-surface/60 italic">Document not available.</p>
+            <p class="text-on-surface/60 italic">{isEs ? 'Documento no disponible.' : 'Document not available.'}</p>
           )}
         </div>
       </div>
@@ -128,7 +167,7 @@ try {
     margin-top: 0;
   }
 
-  /* Headings */
+  /* Headings with icon-like visual treatment */
   .markdown-doc h1,
   .markdown-doc h1 strong {
     font-family: 'Epilogue', sans-serif;
@@ -157,6 +196,18 @@ try {
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--color-outline);
     scroll-margin-top: 8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .markdown-doc h2::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    flex-shrink: 0;
   }
   .markdown-doc h3,
   .markdown-doc h3 strong {
@@ -170,6 +221,18 @@ try {
     margin-top: 2rem;
     margin-bottom: 1rem;
     scroll-margin-top: 8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .markdown-doc h3::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 2px;
+    background: var(--color-secondary);
+    flex-shrink: 0;
   }
   .markdown-doc h4 {
     font-family: 'Epilogue', sans-serif;
@@ -189,7 +252,7 @@ try {
     margin-bottom: 1.25rem;
   }
 
-  /* Lists */
+  /* Lists - enhanced with check icons */
   .markdown-doc ul,
   .markdown-doc ol {
     margin-bottom: 1.5rem;
@@ -200,7 +263,7 @@ try {
   }
   .markdown-doc ul li {
     position: relative;
-    padding-left: 1.5rem;
+    padding-left: 1.75rem;
     margin-bottom: 0.75rem;
     font-size: 1.0625rem;
     line-height: 1.7;
@@ -208,14 +271,14 @@ try {
     opacity: 0.85;
   }
   .markdown-doc ul li::before {
-    content: '';
+    content: 'check_circle';
+    font-family: 'Material Symbols Outlined';
     position: absolute;
     left: 0;
-    top: 0.6rem;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--color-primary);
+    top: 0.15rem;
+    font-size: 1rem;
+    color: var(--color-primary);
+    font-variation-settings: 'FILL' 1;
   }
   .markdown-doc ol {
     list-style: decimal;
@@ -229,16 +292,32 @@ try {
     opacity: 0.85;
   }
 
-  /* Blockquotes */
+  /* Task lists (GFM) */
+  .markdown-doc ul.contains-task-list li::before {
+    content: none;
+  }
+  .markdown-doc ul.contains-task-list li {
+    padding-left: 0;
+  }
+  .markdown-doc input[type="checkbox"] {
+    accent-color: var(--color-primary);
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+
+  /* Blockquotes - enhanced */
   .markdown-doc blockquote {
     margin: 2rem 0;
-    padding: 1.25rem 1.5rem;
+    padding: 1.5rem 1.75rem;
     border-left: 4px solid var(--color-primary);
-    background: var(--color-surface-container-low);
-    border-radius: 0 0.5rem 0.5rem 0;
+    background: linear-gradient(135deg, var(--color-surface-container-low) 0%, var(--color-surface-container) 100%);
+    border-radius: 0 0.75rem 0.75rem 0;
     font-style: italic;
     color: var(--color-on-surface);
-    opacity: 0.75;
+    opacity: 0.85;
+    box-shadow: 0 2px 8px rgba(54, 59, 16, 0.06);
   }
   .markdown-doc blockquote p {
     margin-bottom: 0.75rem;
@@ -247,29 +326,33 @@ try {
     margin-bottom: 0;
   }
 
-  /* Tables */
+  /* Tables - enhanced */
+  .markdown-doc .table-wrapper {
+    overflow-x: auto;
+    margin: 2rem 0;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
   .markdown-doc table {
     width: 100%;
     border-collapse: collapse;
-    margin: 2rem 0;
     font-size: 0.9375rem;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    min-width: 500px;
   }
   .markdown-doc thead {
-    background: var(--color-surface-container);
+    background: linear-gradient(135deg, var(--color-surface-container) 0%, var(--color-surface-container-high) 100%);
   }
   .markdown-doc th {
-    padding: 0.875rem 1rem;
+    padding: 1rem 1.25rem;
     text-align: left;
     font-weight: 700;
     font-family: 'Epilogue', sans-serif;
     color: var(--color-on-surface);
-    border-bottom: 2px solid var(--color-outline);
+    border-bottom: 2px solid var(--color-primary);
+    white-space: nowrap;
   }
   .markdown-doc td {
-    padding: 0.75rem 1rem;
+    padding: 0.875rem 1.25rem;
     border-bottom: 1px solid var(--color-outline);
     color: var(--color-on-surface);
     opacity: 0.85;
@@ -356,5 +439,23 @@ try {
     font-weight: 600;
     cursor: pointer;
     outline: none;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .markdown-doc h1 {
+      font-size: 1.75rem;
+    }
+    .markdown-doc h2 {
+      font-size: 1.375rem;
+    }
+    .markdown-doc h3 {
+      font-size: 1.125rem;
+    }
+    .markdown-doc p,
+    .markdown-doc ul li,
+    .markdown-doc ol li {
+      font-size: 1rem;
+    }
   }
 </style>

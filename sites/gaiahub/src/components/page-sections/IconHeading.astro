@@ -1,0 +1,32 @@
+---
+interface Props {
+  icon: string;
+  text: string;
+  level?: 'h2' | 'h3';
+  color?: 'primary' | 'secondary' | 'tertiary';
+}
+
+const { icon, text, level = 'h2', color = 'primary' } = Astro.props;
+
+const colorClasses = {
+  primary: 'text-primary',
+  secondary: 'text-secondary',
+  tertiary: 'text-tertiary',
+};
+
+const sizeClasses = {
+  h2: 'text-2xl md:text-3xl lg:text-4xl',
+  h3: 'text-xl md:text-2xl lg:text-3xl',
+};
+
+const Tag = level;
+---
+
+<div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+  <span class={`material-symbols-outlined text-3xl md:text-4xl flex-shrink-0 ${colorClasses[color]}`} style="font-variation-settings: 'FILL' 1;">
+    {icon}
+  </span>
+  <Tag class={`font-headline font-black text-on-surface leading-tight ${sizeClasses[level]}`}>
+    {text}
+  </Tag>
+</div>

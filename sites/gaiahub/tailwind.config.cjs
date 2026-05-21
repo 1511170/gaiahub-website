@@ -88,7 +88,32 @@ module.exports = {
         'ethereal': '0 40px 60px -20px rgba(54, 59, 16, 0.06)',
         '[0_20px_40px_-15px_rgba(54,59,16,0.05)]': '0 20px 40px -15px rgba(54,59,16,0.05)',
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            '--tw-prose-body': theme('colors.on-surface'),
+            '--tw-prose-headings': theme('colors.on-surface'),
+            '--tw-prose-lead': theme('colors.on-surface'),
+            '--tw-prose-links': theme('colors.primary'),
+            '--tw-prose-bold': theme('colors.on-surface'),
+            '--tw-prose-counters': theme('colors.primary'),
+            '--tw-prose-bullets': theme('colors.primary'),
+            '--tw-prose-hr': theme('colors.outline'),
+            '--tw-prose-quotes': theme('colors.on-surface'),
+            '--tw-prose-quote-borders': theme('colors.primary'),
+            '--tw-prose-captions': theme('colors.on-surface-variant'),
+            '--tw-prose-code': theme('colors.on-surface'),
+            '--tw-prose-pre-code': theme('colors.on-surface'),
+            '--tw-prose-pre-bg': theme('colors.surface-container-high'),
+            '--tw-prose-th-borders': theme('colors.outline'),
+            '--tw-prose-td-borders': theme('colors.outline-variant'),
+            maxWidth: 'none',
+          },
+        },
+      }),
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
