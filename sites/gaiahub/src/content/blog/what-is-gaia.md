@@ -5,7 +5,7 @@ date: 2026-04-15
 author: "Gaia Stewardship Team"
 category: "Ecosystem"
 tags: ["regeneration", "commons", "coordination"]
-image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2026&auto=format&fit=crop"
+image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1200&auto=format&fit=crop"
 published: true
 ---
 
@@ -19,7 +19,7 @@ Gaia emerges as a response to the civilizational crisis we face. Not as another 
 
 Like any living organism, Gaia has specialized organs that work in harmony:
 
-![Interconnected ecosystem](https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=2000&auto=format&fit=crop)
+![Interconnected ecosystem](https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=1200&auto=format&fit=crop)
 
 ### Gaia Commons — The Soul
 The governance layer that ensures every action aligns with regenerative principles. It custodies values, distributes strategic capital, and maintains the ethical compass of the ecosystem.
@@ -34,7 +34,7 @@ The marketplace where every transaction nurtures life. Money flows like water in
 
 ## Why Now?
 
-![Forest regeneration](https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=2000&auto=format&fit=crop)
+![Forest regeneration](https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1200&auto=format&fit=crop)
 
 We stand at a crossroads. The extractive model has reached its limits. Climate collapse, biodiversity loss, and social fragmentation are not separate problems — they are symptoms of a single design flaw: **the illusion that we are separate from nature**.
 

@@ -7,7 +7,7 @@
 import { readdirSync, existsSync, readFileSync } from 'fs';
 import { join, resolve } from 'path';
 
-const skillsRoot = resolve(process.cwd(), '../../skills');
+const skillsRoot = resolve(process.cwd(), 'skills');
 const activeSkillsPath = join(process.cwd(), 'skills-active.json');
 
 console.log('🧩 KINTO CMS - Skills\n');

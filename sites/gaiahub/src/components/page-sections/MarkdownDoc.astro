@@ -24,7 +24,10 @@ const finalBadge = badgeText ?? defaultBadge;
 const finalContents = contentsText ?? defaultContents;
 
 let htmlContent = '';
-let toc: Array<{ level: number; text: string; id: string }> = [];
+let toc: Array<{ level: number; text: string; id: string; num?: string }> = [];
+type TocItem = { level: number; text: string; id: string; num?: string };
+type TocGroup = { h2: TocItem; h3s: TocItem[] };
+let tocGroups: TocGroup[] = [];
 
 try {
   const absolutePath = resolve(process.cwd(), filePath);
@@ -46,28 +49,90 @@ try {
 
   htmlContent = String(result);
 
-  // Add IDs to h2 and h3 for anchor navigation
-  htmlContent = htmlContent.replace(/<h2>([^<]+)<\/h2>/g, (_match, text) => {
-    const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-    return `<h2 id="${id}">${text}</h2>`;
+  // Helper: strip HTML tags to get plain text
+  function stripHtml(html: string): string {
+    return html.replace(/<[^>]+>/g, '');
+  }
+
+  // Helper: generate slug from text
+  function slugify(text: string): string {
+    return stripHtml(text)
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
+
+  // Step 1: Add IDs to h2 and h3
+  htmlContent = htmlContent.replace(/<h2\b([^>]*)>([\s\S]*?)<\/h2>/g, (_match, attrs, inner) => {
+    if (attrs.includes('id=')) return _match;
+    const id = slugify(inner);
+    return `<h2 id="${id}"${attrs}>${inner}</h2>`;
   });
-  htmlContent = htmlContent.replace(/<h3>([^<]+)<\/h3>/g, (_match, text) => {
-    const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-    return `<h3 id="${id}">${text}</h3>`;
+  htmlContent = htmlContent.replace(/<h3\b([^>]*)>([\s\S]*?)<\/h3>/g, (_match, attrs, inner) => {
+    if (attrs.includes('id=')) return _match;
+    const id = slugify(inner);
+    return `<h3 id="${id}"${attrs}>${inner}</h3>`;
   });
 
-  // Extract TOC from h2 and h3
-  const h2Matches = [...htmlContent.matchAll(/<h2 id="([^"]+)">([^<]+)<\/h2>/g)];
-  const h3Matches = [...htmlContent.matchAll(/<h3 id="([^"]+)">([^<]+)<\/h3>/g)];
+  // Step 2: Extract headings and assign sequential numbers
+  const headingRe = /<h([23])\b[^>]*id="([^"]+)"[^>]*>([\s\S]*?)<\/h\1>/g;
+  const rawHeadings: Array<{ level: number; text: string; id: string; fullMatch: string; attrs: string; inner: string }> = [];
+  let match;
+  while ((match = headingRe.exec(htmlContent)) !== null) {
+    const level = parseInt(match[1], 10);
+    const id = match[2];
+    const inner = match[3];
+    const text = stripHtml(inner).trim();
+    if (!id || !text) continue;
+    rawHeadings.push({ level, text, id, fullMatch: match[0], attrs: match[0].replace(/<h[23]([^>]*)>[\s\S]*<\/h[23]>/, '$1'), inner });
+  }
 
-  toc = [
-    ...h2Matches.map(m => ({ level: 2, text: m[2], id: m[1] })),
-    ...h3Matches.map(m => ({ level: 3, text: m[2], id: m[1] })),
-  ].sort((a, b) => {
-    const idxA = htmlContent.indexOf(`<h${a.level} id="${a.id}">`);
-    const idxB = htmlContent.indexOf(`<h${b.level} id="${b.id}">`);
-    return idxA - idxB;
+  // Step 3: Assign sequential numbers (1, 1.1, 1.2, 2, 2.1...)
+  let h2Counter = 0;
+  let h3Counter = 0;
+  const numberedHeadings = rawHeadings.map(h => {
+    if (h.level === 2) {
+      h2Counter++;
+      h3Counter = 0;
+      return { ...h, num: String(h2Counter) };
+    } else {
+      h3Counter++;
+      return { ...h, num: `${h2Counter}.${h3Counter}` };
+    }
   });
+
+  // Step 4: Replace headings in HTML with numbered versions
+  for (const h of numberedHeadings) {
+    const cleanText = h.text.replace(/^\d+(?:\.\d+)?[.\s]+/, ''); // remove existing number
+    const numSpan = `<span class="heading-num">${h.num}.</span>`;
+    const newTag = h.level === 2
+      ? `<h2 id="${h.id}"${h.attrs}>${numSpan} ${cleanText}</h2>`
+      : `<h3 id="${h.id}"${h.attrs}>${numSpan} ${cleanText}</h3>`;
+    htmlContent = htmlContent.replace(h.fullMatch, newTag);
+  }
+
+  // Step 5: Build TOC from numbered headings
+  const seenIds = new Set<string>();
+  const seenText = new Set<string>();
+  for (const h of numberedHeadings) {
+    const cleanText = h.text.replace(/^\d+(?:\.\d+)?[.\s]+/, '');
+    if (seenIds.has(h.id) || seenText.has(cleanText)) continue;
+    seenIds.add(h.id);
+    seenText.add(cleanText);
+    toc.push({ level: h.level, text: cleanText, id: h.id, num: h.num });
+  }
+
+  // Step 6: Build hierarchical structure
+  let currentGroup: TocGroup | null = null;
+  for (const item of toc) {
+    if (item.level === 2) {
+      currentGroup = { h2: item, h3s: [] };
+      tocGroups.push(currentGroup);
+    } else if (item.level === 3 && currentGroup) {
+      currentGroup.h3s.push(item);
+    }
+  }
 } catch (err) {
   console.error(`MarkdownDoc: failed to read or process ${filePath}`, err);
 }
@@ -98,19 +163,41 @@ try {
 
       <div class="mt-8 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-12">
         {/* TOC Sidebar */}
-        {toc.length > 0 && (
+        {tocGroups.length > 0 && (
           <aside class="hidden lg:block">
-            <nav class="sticky top-32 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4">
-              <div class="font-headline text-sm font-bold text-on-surface/40 uppercase tracking-wider mb-4">{finalContents}</div>
-              <ul class="space-y-2 border-l-2 border-outline/10">
-                {toc.map(item => (
-                  <li class={`${item.level === 3 ? 'ml-4' : ''}`}>
+            <nav class="sticky top-32 max-h-[calc(100vh-10rem)] overflow-y-auto pr-2 toc-sidebar" data-toc-sidebar>
+              <div class="font-headline text-xs font-bold text-on-surface/40 uppercase tracking-wider mb-4 px-3">{finalContents}</div>
+              <ul class="space-y-1">
+                {tocGroups.map((group, gIdx) => (
+                  <li class="toc-group">
                     <a
-                      href={`#${item.id}`}
-                      class={`block py-1 px-3 text-sm rounded-r-md transition-colors ${item.level === 2 ? 'font-semibold text-on-surface/80 hover:text-primary hover:bg-primary-container/20' : 'text-on-surface/60 hover:text-primary hover:bg-primary-container/10'}`}
+                      href={`#${group.h2.id}`}
+                      class="toc-link toc-h2 flex items-start gap-2 py-2 px-3 text-sm rounded-lg transition-all font-semibold text-on-surface/70 hover:text-primary hover:bg-primary-container/10"
+                      data-toc-link={group.h2.id}
                     >
-                      {item.text}
+                      {group.h2.num && (
+                        <span class="flex-shrink-0 w-6 h-6 rounded-md bg-primary-container text-primary text-xs font-bold flex items-center justify-center mt-0.5">{group.h2.num}</span>
+                      )}
+                      <span class="leading-snug">{group.h2.text.replace(/^\d+(?:\.\d+)?[.\s]+/, '')}</span>
                     </a>
+                    {group.h3s.length > 0 && (
+                      <ul class="mt-1 ml-2 space-y-1 border-l-2 border-outline/10">
+                        {group.h3s.map(h3 => (
+                          <li>
+                            <a
+                              href={`#${h3.id}`}
+                              class="toc-link toc-h3 flex items-start gap-2 py-1.5 pl-3 pr-2 text-sm rounded-r-lg transition-all text-on-surface/50 hover:text-primary hover:bg-primary-container/10"
+                              data-toc-link={h3.id}
+                            >
+                              {h3.num && (
+                                <span class="flex-shrink-0 w-5 h-5 rounded bg-surface-container-high text-on-surface/60 text-[10px] font-bold flex items-center justify-center mt-0.5">{h3.num}</span>
+                              )}
+                              <span class="leading-snug">{h3.text.replace(/^\d+(?:\.\d+)?[.\s]+/, '')}</span>
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -119,7 +206,7 @@ try {
         )}
 
         {/* Mobile TOC Dropdown */}
-        {toc.length > 0 && (
+        {tocGroups.length > 0 && (
           <div class="lg:hidden mb-6">
             <details class="bg-surface-container rounded-xl border border-outline/10 overflow-hidden">
               <summary class="flex items-center justify-between px-4 py-3 cursor-pointer font-headline font-bold text-sm text-on-surface">
@@ -130,14 +217,28 @@ try {
                 <span class="material-symbols-outlined text-primary transition-transform duration-300">expand_more</span>
               </summary>
               <ul class="px-4 pb-4 space-y-1 border-t border-outline/10 pt-3">
-                {toc.map(item => (
-                  <li class={`${item.level === 3 ? 'ml-3' : ''}`}>
+                {tocGroups.map(group => (
+                  <li>
                     <a
-                      href={`#${item.id}`}
-                      class={`block py-1.5 px-2 text-sm rounded-md transition-colors ${item.level === 2 ? 'font-semibold text-on-surface/80 hover:text-primary hover:bg-primary-container/20' : 'text-on-surface/60 hover:text-primary hover:bg-primary-container/10'}`}
+                      href={`#${group.h2.id}`}
+                      class="block py-2 px-3 text-sm rounded-lg transition-colors font-semibold text-on-surface/80 hover:text-primary hover:bg-primary-container/20"
                     >
-                      {item.text}
+                      {group.h2.text}
                     </a>
+                    {group.h3s.length > 0 && (
+                      <ul class="mt-1 ml-2 space-y-1 border-l-2 border-outline/10">
+                        {group.h3s.map(h3 => (
+                          <li>
+                            <a
+                              href={`#${h3.id}`}
+                              class="block py-1.5 pl-3 pr-2 text-sm rounded-r-md transition-colors text-on-surface/60 hover:text-primary hover:bg-primary-container/10"
+                            >
+                              {h3.text}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -158,104 +259,166 @@ try {
   </div>
 </section>
 
+<script>
+  // Scroll spy: highlight active TOC item based on scroll position
+  (function() {
+    const tocLinks = document.querySelectorAll('[data-toc-link]');
+    const headings = document.querySelectorAll('.markdown-doc h2[id], .markdown-doc h3[id]');
+    if (!tocLinks.length || !headings.length) return;
+
+    const offset = 120; // scroll offset for sticky nav
+
+    function updateActive() {
+      let activeId = '';
+      for (const h of headings) {
+        const rect = h.getBoundingClientRect();
+        if (rect.top <= offset) {
+          activeId = h.id;
+        } else {
+          break;
+        }
+      }
+
+      tocLinks.forEach(link => {
+        const linkId = link.getAttribute('data-toc-link');
+        if (linkId === activeId) {
+          link.classList.add('toc-active');
+          link.classList.remove('text-on-surface/70', 'text-on-surface/50');
+        } else {
+          link.classList.remove('toc-active');
+          if (link.classList.contains('toc-h2')) {
+            link.classList.add('text-on-surface/70');
+          } else {
+            link.classList.add('text-on-surface/50');
+          }
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActive, { passive: true });
+    updateActive();
+  })();
+</script>
+
 <style is:global>
   .markdown-doc {
     color: var(--color-on-surface);
-    line-height: 1.75;
+    line-height: 1.8;
+    font-size: 1.0625rem;
   }
   .markdown-doc > *:first-child {
     margin-top: 0;
   }
 
-  /* Headings with icon-like visual treatment */
+  /* Headings */
   .markdown-doc h1,
   .markdown-doc h1 strong {
     font-family: 'Epilogue', sans-serif;
     font-size: 2.25rem;
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 1.15;
     color: var(--color-on-surface);
+    letter-spacing: -0.02em;
   }
   .markdown-doc h1 {
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid var(--color-primary);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--color-primary);
     scroll-margin-top: 8rem;
   }
+
   .markdown-doc h2,
   .markdown-doc h2 strong {
     font-family: 'Epilogue', sans-serif;
-    font-size: 1.75rem;
+    font-size: 1.625rem;
     font-weight: 800;
-    line-height: 1.2;
-    color: var(--color-on-surface);
+    line-height: 1.25;
+    color: var(--color-primary);
+    letter-spacing: -0.01em;
   }
   .markdown-doc h2 {
-    margin-top: 3rem;
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--color-outline);
-    scroll-margin-top: 8rem;
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--color-primary-container);
+    scroll-margin-top: 7rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.75rem;
   }
-  .markdown-doc h2::before {
-    content: '';
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
+  .markdown-doc h2 .heading-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    height: 2rem;
+    padding: 0 0.5rem;
     background: var(--color-primary);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 800;
+    border-radius: 0.5rem;
+    margin-right: 0.75rem;
     flex-shrink: 0;
+    font-family: 'Epilogue', sans-serif;
   }
+
   .markdown-doc h3,
   .markdown-doc h3 strong {
     font-family: 'Epilogue', sans-serif;
-    font-size: 1.375rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    line-height: 1.3;
-    color: var(--color-on-surface);
+    line-height: 1.35;
+    color: var(--color-secondary);
   }
   .markdown-doc h3 {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     margin-bottom: 1rem;
-    scroll-margin-top: 8rem;
+    scroll-margin-top: 7rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.5rem;
+    padding-left: 0.875rem;
+    border-left: 3px solid var(--color-secondary-container);
   }
-  .markdown-doc h3::before {
-    content: '';
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 2px;
+  .markdown-doc h3 .heading-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.75rem;
+    height: 1.75rem;
+    padding: 0 0.375rem;
     background: var(--color-secondary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 0.375rem;
+    margin-right: 0.625rem;
     flex-shrink: 0;
+    font-family: 'Epilogue', sans-serif;
   }
+
   .markdown-doc h4 {
     font-family: 'Epilogue', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
     color: var(--color-on-surface);
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     margin-bottom: 0.75rem;
   }
 
   /* Paragraphs */
   .markdown-doc p {
-    font-size: 1.0625rem;
-    line-height: 1.8;
+    line-height: 1.85;
     color: var(--color-on-surface);
-    opacity: 0.85;
-    margin-bottom: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
   }
 
-  /* Lists - enhanced with check icons */
+  /* Lists */
   .markdown-doc ul,
   .markdown-doc ol {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     padding-left: 1.5rem;
   }
   .markdown-doc ul {
@@ -263,20 +426,19 @@ try {
   }
   .markdown-doc ul li {
     position: relative;
-    padding-left: 1.75rem;
-    margin-bottom: 0.75rem;
-    font-size: 1.0625rem;
-    line-height: 1.7;
+    padding-left: 2rem;
+    margin-bottom: 0.875rem;
+    line-height: 1.75;
     color: var(--color-on-surface);
-    opacity: 0.85;
+    opacity: 0.9;
   }
   .markdown-doc ul li::before {
     content: 'check_circle';
     font-family: 'Material Symbols Outlined';
     position: absolute;
     left: 0;
-    top: 0.15rem;
-    font-size: 1rem;
+    top: 0.1rem;
+    font-size: 1.125rem;
     color: var(--color-primary);
     font-variation-settings: 'FILL' 1;
   }
@@ -284,15 +446,14 @@ try {
     list-style: decimal;
   }
   .markdown-doc ol li {
-    margin-bottom: 0.75rem;
-    padding-left: 0.5rem;
-    font-size: 1.0625rem;
-    line-height: 1.7;
+    margin-bottom: 0.875rem;
+    padding-left: 0.75rem;
+    line-height: 1.75;
     color: var(--color-on-surface);
-    opacity: 0.85;
+    opacity: 0.9;
   }
 
-  /* Task lists (GFM) */
+  /* Task lists */
   .markdown-doc ul.contains-task-list li::before {
     content: none;
   }
@@ -307,17 +468,17 @@ try {
     vertical-align: middle;
   }
 
-  /* Blockquotes - enhanced */
+  /* Blockquotes */
   .markdown-doc blockquote {
-    margin: 2rem 0;
-    padding: 1.5rem 1.75rem;
+    margin: 2.5rem 0;
+    padding: 1.75rem 2rem;
     border-left: 4px solid var(--color-primary);
     background: linear-gradient(135deg, var(--color-surface-container-low) 0%, var(--color-surface-container) 100%);
     border-radius: 0 0.75rem 0.75rem 0;
     font-style: italic;
     color: var(--color-on-surface);
-    opacity: 0.85;
-    box-shadow: 0 2px 8px rgba(54, 59, 16, 0.06);
+    opacity: 0.9;
+    box-shadow: 0 2px 12px rgba(54, 59, 16, 0.06);
   }
   .markdown-doc blockquote p {
     margin-bottom: 0.75rem;
@@ -326,10 +487,10 @@ try {
     margin-bottom: 0;
   }
 
-  /* Tables - enhanced */
+  /* Tables */
   .markdown-doc .table-wrapper {
     overflow-x: auto;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
     border-radius: 0.75rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   }
@@ -355,7 +516,7 @@ try {
     padding: 0.875rem 1.25rem;
     border-bottom: 1px solid var(--color-outline);
     color: var(--color-on-surface);
-    opacity: 0.85;
+    opacity: 0.9;
   }
   .markdown-doc tbody tr:nth-child(even) {
     background: var(--color-surface-container-low);
@@ -375,10 +536,10 @@ try {
   }
   .markdown-doc pre {
     background: var(--color-surface-container-high);
-    padding: 1.25rem;
+    padding: 1.5rem;
     border-radius: 0.75rem;
     overflow-x: auto;
-    margin: 1.5rem 0;
+    margin: 2rem 0;
   }
   .markdown-doc pre code {
     background: transparent;
@@ -404,7 +565,7 @@ try {
     border: none;
     border-top: 2px solid var(--color-outline);
     opacity: 0.3;
-    margin: 3rem 0;
+    margin: 3.5rem 0;
   }
 
   /* Strong / Emphasis */
@@ -415,7 +576,7 @@ try {
   .markdown-doc em {
     font-style: italic;
     color: var(--color-on-surface);
-    opacity: 0.8;
+    opacity: 0.85;
   }
 
   /* Images */
@@ -423,14 +584,14 @@ try {
     max-width: 100%;
     height: auto;
     border-radius: 0.75rem;
-    margin: 1.5rem 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin: 2rem 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   }
 
-  /* Summary / Details inside markdown */
+  /* Details / Summary inside markdown */
   .markdown-doc details {
-    margin: 1.5rem 0;
-    padding: 1rem 1.25rem;
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem;
     background: var(--color-surface-container);
     border-radius: 0.75rem;
     border: 1px solid var(--color-outline);
@@ -441,16 +602,33 @@ try {
     outline: none;
   }
 
+  /* TOC Active state */
+  .toc-link.toc-active {
+    background: var(--color-primary-container) !important;
+    color: var(--color-primary) !important;
+    box-shadow: 0 0 0 1px var(--color-primary);
+  }
+  .toc-link.toc-active .rounded-md,
+  .toc-link.toc-active .rounded-lg {
+    background: var(--color-primary) !important;
+    color: white !important;
+  }
+
   /* Responsive */
   @media (max-width: 768px) {
+    .markdown-doc {
+      font-size: 1rem;
+    }
     .markdown-doc h1 {
       font-size: 1.75rem;
     }
     .markdown-doc h2 {
       font-size: 1.375rem;
+      margin-top: 2.5rem;
     }
     .markdown-doc h3 {
       font-size: 1.125rem;
+      margin-top: 2rem;
     }
     .markdown-doc p,
     .markdown-doc ul li,

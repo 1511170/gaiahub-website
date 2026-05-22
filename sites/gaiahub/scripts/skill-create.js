@@ -19,7 +19,7 @@ if (!skillName) {
   process.exit(1);
 }
 
-const skillsRoot = resolve(process.cwd(), '../../skills');
+const skillsRoot = resolve(process.cwd(), 'skills');
 const skillPath = join(skillsRoot, category, skillName);
 
 if (existsSync(skillPath)) {

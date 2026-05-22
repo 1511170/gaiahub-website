@@ -18,7 +18,7 @@ if (!skillName) {
   process.exit(1);
 }
 
-const skillsRoot = resolve(process.cwd(), '../../skills');
+const skillsRoot = resolve(process.cwd(), 'skills');
 const activeSkillsPath = join(process.cwd(), 'skills-active.json');
 
 // Buscar skill en official/ y community/

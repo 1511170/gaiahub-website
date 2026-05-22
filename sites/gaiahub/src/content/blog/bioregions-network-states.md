@@ -5,7 +5,7 @@ date: 2026-05-10
 author: "Governance Research Team"
 category: "Governance"
 tags: ["bioregions", "governance", "territory"]
-image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop"
+image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop"
 published: true
 ---
 
@@ -17,7 +17,7 @@ The nation-state model is cracking under pressure. Centralized control, extracti
 
 ## Enter the Bioregion
 
-![Watershed landscape](https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=2000&auto=format&fit=crop)
+![Watershed landscape](https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=1200&auto=format&fit=crop)
 
 A bioregion is defined not by political borders but by **ecological boundaries**: watersheds, ecosystems, and cultural watersheds. It is governance aligned with geography rather than imposed upon it.
 
@@ -47,7 +47,7 @@ The Gaia Confederation connects these network states into a cohesive alliance â€
 
 ## Distributed Governance
 
-![Community decision](https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2000&auto=format&fit=crop)
+![Community decision](https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop)
 
 Using blockchain technology, DAO structures, and ancestral wisdom protocols, bioregions can:
 

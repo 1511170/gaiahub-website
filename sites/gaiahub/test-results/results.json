@@ -1,0 +1,799 @@
+{
+  "timestamp": "2026-05-22T22:21:01.471Z",
+  "baseUrl": "http://localhost:4321",
+  "tests": [
+    {
+      "page": "/",
+      "url": "http://localhost:4321/",
+      "viewports": [
+        {
+          "name": "mobile",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\__mobile.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "tablet",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\__tablet.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "desktop",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\__desktop.png",
+          "navigation": {
+            "url": "http://localhost:4321/",
+            "menuLinks": [],
+            "ctaButtons": [
+              {
+                "text": "Gaia",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Home",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Hub",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Market",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Commons",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Blog",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Impact expand_more",
+                "tag": "BUTTON",
+                "visible": true
+              },
+              {
+                "text": "Impact Fund",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Impact Hub",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "ES",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "menu close",
+                "tag": "BUTTON",
+                "visible": false
+              },
+              {
+                "text": "close",
+                "tag": "BUTTON",
+                "visible": false
+              },
+              {
+                "text": "Home",
+                "tag": "A",
+                "visible": false
+              },
+              {
+                "text": "Hub",
+                "tag": "A",
+                "visible": false
+              },
+              {
+                "text": "Market",
+                "tag": "A",
+                "visible": false
+              },
+              {
+                "text": "Commons",
+                "tag": "A",
+                "visible": false
+              },
+              {
+                "text": "Blog",
+                "tag": "A",
+                "visible": false
+              },
+              {
+                "text": "Impact Fund",
+                "tag": "A",
+                "visible": false
+              },
+              {
+                "text": "Impact Hub",
+                "tag": "A",
+                "visible": false
+              },
+              {
+                "text": "ES",
+                "tag": "A",
+                "visible": false
+              },
+              {
+                "text": "Join the Community",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Subscribe",
+                "tag": "BUTTON",
+                "visible": true
+              },
+              {
+                "text": "More about the Fund",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "More about the Hub",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "View all posts arrow_forward",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Governance May 9, 2026  Bioregions & Network State",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Economy April 27, 2026  Regenerative Economy: Beyo",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Ecosystem April 14, 2026  What is Gaia? Understand",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Send Message send",
+                "tag": "BUTTON",
+                "visible": true
+              },
+              {
+                "text": "Schedule a Call",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "WhatsApp Broadcast channel. News, updates, and exc",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Telegram Community group. Networking, resources, a",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Gaia Hub",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Gaia Market",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Gaia Commons",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Impact Fund",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Impact Hub",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Allied Companies",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Blog",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Gaia Vision",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Gaia Academy",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Certification",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Confederation",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Bioregions",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "EcoHabitats",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "Telegram",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "WhatsApp",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "ES",
+                "tag": "A",
+                "visible": false
+              },
+              {
+                "text": "",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "",
+                "tag": "A",
+                "visible": true
+              }
+            ],
+            "images": [
+              {
+                "src": "http://localhost:4321/images/concept-bg.webp",
+                "alt": "Regenerative landscape",
+                "complete": true,
+                "naturalWidth": 1920
+              },
+              {
+                "src": "http://localhost:4321/images/concept-regen.webp",
+                "alt": "Regeneration",
+                "complete": true,
+                "naturalWidth": 800
+              },
+              {
+                "src": "http://localhost:4321/images/concept-coord.webp",
+                "alt": "Coordination",
+                "complete": true,
+                "naturalWidth": 800
+              },
+              {
+                "src": "http://localhost:4321/images/concept-collab.webp",
+                "alt": "Collaboration",
+                "complete": true,
+                "naturalWidth": 800
+              },
+              {
+                "src": "http://localhost:4321/images/flow-bg.webp",
+                "alt": "",
+                "complete": true,
+                "naturalWidth": 1920
+              },
+              {
+                "src": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop",
+                "alt": "Thomas Bergmann",
+                "complete": true,
+                "naturalWidth": 200
+              },
+              {
+                "src": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
+                "alt": "Amina Okafor",
+                "complete": true,
+                "naturalWidth": 200
+              },
+              {
+                "src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+                "alt": "Carlos Mendoza",
+                "complete": true,
+                "naturalWidth": 200
+              },
+              {
+                "src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
+                "alt": "María Fernández",
+                "complete": true,
+                "naturalWidth": 200
+              },
+              {
+                "src": "http://localhost:4321/images/bioregions-hero.webp",
+                "alt": "Bioregions",
+                "complete": true,
+                "naturalWidth": 1200
+              },
+              {
+                "src": "http://localhost:4321/images/ecohabitats-hero.webp",
+                "alt": "EcoHabitats",
+                "complete": true,
+                "naturalWidth": 1200
+              },
+              {
+                "src": "http://localhost:4321/images/academy-hero.webp",
+                "alt": "Academy",
+                "complete": true,
+                "naturalWidth": 1200
+              },
+              {
+                "src": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop",
+                "alt": "Bioregions & Network States: The Future of Territory",
+                "complete": true,
+                "naturalWidth": 1200
+              },
+              {
+                "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop",
+                "alt": "Regenerative Economy: Beyond Sustainability",
+                "complete": true,
+                "naturalWidth": 1200
+              },
+              {
+                "src": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1200&auto=format&fit=crop",
+                "alt": "What is Gaia? Understanding the Regenerative Ecosystem",
+                "complete": true,
+                "naturalWidth": 1200
+              },
+              {
+                "src": "http://localhost:4321/images/closing-bg.webp",
+                "alt": "Mountain peak at sunrise",
+                "complete": true,
+                "naturalWidth": 1600
+              }
+            ],
+            "brokenImages": [],
+            "bodyStyles": {
+              "fontFamily": "Manrope, system-ui, sans-serif",
+              "backgroundColor": "rgb(254, 254, 229)",
+              "color": "rgb(54, 59, 16)"
+            },
+            "mobileMenuWorks": false,
+            "hasSmoothScroll": true,
+            "errors": []
+          },
+          "forms": null
+        }
+      ]
+    },
+    {
+      "page": "/vision",
+      "url": "http://localhost:4321/vision",
+      "viewports": [
+        {
+          "name": "mobile",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_vision_mobile.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "tablet",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_vision_tablet.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "desktop",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_vision_desktop.png",
+          "navigation": {
+            "url": "http://localhost:4321/vision",
+            "menuLinks": [],
+            "ctaButtons": [
+              {
+                "text": "/vision/",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "the documentation for trailingSlash",
+                "tag": "A",
+                "visible": true
+              }
+            ],
+            "images": [],
+            "brokenImages": [],
+            "bodyStyles": {
+              "fontFamily": "ui-monospace, Menlo, Monaco, \"Cascadia Mono\", \"Segoe UI Mono\", \"Roboto Mono\", \"Oxygen Mono\", \"Ubuntu Monospace\", \"Source Code Pro\", \"Fira Mono\", \"Droid Sans Mono\", \"Courier New\", monospace",
+              "backgroundColor": "rgb(25, 24, 27)",
+              "color": "rgb(203, 200, 208)"
+            },
+            "mobileMenuWorks": false,
+            "hasSmoothScroll": false,
+            "errors": []
+          },
+          "forms": null
+        }
+      ]
+    },
+    {
+      "page": "/commons",
+      "url": "http://localhost:4321/commons",
+      "viewports": [
+        {
+          "name": "mobile",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_commons_mobile.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "tablet",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_commons_tablet.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "desktop",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_commons_desktop.png",
+          "navigation": {
+            "url": "http://localhost:4321/commons",
+            "menuLinks": [],
+            "ctaButtons": [
+              {
+                "text": "/commons/",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "the documentation for trailingSlash",
+                "tag": "A",
+                "visible": true
+              }
+            ],
+            "images": [],
+            "brokenImages": [],
+            "bodyStyles": {
+              "fontFamily": "ui-monospace, Menlo, Monaco, \"Cascadia Mono\", \"Segoe UI Mono\", \"Roboto Mono\", \"Oxygen Mono\", \"Ubuntu Monospace\", \"Source Code Pro\", \"Fira Mono\", \"Droid Sans Mono\", \"Courier New\", monospace",
+              "backgroundColor": "rgb(25, 24, 27)",
+              "color": "rgb(203, 200, 208)"
+            },
+            "mobileMenuWorks": false,
+            "hasSmoothScroll": false,
+            "errors": []
+          },
+          "forms": null
+        }
+      ]
+    },
+    {
+      "page": "/hub",
+      "url": "http://localhost:4321/hub",
+      "viewports": [
+        {
+          "name": "mobile",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_hub_mobile.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "tablet",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_hub_tablet.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "desktop",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_hub_desktop.png",
+          "navigation": {
+            "url": "http://localhost:4321/hub",
+            "menuLinks": [],
+            "ctaButtons": [
+              {
+                "text": "/hub/",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "the documentation for trailingSlash",
+                "tag": "A",
+                "visible": true
+              }
+            ],
+            "images": [],
+            "brokenImages": [],
+            "bodyStyles": {
+              "fontFamily": "ui-monospace, Menlo, Monaco, \"Cascadia Mono\", \"Segoe UI Mono\", \"Roboto Mono\", \"Oxygen Mono\", \"Ubuntu Monospace\", \"Source Code Pro\", \"Fira Mono\", \"Droid Sans Mono\", \"Courier New\", monospace",
+              "backgroundColor": "rgb(25, 24, 27)",
+              "color": "rgb(203, 200, 208)"
+            },
+            "mobileMenuWorks": false,
+            "hasSmoothScroll": false,
+            "errors": []
+          },
+          "forms": null
+        }
+      ]
+    },
+    {
+      "page": "/market",
+      "url": "http://localhost:4321/market",
+      "viewports": [
+        {
+          "name": "mobile",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_market_mobile.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "tablet",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_market_tablet.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "desktop",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_market_desktop.png",
+          "navigation": {
+            "url": "http://localhost:4321/market",
+            "menuLinks": [],
+            "ctaButtons": [
+              {
+                "text": "/market/",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "the documentation for trailingSlash",
+                "tag": "A",
+                "visible": true
+              }
+            ],
+            "images": [],
+            "brokenImages": [],
+            "bodyStyles": {
+              "fontFamily": "ui-monospace, Menlo, Monaco, \"Cascadia Mono\", \"Segoe UI Mono\", \"Roboto Mono\", \"Oxygen Mono\", \"Ubuntu Monospace\", \"Source Code Pro\", \"Fira Mono\", \"Droid Sans Mono\", \"Courier New\", monospace",
+              "backgroundColor": "rgb(25, 24, 27)",
+              "color": "rgb(203, 200, 208)"
+            },
+            "mobileMenuWorks": false,
+            "hasSmoothScroll": false,
+            "errors": []
+          },
+          "forms": null
+        }
+      ]
+    },
+    {
+      "page": "/bioregions",
+      "url": "http://localhost:4321/bioregions",
+      "viewports": [
+        {
+          "name": "mobile",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_bioregions_mobile.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "tablet",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_bioregions_tablet.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "desktop",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_bioregions_desktop.png",
+          "navigation": {
+            "url": "http://localhost:4321/bioregions",
+            "menuLinks": [],
+            "ctaButtons": [
+              {
+                "text": "/bioregions/",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "the documentation for trailingSlash",
+                "tag": "A",
+                "visible": true
+              }
+            ],
+            "images": [],
+            "brokenImages": [],
+            "bodyStyles": {
+              "fontFamily": "ui-monospace, Menlo, Monaco, \"Cascadia Mono\", \"Segoe UI Mono\", \"Roboto Mono\", \"Oxygen Mono\", \"Ubuntu Monospace\", \"Source Code Pro\", \"Fira Mono\", \"Droid Sans Mono\", \"Courier New\", monospace",
+              "backgroundColor": "rgb(25, 24, 27)",
+              "color": "rgb(203, 200, 208)"
+            },
+            "mobileMenuWorks": false,
+            "hasSmoothScroll": false,
+            "errors": []
+          },
+          "forms": null
+        }
+      ]
+    },
+    {
+      "page": "/academy",
+      "url": "http://localhost:4321/academy",
+      "viewports": [
+        {
+          "name": "mobile",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_academy_mobile.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "tablet",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_academy_tablet.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "desktop",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_academy_desktop.png",
+          "navigation": {
+            "url": "http://localhost:4321/academy",
+            "menuLinks": [],
+            "ctaButtons": [
+              {
+                "text": "/academy/",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "the documentation for trailingSlash",
+                "tag": "A",
+                "visible": true
+              }
+            ],
+            "images": [],
+            "brokenImages": [],
+            "bodyStyles": {
+              "fontFamily": "ui-monospace, Menlo, Monaco, \"Cascadia Mono\", \"Segoe UI Mono\", \"Roboto Mono\", \"Oxygen Mono\", \"Ubuntu Monospace\", \"Source Code Pro\", \"Fira Mono\", \"Droid Sans Mono\", \"Courier New\", monospace",
+              "backgroundColor": "rgb(25, 24, 27)",
+              "color": "rgb(203, 200, 208)"
+            },
+            "mobileMenuWorks": false,
+            "hasSmoothScroll": false,
+            "errors": []
+          },
+          "forms": null
+        }
+      ]
+    },
+    {
+      "page": "/certification",
+      "url": "http://localhost:4321/certification",
+      "viewports": [
+        {
+          "name": "mobile",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_certification_mobile.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "tablet",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_certification_tablet.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "desktop",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_certification_desktop.png",
+          "navigation": {
+            "url": "http://localhost:4321/certification",
+            "menuLinks": [],
+            "ctaButtons": [
+              {
+                "text": "/certification/",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "the documentation for trailingSlash",
+                "tag": "A",
+                "visible": true
+              }
+            ],
+            "images": [],
+            "brokenImages": [],
+            "bodyStyles": {
+              "fontFamily": "ui-monospace, Menlo, Monaco, \"Cascadia Mono\", \"Segoe UI Mono\", \"Roboto Mono\", \"Oxygen Mono\", \"Ubuntu Monospace\", \"Source Code Pro\", \"Fira Mono\", \"Droid Sans Mono\", \"Courier New\", monospace",
+              "backgroundColor": "rgb(25, 24, 27)",
+              "color": "rgb(203, 200, 208)"
+            },
+            "mobileMenuWorks": false,
+            "hasSmoothScroll": false,
+            "errors": []
+          },
+          "forms": null
+        }
+      ]
+    },
+    {
+      "page": "/confederation",
+      "url": "http://localhost:4321/confederation",
+      "viewports": [
+        {
+          "name": "mobile",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_confederation_mobile.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "tablet",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_confederation_tablet.png",
+          "navigation": null,
+          "forms": null
+        },
+        {
+          "name": "desktop",
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\_confederation_desktop.png",
+          "navigation": {
+            "url": "http://localhost:4321/confederation",
+            "menuLinks": [],
+            "ctaButtons": [
+              {
+                "text": "/confederation/",
+                "tag": "A",
+                "visible": true
+              },
+              {
+                "text": "the documentation for trailingSlash",
+                "tag": "A",
+                "visible": true
+              }
+            ],
+            "images": [],
+            "brokenImages": [],
+            "bodyStyles": {
+              "fontFamily": "ui-monospace, Menlo, Monaco, \"Cascadia Mono\", \"Segoe UI Mono\", \"Roboto Mono\", \"Oxygen Mono\", \"Ubuntu Monospace\", \"Source Code Pro\", \"Fira Mono\", \"Droid Sans Mono\", \"Courier New\", monospace",
+              "backgroundColor": "rgb(25, 24, 27)",
+              "color": "rgb(203, 200, 208)"
+            },
+            "mobileMenuWorks": false,
+            "hasSmoothScroll": false,
+            "errors": []
+          },
+          "forms": []
+        }
+      ]
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import rehypeSlug from 'rehype-slug';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -25,6 +26,10 @@ export default defineConfig({
   
   integrations: [],
   
+  markdown: {
+    rehypePlugins: [rehypeSlug],
+  },
+  
   build: {
     format: 'directory',
     compressHTML: true,
@@ -37,9 +42,9 @@ export default defineConfig({
         '@': join(__dirname, 'src'),
         
         // Alias para skills
-        '@skills': join(__dirname, '../../skills'),
-        '@skills-official': join(__dirname, '../../skills/official'),
-        '@skills-community': join(__dirname, '../../skills/community'),
+        '@skills': join(__dirname, 'skills'),
+        '@skills-official': join(__dirname, 'skills/official'),
+        '@skills-community': join(__dirname, 'skills/community'),
         
         // Alias para el sitio
         '@site': join(__dirname, 'src'),

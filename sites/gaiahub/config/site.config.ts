@@ -36,7 +36,7 @@ export default {
   site: {
     domain: 'gaiahub.co',
     name: 'Gaia Hub',
-    description: 'Plataforma de gestión de presencia digital empresarial. Crea, gestiona y escala tu presencia online con tecnología de última generación.',
+    description: 'Gaia Hub — Plataforma de coordinación para ecosistemas regenerativos. Conecta proyectos, comunidades y capital de impacto en una red viva de regeneración planetaria. Economía regenerativa, bioregiones, marketplace sostenible y gobernanza distribuida.',
     language: 'en',
     logo: '/logo.svg',
     favicon: '/favicon.svg'

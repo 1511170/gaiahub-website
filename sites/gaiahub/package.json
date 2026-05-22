@@ -9,13 +9,16 @@
     "preview": "astro preview",
     "astro": "astro",
     "validate": "node scripts/validate.js",
-    "skills:list": "node scripts/skill-list.js"
+    "skills:list": "node scripts/skill-list.js",
+    "kinto:create": "node scripts/kinto-create-collection.js",
+    "kinto:add": "node scripts/kinto-add-content.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.0",
     "astro": "^5.0.0",
     "gsap": "^3.14.2",
     "puppeteer": "^25.0.4",
+    "rehype-slug": "^6.0.0",
     "typescript": "^5.0.0"
   },
   "devDependencies": {

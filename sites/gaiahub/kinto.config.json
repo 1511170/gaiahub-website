@@ -1,0 +1,20 @@
+{
+  "collections": {
+    "pages": {
+      "fields": ["title", "slug", "content", "seo"],
+      "required": ["title", "slug"]
+    },
+    "posts": {
+      "fields": ["title", "slug", "excerpt", "content", "date", "author", "category", "tags"],
+      "required": ["title", "slug", "date"]
+    },
+    "testimonials": {
+      "fields": ["author", "quote", "rating", "company", "image", "published", "date"],
+      "required": ["author", "quote"]
+    }
+  },
+  "site": {
+    "name": "Gaia Hub",
+    "url": "https://gaiahub.co"
+  }
+}

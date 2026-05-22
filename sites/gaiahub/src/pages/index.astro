@@ -34,47 +34,37 @@ function formatDate(date: Date) {
   <Navigation locale={locale} activePage="home" />
 
   <main>
-    <!-- Hero Section: Full-bleed banner with text overlay -->
-    <section class="relative pt-32 pb-16 lg:pb-24 px-6 lg:px-[5.5rem] overflow-hidden min-h-[85vh] flex items-center">
-      <div class="absolute inset-0 -z-10">
-        <img 
-          src="/images/hero-banner.webp" 
-          class="w-full h-full object-cover" 
-          alt="Sustainable community integrated into rainforest" 
-        />
-        <!-- Light overlay so image stays visible -->
-        <div class="absolute inset-0 bg-on-surface/30"></div>
-        <!-- Subtle gradient from bottom for smooth transition -->
-        <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
-      </div>
+    <!-- Hero Section: Full-bleed background image with centered content -->
+    <section class="relative pt-28 pb-16 lg:pb-20 px-6 lg:px-[5.5rem] overflow-hidden min-h-[92vh] flex items-center bg-cover bg-center" style="background-image: url('/images/hero-banner.webp');">
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40"></div>
       <div class="max-w-[1618px] mx-auto w-full relative z-10">
-        <!-- Text card with semi-transparent dark background for readability -->
-        <div class="inline-block p-8 md:p-10 lg:p-12 rounded-2xl bg-black/40 backdrop-blur-md max-w-3xl">
+        <div class="max-w-3xl mx-auto text-center">
           <div class="inline-block px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 text-white text-xs font-bold tracking-widest uppercase mb-6 gsap-fade-up">
             {i18n.home.hero_badge}
           </div>
-          <h1 class="hero-title font-headline text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[0.95] tracking-tighter mb-6 drop-shadow-lg">
+          <h1 class="hero-title font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[0.95] tracking-tighter mb-6 drop-shadow-[0_4px_20px_rgba(0,0,0,0.6)]">
             {i18n.home.hero_title.split('regenerates')[0]}<span class="text-primary italic">regenerates</span>.
           </h1>
-          <p class="hero-subtitle text-lg md:text-xl text-white/90 max-w-xl font-light leading-relaxed mb-8 drop-shadow-md">
+          <p class="hero-subtitle text-lg md:text-xl text-white max-w-xl mx-auto font-light leading-relaxed mb-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
             {i18n.home.hero_subtitle}
           </p>
-          <div class="hero-cta flex flex-col sm:flex-row gap-4">
+          <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#triada" class="solar-gradient px-8 py-4 rounded-full text-white font-headline font-bold text-base hover:opacity-90 transition-all scale-95 active:scale-90 shadow-xl text-center">
               {i18n.home.cta_discover}
             </a>
-            <a href="#comunidad" class="bg-white/15 backdrop-blur-sm border border-white/25 px-8 py-4 rounded-full text-white font-headline font-bold text-base hover:bg-white/25 transition-all text-center">
+            <a href="/confederation/" class="bg-white/20 backdrop-blur-md border border-white/30 px-8 py-4 rounded-full text-white font-headline font-bold text-base hover:bg-white/30 transition-all text-center shadow-lg">
               {i18n.home.cta_join}
             </a>
           </div>
-          <!-- Newsletter CTA -->
-          <div class="mt-8 max-w-md gsap-fade-up">
-            <p class="text-xs font-bold text-white/70 uppercase tracking-wider mb-2">{i18n.home.newsletter_title}</p>
+          <!-- Newsletter -->
+          <div class="mt-8 max-w-md mx-auto gsap-fade-up">
+            <p class="text-xs font-bold text-white/80 uppercase tracking-wider mb-2 drop-shadow-md">{i18n.home.newsletter_title}</p>
             <form class="flex gap-2" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
               <input 
                 type="email" 
                 placeholder={i18n.home.newsletter_placeholder}
-                class="flex-1 px-4 py-2.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-sm"
+                class="flex-1 px-4 py-2.5 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white placeholder:text-white/60 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-sm shadow-lg"
                 required
               />
               <button 
@@ -85,21 +75,18 @@ function formatDate(date: Date) {
               </button>
             </form>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Search Section -->
-    <section class="py-12 px-6 lg:px-[5.5rem] bg-surface gsap-fade-up">
-      <div class="max-w-[1618px] mx-auto">
-        <div class="relative max-w-2xl mx-auto">
-          <span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-on-surface/40">search</span>
-          <input 
-            type="text" 
-            placeholder={i18n.home.search_placeholder}
-            class="w-full pl-14 pr-6 py-4 rounded-full bg-surface-container-high border border-outline/10 text-on-surface placeholder:text-on-surface/40 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-lg shadow-sm"
-          />
-          <span class="absolute right-5 top-1/2 -translate-y-1/2 text-xs font-bold text-primary uppercase tracking-wider hidden sm:block">{i18n.home.search_title}</span>
+          <!-- Functional Search -->
+          <div class="mt-10 max-w-xl mx-auto relative">
+            <span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-white/60 drop-shadow">search</span>
+            <input 
+              id="home-search"
+              type="text" 
+              placeholder={i18n.home.search_placeholder}
+              class="w-full pl-14 pr-6 py-4 rounded-full bg-white/15 backdrop-blur-md border border-white/30 text-white placeholder:text-white/60 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-lg shadow-xl"
+            />
+            <span class="absolute right-5 top-1/2 -translate-y-1/2 text-xs font-bold text-primary uppercase tracking-wider hidden sm:block drop-shadow">{i18n.home.search_title}</span>
+          </div>
+          <p id="search-no-results" class="hidden mt-4 text-sm text-white/80 drop-shadow"></p>
         </div>
       </div>
     </section>
@@ -162,48 +149,60 @@ function formatDate(date: Date) {
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 gsap-stagger">
           <!-- Gaia Commons -->
           <div class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/triad-commons.webp'); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-surface-container-low/95"></div>
-            <div class="absolute top-0 right-0 p-8 text-on-surface/10 font-black text-6xl font-headline">01</div>
-            <span class="material-symbols-outlined text-5xl text-secondary-dim mb-8" style="font-variation-settings: 'FILL' 1;">favorite</span>
-            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">{i18n.home.triad_commons_title}</h3>
-            <p class="text-secondary-dim font-headline font-bold uppercase tracking-widest text-sm mb-2">{i18n.home.triad_commons_system}</p>
-            <p class="text-on-surface/70 leading-relaxed mb-6">{i18n.home.triad_commons_desc_new}</p>
-            <div class="flex flex-wrap gap-3 mb-6">
-              <a href="/impact-fund/" class="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-secondary-dim/10 text-secondary-dim text-xs font-bold uppercase tracking-wider hover:bg-secondary-dim/20 transition-colors">
-                {i18n.home.triad_commons_fund_link}
-              </a>
-              <a href="/impact-hub/" class="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-secondary-dim/10 text-secondary-dim text-xs font-bold uppercase tracking-wider hover:bg-secondary-dim/20 transition-colors">
-                {i18n.home.triad_commons_hub_link}
-              </a>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/60"></div>
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="absolute top-0 right-0 p-8 text-white/10 font-black text-6xl font-headline">01</div>
+            <div class="relative">
+              <span class="material-symbols-outlined text-5xl text-white mb-8 drop-shadow-lg" style="font-variation-settings: 'FILL' 1;">favorite</span>
+              <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4 text-white drop-shadow-md">{i18n.home.triad_commons_title}</h3>
+              <p class="text-white/90 font-headline font-bold uppercase tracking-widest text-sm mb-2">{i18n.home.triad_commons_system}</p>
+              <p class="text-white/80 leading-relaxed mb-6">{i18n.home.triad_commons_desc_new}</p>
+              <div class="flex flex-wrap gap-3 mb-6">
+                <a href="/impact-fund/" class="relative z-20 inline-flex items-center gap-1 px-4 py-2 rounded-full bg-white/15 text-white text-xs font-bold uppercase tracking-wider hover:bg-white/25 transition-colors backdrop-blur-sm">
+                  {i18n.home.triad_commons_fund_link}
+                </a>
+                <a href="/impact-hub/" class="relative z-20 inline-flex items-center gap-1 px-4 py-2 rounded-full bg-white/15 text-white text-xs font-bold uppercase tracking-wider hover:bg-white/25 transition-colors backdrop-blur-sm">
+                  {i18n.home.triad_commons_hub_link}
+                </a>
+              </div>
+              <span class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm group-hover:gap-4 transition-all text-white">
+                {i18n.home.triad_commons_cta} <span class="material-symbols-outlined">arrow_forward</span>
+              </span>
             </div>
-            <a href="/commons" class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm group-hover:gap-4 transition-all text-secondary-dim">
-              {i18n.home.triad_commons_cta} <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
+            <a href="/commons/" class="absolute inset-0 z-10" aria-label={i18n.home.triad_commons_title}></a>
           </div>
           <!-- Gaia Hub -->
-          <a href="/hub" class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/triad-hub.webp'); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-surface-container-high/95"></div>
-            <div class="absolute top-0 right-0 p-8 text-on-surface/10 font-black text-6xl font-headline">02</div>
-            <span class="material-symbols-outlined text-5xl text-primary mb-8" style="font-variation-settings: 'FILL' 1;">network_node</span>
-            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">{i18n.home.triad_hub_title}</h3>
-            <p class="text-primary font-headline font-bold uppercase tracking-widest text-sm mb-6">{i18n.home.triad_hub_subtitle}</p>
-            <p class="text-on-surface/70 leading-relaxed mb-8">{i18n.home.triad_hub_desc}</p>
-            <div class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm group-hover:gap-4 transition-all text-primary">
-              {i18n.home.triad_hub_cta} <span class="material-symbols-outlined">arrow_forward</span>
+          <div class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/triad-hub.webp'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/60"></div>
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="absolute top-0 right-0 p-8 text-white/10 font-black text-6xl font-headline">02</div>
+            <div class="relative">
+              <span class="material-symbols-outlined text-5xl text-white mb-8 drop-shadow-lg" style="font-variation-settings: 'FILL' 1;">network_node</span>
+              <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4 text-white drop-shadow-md">{i18n.home.triad_hub_title}</h3>
+              <p class="text-white/90 font-headline font-bold uppercase tracking-widest text-sm mb-6">{i18n.home.triad_hub_subtitle}</p>
+              <p class="text-white/80 leading-relaxed mb-8">{i18n.home.triad_hub_desc}</p>
+              <span class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm group-hover:gap-4 transition-all text-white">
+                {i18n.home.triad_hub_cta} <span class="material-symbols-outlined">arrow_forward</span>
+              </span>
             </div>
-          </a>
+            <a href="/hub/" class="absolute inset-0 z-10" aria-label={i18n.home.triad_hub_title}></a>
+          </div>
           <!-- Gaia Market -->
-          <a href="/market" class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/triad-market.webp'); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-surface-container-highest/95"></div>
-            <div class="absolute top-0 right-0 p-8 text-on-surface/10 font-black text-6xl font-headline">03</div>
-            <span class="material-symbols-outlined text-5xl text-secondary mb-8" style="font-variation-settings: 'FILL' 1;">storefront</span>
-            <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4">{i18n.home.triad_market_title}</h3>
-            <p class="text-secondary font-headline font-bold uppercase tracking-widest text-sm mb-6">{i18n.home.triad_market_subtitle}</p>
-            <p class="text-on-surface/70 leading-relaxed mb-8">{i18n.home.triad_market_desc}</p>
-            <div class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm group-hover:gap-4 transition-all text-secondary">
-              {i18n.home.triad_market_cta} <span class="material-symbols-outlined">arrow_forward</span>
+          <div class="group relative p-10 lg:p-12 rounded-xl transition-all hover:-translate-y-4 block overflow-hidden" style="background-image: url('/images/triad-market.webp'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/60"></div>
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="absolute top-0 right-0 p-8 text-white/10 font-black text-6xl font-headline">03</div>
+            <div class="relative">
+              <span class="material-symbols-outlined text-5xl text-white mb-8 drop-shadow-lg" style="font-variation-settings: 'FILL' 1;">storefront</span>
+              <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4 text-white drop-shadow-md">{i18n.home.triad_market_title}</h3>
+              <p class="text-white/90 font-headline font-bold uppercase tracking-widest text-sm mb-6">{i18n.home.triad_market_subtitle}</p>
+              <p class="text-white/80 leading-relaxed mb-8">{i18n.home.triad_market_desc}</p>
+              <span class="inline-flex items-center gap-2 font-headline font-bold uppercase text-sm group-hover:gap-4 transition-all text-white">
+                {i18n.home.triad_market_cta} <span class="material-symbols-outlined">arrow_forward</span>
+              </span>
             </div>
-          </a>
+            <a href="/market/" class="absolute inset-0 z-10" aria-label={i18n.home.triad_market_title}></a>
+          </div>
         </div>
       </div>
     </section>
@@ -438,7 +437,7 @@ function formatDate(date: Date) {
           <a href="#comunidad" class="solar-gradient px-12 py-6 rounded-full text-white font-headline font-bold text-xl hover:opacity-90 transition-all scale-95 active:scale-90 shadow-2xl text-center">
             {i18n.home.closing_cta_primary}
           </a>
-          <a href="#comunidad" class="bg-surface-container-highest px-12 py-6 rounded-full text-on-surface font-headline font-bold text-xl hover:bg-surface-container-high transition-all text-center">
+          <a href="/confederation/" class="bg-surface-container-highest px-12 py-6 rounded-full text-on-surface font-headline font-bold text-xl hover:bg-surface-container-high transition-all text-center">
             {i18n.home.closing_cta_secondary}
           </a>
         </div>
@@ -492,6 +491,38 @@ function formatDate(date: Date) {
 
   <Footer locale={locale} />
 </Layout>
+
+<script is:inline>
+  (function() {
+    const searchInput = document.getElementById('home-search');
+    const noResults = document.getElementById('search-no-results');
+    const sections = document.querySelectorAll('main > section');
+    if (!searchInput) return;
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      if (!query) {
+        sections.forEach(s => s.style.display = '');
+        if (noResults) noResults.classList.add('hidden');
+        return;
+      }
+      let visibleCount = 0;
+      sections.forEach(section => {
+        const text = section.textContent.toLowerCase();
+        const match = text.includes(query);
+        section.style.display = match ? '' : 'none';
+        if (match) visibleCount++;
+      });
+      if (noResults) {
+        if (visibleCount === 0) {
+          noResults.textContent = 'No results found for "' + query + '"';
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      }
+    });
+  })();
+</script>
 
 <style>
   .material-symbols-outlined {
