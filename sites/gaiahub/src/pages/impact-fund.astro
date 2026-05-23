@@ -67,27 +67,30 @@ const i18n = t(locale);
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-16">
           <!-- Criteria Cards -->
-          <div class="bg-white p-8 lg:p-10 rounded-xl space-y-6 text-left border border-outline/10 hover:shadow-2xl transition-all group">
+          <a href="/bioregions/" class="bg-white p-8 lg:p-10 rounded-xl space-y-6 text-left border border-outline/10 hover:shadow-2xl transition-all group cursor-pointer block">
             <div class="w-16 h-16 rounded-full bg-primary-container/30 flex items-center justify-center group-hover:bg-primary-container transition-colors">
               <span class="material-symbols-outlined text-primary text-3xl">eco</span>
             </div>
             <h3 class="text-2xl font-bold font-headline">{i18n.impact_fund.criteria_ecological}</h3>
             <p class="text-on-surface/60 text-sm leading-relaxed">{i18n.impact_fund.criteria_ecological_desc}</p>
-          </div>
-          <div class="bg-white p-8 lg:p-10 rounded-xl space-y-6 text-left border border-outline/10 hover:shadow-2xl transition-all group">
+            <p class="text-primary text-sm font-bold mt-2 group-hover:underline">→ Explore bioregions</p>
+          </a>
+          <a href="/commons/" class="bg-white p-8 lg:p-10 rounded-xl space-y-6 text-left border border-outline/10 hover:shadow-2xl transition-all group cursor-pointer block">
             <div class="w-16 h-16 rounded-full bg-secondary-container/30 flex items-center justify-center group-hover:bg-secondary-container transition-colors">
               <span class="material-symbols-outlined text-secondary text-3xl">diversity_3</span>
             </div>
             <h3 class="text-2xl font-bold font-headline">{i18n.impact_fund.criteria_social}</h3>
             <p class="text-on-surface/60 text-sm leading-relaxed">{i18n.impact_fund.criteria_social_desc}</p>
-          </div>
-          <div class="bg-white p-8 lg:p-10 rounded-xl space-y-6 text-left border border-outline/10 hover:shadow-2xl transition-all group">
+            <p class="text-primary text-sm font-bold mt-2 group-hover:underline">→ Discover Commons</p>
+          </a>
+          <a href="/market/" class="bg-white p-8 lg:p-10 rounded-xl space-y-6 text-left border border-outline/10 hover:shadow-2xl transition-all group cursor-pointer block">
             <div class="w-16 h-16 rounded-full bg-tertiary-container/30 flex items-center justify-center group-hover:bg-tertiary-container transition-colors">
               <span class="material-symbols-outlined text-tertiary text-3xl">account_balance</span>
             </div>
             <h3 class="text-2xl font-bold font-headline">{i18n.impact_fund.criteria_economic}</h3>
             <p class="text-on-surface/60 text-sm leading-relaxed">{i18n.impact_fund.criteria_economic_desc}</p>
-          </div>
+            <p class="text-primary text-sm font-bold mt-2 group-hover:underline">→ Visit Market</p>
+          </a>
         </div>
       </div>
     </section>
