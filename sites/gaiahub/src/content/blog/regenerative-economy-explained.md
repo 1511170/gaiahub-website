@@ -5,7 +5,7 @@ date: 2026-04-28
 author: "Economics Working Group"
 category: "Economy"
 tags: ["economy", "market", "commons"]
-image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop"
+image: "/images/blog/regenerative-economy.webp"
 published: true
 ---
 
@@ -19,7 +19,7 @@ The word "sustainability" has been co-opted. Too often it means "slightly less d
 
 Traditional economics treats nature as a subset of the economy. Regenerative economics flips this: **the economy is a subset of nature**. Every transaction must leave the system better than it found it.
 
-![Regenerative landscape](https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1200&auto=format&fit=crop)
+![Regenerative landscape](/images/blog/regenerative-economy.webp)
 
 ---
 
@@ -53,7 +53,7 @@ This multi-capital approach ensures that **no form of wealth is exploited to ben
 
 ## The Invitation
 
-![Community market](https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200&auto=format&fit=crop)
+![Community market](/images/blog/regenerative-economy.webp)
 
 Join 450+ regenerative communities already exchanging value through Gaia Market. Every purchase is a vote for the world you want to live in.
 

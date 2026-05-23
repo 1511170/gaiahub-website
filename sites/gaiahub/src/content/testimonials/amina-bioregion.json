@@ -1,8 +1,10 @@
 {
   "author": "Amina Okafor",
   "company": "Nile Bioregion Alliance",
+  "company_es": "Alianza de la Biorregión del Nilo",
   "quote": "The Gaia Confederation allowed three autonomous communities to pool resources for a watershed restoration project that no single community could afford. Polycentric governance actually works when the tools are designed right.",
-  "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
+  "quote_es": "La Confederación Gaia permitió que tres comunidades autónomas unieran recursos para un proyecto de restauración de cuenca hidrográfica que ninguna comunidad podía costear sola. La gobernanza policéntrica realmente funciona cuando las herramientas están bien diseñadas.",
+  "image": "/images/testimonials/amina-okafor.webp",
   "rating": 5,
   "date": "2026-04-20",
   "published": true

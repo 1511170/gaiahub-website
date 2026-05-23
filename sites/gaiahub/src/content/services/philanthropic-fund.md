@@ -8,7 +8,7 @@ published: true
 
 1\. Gaia Philanthropic Fund
 
-![](https://gaiahub.net.co/wp-content/uploads/2024/04/OIG1-1.jpg)
+![](https://gaiahub.net.co/wp-content/uploads/2024/04/OIG1-1.webp)
 
 Philantropic EcoSocial “Aid” in areas such as suplying access to healthy food, clean water, quality content and education, health, technologies, etc
 

@@ -27,6 +27,7 @@ function formatDate(date: Date) {
 <Layout 
   title={i18n.home.meta_title}
   description={i18n.home.meta_description}
+  image="/images/hero-banner.webp"
   keywords={["regenerative economy", "Gaia", "commons", "bioregions", "regenerative marketplace", "coordination platform", "ecosistema regenerativo"]}
   schemaType={["Organization", "WebSite"]}
 >
@@ -94,7 +95,7 @@ function formatDate(date: Date) {
     <!-- Concept Section: Full-bleed image with text overlay -->
     <section class="relative py-[7rem] lg:py-[10rem] px-6 lg:px-[5.5rem] overflow-hidden gsap-fade-up">
       <div class="absolute inset-0 -z-10">
-        <img src="/images/concept-bg.webp" class="w-full h-full object-cover" alt="Regenerative landscape" />
+        <img src="/images/concept-bg.webp" class="w-full h-full object-cover" alt="Regenerative landscape"  loading="eager" fetchpriority="high" />
         <div class="absolute inset-0 bg-gradient-to-r from-on-surface/90 via-on-surface/75 to-on-surface/50"></div>
       </div>
       <div class="max-w-[1618px] mx-auto relative z-10">
@@ -112,7 +113,7 @@ function formatDate(date: Date) {
       <div class="max-w-[1618px] mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 gsap-stagger">
           <a href="/commons/" class="relative aspect-[4/3] rounded-xl overflow-hidden ethereal-shadow group block">
-            <img src="/images/concept-regen.webp" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Regeneration" />
+            <img src="/images/concept-regen.webp" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Regeneration"  loading="lazy" decoding="async" />
             <div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-on-surface/20"></div>
             <div class="absolute bottom-0 left-0 p-6">
               <span class="material-symbols-outlined text-4xl text-primary-container mb-2" style="font-variation-settings: 'FILL' 1;">eco</span>
@@ -120,7 +121,7 @@ function formatDate(date: Date) {
             </div>
           </a>
           <a href="/hub/" class="relative aspect-[4/3] rounded-xl overflow-hidden ethereal-shadow group block">
-            <img src="/images/concept-coord.webp" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Coordination" />
+            <img src="/images/concept-coord.webp" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Coordination"  loading="lazy" decoding="async" />
             <div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-on-surface/20"></div>
             <div class="absolute bottom-0 left-0 p-6">
               <span class="material-symbols-outlined text-4xl text-primary-container mb-2" style="font-variation-settings: 'FILL' 1;">hub</span>
@@ -128,7 +129,7 @@ function formatDate(date: Date) {
             </div>
           </a>
           <a href="/confederation/" class="relative aspect-[4/3] rounded-xl overflow-hidden ethereal-shadow group block">
-            <img src="/images/concept-collab.webp" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Collaboration" />
+            <img src="/images/concept-collab.webp" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Collaboration"  loading="lazy" decoding="async" />
             <div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 to-on-surface/20"></div>
             <div class="absolute bottom-0 left-0 p-6">
               <span class="material-symbols-outlined text-4xl text-primary-container mb-2" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
@@ -210,7 +211,7 @@ function formatDate(date: Date) {
     <!-- Flow Section: Cómo funciona -->
     <section id="como-funciona" class="relative py-[5.5rem] lg:py-[7rem] px-6 lg:px-[5.5rem] bg-surface gsap-fade-up overflow-hidden">
       <div class="absolute inset-0 -z-0 opacity-5">
-        <img src="/images/flow-bg.webp" class="w-full h-full object-cover" alt="" />
+        <img src="/images/flow-bg.webp" class="w-full h-full object-cover" alt=""  loading="lazy" decoding="async" />
       </div>
       <div class="max-w-[1618px] mx-auto">
         <h2 class="font-headline text-3xl md:text-4xl lg:text-5xl font-black text-center mb-20">{i18n.home.how_title}</h2>
@@ -292,7 +293,7 @@ function formatDate(date: Date) {
                 </blockquote>
                 <footer class="flex items-center gap-3 mt-4 pt-4 border-t border-outline/10">
                   {t.data.image && (
-                    <img src={t.data.image} alt={t.data.author} class="w-10 h-10 rounded-full object-cover" itemprop="image" />
+                    <img src={t.data.image} alt={t.data.author} class="w-10 h-10 rounded-full object-cover" itemprop="image" loading="lazy" decoding="async" />
                   )}
                   <div>
                     <cite class="not-italic font-headline font-bold text-on-surface text-sm" itemprop="author" itemscope itemtype="https://schema.org/Person">
@@ -323,13 +324,13 @@ function formatDate(date: Date) {
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 gsap-stagger">
           <a href="/bioregions/" class="aspect-[3/4] rounded-xl overflow-hidden ethereal-shadow block">
-            <img src="/images/bioregions-hero.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Bioregions" />
+            <img src="/images/bioregions-hero.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Bioregions"  loading="lazy" decoding="async" />
           </a>
           <a href="/ecohabitats/" class="aspect-[3/4] rounded-xl overflow-hidden ethereal-shadow mt-8 md:mt-0 block">
-            <img src="/images/ecohabitats-hero.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="EcoHabitats" />
+            <img src="/images/ecohabitats-hero.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="EcoHabitats"  loading="lazy" decoding="async" />
           </a>
           <a href="/academy/" class="aspect-[3/4] rounded-xl overflow-hidden ethereal-shadow block">
-            <img src="/images/academy-hero.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Academy" />
+            <img src="/images/academy-hero.webp" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" alt="Academy"  loading="lazy" decoding="async" />
           </a>
         </div>
       </div>
@@ -357,7 +358,7 @@ function formatDate(date: Date) {
               <a href={`/blog/${post.slug}/`} class="group block bg-surface-container-low rounded-xl overflow-hidden hover:-translate-y-2 transition-all duration-300 ethereal-shadow">
                 <div class="aspect-video bg-surface-container-high overflow-hidden">
                   {post.data.image ? (
-                    <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"  loading="lazy" decoding="async" />
                   ) : (
                     <div class="w-full h-full flex items-center justify-center text-6xl">🌱</div>
                   )}
@@ -424,7 +425,7 @@ function formatDate(date: Date) {
           class="w-full h-full object-cover opacity-10" 
           alt="Mountain peak at sunrise" 
           src="/images/closing-bg.webp"
-        />
+         loading="lazy" decoding="async" />
       </div>
       <div class="max-w-[1618px] mx-auto text-center">
         <h2 class="font-headline text-4xl md:text-6xl lg:text-7xl font-black text-on-surface mb-8 tracking-tighter">

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-23T02:45:42.847Z",
+  "timestamp": "2026-05-23T06:31:17.782Z",
   "baseUrl": "http://localhost:4321",
   "tests": [
     {
@@ -721,7 +721,7 @@
                 }
               ],
               "brokenImagesCount": 0,
-              "totalExternalImages": 4
+              "totalExternalImages": 6
             },
             "errors": [],
             "passed": true
@@ -822,7 +822,7 @@
                 }
               ],
               "brokenImagesCount": 0,
-              "totalExternalImages": 4
+              "totalExternalImages": 6
             },
             "errors": [],
             "passed": true
@@ -927,7 +927,7 @@
                 }
               ],
               "brokenImagesCount": 0,
-              "totalExternalImages": 9
+              "totalExternalImages": 1
             },
             "errors": [],
             "passed": true
@@ -1028,7 +1028,7 @@
                 }
               ],
               "brokenImagesCount": 0,
-              "totalExternalImages": 9
+              "totalExternalImages": 1
             },
             "errors": [],
             "passed": true

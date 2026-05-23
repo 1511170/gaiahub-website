@@ -8,7 +8,7 @@ published: true
 
 2\. GLocal EcoHabitats Network Fund
 
-![](https://gaiahub.net.co/wp-content/uploads/2024/03/OIG2-1.jpg)
+![](https://gaiahub.net.co/wp-content/uploads/2024/03/OIG2-1.webp)
 
 This Hub supports the LandBased Projects and Communities that are aligned with this Glocal Initiative.
 

@@ -1,8 +1,10 @@
 {
   "author": "Carlos Mendoza",
   "company": "Regenera Capital",
+  "company_es": "Regenera Capital",
   "quote": "As an impact investor, I was tired of greenwashing. Gaia Commons gave me radical transparency — I can trace every dollar to its ecological and social outcome. This is the infrastructure impact finance has been waiting for.",
-  "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
+  "quote_es": "Como inversor de impacto, estaba cansado del greenwashing. Gaia Commons me dio transparencia radical — puedo rastrear cada dólar hasta su resultado ecológico y social. Esta es la infraestructura que las finanzas de impacto han estado esperando.",
+  "image": "/images/testimonials/carlos-mendoza.webp",
   "rating": 5,
   "date": "2026-04-02",
   "published": true

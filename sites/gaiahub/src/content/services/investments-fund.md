@@ -8,7 +8,7 @@ published: true
 
 3\. Gaia Investments Fund
 
-![](https://gaiahub.net.co/wp-content/uploads/2024/04/OIG4.jpg)
+![](https://gaiahub.net.co/wp-content/uploads/2024/04/OIG4.webp)
 
 Purpose driven aligned profit generating organisations and objects that do not fully align with the gaia commons profit sharing agreement.
 

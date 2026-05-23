@@ -26,7 +26,9 @@ const testimonials = defineCollection({
   schema: z.object({
     author: z.string(),
     company: z.string().optional(),
+    company_es: z.string().optional(),
     quote: z.string(),
+    quote_es: z.string().optional(),
     image: z.string().optional(),
     rating: z.number().min(1).max(5).default(5),
     date: z.string().optional(),
@@ -72,8 +74,24 @@ const team = defineCollection({
   }),
 });
 
+// Colección: Blog en Español
+const blogEs = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    excerpt: z.string(),
+    date: z.date(),
+    author: z.string(),
+    category: z.string(),
+    tags: z.array(z.string()).optional(),
+    image: z.string().optional(),
+    published: z.boolean().default(true),
+  }),
+});
+
 export const collections = {
   blog,
+  'blog-es': blogEs,
   testimonials,
   pages,
   services,

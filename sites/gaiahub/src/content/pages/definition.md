@@ -9,7 +9,7 @@ DEFINITION
 
 GaiaHub is an Innovative Network EcoSystem With The Mission To Bridge Worlds In Service To All Forms Of Life
 
-![](https://gaiahub.net.co/wp-content/uploads/2024/03/OIG3.47Qk6wRqWpthyblHed.jpg)
+![](https://gaiahub.net.co/wp-content/uploads/2024/03/OIG3.47Qk6wRqWpthyblHed.webp)
 
 Gaia is a for purpose ecosystem devoted to fostering holistic integral welfare.
 

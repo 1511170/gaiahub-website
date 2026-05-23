@@ -1,8 +1,10 @@
 {
   "author": "Thomas Bergmann",
   "company": "Permaculture Institute Europe",
+  "company_es": "Instituto de Permacultura Europa",
   "quote": "Gaia Academy's hybrid learning model — combining ancestral wisdom with cutting-edge science — transformed how we train regenerative designers. Our graduates are now leading projects across 12 countries.",
-  "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop",
+  "quote_es": "El modelo híbrido de aprendizaje de Gaia Academy — que combina sabiduría ancestral con ciencia de vanguardia — transformó la forma en que formamos diseñadores regenerativos. Nuestros graduados ahora lideran proyectos en 12 países.",
+  "image": "/images/testimonials/thomas-bergmann.webp",
   "rating": 5,
   "date": "2026-05-05",
   "published": true

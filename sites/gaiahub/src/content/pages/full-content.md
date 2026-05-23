@@ -121,7 +121,7 @@ Gaia Commons Funds
 
 1\. Gaia Philanthropic Fund
 
-![](https://gaiahub.net.co/wp-content/uploads/2024/04/OIG1-1.jpg)
+![](https://gaiahub.net.co/wp-content/uploads/2024/04/OIG1-1.webp)
 
 Philantropic EcoSocial “Aid” in areas such as suplying access to healthy food, clean water, quality content and education, health, technologies, etc
 
@@ -131,7 +131,7 @@ This Fund Prioritises programs with the highest potential for ecological and soc
 
 2\. GLocal EcoHabitats Network Fund
 
-![](https://gaiahub.net.co/wp-content/uploads/2024/03/OIG2-1.jpg)
+![](https://gaiahub.net.co/wp-content/uploads/2024/03/OIG2-1.webp)
 
 This Hub supports the LandBased Projects and Communities that are aligned with this Glocal Initiative.
 
@@ -141,7 +141,7 @@ This component focuses on geographical distribution to local communities and bio
 
 3\. Gaia Investments Fund
 
-![](https://gaiahub.net.co/wp-content/uploads/2024/04/OIG4.jpg)
+![](https://gaiahub.net.co/wp-content/uploads/2024/04/OIG4.webp)
 
 Purpose driven aligned profit generating organisations and objects that do not fully align with the gaia commons profit sharing agreement.
 
@@ -153,7 +153,7 @@ DEFINITION
 
 GaiaHub is an Innovative Network EcoSystem With The Mission To Bridge Worlds In Service To All Forms Of Life
 
-![](https://gaiahub.net.co/wp-content/uploads/2024/03/OIG3.47Qk6wRqWpthyblHed.jpg)
+![](https://gaiahub.net.co/wp-content/uploads/2024/03/OIG3.47Qk6wRqWpthyblHed.webp)
 
 Gaia is a for purpose ecosystem devoted to fostering holistic integral welfare.
 

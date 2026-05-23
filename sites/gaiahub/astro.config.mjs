@@ -3,6 +3,7 @@ import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import rehypeSlug from 'rehype-slug';
+import sitemap from '@astrojs/sitemap';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -24,7 +25,17 @@ export default defineConfig({
   site: 'https://gaiahub.co',
   trailingSlash: 'always',
   
-  integrations: [],
+  integrations: [
+    sitemap({
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en-US',
+          es: 'es-CO',
+        },
+      },
+    }),
+  ],
   
   markdown: {
     rehypePlugins: [rehypeSlug],

@@ -5,7 +5,7 @@ import Footer from '@site/components/Footer.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('blog-es');
   return posts
     .filter(p => p.data.published)
     .map(post => ({
@@ -35,7 +35,7 @@ const toc = headingMatches.map(m => {
 });
 
 // Get all posts for prev/next navigation
-const allPosts = (await getCollection('blog'))
+const allPosts = (await getCollection('blog-es'))
   .filter(p => p.data.published)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
@@ -67,7 +67,7 @@ const shareText = encodeURIComponent(post.data.title);
   <!-- Hero Image -->
   {post.data.image && (
     <div class="relative w-full h-[40vh] min-h-[280px] max-h-[420px] overflow-hidden">
-      <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover" />
+      <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover" loading="eager" decoding="async" />
       <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
     </div>
   )}
@@ -205,7 +205,7 @@ const shareText = encodeURIComponent(post.data.title);
                   <a href={`/es/blog/${rp.slug}/`} class="group block">
                     {rp.data.image && (
                       <div class="aspect-video rounded-lg overflow-hidden mb-2">
-                        <img src={rp.data.image} alt={rp.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <img src={rp.data.image} alt={rp.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
                       </div>
                     )}
                     <span class="text-xs font-bold text-primary uppercase tracking-wider">{rp.data.category}</span>

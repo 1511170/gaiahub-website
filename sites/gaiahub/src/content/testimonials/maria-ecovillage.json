@@ -1,8 +1,10 @@
 {
   "author": "María Fernández",
   "company": "EcoAldea Pacha Mama",
+  "company_es": "EcoAldea Pacha Mama",
   "quote": "Gaia Hub connected us with investors and volunteers we never would have found otherwise. In six months, our regenerative agriculture project scaled from 5 to 50 hectares. This is not just technology — it's life support.",
-  "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
+  "quote_es": "Gaia Hub nos conectó con inversores y voluntarios que nunca habríamos encontrado de otra manera. En seis meses, nuestro proyecto de agricultura regenerativa escaló de 5 a 50 hectáreas. Esto no es solo tecnología — es soporte vital.",
+  "image": "/images/testimonials/maria-fernandez.webp",
   "rating": 5,
   "date": "2026-03-15",
   "published": true
