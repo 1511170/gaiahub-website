@@ -52,9 +52,9 @@ interface Props {
 const { alternates, sticky = false } = Astro.props;
 
 const inlineClass =
-  'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 hover:border-gray-400 transition-colors text-sm font-medium text-gray-700 hover:text-gray-900';
+  'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary/30 bg-white/80 hover:bg-white hover:border-primary/60 transition-all text-sm font-bold text-primary hover:text-primary-dim shadow-sm hover:shadow-md active:scale-95';
 const stickyClass =
-  'inline-flex items-center gap-2 px-4 py-3 rounded-full border-2 border-gray-200 bg-white shadow-lg hover:border-gray-400 hover:shadow-xl transition-all text-base font-semibold text-gray-800 hover:text-gray-900 active:scale-[0.98]';
+  'inline-flex items-center gap-2 px-4 py-3 rounded-full border-2 border-primary/30 bg-white shadow-lg hover:border-primary/60 hover:shadow-xl transition-all text-base font-bold text-primary hover:text-primary-dim active:scale-[0.98]';
 
 // Inline SVG flags — avoids Windows/Node.js emoji encoding issues
 const flagSvgs: Record<string, string> = {
