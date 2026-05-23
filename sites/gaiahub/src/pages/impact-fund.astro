@@ -28,7 +28,7 @@ const i18n = t(locale);
           <h1 class="text-5xl md:text-6xl lg:text-8xl font-black font-headline text-on-surface leading-[0.9] tracking-tighter">
             {i18n.impact_fund.hero_title}
           </h1>
-          <p class="text-xl md:text-2xl text-on-surface/70 font-light max-w-xl leading-relaxed">
+          <p class="text-xl md:text-2xl text-on-surface/70 font-light max-w-xl leading-relaxed whitespace-pre-line">
             {i18n.impact_fund.hero_subtitle}
           </p>
           <div class="flex flex-wrap gap-4 pt-4">
@@ -49,8 +49,7 @@ const i18n = t(locale);
               src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop"
             />
             <div class="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
-              <p class="text-white font-headline font-bold text-sm tracking-tight">ASSETS UNDER MANAGEMENT</p>
-              <p class="text-white text-3xl lg:text-4xl font-black">$2.6B+ REGENERATIVE</p>
+              <p class="text-white font-headline font-bold text-sm tracking-tight uppercase">Regenerative Impact</p>
             </div>
           </div>
         </div>
@@ -58,7 +57,7 @@ const i18n = t(locale);
     </section>
 
     <!-- Definition & Strategic Heart -->
-    <section class="bg-surface-container-low py-24 lg:py-32">
+    <section id="criterios" class="bg-surface-container-low py-24 lg:py-32">
       <div class="px-6 lg:px-[5.5rem] max-w-[1618px] mx-auto text-center space-y-12">
         <div class="max-w-3xl mx-auto space-y-6">
           <h2 class="text-4xl md:text-5xl font-headline font-black tracking-tight text-on-surface">{i18n.impact_fund.manifesto_title}</h2>
@@ -99,34 +98,38 @@ const i18n = t(locale);
         <h2 class="text-4xl md:text-5xl font-headline font-black tracking-tight">{i18n.impact_fund.flow_title}</h2>
       </div>
       <div class="flex flex-col md:flex-row items-stretch gap-4 min-h-[400px] lg:min-h-[500px]">
-        <div class="flex-1 bg-surface-container-high p-8 lg:p-12 rounded-xl flex flex-col justify-between border-l-8 border-primary">
+        <a href="#criterios" class="flex-1 bg-surface-container-high p-8 lg:p-12 rounded-xl flex flex-col justify-between border-l-8 border-primary hover:shadow-xl transition-all group cursor-pointer">
           <span class="text-primary font-black text-5xl lg:text-6xl">01</span>
           <div>
             <h4 class="text-2xl font-bold font-headline mb-2">{i18n.impact_fund.flow_01_title}</h4>
             <p class="text-on-surface/60">{i18n.impact_fund.flow_01_desc}</p>
+            <p class="text-primary text-sm font-bold mt-3 group-hover:underline">→ See investment criteria</p>
           </div>
-        </div>
-        <div class="flex-1 bg-surface-container p-8 lg:p-12 rounded-xl flex flex-col justify-between border-l-8 border-primary-container">
+        </a>
+        <a href="#comunidad" class="flex-1 bg-surface-container p-8 lg:p-12 rounded-xl flex flex-col justify-between border-l-8 border-primary-container hover:shadow-xl transition-all group cursor-pointer">
           <span class="text-primary-container font-black text-5xl lg:text-6xl">02</span>
           <div>
             <h4 class="text-2xl font-bold font-headline mb-2">{i18n.impact_fund.flow_02_title}</h4>
             <p class="text-on-surface/60">{i18n.impact_fund.flow_02_desc}</p>
+            <p class="text-primary text-sm font-bold mt-3 group-hover:underline">→ Explore available funds</p>
           </div>
-        </div>
-        <div class="flex-1 bg-surface-container-low p-8 lg:p-12 rounded-xl flex flex-col justify-between border-l-8 border-secondary">
+        </a>
+        <a href="#comunidad" class="flex-1 bg-surface-container-low p-8 lg:p-12 rounded-xl flex flex-col justify-between border-l-8 border-secondary hover:shadow-xl transition-all group cursor-pointer">
           <span class="text-secondary font-black text-5xl lg:text-6xl">03</span>
           <div>
             <h4 class="text-2xl font-bold font-headline mb-2">{i18n.impact_fund.flow_03_title}</h4>
             <p class="text-on-surface/60">{i18n.impact_fund.flow_03_desc}</p>
+            <p class="text-primary text-sm font-bold mt-3 group-hover:underline">→ Explore biomes</p>
           </div>
-        </div>
-        <div class="flex-1 bg-white p-8 lg:p-12 rounded-xl flex flex-col justify-between border-l-8 border-secondary-fixed">
+        </a>
+        <a href="#comunidad" class="flex-1 bg-white p-8 lg:p-12 rounded-xl flex flex-col justify-between border-l-8 border-secondary-fixed hover:shadow-xl transition-all group cursor-pointer">
           <span class="text-secondary-fixed font-black text-5xl lg:text-6xl">04</span>
           <div>
             <h4 class="text-2xl font-bold font-headline mb-2">{i18n.impact_fund.flow_04_title}</h4>
             <p class="text-on-surface/60">{i18n.impact_fund.flow_04_desc}</p>
+            <p class="text-primary text-sm font-bold mt-3 group-hover:underline">→ More about impact measurement</p>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 

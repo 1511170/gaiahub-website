@@ -1,0 +1,1453 @@
+{
+  "timestamp": "2026-05-23T02:45:42.847Z",
+  "baseUrl": "http://localhost:4321",
+  "tests": [
+    {
+      "page": "home",
+      "en": {
+        "mobile": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\home_en_mobile.png",
+          "i18n": null
+        },
+        "desktop": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\home_en_desktop.png",
+          "i18n": {
+            "url": "http://localhost:4321/",
+            "lang": "en",
+            "checks": {
+              "htmlLang": "en-US",
+              "languageToggles": [
+                {
+                  "text": "ES",
+                  "href": "/es/",
+                  "hreflang": "es",
+                  "visible": true,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "ES",
+                  "href": "/es/",
+                  "hreflang": "es",
+                  "visible": false,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "ES",
+                  "href": "/es/",
+                  "hreflang": "es",
+                  "visible": false,
+                  "boundingRect": {}
+                }
+              ],
+              "hasContent": true,
+              "hasEnglishContent": true,
+              "alternateLinks": [
+                {
+                  "hreflang": "es",
+                  "href": "https://gaiahub.co/es/"
+                },
+                {
+                  "hreflang": "x-default",
+                  "href": "https://gaiahub.co"
+                },
+                {
+                  "hreflang": null,
+                  "href": "/llms.txt"
+                }
+              ],
+              "sampleLinks": [
+                {
+                  "href": "/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/commons/",
+                  "text": "Commons"
+                },
+                {
+                  "href": "/blog/",
+                  "text": "Blog"
+                },
+                {
+                  "href": "/impact-fund/",
+                  "text": "Impact Fund"
+                },
+                {
+                  "href": "/impact-hub/",
+                  "text": "Impact Hub"
+                },
+                {
+                  "href": "/es/",
+                  "text": "ES"
+                },
+                {
+                  "href": "/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/commons/",
+                  "text": "Commons"
+                }
+              ],
+              "brokenImagesCount": 0,
+              "totalExternalImages": 16
+            },
+            "errors": [],
+            "passed": true
+          }
+        }
+      },
+      "es": {
+        "mobile": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\home_es_mobile.png",
+          "i18n": null
+        },
+        "desktop": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\home_es_desktop.png",
+          "i18n": {
+            "url": "http://localhost:4321/es/",
+            "lang": "es",
+            "checks": {
+              "htmlLang": "es-CO",
+              "languageToggles": [
+                {
+                  "text": "EN",
+                  "href": "/",
+                  "hreflang": "en",
+                  "visible": true,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "EN",
+                  "href": "/",
+                  "hreflang": "en",
+                  "visible": false,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "EN",
+                  "href": "/",
+                  "hreflang": "en",
+                  "visible": false,
+                  "boundingRect": {}
+                }
+              ],
+              "hasContent": true,
+              "hasSpanishContent": true,
+              "alternateLinks": [
+                {
+                  "hreflang": "en",
+                  "href": "https://gaiahub.co/"
+                },
+                {
+                  "hreflang": "x-default",
+                  "href": "https://gaiahub.co"
+                },
+                {
+                  "hreflang": null,
+                  "href": "/llms.txt"
+                }
+              ],
+              "sampleLinks": [
+                {
+                  "href": "/es/",
+                  "text": "Gaia"
+                },
+                {
+                  "href": "/es/",
+                  "text": "Inicio"
+                },
+                {
+                  "href": "/es/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/es/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/es/commons/",
+                  "text": "Commons"
+                },
+                {
+                  "href": "/es/blog/",
+                  "text": "Blog"
+                },
+                {
+                  "href": "/es/impact-fund/",
+                  "text": "Impact Fund"
+                },
+                {
+                  "href": "/es/impact-hub/",
+                  "text": "Impact Hub"
+                },
+                {
+                  "href": "/es/",
+                  "text": "Inicio"
+                },
+                {
+                  "href": "/es/hub/",
+                  "text": "Hub"
+                }
+              ],
+              "brokenImagesCount": 0,
+              "totalExternalImages": 16
+            },
+            "errors": [],
+            "passed": true
+          }
+        }
+      },
+      "switchTest": {
+        "canSwitch": true,
+        "fromUrl": "http://localhost:4321/",
+        "toUrl": "http://localhost:4321/es/",
+        "error": null
+      }
+    },
+    {
+      "page": "vision",
+      "en": {
+        "mobile": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\vision_en_mobile.png",
+          "i18n": null
+        },
+        "desktop": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\vision_en_desktop.png",
+          "i18n": {
+            "url": "http://localhost:4321/vision/",
+            "lang": "en",
+            "checks": {
+              "htmlLang": "en-US",
+              "languageToggles": [
+                {
+                  "text": "ES",
+                  "href": "/es/vision/",
+                  "hreflang": "es",
+                  "visible": true,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "ES",
+                  "href": "/es/vision/",
+                  "hreflang": "es",
+                  "visible": false,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "ES",
+                  "href": "/es/vision/",
+                  "hreflang": "es",
+                  "visible": false,
+                  "boundingRect": {}
+                }
+              ],
+              "hasContent": true,
+              "hasEnglishContent": true,
+              "alternateLinks": [
+                {
+                  "hreflang": "es",
+                  "href": "https://gaiahub.co/es/vision/"
+                },
+                {
+                  "hreflang": "x-default",
+                  "href": "https://gaiahub.co"
+                },
+                {
+                  "hreflang": null,
+                  "href": "/llms.txt"
+                }
+              ],
+              "sampleLinks": [
+                {
+                  "href": "/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/commons/",
+                  "text": "Commons"
+                },
+                {
+                  "href": "/blog/",
+                  "text": "Blog"
+                },
+                {
+                  "href": "/impact-fund/",
+                  "text": "Impact Fund"
+                },
+                {
+                  "href": "/impact-hub/",
+                  "text": "Impact Hub"
+                },
+                {
+                  "href": "/es/vision/",
+                  "text": "ES"
+                },
+                {
+                  "href": "/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/commons/",
+                  "text": "Commons"
+                }
+              ],
+              "brokenImagesCount": 0,
+              "totalExternalImages": 3
+            },
+            "errors": [],
+            "passed": true
+          }
+        }
+      },
+      "es": {
+        "mobile": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\vision_es_mobile.png",
+          "i18n": null
+        },
+        "desktop": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\vision_es_desktop.png",
+          "i18n": {
+            "url": "http://localhost:4321/es/vision/",
+            "lang": "es",
+            "checks": {
+              "htmlLang": "es-CO",
+              "languageToggles": [
+                {
+                  "text": "EN",
+                  "href": "/vision/",
+                  "hreflang": "en",
+                  "visible": true,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "EN",
+                  "href": "/vision/",
+                  "hreflang": "en",
+                  "visible": false,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "EN",
+                  "href": "/vision/",
+                  "hreflang": "en",
+                  "visible": false,
+                  "boundingRect": {}
+                }
+              ],
+              "hasContent": true,
+              "hasSpanishContent": true,
+              "alternateLinks": [
+                {
+                  "hreflang": "en",
+                  "href": "https://gaiahub.co/vision/"
+                },
+                {
+                  "hreflang": "x-default",
+                  "href": "https://gaiahub.co"
+                },
+                {
+                  "hreflang": null,
+                  "href": "/llms.txt"
+                }
+              ],
+              "sampleLinks": [
+                {
+                  "href": "/es/",
+                  "text": "Gaia"
+                },
+                {
+                  "href": "/es/",
+                  "text": "Inicio"
+                },
+                {
+                  "href": "/es/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/es/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/es/commons/",
+                  "text": "Commons"
+                },
+                {
+                  "href": "/es/blog/",
+                  "text": "Blog"
+                },
+                {
+                  "href": "/es/impact-fund/",
+                  "text": "Impact Fund"
+                },
+                {
+                  "href": "/es/impact-hub/",
+                  "text": "Impact Hub"
+                },
+                {
+                  "href": "/vision/",
+                  "text": "EN"
+                },
+                {
+                  "href": "/es/",
+                  "text": "Inicio"
+                }
+              ],
+              "brokenImagesCount": 0,
+              "totalExternalImages": 3
+            },
+            "errors": [],
+            "passed": true
+          }
+        }
+      },
+      "switchTest": null
+    },
+    {
+      "page": "commons",
+      "en": {
+        "mobile": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\commons_en_mobile.png",
+          "i18n": null
+        },
+        "desktop": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\commons_en_desktop.png",
+          "i18n": {
+            "url": "http://localhost:4321/commons/",
+            "lang": "en",
+            "checks": {
+              "htmlLang": "en-US",
+              "languageToggles": [
+                {
+                  "text": "ES",
+                  "href": "/es/commons/",
+                  "hreflang": "es",
+                  "visible": true,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "ES",
+                  "href": "/es/commons/",
+                  "hreflang": "es",
+                  "visible": false,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "ES",
+                  "href": "/es/commons/",
+                  "hreflang": "es",
+                  "visible": false,
+                  "boundingRect": {}
+                }
+              ],
+              "hasContent": true,
+              "hasEnglishContent": true,
+              "alternateLinks": [
+                {
+                  "hreflang": "es",
+                  "href": "https://gaiahub.co/es/commons/"
+                },
+                {
+                  "hreflang": "x-default",
+                  "href": "https://gaiahub.co"
+                },
+                {
+                  "hreflang": null,
+                  "href": "/llms.txt"
+                }
+              ],
+              "sampleLinks": [
+                {
+                  "href": "/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/commons/",
+                  "text": "Commons"
+                },
+                {
+                  "href": "/blog/",
+                  "text": "Blog"
+                },
+                {
+                  "href": "/impact-fund/",
+                  "text": "Impact Fund"
+                },
+                {
+                  "href": "/impact-hub/",
+                  "text": "Impact Hub"
+                },
+                {
+                  "href": "/es/commons/",
+                  "text": "ES"
+                },
+                {
+                  "href": "/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/commons/",
+                  "text": "Commons"
+                }
+              ],
+              "brokenImagesCount": 0,
+              "totalExternalImages": 1
+            },
+            "errors": [],
+            "passed": true
+          }
+        }
+      },
+      "es": {
+        "mobile": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\commons_es_mobile.png",
+          "i18n": null
+        },
+        "desktop": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\commons_es_desktop.png",
+          "i18n": {
+            "url": "http://localhost:4321/es/commons/",
+            "lang": "es",
+            "checks": {
+              "htmlLang": "es-CO",
+              "languageToggles": [
+                {
+                  "text": "EN",
+                  "href": "/commons/",
+                  "hreflang": "en",
+                  "visible": true,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "EN",
+                  "href": "/commons/",
+                  "hreflang": "en",
+                  "visible": false,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "EN",
+                  "href": "/commons/",
+                  "hreflang": "en",
+                  "visible": false,
+                  "boundingRect": {}
+                }
+              ],
+              "hasContent": true,
+              "hasSpanishContent": true,
+              "alternateLinks": [
+                {
+                  "hreflang": "en",
+                  "href": "https://gaiahub.co/commons/"
+                },
+                {
+                  "hreflang": "x-default",
+                  "href": "https://gaiahub.co"
+                },
+                {
+                  "hreflang": null,
+                  "href": "/llms.txt"
+                }
+              ],
+              "sampleLinks": [
+                {
+                  "href": "/es/",
+                  "text": "Gaia"
+                },
+                {
+                  "href": "/es/",
+                  "text": "Inicio"
+                },
+                {
+                  "href": "/es/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/es/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/es/commons/",
+                  "text": "Commons"
+                },
+                {
+                  "href": "/es/blog/",
+                  "text": "Blog"
+                },
+                {
+                  "href": "/es/impact-fund/",
+                  "text": "Impact Fund"
+                },
+                {
+                  "href": "/es/impact-hub/",
+                  "text": "Impact Hub"
+                },
+                {
+                  "href": "/commons/",
+                  "text": "EN"
+                },
+                {
+                  "href": "/es/",
+                  "text": "Inicio"
+                }
+              ],
+              "brokenImagesCount": 0,
+              "totalExternalImages": 1
+            },
+            "errors": [],
+            "passed": true
+          }
+        }
+      },
+      "switchTest": null
+    },
+    {
+      "page": "hub",
+      "en": {
+        "mobile": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\hub_en_mobile.png",
+          "i18n": null
+        },
+        "desktop": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\hub_en_desktop.png",
+          "i18n": {
+            "url": "http://localhost:4321/hub/",
+            "lang": "en",
+            "checks": {
+              "htmlLang": "en-US",
+              "languageToggles": [
+                {
+                  "text": "ES",
+                  "href": "/es/hub/",
+                  "hreflang": "es",
+                  "visible": true,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "ES",
+                  "href": "/es/hub/",
+                  "hreflang": "es",
+                  "visible": false,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "ES",
+                  "href": "/es/hub/",
+                  "hreflang": "es",
+                  "visible": false,
+                  "boundingRect": {}
+                }
+              ],
+              "hasContent": true,
+              "hasEnglishContent": true,
+              "alternateLinks": [
+                {
+                  "hreflang": "es",
+                  "href": "https://gaiahub.co/es/hub/"
+                },
+                {
+                  "hreflang": "x-default",
+                  "href": "https://gaiahub.co"
+                },
+                {
+                  "hreflang": null,
+                  "href": "/llms.txt"
+                }
+              ],
+              "sampleLinks": [
+                {
+                  "href": "/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/commons/",
+                  "text": "Commons"
+                },
+                {
+                  "href": "/blog/",
+                  "text": "Blog"
+                },
+                {
+                  "href": "/impact-fund/",
+                  "text": "Impact Fund"
+                },
+                {
+                  "href": "/impact-hub/",
+                  "text": "Impact Hub"
+                },
+                {
+                  "href": "/es/hub/",
+                  "text": "ES"
+                },
+                {
+                  "href": "/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/commons/",
+                  "text": "Commons"
+                }
+              ],
+              "brokenImagesCount": 0,
+              "totalExternalImages": 4
+            },
+            "errors": [],
+            "passed": true
+          }
+        }
+      },
+      "es": {
+        "mobile": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\hub_es_mobile.png",
+          "i18n": null
+        },
+        "desktop": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\hub_es_desktop.png",
+          "i18n": {
+            "url": "http://localhost:4321/es/hub/",
+            "lang": "es",
+            "checks": {
+              "htmlLang": "es-CO",
+              "languageToggles": [
+                {
+                  "text": "EN",
+                  "href": "/hub/",
+                  "hreflang": "en",
+                  "visible": true,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "EN",
+                  "href": "/hub/",
+                  "hreflang": "en",
+                  "visible": false,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "EN",
+                  "href": "/hub/",
+                  "hreflang": "en",
+                  "visible": false,
+                  "boundingRect": {}
+                }
+              ],
+              "hasContent": true,
+              "hasSpanishContent": true,
+              "alternateLinks": [
+                {
+                  "hreflang": "en",
+                  "href": "https://gaiahub.co/hub/"
+                },
+                {
+                  "hreflang": "x-default",
+                  "href": "https://gaiahub.co"
+                },
+                {
+                  "hreflang": null,
+                  "href": "/llms.txt"
+                }
+              ],
+              "sampleLinks": [
+                {
+                  "href": "/es/",
+                  "text": "Gaia"
+                },
+                {
+                  "href": "/es/",
+                  "text": "Inicio"
+                },
+                {
+                  "href": "/es/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/es/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/es/commons/",
+                  "text": "Commons"
+                },
+                {
+                  "href": "/es/blog/",
+                  "text": "Blog"
+                },
+                {
+                  "href": "/es/impact-fund/",
+                  "text": "Impact Fund"
+                },
+                {
+                  "href": "/es/impact-hub/",
+                  "text": "Impact Hub"
+                },
+                {
+                  "href": "/hub/",
+                  "text": "EN"
+                },
+                {
+                  "href": "/es/",
+                  "text": "Inicio"
+                }
+              ],
+              "brokenImagesCount": 0,
+              "totalExternalImages": 4
+            },
+            "errors": [],
+            "passed": true
+          }
+        }
+      },
+      "switchTest": null
+    },
+    {
+      "page": "market",
+      "en": {
+        "mobile": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\market_en_mobile.png",
+          "i18n": null
+        },
+        "desktop": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\market_en_desktop.png",
+          "i18n": {
+            "url": "http://localhost:4321/market/",
+            "lang": "en",
+            "checks": {
+              "htmlLang": "en-US",
+              "languageToggles": [
+                {
+                  "text": "ES",
+                  "href": "/es/market/",
+                  "hreflang": "es",
+                  "visible": true,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "ES",
+                  "href": "/es/market/",
+                  "hreflang": "es",
+                  "visible": false,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "ES",
+                  "href": "/es/market/",
+                  "hreflang": "es",
+                  "visible": false,
+                  "boundingRect": {}
+                }
+              ],
+              "hasContent": true,
+              "hasEnglishContent": true,
+              "alternateLinks": [
+                {
+                  "hreflang": "es",
+                  "href": "https://gaiahub.co/es/market/"
+                },
+                {
+                  "hreflang": "x-default",
+                  "href": "https://gaiahub.co"
+                },
+                {
+                  "hreflang": null,
+                  "href": "/llms.txt"
+                }
+              ],
+              "sampleLinks": [
+                {
+                  "href": "/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/commons/",
+                  "text": "Commons"
+                },
+                {
+                  "href": "/blog/",
+                  "text": "Blog"
+                },
+                {
+                  "href": "/impact-fund/",
+                  "text": "Impact Fund"
+                },
+                {
+                  "href": "/impact-hub/",
+                  "text": "Impact Hub"
+                },
+                {
+                  "href": "/es/market/",
+                  "text": "ES"
+                },
+                {
+                  "href": "/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/commons/",
+                  "text": "Commons"
+                }
+              ],
+              "brokenImagesCount": 0,
+              "totalExternalImages": 9
+            },
+            "errors": [],
+            "passed": true
+          }
+        }
+      },
+      "es": {
+        "mobile": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\market_es_mobile.png",
+          "i18n": null
+        },
+        "desktop": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\market_es_desktop.png",
+          "i18n": {
+            "url": "http://localhost:4321/es/market/",
+            "lang": "es",
+            "checks": {
+              "htmlLang": "es-CO",
+              "languageToggles": [
+                {
+                  "text": "EN",
+                  "href": "/market/",
+                  "hreflang": "en",
+                  "visible": true,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "EN",
+                  "href": "/market/",
+                  "hreflang": "en",
+                  "visible": false,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "EN",
+                  "href": "/market/",
+                  "hreflang": "en",
+                  "visible": false,
+                  "boundingRect": {}
+                }
+              ],
+              "hasContent": true,
+              "hasSpanishContent": true,
+              "alternateLinks": [
+                {
+                  "hreflang": "en",
+                  "href": "https://gaiahub.co/market/"
+                },
+                {
+                  "hreflang": "x-default",
+                  "href": "https://gaiahub.co"
+                },
+                {
+                  "hreflang": null,
+                  "href": "/llms.txt"
+                }
+              ],
+              "sampleLinks": [
+                {
+                  "href": "/es/",
+                  "text": "Gaia"
+                },
+                {
+                  "href": "/es/",
+                  "text": "Inicio"
+                },
+                {
+                  "href": "/es/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/es/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/es/commons/",
+                  "text": "Commons"
+                },
+                {
+                  "href": "/es/blog/",
+                  "text": "Blog"
+                },
+                {
+                  "href": "/es/impact-fund/",
+                  "text": "Impact Fund"
+                },
+                {
+                  "href": "/es/impact-hub/",
+                  "text": "Impact Hub"
+                },
+                {
+                  "href": "/market/",
+                  "text": "EN"
+                },
+                {
+                  "href": "/es/",
+                  "text": "Inicio"
+                }
+              ],
+              "brokenImagesCount": 0,
+              "totalExternalImages": 9
+            },
+            "errors": [],
+            "passed": true
+          }
+        }
+      },
+      "switchTest": null
+    },
+    {
+      "page": "allies",
+      "en": {
+        "mobile": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\allies_en_mobile.png",
+          "i18n": null
+        },
+        "desktop": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\allies_en_desktop.png",
+          "i18n": {
+            "url": "http://localhost:4321/allies/",
+            "lang": "en",
+            "checks": {
+              "htmlLang": "en-US",
+              "languageToggles": [
+                {
+                  "text": "ES",
+                  "href": "/es/allies/",
+                  "hreflang": "es",
+                  "visible": true,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "ES",
+                  "href": "/es/allies/",
+                  "hreflang": "es",
+                  "visible": false,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "ES",
+                  "href": "/es/allies/",
+                  "hreflang": "es",
+                  "visible": false,
+                  "boundingRect": {}
+                }
+              ],
+              "hasContent": true,
+              "hasEnglishContent": true,
+              "alternateLinks": [
+                {
+                  "hreflang": "es",
+                  "href": "https://gaiahub.co/es/allies/"
+                },
+                {
+                  "hreflang": "x-default",
+                  "href": "https://gaiahub.co"
+                },
+                {
+                  "hreflang": null,
+                  "href": "/llms.txt"
+                }
+              ],
+              "sampleLinks": [
+                {
+                  "href": "/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/commons/",
+                  "text": "Commons"
+                },
+                {
+                  "href": "/blog/",
+                  "text": "Blog"
+                },
+                {
+                  "href": "/impact-fund/",
+                  "text": "Impact Fund"
+                },
+                {
+                  "href": "/impact-hub/",
+                  "text": "Impact Hub"
+                },
+                {
+                  "href": "/es/allies/",
+                  "text": "ES"
+                },
+                {
+                  "href": "/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/commons/",
+                  "text": "Commons"
+                }
+              ],
+              "brokenImagesCount": 0,
+              "totalExternalImages": 0
+            },
+            "errors": [],
+            "passed": true
+          }
+        }
+      },
+      "es": {
+        "mobile": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\allies_es_mobile.png",
+          "i18n": null
+        },
+        "desktop": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\allies_es_desktop.png",
+          "i18n": {
+            "url": "http://localhost:4321/es/allies/",
+            "lang": "es",
+            "checks": {
+              "htmlLang": "es-CO",
+              "languageToggles": [
+                {
+                  "text": "EN",
+                  "href": "/allies/",
+                  "hreflang": "en",
+                  "visible": true,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "EN",
+                  "href": "/allies/",
+                  "hreflang": "en",
+                  "visible": false,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "EN",
+                  "href": "/allies/",
+                  "hreflang": "en",
+                  "visible": false,
+                  "boundingRect": {}
+                }
+              ],
+              "hasContent": true,
+              "hasSpanishContent": true,
+              "alternateLinks": [
+                {
+                  "hreflang": "en",
+                  "href": "https://gaiahub.co/allies/"
+                },
+                {
+                  "hreflang": "x-default",
+                  "href": "https://gaiahub.co"
+                },
+                {
+                  "hreflang": null,
+                  "href": "/llms.txt"
+                }
+              ],
+              "sampleLinks": [
+                {
+                  "href": "/es/",
+                  "text": "Gaia"
+                },
+                {
+                  "href": "/es/",
+                  "text": "Inicio"
+                },
+                {
+                  "href": "/es/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/es/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/es/commons/",
+                  "text": "Commons"
+                },
+                {
+                  "href": "/es/blog/",
+                  "text": "Blog"
+                },
+                {
+                  "href": "/es/impact-fund/",
+                  "text": "Impact Fund"
+                },
+                {
+                  "href": "/es/impact-hub/",
+                  "text": "Impact Hub"
+                },
+                {
+                  "href": "/allies/",
+                  "text": "EN"
+                },
+                {
+                  "href": "/es/",
+                  "text": "Inicio"
+                }
+              ],
+              "brokenImagesCount": 0,
+              "totalExternalImages": 0
+            },
+            "errors": [],
+            "passed": true
+          }
+        }
+      },
+      "switchTest": null
+    },
+    {
+      "page": "blog",
+      "en": {
+        "mobile": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\blog_en_mobile.png",
+          "i18n": null
+        },
+        "desktop": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\blog_en_desktop.png",
+          "i18n": {
+            "url": "http://localhost:4321/blog/",
+            "lang": "en",
+            "checks": {
+              "htmlLang": "en-US",
+              "languageToggles": [
+                {
+                  "text": "ES",
+                  "href": "/es/blog/",
+                  "hreflang": "es",
+                  "visible": true,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "ES",
+                  "href": "/es/blog/",
+                  "hreflang": "es",
+                  "visible": false,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "ES",
+                  "href": "/es/blog/",
+                  "hreflang": "es",
+                  "visible": false,
+                  "boundingRect": {}
+                }
+              ],
+              "hasContent": true,
+              "hasEnglishContent": true,
+              "alternateLinks": [
+                {
+                  "hreflang": "es",
+                  "href": "https://gaiahub.co/es/blog/"
+                },
+                {
+                  "hreflang": "x-default",
+                  "href": "https://gaiahub.co"
+                },
+                {
+                  "hreflang": null,
+                  "href": "/llms.txt"
+                }
+              ],
+              "sampleLinks": [
+                {
+                  "href": "/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/commons/",
+                  "text": "Commons"
+                },
+                {
+                  "href": "/blog/",
+                  "text": "Blog"
+                },
+                {
+                  "href": "/impact-fund/",
+                  "text": "Impact Fund"
+                },
+                {
+                  "href": "/impact-hub/",
+                  "text": "Impact Hub"
+                },
+                {
+                  "href": "/es/blog/",
+                  "text": "ES"
+                },
+                {
+                  "href": "/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/commons/",
+                  "text": "Commons"
+                }
+              ],
+              "brokenImagesCount": 0,
+              "totalExternalImages": 3
+            },
+            "errors": [],
+            "passed": true
+          }
+        }
+      },
+      "es": {
+        "mobile": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\blog_es_mobile.png",
+          "i18n": null
+        },
+        "desktop": {
+          "screenshot": "C:\\Users\\USER\\DEVS\\Gaia\\sites\\gaiahub\\test-results\\screenshots\\blog_es_desktop.png",
+          "i18n": {
+            "url": "http://localhost:4321/es/blog/",
+            "lang": "es",
+            "checks": {
+              "htmlLang": "es-CO",
+              "languageToggles": [
+                {
+                  "text": "EN",
+                  "href": "/blog/",
+                  "hreflang": "en",
+                  "visible": true,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "EN",
+                  "href": "/blog/",
+                  "hreflang": "en",
+                  "visible": false,
+                  "boundingRect": {}
+                },
+                {
+                  "text": "EN",
+                  "href": "/blog/",
+                  "hreflang": "en",
+                  "visible": false,
+                  "boundingRect": {}
+                }
+              ],
+              "hasContent": true,
+              "hasSpanishContent": true,
+              "alternateLinks": [
+                {
+                  "hreflang": "en",
+                  "href": "https://gaiahub.co/blog/"
+                },
+                {
+                  "hreflang": "x-default",
+                  "href": "https://gaiahub.co"
+                },
+                {
+                  "hreflang": null,
+                  "href": "/llms.txt"
+                }
+              ],
+              "sampleLinks": [
+                {
+                  "href": "/es/",
+                  "text": "Gaia"
+                },
+                {
+                  "href": "/es/",
+                  "text": "Inicio"
+                },
+                {
+                  "href": "/es/hub/",
+                  "text": "Hub"
+                },
+                {
+                  "href": "/es/market/",
+                  "text": "Market"
+                },
+                {
+                  "href": "/es/commons/",
+                  "text": "Commons"
+                },
+                {
+                  "href": "/es/blog/",
+                  "text": "Blog"
+                },
+                {
+                  "href": "/es/impact-fund/",
+                  "text": "Impact Fund"
+                },
+                {
+                  "href": "/es/impact-hub/",
+                  "text": "Impact Hub"
+                },
+                {
+                  "href": "/blog/",
+                  "text": "EN"
+                },
+                {
+                  "href": "/es/",
+                  "text": "Inicio"
+                }
+              ],
+              "brokenImagesCount": 0,
+              "totalExternalImages": 3
+            },
+            "errors": [],
+            "passed": true
+          }
+        }
+      },
+      "switchTest": null
+    }
+  ]
+}

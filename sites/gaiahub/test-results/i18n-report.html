@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>i18n Browser Automation Report</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #e2e8f0; padding: 2rem; }
+    h1 { color: #38bdf8; margin-bottom: 0.5rem; }
+    .meta { color: #94a3b8; margin-bottom: 2rem; }
+    .page { background: #1e293b; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .page h2 { color: #60a5fa; margin-bottom: 1rem; }
+    .lang-section { background: #334155; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+    .lang-section h3 { color: #a78bfa; margin-bottom: 0.5rem; }
+    .lang-section.en h3 { color: #38bdf8; }
+    .lang-section.es h3 { color: #fbbf24; }
+    .screenshot { max-width: 100%; border-radius: 4px; margin: 0.5rem 0; border: 1px solid #475569; }
+    .checks { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; margin: 1rem 0; }
+    .check { background: #1e293b; padding: 0.75rem; border-radius: 6px; font-size: 0.875rem; }
+    .check.ok { border-left: 3px solid #4ade80; }
+    .check.fail { border-left: 3px solid #f87171; }
+    .check-label { color: #94a3b8; }
+    .check-value { font-weight: bold; }
+    .error { background: #7f1d1d; color: #fecaca; padding: 0.75rem; border-radius: 6px; margin: 0.25rem 0; font-size: 0.875rem; }
+    .switch-test { background: #1e293b; padding: 1rem; border-radius: 8px; margin-top: 1rem; }
+    .switch-test.ok { border-left: 3px solid #4ade80; }
+    .switch-test.fail { border-left: 3px solid #f87171; }
+    .passed { color: #4ade80; }
+    .failed { color: #f87171; }
+  </style>
+</head>
+<body>
+  <h1>🧪 i18n Browser Automation Report</h1>
+  <div class="meta">
+    <p><strong>URL:</strong> http://localhost:4321</p>
+    <p><strong>Fecha:</strong> 22/5/2026, 9:45:42 p. m.</p>
+  </div>
+  
+  
+    <div class="page">
+      <h2>📄 home</h2>
+      
+      
+        <div class="lang-section en">
+          <h3>🇺🇸 English</h3>
+          <img class="screenshot" src="./screenshots/home_en_desktop.png" alt="Screenshot en">
+          
+            <div class="checks">
+              <div class="check ok">
+                <div class="check-label">HTML lang</div>
+                <div class="check-value">en-US</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Language Toggle</div>
+                <div class="check-value">1 visible</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Contenido</div>
+                <div class="check-value">✓ Presente</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Idioma detectado</div>
+                <div class="check-value">✓ Inglés</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Imágenes rotas</div>
+                <div class="check-value">0</div>
+              </div>
+            </div>
+            <div class="check ok">✅ Todos los checks pasaron</div>
+          
+        </div>
+        
+        <div class="lang-section es">
+          <h3>🇪🇸 Español</h3>
+          <img class="screenshot" src="./screenshots/home_es_desktop.png" alt="Screenshot es">
+          
+            <div class="checks">
+              <div class="check ok">
+                <div class="check-label">HTML lang</div>
+                <div class="check-value">es-CO</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Language Toggle</div>
+                <div class="check-value">1 visible</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Contenido</div>
+                <div class="check-value">✓ Presente</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Idioma detectado</div>
+                <div class="check-value">✓ Español</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Imágenes rotas</div>
+                <div class="check-value">0</div>
+              </div>
+            </div>
+            <div class="check ok">✅ Todos los checks pasaron</div>
+          
+        </div>
+        
+      
+      
+        <div class="switch-test ok">
+          <strong>🔄 Test de cambio de idioma:</strong> 
+          <span class="passed">
+            ✅ FUNCIONA
+          </span>
+          
+          <div style="margin-top:0.5rem;color:#94a3b8;font-size:0.875rem;">Navegó a: http://localhost:4321/es/</div>
+        </div>
+      
+    </div>
+  
+    <div class="page">
+      <h2>📄 vision</h2>
+      
+      
+        <div class="lang-section en">
+          <h3>🇺🇸 English</h3>
+          <img class="screenshot" src="./screenshots/vision_en_desktop.png" alt="Screenshot en">
+          
+            <div class="checks">
+              <div class="check ok">
+                <div class="check-label">HTML lang</div>
+                <div class="check-value">en-US</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Language Toggle</div>
+                <div class="check-value">1 visible</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Contenido</div>
+                <div class="check-value">✓ Presente</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Idioma detectado</div>
+                <div class="check-value">✓ Inglés</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Imágenes rotas</div>
+                <div class="check-value">0</div>
+              </div>
+            </div>
+            <div class="check ok">✅ Todos los checks pasaron</div>
+          
+        </div>
+        
+        <div class="lang-section es">
+          <h3>🇪🇸 Español</h3>
+          <img class="screenshot" src="./screenshots/vision_es_desktop.png" alt="Screenshot es">
+          
+            <div class="checks">
+              <div class="check ok">
+                <div class="check-label">HTML lang</div>
+                <div class="check-value">es-CO</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Language Toggle</div>
+                <div class="check-value">1 visible</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Contenido</div>
+                <div class="check-value">✓ Presente</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Idioma detectado</div>
+                <div class="check-value">✓ Español</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Imágenes rotas</div>
+                <div class="check-value">0</div>
+              </div>
+            </div>
+            <div class="check ok">✅ Todos los checks pasaron</div>
+          
+        </div>
+        
+      
+      
+    </div>
+  
+    <div class="page">
+      <h2>📄 commons</h2>
+      
+      
+        <div class="lang-section en">
+          <h3>🇺🇸 English</h3>
+          <img class="screenshot" src="./screenshots/commons_en_desktop.png" alt="Screenshot en">
+          
+            <div class="checks">
+              <div class="check ok">
+                <div class="check-label">HTML lang</div>
+                <div class="check-value">en-US</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Language Toggle</div>
+                <div class="check-value">1 visible</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Contenido</div>
+                <div class="check-value">✓ Presente</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Idioma detectado</div>
+                <div class="check-value">✓ Inglés</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Imágenes rotas</div>
+                <div class="check-value">0</div>
+              </div>
+            </div>
+            <div class="check ok">✅ Todos los checks pasaron</div>
+          
+        </div>
+        
+        <div class="lang-section es">
+          <h3>🇪🇸 Español</h3>
+          <img class="screenshot" src="./screenshots/commons_es_desktop.png" alt="Screenshot es">
+          
+            <div class="checks">
+              <div class="check ok">
+                <div class="check-label">HTML lang</div>
+                <div class="check-value">es-CO</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Language Toggle</div>
+                <div class="check-value">1 visible</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Contenido</div>
+                <div class="check-value">✓ Presente</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Idioma detectado</div>
+                <div class="check-value">✓ Español</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Imágenes rotas</div>
+                <div class="check-value">0</div>
+              </div>
+            </div>
+            <div class="check ok">✅ Todos los checks pasaron</div>
+          
+        </div>
+        
+      
+      
+    </div>
+  
+    <div class="page">
+      <h2>📄 hub</h2>
+      
+      
+        <div class="lang-section en">
+          <h3>🇺🇸 English</h3>
+          <img class="screenshot" src="./screenshots/hub_en_desktop.png" alt="Screenshot en">
+          
+            <div class="checks">
+              <div class="check ok">
+                <div class="check-label">HTML lang</div>
+                <div class="check-value">en-US</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Language Toggle</div>
+                <div class="check-value">1 visible</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Contenido</div>
+                <div class="check-value">✓ Presente</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Idioma detectado</div>
+                <div class="check-value">✓ Inglés</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Imágenes rotas</div>
+                <div class="check-value">0</div>
+              </div>
+            </div>
+            <div class="check ok">✅ Todos los checks pasaron</div>
+          
+        </div>
+        
+        <div class="lang-section es">
+          <h3>🇪🇸 Español</h3>
+          <img class="screenshot" src="./screenshots/hub_es_desktop.png" alt="Screenshot es">
+          
+            <div class="checks">
+              <div class="check ok">
+                <div class="check-label">HTML lang</div>
+                <div class="check-value">es-CO</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Language Toggle</div>
+                <div class="check-value">1 visible</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Contenido</div>
+                <div class="check-value">✓ Presente</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Idioma detectado</div>
+                <div class="check-value">✓ Español</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Imágenes rotas</div>
+                <div class="check-value">0</div>
+              </div>
+            </div>
+            <div class="check ok">✅ Todos los checks pasaron</div>
+          
+        </div>
+        
+      
+      
+    </div>
+  
+    <div class="page">
+      <h2>📄 market</h2>
+      
+      
+        <div class="lang-section en">
+          <h3>🇺🇸 English</h3>
+          <img class="screenshot" src="./screenshots/market_en_desktop.png" alt="Screenshot en">
+          
+            <div class="checks">
+              <div class="check ok">
+                <div class="check-label">HTML lang</div>
+                <div class="check-value">en-US</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Language Toggle</div>
+                <div class="check-value">1 visible</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Contenido</div>
+                <div class="check-value">✓ Presente</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Idioma detectado</div>
+                <div class="check-value">✓ Inglés</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Imágenes rotas</div>
+                <div class="check-value">0</div>
+              </div>
+            </div>
+            <div class="check ok">✅ Todos los checks pasaron</div>
+          
+        </div>
+        
+        <div class="lang-section es">
+          <h3>🇪🇸 Español</h3>
+          <img class="screenshot" src="./screenshots/market_es_desktop.png" alt="Screenshot es">
+          
+            <div class="checks">
+              <div class="check ok">
+                <div class="check-label">HTML lang</div>
+                <div class="check-value">es-CO</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Language Toggle</div>
+                <div class="check-value">1 visible</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Contenido</div>
+                <div class="check-value">✓ Presente</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Idioma detectado</div>
+                <div class="check-value">✓ Español</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Imágenes rotas</div>
+                <div class="check-value">0</div>
+              </div>
+            </div>
+            <div class="check ok">✅ Todos los checks pasaron</div>
+          
+        </div>
+        
+      
+      
+    </div>
+  
+    <div class="page">
+      <h2>📄 allies</h2>
+      
+      
+        <div class="lang-section en">
+          <h3>🇺🇸 English</h3>
+          <img class="screenshot" src="./screenshots/allies_en_desktop.png" alt="Screenshot en">
+          
+            <div class="checks">
+              <div class="check ok">
+                <div class="check-label">HTML lang</div>
+                <div class="check-value">en-US</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Language Toggle</div>
+                <div class="check-value">1 visible</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Contenido</div>
+                <div class="check-value">✓ Presente</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Idioma detectado</div>
+                <div class="check-value">✓ Inglés</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Imágenes rotas</div>
+                <div class="check-value">0</div>
+              </div>
+            </div>
+            <div class="check ok">✅ Todos los checks pasaron</div>
+          
+        </div>
+        
+        <div class="lang-section es">
+          <h3>🇪🇸 Español</h3>
+          <img class="screenshot" src="./screenshots/allies_es_desktop.png" alt="Screenshot es">
+          
+            <div class="checks">
+              <div class="check ok">
+                <div class="check-label">HTML lang</div>
+                <div class="check-value">es-CO</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Language Toggle</div>
+                <div class="check-value">1 visible</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Contenido</div>
+                <div class="check-value">✓ Presente</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Idioma detectado</div>
+                <div class="check-value">✓ Español</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Imágenes rotas</div>
+                <div class="check-value">0</div>
+              </div>
+            </div>
+            <div class="check ok">✅ Todos los checks pasaron</div>
+          
+        </div>
+        
+      
+      
+    </div>
+  
+    <div class="page">
+      <h2>📄 blog</h2>
+      
+      
+        <div class="lang-section en">
+          <h3>🇺🇸 English</h3>
+          <img class="screenshot" src="./screenshots/blog_en_desktop.png" alt="Screenshot en">
+          
+            <div class="checks">
+              <div class="check ok">
+                <div class="check-label">HTML lang</div>
+                <div class="check-value">en-US</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Language Toggle</div>
+                <div class="check-value">1 visible</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Contenido</div>
+                <div class="check-value">✓ Presente</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Idioma detectado</div>
+                <div class="check-value">✓ Inglés</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Imágenes rotas</div>
+                <div class="check-value">0</div>
+              </div>
+            </div>
+            <div class="check ok">✅ Todos los checks pasaron</div>
+          
+        </div>
+        
+        <div class="lang-section es">
+          <h3>🇪🇸 Español</h3>
+          <img class="screenshot" src="./screenshots/blog_es_desktop.png" alt="Screenshot es">
+          
+            <div class="checks">
+              <div class="check ok">
+                <div class="check-label">HTML lang</div>
+                <div class="check-value">es-CO</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Language Toggle</div>
+                <div class="check-value">1 visible</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Contenido</div>
+                <div class="check-value">✓ Presente</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Idioma detectado</div>
+                <div class="check-value">✓ Español</div>
+              </div>
+              <div class="check ok">
+                <div class="check-label">Imágenes rotas</div>
+                <div class="check-value">0</div>
+              </div>
+            </div>
+            <div class="check ok">✅ Todos los checks pasaron</div>
+          
+        </div>
+        
+      
+      
+    </div>
+  
+</body>
+</html>
