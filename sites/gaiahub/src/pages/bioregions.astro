@@ -44,11 +44,11 @@ const i18n = t(locale);
     <FeatureGrid
       title="5 Pillars"
       features={[
-        { icon: "map", title: "The Platform", description: "The overarching digital environment for mapping, verifying, and connecting individuals, projects, and communities across the regenerative world." },
-        { icon: "eco", title: "Integral Regeneration", description: "A structured process of ecological, social, cultural, and personal renewal inspired by permaculture, regenerative design, and spiritual traditions." },
-        { icon: "verified", title: "Certification", description: "A system ensuring participants meet regenerative standards, offering ongoing audits and credibility badges for verified entities." },
-        { icon: "account_balance", title: "CoRe Economy", description: "Mechanisms for fair exchange, rewarding positive actions, referrals, donations, and synergy creation across the ecosystem." },
-        { icon: "passport", title: "Gaia Passport", description: "A unified identity, reputation, and membership container including personal badges, skill credentials, and organizational memberships." }
+        { icon: "map", title: "The Platform", description: "The overarching digital environment for mapping, verifying, and connecting individuals, projects, and communities across the regenerative world.", href: "/hub/" },
+        { icon: "eco", title: "Integral Regeneration", description: "A structured process of ecological, social, cultural, and personal renewal inspired by permaculture, regenerative design, and spiritual traditions.", href: "/ecohabitats/" },
+        { icon: "verified", title: "Certification", description: "A system ensuring participants meet regenerative standards, offering ongoing audits and credibility badges for verified entities.", href: "/certification/" },
+        { icon: "account_balance", title: "CoRe Economy", description: "Mechanisms for fair exchange, rewarding positive actions, referrals, donations, and synergy creation across the ecosystem.", href: "/market/" },
+        { icon: "passport", title: "Gaia Passport", description: "A unified identity, reputation, and membership container including personal badges, skill credentials, and organizational memberships.", href: "/commons/" }
       ]}
       columns={3}
     />
@@ -86,10 +86,13 @@ const i18n = t(locale);
     <CTABanner
       title="Explore the regenerative map"
       subtitle="Discover regenerative projects, communities, and opportunities across the globe. The Gaia GPS Platform is your gateway to a new era of connected regeneration."
-      ctaLabel="Join the Platform"
-      ctaHref="https://t.me/+1x_EVaVp-lEwN2I8"
+      ctaLabel="Join on WhatsApp"
+      ctaHref="https://whatsapp.com/channel/0029VbCY4kLIiRozv7gGVN3L"
+      ctaSecondaryLabel="Join on Telegram"
+      ctaSecondaryHref="https://t.me/+1x_EVaVp-lEwN2I8"
       bgImage="/images/cta-banner-bg.webp"
       external
+      externalSecondary
     />
     <MarkdownDoc locale={locale}
       filePath="../../docs/@ Gaia GPS - Meta-Mapping, Synergies & MatchMaking Platform.md"

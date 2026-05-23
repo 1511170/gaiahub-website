@@ -365,6 +365,16 @@
     "model_step3_desc": "Ejecutar soluciones con impacto medible.",
     "model_step4": "Escalar",
     "model_step4_desc": "Replicar modelos exitosos entre biorregiones.",
+    "actor_ngo": "ONGs",
+    "actor_ngo_desc": "Visibilizar necesidades críticas y canalizar recursos hacia comunidades vulnerables.",
+    "actor_startup": "Startups Regenerativas",
+    "actor_startup_desc": "Conectar innovación tecnológica con capital de impacto para escalar soluciones.",
+    "actor_coop": "Cooperativas",
+    "actor_coop_desc": "Desplegar modelos económicos locales con herramientas de gobernanza distribuida.",
+    "actor_community": "Comunidades",
+    "actor_community_desc": "Empoderar liderazgo local para replicar y adaptar soluciones probadas.",
+    "actor_enterprise": "Empresas Regenerativas",
+    "actor_enterprise_desc": "Transformar cadenas de valor hacia prácticas regenerativas medibles.",
     "cta_partner": "Asociarse con Nosotros",
     "cta_donate": "Apoyar el Hub"
   }

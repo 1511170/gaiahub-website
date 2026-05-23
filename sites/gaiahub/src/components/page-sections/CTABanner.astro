@@ -4,10 +4,13 @@ interface Props {
   subtitle?: string;
   ctaLabel: string;
   ctaHref: string;
+  ctaSecondaryLabel?: string;
+  ctaSecondaryHref?: string;
   bgImage?: string;
   external?: boolean;
+  externalSecondary?: boolean;
 }
-const { title, subtitle, ctaLabel, ctaHref, bgImage, external = false } = Astro.props;
+const { title, subtitle, ctaLabel, ctaHref, ctaSecondaryLabel, ctaSecondaryHref, bgImage, external = false, externalSecondary = false } = Astro.props;
 ---
 
 <section class="relative py-24 lg:py-40 px-6 lg:px-[5.5rem] overflow-hidden gsap-fade-up">
@@ -32,6 +35,16 @@ const { title, subtitle, ctaLabel, ctaHref, bgImage, external = false } = Astro.
       >
         {ctaLabel}
       </a>
+      {ctaSecondaryLabel && ctaSecondaryHref && (
+        <a 
+          href={ctaSecondaryHref} 
+          target={externalSecondary ? "_blank" : undefined}
+          rel={externalSecondary ? "noopener noreferrer" : undefined}
+          class="px-12 lg:px-16 py-6 lg:py-8 rounded-full bg-surface-container-highest text-on-surface font-headline font-bold text-lg tracking-wider uppercase hover:bg-surface-container-high transition-all border border-outline/20"
+        >
+          {ctaSecondaryLabel}
+        </a>
+      )}
     </div>
   </div>
 </section>

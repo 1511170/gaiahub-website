@@ -35,8 +35,9 @@ const i18n = t(locale);
     <ContentSection
       title="La Plataforma"
       body={[
-        "Frente a la degradacion ecologica, la polarizacion social y los modelos economicos obsoletos, las soluciones regenerativas y las comunidades distribuidas basadas en la confianza estan emergiendo en todo el mundo. Sin embargo, estos esfuerzos a menudo permanecen aislados. La Plataforma Gaia GPS busca unificar estos bolsillos de innovacion en una red compartida de sinergia.",
-        "Puentea la autonomia local con la interdependencia global, ayudando a definir nuevas formas de vivir y como participamos en diferentes lugares del mundo—incluyendo como producimos, consumimos, intercambiamos, compramos y vendemos. Existe una creciente constelacion de sitios fisicos que abogan por la sostenibilidad, el bienestar, la regeneracion y la vitalidad cultural."
+        "Frente a la degradación ecológica, la polarización social y los modelos económicos obsoletos, las soluciones regenerativas están emergiendo en todo el mundo. Sin embargo, estos esfuerzos a menudo permanecen aislados.",
+        "La Plataforma Gaia GPS busca unificar estos bolsillos de innovación en una red compartida de sinergia. Puentea la autonomía local con la interdependencia global, ayudando a definir nuevas formas de vivir y participar en el mundo.",
+        "Existe una creciente constelación de sitios físicos que abogan por la sostenibilidad, el bienestar, la regeneración y la vitalidad cultural."
       ]}
       image="/images/ecohabitats-hero.webp"
     />
@@ -44,11 +45,11 @@ const i18n = t(locale);
     <FeatureGrid
       title="5 Pilares"
       features={[
-        { icon: "map", title: "La Plataforma", description: "El entorno digital general para mapear, verificar y conectar individuos, proyectos y comunidades en el mundo regenerativo." },
-        { icon: "eco", title: "Regeneracion Integral", description: "Un proceso estructurado de renovacion ecologica, social, cultural y personal inspirado en permacultura, diseno regenerativo y tradiciones espirituales." },
-        { icon: "verified", title: "Certificacion", description: "Un sistema que asegura que los participantes cumplen estandares regenerativos, ofreciendo auditorias continuas e insignias de credibilidad para entidades verificadas." },
-        { icon: "account_balance", title: "Economia CoRe", description: "Mecanismos para el intercambio justo, recompensando acciones positivas, referidos, donaciones y creacion de sinergias en todo el ecosistema." },
-        { icon: "passport", title: "Pasaporte Gaia", description: "Un contenedor unificado de identidad, reputacion y membresia que incluye insignias personales, credenciales de habilidades y membresias organizacionales." }
+        { icon: "map", title: "La Plataforma", description: "El entorno digital general para mapear, verificar y conectar individuos, proyectos y comunidades en el mundo regenerativo.", href: "/es/hub/" },
+        { icon: "eco", title: "Regeneracion Integral", description: "Un proceso estructurado de renovacion ecologica, social, cultural y personal inspirado en permacultura, diseno regenerativo y tradiciones espirituales.", href: "/es/ecohabitats/" },
+        { icon: "verified", title: "Certificacion", description: "Un sistema que asegura que los participantes cumplen estandares regenerativos, ofreciendo auditorias continuas e insignias de credibilidad para entidades verificadas.", href: "/es/certification/" },
+        { icon: "account_balance", title: "Economia CoRe", description: "Mecanismos para el intercambio justo, recompensando acciones positivas, referidos, donaciones y creacion de sinergias en todo el ecosistema.", href: "/es/market/" },
+        { icon: "passport", title: "Pasaporte Gaia", description: "Un contenedor unificado de identidad, reputacion y membresia que incluye insignias personales, credenciales de habilidades y membresias organizacionales.", href: "/es/commons/" }
       ]}
       columns={3}
     />
@@ -86,10 +87,13 @@ const i18n = t(locale);
     <CTABanner
       title="Explora el mapa regenerativo"
       subtitle="Descubre proyectos regenerativos, comunidades y oportunidades en todo el globo. La Plataforma Gaia GPS es tu puerta de entrada a una nueva era de regeneracion conectada."
-      ctaLabel="Unirse a la Plataforma"
-      ctaHref="https://t.me/+1x_EVaVp-lEwN2I8"
+      ctaLabel="Unirse por WhatsApp"
+      ctaHref="https://whatsapp.com/channel/0029VbCY4kLIiRozv7gGVN3L"
+      ctaSecondaryLabel="Unirse por Telegram"
+      ctaSecondaryHref="https://t.me/+1x_EVaVp-lEwN2I8"
       bgImage="/images/cta-banner-bg.webp"
       external
+      externalSecondary
     />
     <MarkdownDoc locale={locale}
       filePath="../../docs/@ Gaia GPS - Meta-Mapping, Synergies & MatchMaking Platform.md"

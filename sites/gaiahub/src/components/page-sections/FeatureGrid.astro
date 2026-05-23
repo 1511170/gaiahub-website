@@ -3,6 +3,7 @@ interface Feature {
   icon: string;
   title: string;
   description: string;
+  href?: string;
 }
 interface Props {
   title?: string;
@@ -25,15 +26,22 @@ const gridClass = columns === 2 ? 'md:grid-cols-2' : columns === 4 ? 'md:grid-co
       </div>
     )}
     <div class={`grid grid-cols-1 ${gridClass} gap-8 gsap-stagger`}>
-      {features.map(f => (
-        <div class="bg-white rounded-2xl p-8 shadow-sm border border-outline/5 hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
-          <div class="w-14 h-14 rounded-xl bg-primary-container flex items-center justify-center mb-6">
-            <span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">{f.icon}</span>
+      {features.map(f => {
+        const Card = (
+          <div class={`bg-white rounded-2xl p-8 shadow-sm border border-outline/5 transition-all duration-300 ${f.href ? 'hover:-translate-y-2 hover:shadow-lg' : 'hover:-translate-y-2 hover:shadow-lg'}`}>
+            <div class="w-14 h-14 rounded-xl bg-primary-container flex items-center justify-center mb-6">
+              <span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1;">{f.icon}</span>
+            </div>
+            <h3 class="font-headline text-xl font-bold text-on-surface mb-3">{f.title}</h3>
+            <p class="text-on-surface/60 leading-relaxed">{f.description}</p>
           </div>
-          <h3 class="font-headline text-xl font-bold text-on-surface mb-3">{f.title}</h3>
-          <p class="text-on-surface/60 leading-relaxed">{f.description}</p>
-        </div>
-      ))}
+        );
+        return f.href ? (
+          <a href={f.href} class="block group">{Card}</a>
+        ) : (
+          Card
+        );
+      })}
     </div>
   </div>
 </section>

@@ -48,13 +48,13 @@ const i18n = t(locale);
       title="7 Core Values"
       subtitle="The foundation of the Great Alliance of Integrity, Interdependence and Autonomy."
       features={[
-        { icon: "gavel", title: "Integrity", description: "Ethics, transparency, and responsibility in all actions and relationships." },
-        { icon: "self_improvement", title: "Autonomy", description: "Self-determination and sovereignty of individuals and communities over their destinies." },
-        { icon: "diversity_1", title: "Diversity Harmony", description: "Celebration and appreciation of cultural, biological, and epistemological plurality." },
-        { icon: "eco", title: "Regeneration", description: "Active restoration of deteriorated natural and social ecosystems." },
-        { icon: "handshake", title: "Collaboration", description: "Synergistic cooperation for the common good and shared abundance." },
-        { icon: "favorite", title: "Kindness", description: "Cultivation of relationships based on empathy, respect, and genuine care." },
-        { icon: "hub", title: "Interdependence", description: "Recognition of the fundamental interconnection between all beings." }
+        { icon: "gavel", title: "Integrity", description: "Ethics, transparency, and responsibility in all actions and relationships.", href: "/commons/" },
+        { icon: "self_improvement", title: "Autonomy", description: "Self-determination and sovereignty of individuals and communities over their destinies.", href: "/commons/" },
+        { icon: "diversity_1", title: "Diversity Harmony", description: "Celebration and appreciation of cultural, biological, and epistemological plurality.", href: "/bioregions/" },
+        { icon: "eco", title: "Regeneration", description: "Active restoration of deteriorated natural and social ecosystems.", href: "/ecohabitats/" },
+        { icon: "handshake", title: "Collaboration", description: "Synergistic cooperation for the common good and shared abundance.", href: "/market/" },
+        { icon: "favorite", title: "Kindness", description: "Cultivation of relationships based on empathy, respect, and genuine care.", href: "/commons/" },
+        { icon: "hub", title: "Interdependence", description: "Recognition of the fundamental interconnection between all beings.", href: "/hub/" }
       ]}
       columns={3}
     />
@@ -111,9 +111,12 @@ const i18n = t(locale);
     <CTABanner
       title="Join the Alliance"
       subtitle="Whether as an individual, community, organization, or project—explore how you can participate in this great alliance for integrity and autonomy. There are many entry points, many ways to contribute, many paths to engage."
-      ctaLabel="Join the Alliance"
-      ctaHref="https://t.me/+1x_EVaVp-lEwN2I8"
+      ctaLabel="Join on WhatsApp"
+      ctaHref="https://whatsapp.com/channel/0029VbCY4kLIiRozv7gGVN3L"
+      ctaSecondaryLabel="Join on Telegram"
+      ctaSecondaryHref="https://t.me/+1x_EVaVp-lEwN2I8"
       external
+      externalSecondary
       bgImage="/images/cta-banner-bg.webp"
     />
     <MarkdownDoc locale={locale}

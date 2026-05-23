@@ -37,8 +37,9 @@ const i18n = t(locale);
     <ContentSection
       title="Visión y Misión"
       body={[
-        "Crear una red glocal de culturas y territorios autónomos, interdependientes y regenerativos que operen en armonía con la Madre Tierra y promuevan el bienestar integral de todos los seres.",
-        "Facilitamos la emergencia, interconexión y fortalecimiento de comunidades autónomas, utilizando tecnologías distribuidas, prácticas regenerativas y modelos de gobernanza holocrática para catalizar la transición hacia una civilización basada en la abundancia compartida, la regeneración planetaria y el pleno desarrollo humano."
+        "Crear una red glocal de culturas y territorios autónomos, interdependientes y regenerativos que operen en armonía con la Madre Tierra.",
+        "Facilitamos la emergencia, interconexión y fortalecimiento de comunidades autónomas, utilizando tecnologías distribuidas y prácticas regenerativas.",
+        "Catalizamos la transición hacia una civilización basada en la abundancia compartida, la regeneración planetaria y el pleno desarrollo humano."
       ]}
       image="/images/concept-regen.webp"
       bg="surface-container"
@@ -48,13 +49,13 @@ const i18n = t(locale);
       title="7 Valores Fundamentales"
       subtitle="La base de la Gran Alianza de Integridad, Interdependencia y Autonomía."
       features={[
-        { icon: "gavel", title: "Integridad", description: "Ética, transparencia y responsabilidad en todas las acciones y relaciones." },
-        { icon: "self_improvement", title: "Autonomía", description: "Autodeterminación y soberanía de individuos y comunidades sobre sus destinos." },
-        { icon: "diversity_1", title: "Armonía en la Diversidad", description: "Celebración y apreciación de la pluralidad cultural, biológica y epistemológica." },
-        { icon: "eco", title: "Regeneración", description: "Restauración activa de ecosistemas naturales y sociales deteriorados." },
-        { icon: "handshake", title: "Colaboración", description: "Cooperación sinérgica para el bien común y la abundancia compartida." },
-        { icon: "favorite", title: "Bondad", description: "Cultivo de relaciones basadas en la empatía, el respeto y el cuidado genuino." },
-        { icon: "hub", title: "Interdependencia", description: "Reconocimiento de la interconexión fundamental entre todos los seres." }
+        { icon: "gavel", title: "Integridad", description: "Ética, transparencia y responsabilidad en todas las acciones y relaciones.", href: "/es/commons/" },
+        { icon: "self_improvement", title: "Autonomía", description: "Autodeterminación y soberanía de individuos y comunidades sobre sus destinos.", href: "/es/commons/" },
+        { icon: "diversity_1", title: "Armonía en la Diversidad", description: "Celebración y apreciación de la pluralidad cultural, biológica y epistemológica.", href: "/es/bioregions/" },
+        { icon: "eco", title: "Regeneración", description: "Restauración activa de ecosistemas naturales y sociales deteriorados.", href: "/es/ecohabitats/" },
+        { icon: "handshake", title: "Colaboración", description: "Cooperación sinérgica para el bien común y la abundancia compartida.", href: "/es/market/" },
+        { icon: "favorite", title: "Bondad", description: "Cultivo de relaciones basadas en la empatía, el respeto y el cuidado genuino.", href: "/es/commons/" },
+        { icon: "hub", title: "Interdependencia", description: "Reconocimiento de la interconexión fundamental entre todos los seres.", href: "/es/hub/" }
       ]}
       columns={3}
     />
@@ -91,8 +92,9 @@ const i18n = t(locale);
     <ContentSection
       title="Contexto y Justificación"
       body={[
-        "Vivimos en una era marcada por desafíos sistémicos sin precedentes: colapso climático, extinción masiva de especies, extrema desigualdad económica y creciente fragmentación social. Estos son síntomas interconectados de una civilización basada en la separación—de la naturaleza, de los demás y de nuestro propósito más profundo.",
-        "Los sistemas de gobernanza convencionales demuestran una incapacidad creciente para responder a estos desafíos. La Confederación Gaia reconoce que la transformación necesaria no vendrá de reformas incrementales, sino de la emergencia de nuevos modelos de organización social que trasciendan limitaciones geopolíticas y activen la inteligencia colectiva al servicio de la regeneración planetaria."
+        "Vivimos en una era marcada por desafíos sistémicos sin precedentes: colapso climático, extinción masiva de especies, extrema desigualdad económica y creciente fragmentación social.",
+        "Estos son síntomas interconectados de una civilización basada en la separación—de la naturaleza, de los demás y de nuestro propósito más profundo.",
+        "La Confederación Gaia reconoce que la transformación necesaria no vendrá de reformas incrementales, sino de nuevos modelos de organización social que activen la inteligencia colectiva al servicio de la regeneración planetaria."
       ]}
       image="/images/cta-banner-bg.webp"
       bg="surface-container"
@@ -111,9 +113,12 @@ const i18n = t(locale);
     <CTABanner
       title="Únete a la Alianza"
       subtitle="Ya sea como individuo, comunidad, organización o proyecto—explora cómo puedes participar en esta gran alianza por la integridad y la autonomía. Hay muchos puntos de entrada, muchas formas de contribuir, muchos caminos por recorrer."
-      ctaLabel="Unirse a la Alianza"
-      ctaHref="https://t.me/+1x_EVaVp-lEwN2I8"
+      ctaLabel="Unirse por WhatsApp"
+      ctaHref="https://whatsapp.com/channel/0029VbCY4kLIiRozv7gGVN3L"
+      ctaSecondaryLabel="Unirse por Telegram"
+      ctaSecondaryHref="https://t.me/+1x_EVaVp-lEwN2I8"
       external
+      externalSecondary
       bgImage="/images/cta-banner-bg.webp"
     />
     <MarkdownDoc locale={locale}
